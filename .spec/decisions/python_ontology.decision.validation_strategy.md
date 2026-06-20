@@ -39,4 +39,8 @@ The project can fail fast on malformed Turtle or malformed specs before running 
 
 Generated graph validation remains explicit rather than hidden inside builders.
 
+## Implementation Notes
+
+Wave 7 starts the validation layer with RDF.ex-backed Turtle parsing for authored ontology files. This parse gate is independent from generated graph validation: it verifies local ontology artifacts before SHACL checks run against RDF emitted by builders.
+
 <!-- covers: python_ontology.validation_strategy.turtle_parse_gate python_ontology.validation_strategy.owl_open_world python_ontology.validation_strategy.shacl_closed_world python_ontology.validation_strategy.parser_unit_tests python_ontology.validation_strategy.extractor_builder_tests python_ontology.validation_strategy.specled_current_truth python_ontology.validation_strategy.command_verification python_ontology.validation_strategy.validation_reports python_ontology.validation_strategy.no_validation_by_execution python_ontology.validation_strategy.validation_after_graph_build -->

@@ -816,4 +816,127 @@ decisions:
     - python_ontology.initial_analysis_slice.first_cli_output
     - python_ontology.initial_analysis_slice.out_of_scope_runtime
     - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: lib/python_ontology/validator/diagnostic.ex
+  covers:
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: lib/python_ontology/validator/turtle.ex
+  covers:
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: test/python_ontology/validation/turtle_validation_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/validation/phase1_integration_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: lib/python_ontology/validator.ex
+  covers:
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: lib/python_ontology/shacl/result.ex
+  covers:
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: lib/python_ontology/shacl/validator.ex
+  covers:
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: test/python_ontology/validation/shacl_entrypoint_validation_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/validation/shacl_shape_validation_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/validation/phase2_integration_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.modules_packages
+    - python_ontology.initial_analysis_slice.functions_methods
+    - python_ontology.initial_analysis_slice.parameters_defaults
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: lib/python_ontology/validator/violation.ex
+  covers:
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: lib/python_ontology/validator/report.ex
+  covers:
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: test/python_ontology/validation/report_model_validation_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: lib/python_ontology/validator/report_formatter.ex
+  covers:
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: lib/python_ontology/validator/command_result.ex
+  covers:
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: lib/python_ontology/validator/command.ex
+  covers:
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: test/python_ontology/validation/report_formatting_validation_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/validation/phase3_integration_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.modules_packages
+    - python_ontology.initial_analysis_slice.functions_methods
+    - python_ontology.initial_analysis_slice.parameters_defaults
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
 ```

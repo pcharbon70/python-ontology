@@ -10,8 +10,11 @@ summary: Layered validation strategy for PythonOntology artifacts and generated 
 surface:
   - .spec/decisions/python_ontology.decision.validation_strategy.md
   - priv/ontologies/*.ttl
+  - mix.exs
   - lib/python_ontology/validator*.ex
+  - lib/python_ontology/validator/**/*.ex
   - lib/python_ontology/shacl/**/*.ex
+  - test/python_ontology/validation/**/*_test.exs
   - test/python_ontology/**/*validation*_test.exs
 decisions:
   - python_ontology.decision.ontology_turtle_file_layers
@@ -118,4 +121,159 @@ decisions:
   target: test/python_ontology/ontology/confidence_vocabulary_test.exs
   covers:
     - python_ontology.validation_strategy.command_verification
+
+- kind: source_file
+  target: mix.exs
+  covers:
+    - python_ontology.validation_strategy.turtle_parse_gate
+
+- kind: source_file
+  target: lib/python_ontology/validator/diagnostic.ex
+  covers:
+    - python_ontology.validation_strategy.turtle_parse_gate
+    - python_ontology.validation_strategy.no_validation_by_execution
+
+- kind: source_file
+  target: lib/python_ontology/validator/turtle.ex
+  covers:
+    - python_ontology.validation_strategy.turtle_parse_gate
+    - python_ontology.validation_strategy.owl_open_world
+    - python_ontology.validation_strategy.no_validation_by_execution
+
+- kind: source_file
+  target: test/python_ontology/validation/turtle_validation_test.exs
+  covers:
+    - python_ontology.validation_strategy.turtle_parse_gate
+    - python_ontology.validation_strategy.owl_open_world
+    - python_ontology.validation_strategy.no_validation_by_execution
+
+- kind: source_file
+  target: .spec/planning/w7/README.md
+  covers:
+    - python_ontology.validation_strategy.specled_current_truth
+    - python_ontology.validation_strategy.command_verification
+
+- kind: command
+  target: mix spec.check
+  covers:
+    - python_ontology.validation_strategy.specled_current_truth
+    - python_ontology.validation_strategy.command_verification
+
+- kind: source_file
+  target: test/python_ontology/validation/phase1_integration_test.exs
+  covers:
+    - python_ontology.validation_strategy.turtle_parse_gate
+    - python_ontology.validation_strategy.specled_current_truth
+    - python_ontology.validation_strategy.command_verification
+    - python_ontology.validation_strategy.no_validation_by_execution
+
+- kind: source_file
+  target: lib/python_ontology/validator.ex
+  covers:
+    - python_ontology.validation_strategy.turtle_parse_gate
+    - python_ontology.validation_strategy.shacl_closed_world
+    - python_ontology.validation_strategy.validation_after_graph_build
+    - python_ontology.validation_strategy.no_validation_by_execution
+
+- kind: source_file
+  target: lib/python_ontology/shacl/result.ex
+  covers:
+    - python_ontology.validation_strategy.shacl_closed_world
+    - python_ontology.validation_strategy.validation_reports
+    - python_ontology.validation_strategy.validation_after_graph_build
+
+- kind: source_file
+  target: lib/python_ontology/shacl/validator.ex
+  covers:
+    - python_ontology.validation_strategy.shacl_closed_world
+    - python_ontology.validation_strategy.validation_reports
+    - python_ontology.validation_strategy.no_validation_by_execution
+    - python_ontology.validation_strategy.validation_after_graph_build
+
+- kind: source_file
+  target: test/python_ontology/validation/shacl_entrypoint_validation_test.exs
+  covers:
+    - python_ontology.validation_strategy.shacl_closed_world
+    - python_ontology.validation_strategy.validation_reports
+    - python_ontology.validation_strategy.no_validation_by_execution
+    - python_ontology.validation_strategy.validation_after_graph_build
+
+- kind: source_file
+  target: priv/ontologies/python-shapes.ttl
+  covers:
+    - python_ontology.validation_strategy.shacl_closed_world
+    - python_ontology.validation_strategy.validation_after_graph_build
+
+- kind: source_file
+  target: test/python_ontology/validation/shacl_shape_validation_test.exs
+  covers:
+    - python_ontology.validation_strategy.shacl_closed_world
+    - python_ontology.validation_strategy.validation_reports
+    - python_ontology.validation_strategy.no_validation_by_execution
+    - python_ontology.validation_strategy.validation_after_graph_build
+
+- kind: source_file
+  target: test/python_ontology/validation/phase2_integration_test.exs
+  covers:
+    - python_ontology.validation_strategy.shacl_closed_world
+    - python_ontology.validation_strategy.validation_reports
+    - python_ontology.validation_strategy.no_validation_by_execution
+    - python_ontology.validation_strategy.validation_after_graph_build
+
+- kind: source_file
+  target: lib/python_ontology/validator/violation.ex
+  covers:
+    - python_ontology.validation_strategy.shacl_closed_world
+    - python_ontology.validation_strategy.validation_reports
+    - python_ontology.validation_strategy.validation_after_graph_build
+
+- kind: source_file
+  target: lib/python_ontology/validator/report.ex
+  covers:
+    - python_ontology.validation_strategy.validation_reports
+    - python_ontology.validation_strategy.validation_after_graph_build
+
+- kind: source_file
+  target: test/python_ontology/validation/report_model_validation_test.exs
+  covers:
+    - python_ontology.validation_strategy.validation_reports
+    - python_ontology.validation_strategy.validation_after_graph_build
+
+- kind: source_file
+  target: lib/python_ontology/validator/report_formatter.ex
+  covers:
+    - python_ontology.validation_strategy.validation_reports
+    - python_ontology.validation_strategy.command_verification
+    - python_ontology.validation_strategy.validation_after_graph_build
+
+- kind: source_file
+  target: lib/python_ontology/validator/command_result.ex
+  covers:
+    - python_ontology.validation_strategy.validation_reports
+    - python_ontology.validation_strategy.command_verification
+    - python_ontology.validation_strategy.validation_after_graph_build
+
+- kind: source_file
+  target: lib/python_ontology/validator/command.ex
+  covers:
+    - python_ontology.validation_strategy.validation_reports
+    - python_ontology.validation_strategy.command_verification
+    - python_ontology.validation_strategy.validation_after_graph_build
+
+- kind: source_file
+  target: test/python_ontology/validation/report_formatting_validation_test.exs
+  covers:
+    - python_ontology.validation_strategy.validation_reports
+    - python_ontology.validation_strategy.command_verification
+    - python_ontology.validation_strategy.validation_after_graph_build
+
+- kind: source_file
+  target: test/python_ontology/validation/phase3_integration_test.exs
+  covers:
+    - python_ontology.validation_strategy.turtle_parse_gate
+    - python_ontology.validation_strategy.shacl_closed_world
+    - python_ontology.validation_strategy.command_verification
+    - python_ontology.validation_strategy.validation_reports
+    - python_ontology.validation_strategy.no_validation_by_execution
+    - python_ontology.validation_strategy.validation_after_graph_build
 ```

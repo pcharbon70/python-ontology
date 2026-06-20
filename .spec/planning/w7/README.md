@@ -12,6 +12,19 @@ This wave implements layered validation for authored ontologies, generated graph
 
 Add Turtle parse validation first. Then add SHACL graph validation when builders exist. Finish with structured reports and CLI/test integration.
 
+## Local Gates
+
+<!-- covers: python_ontology.validation_strategy.specled_current_truth python_ontology.validation_strategy.command_verification -->
+
+Each W7 section should finish with:
+
+- `mix format --check-formatted`
+- focused validation tests for the changed section
+- `mix test`
+- `mix spec.check`
+
+Start from a clean branch. If unrelated local changes or baseline findings are present, record them separately before staging W7 work.
+
 ## Parallel Work Lanes
 
 - Phase 1 can run immediately.

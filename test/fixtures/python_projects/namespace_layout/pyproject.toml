@@ -1,0 +1,4 @@
+# covers: python_ontology.project_analysis_scope.root_detection python_ontology.project_analysis_scope.namespace_package_detection
+[project]
+name = "namespace-layout-fixture"
+version = "0.1.0"

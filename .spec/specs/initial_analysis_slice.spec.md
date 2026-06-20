@@ -516,4 +516,92 @@ decisions:
     - python_ontology.initial_analysis_slice.first_cli_output
     - python_ontology.initial_analysis_slice.out_of_scope_runtime
     - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: lib/python_ontology/project.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: lib/python_ontology/project/input.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: lib/python_ontology/project/discovery.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: lib/python_ontology/project/result.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: lib/python_ontology/project/source_file.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+
+- kind: source_file
+  target: lib/python_ontology/project/diagnostic.ex
+  covers:
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: test/python_ontology/project/input_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/project/discovery_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/project/phase1_integration_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/project/selection_policy_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/project/classifier_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/project/phase2_integration_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/project/parser_input_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/project/phase3_integration_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
 ```

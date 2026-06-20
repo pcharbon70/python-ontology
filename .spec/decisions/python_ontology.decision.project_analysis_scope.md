@@ -36,4 +36,8 @@ Some generated or vendored Python files may be skipped until a caller opts into 
 
 Project metadata extraction can later enrich package identity without changing parser behavior.
 
+## Implementation Notes
+
+Wave 5 introduces `PythonOntology.Project` as the project discovery boundary. The initial slice starts with caller input classification so source-file and project-root entry points can be validated before parser handoff without importing or executing target Python code.
+
 <!-- covers: python_ontology.project_analysis_scope.single_file_and_project_modes python_ontology.project_analysis_scope.root_detection python_ontology.project_analysis_scope.include_python_sources python_ontology.project_analysis_scope.include_stub_files python_ontology.project_analysis_scope.exclude_environment_dirs python_ontology.project_analysis_scope.package_detection python_ontology.project_analysis_scope.namespace_package_detection python_ontology.project_analysis_scope.test_scope_marking python_ontology.project_analysis_scope.configurable_globs python_ontology.project_analysis_scope.no_dependency_traversal_default python_ontology.project_analysis_scope.deterministic_order -->

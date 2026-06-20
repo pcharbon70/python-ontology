@@ -16,7 +16,7 @@ Back to index: [README](./README.md)
 - Normalization is deterministic for the same source and parser version.
 - Mapping preserves child order and field names when available.
 
-[ ] 2 Phase 2 - Tree-sitter To Syntax Mapping
+[x] 2 Phase 2 - Tree-sitter To Syntax Mapping
   Convert Tree-sitter parse output into normalized syntax nodes.
 
   [x] 2.1 Section - Structural Mapping
@@ -53,12 +53,12 @@ Back to index: [README](./README.md)
       [x] 2.2.2.2 Subtask - Map string, numeric, boolean, `None`, list, tuple, dict, and set literals.
       [x] 2.2.2.3 Subtask - Preserve raw text where needed for annotations and decorator expressions.
 
-  [ ] 2.3 Section - Phase 2 Integration Tests
+  [x] 2.3 Section - Phase 2 Integration Tests
     Prove representative Python fixtures normalize into stable typed nodes.
 
-    [ ] 2.3.1 Task - Run mapping checks
+    [x] 2.3.1 Task - Run mapping checks
       Validate mapping for all first-slice structural and expression constructs.
 
-      [ ] 2.3.1.1 Subtask - Add fixture tests for imports, classes, functions, decorators, annotations, parameters, calls, attributes, and literals.
-      [ ] 2.3.1.2 Subtask - Add determinism tests for repeated normalization of the same parser result.
-      [ ] 2.3.1.3 Subtask - Run focused mapping tests, full `mix test`, and `mix spec.check`.
+      [x] 2.3.1.1 Subtask - Add fixture tests for imports, classes, functions, decorators, annotations, parameters, calls, attributes, and literals.
+      [x] 2.3.1.2 Subtask - Add determinism tests for repeated normalization of the same parser result.
+      [x] 2.3.1.3 Subtask - Run focused mapping tests, full `mix test`, and `mix spec.check`.

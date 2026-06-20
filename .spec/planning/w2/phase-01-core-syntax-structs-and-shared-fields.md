@@ -15,7 +15,7 @@ Back to index: [README](./README.md)
 - Normalized nodes preserve source identity, source spans, and raw parser provenance.
 - Typed nodes cover the initial analysis slice without hiding unsupported syntax.
 
-[ ] 1 Phase 1 - Core Syntax Structs and Shared Fields
+[x] 1 Phase 1 - Core Syntax Structs and Shared Fields
   Define the normalized syntax structs and shared metadata fields.
 
   [x] 1.1 Section - Shared Node Fields
@@ -52,12 +52,12 @@ Back to index: [README](./README.md)
       [x] 1.2.2.2 Subtask - Define control-flow and comprehension preservation nodes.
       [x] 1.2.2.3 Subtask - Define generic node type for unsupported syntax.
 
-  [ ] 1.3 Section - Phase 1 Integration Tests
+  [x] 1.3 Section - Phase 1 Integration Tests
     Prove syntax structs compile and can represent first-slice fixture shapes.
 
-    [ ] 1.3.1 Task - Run syntax struct checks
+    [x] 1.3.1 Task - Run syntax struct checks
       Validate construction, defaults, and required field behavior.
 
-      [ ] 1.3.1.1 Subtask - Add tests for shared node and span construction.
-      [ ] 1.3.1.2 Subtask - Add tests for representative typed node construction.
-      [ ] 1.3.1.3 Subtask - Run `mix format --check-formatted`, focused syntax struct tests, full `mix test`, and `mix spec.check`.
+      [x] 1.3.1.1 Subtask - Add tests for shared node and span construction.
+      [x] 1.3.1.2 Subtask - Add tests for representative typed node construction.
+      [x] 1.3.1.3 Subtask - Run `mix format --check-formatted`, focused syntax struct tests, full `mix test`, and `mix spec.check`.

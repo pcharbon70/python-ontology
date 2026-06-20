@@ -1073,6 +1073,34 @@ decisions:
     - python_ontology.initial_analysis_slice.tests_for_slice
 
 - kind: source_file
+  target: test/fixtures/python_initial_slice/project/src/initial_slice_pkg/api.pyi
+  covers:
+    - python_ontology.initial_analysis_slice.functions_methods
+    - python_ontology.initial_analysis_slice.parameters_defaults
+    - python_ontology.initial_analysis_slice.decorators_annotations
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/fixtures/python_initial_slice/project/tests/test_complete.py
+  covers:
+    - python_ontology.initial_analysis_slice.imports_aliases
+    - python_ontology.initial_analysis_slice.functions_methods
+    - python_ontology.initial_analysis_slice.calls_attributes
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/fixtures/python_initial_slice/project/build/generated.py
+  covers:
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/fixtures/python_initial_slice/project/.venv/lib/site-packages/installed_dep.py
+  covers:
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
   target: test/python_ontology/analysis/phase2_integration_test.exs
   covers:
     - python_ontology.initial_analysis_slice.modules_packages
@@ -1083,6 +1111,21 @@ decisions:
     - python_ontology.initial_analysis_slice.decorators_annotations
     - python_ontology.initial_analysis_slice.calls_attributes
     - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/analysis/phase3_project_acceptance_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.modules_packages
+    - python_ontology.initial_analysis_slice.imports_aliases
+    - python_ontology.initial_analysis_slice.classes_bases
+    - python_ontology.initial_analysis_slice.functions_methods
+    - python_ontology.initial_analysis_slice.parameters_defaults
+    - python_ontology.initial_analysis_slice.decorators_annotations
+    - python_ontology.initial_analysis_slice.calls_attributes
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.first_cli_output
     - python_ontology.initial_analysis_slice.out_of_scope_runtime
     - python_ontology.initial_analysis_slice.tests_for_slice
 

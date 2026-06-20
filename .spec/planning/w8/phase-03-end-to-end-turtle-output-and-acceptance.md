@@ -30,22 +30,22 @@ Back to index: [README](./README.md)
       [x] 3.1.1.2 Subtask - Preserve stable prefixes for PythonOntology namespaces.
       [x] 3.1.1.3 Subtask - Ensure serialized output parses back as Turtle.
 
-  [ ] 3.2 Section - End-To-End Project Fixture
+  [x] 3.2 Section - End-To-End Project Fixture
     Validate file and project analysis on a realistic small project.
 
-    [ ] 3.2.1 Task - Build acceptance fixture project
+    [x] 3.2.1 Task - Build acceptance fixture project
       Create a representative source project for end-to-end testing.
 
-      [ ] 3.2.1.1 Subtask - Include package metadata, modules, tests, stubs, imports, classes, functions, annotations, decorators, and calls.
-      [ ] 3.2.1.2 Subtask - Include dynamic constructs that should remain unresolved or runtime-dependent.
-      [ ] 3.2.1.3 Subtask - Include excluded directories to prove project scope behavior.
+      [x] 3.2.1.1 Subtask - Include package metadata, modules, tests, stubs, imports, classes, functions, annotations, decorators, and calls.
+      [x] 3.2.1.2 Subtask - Include dynamic constructs that should remain unresolved or runtime-dependent.
+      [x] 3.2.1.3 Subtask - Include excluded directories to prove project scope behavior.
 
-    [ ] 3.2.2 Task - Run full pipeline acceptance
+    [x] 3.2.2 Task - Run full pipeline acceptance
       Validate generated output and diagnostics.
 
-      [ ] 3.2.2.1 Subtask - Analyze the fixture project through the public API.
-      [ ] 3.2.2.2 Subtask - Analyze the fixture project through the Mix task.
-      [ ] 3.2.2.3 Subtask - Assert output graph, Turtle serialization, validation status, and diagnostics.
+      [x] 3.2.2.1 Subtask - Analyze the fixture project through the public API.
+      [x] 3.2.2.2 Subtask - Analyze the fixture project through the Mix task.
+      [x] 3.2.2.3 Subtask - Assert output graph, Turtle serialization, validation status, and diagnostics.
 
   [ ] 3.3 Section - Phase 3 Integration Tests
     Run final first-slice acceptance across formatting, tests, generated output, validation, and SpecLed.

@@ -15,7 +15,7 @@ Back to index: [README](./README.md)
 - Regular and namespace packages are represented.
 - Tests are included by default and marked as test scope.
 
-[ ] 2 Phase 2 - Include Exclude Policy and Package Classification
+[x] 2 Phase 2 - Include Exclude Policy and Package Classification
   Implement selection policy and source classification for Python project files.
 
   [x] 2.1 Section - Include And Exclude Globs
@@ -52,12 +52,12 @@ Back to index: [README](./README.md)
       [x] 2.2.2.2 Subtask - Mark `.pyi` stub files separately from `.py` implementation files.
       [x] 2.2.2.3 Subtask - Keep test files included by default.
 
-  [ ] 2.3 Section - Phase 2 Integration Tests
+  [x] 2.3 Section - Phase 2 Integration Tests
     Validate selection policy, package classification, and configurable globs.
 
-    [ ] 2.3.1 Task - Run selection/classification checks
+    [x] 2.3.1 Task - Run selection/classification checks
       Prove default and configured traversal behavior.
 
-      [ ] 2.3.1.1 Subtask - Add tests for excluded directories and selected source files.
-      [ ] 2.3.1.2 Subtask - Add tests for regular packages, namespace packages, tests, and stubs.
-      [ ] 2.3.1.3 Subtask - Run focused project tests, full `mix test`, and `mix spec.check`.
+      [x] 2.3.1.1 Subtask - Add tests for excluded directories and selected source files.
+      [x] 2.3.1.2 Subtask - Add tests for regular packages, namespace packages, tests, and stubs.
+      [x] 2.3.1.3 Subtask - Run focused project tests, full `mix test`, and `mix spec.check`.

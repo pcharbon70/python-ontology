@@ -228,4 +228,17 @@ decisions:
     - python_ontology.project_analysis_scope.namespace_package_detection
     - python_ontology.project_analysis_scope.test_scope_marking
     - python_ontology.project_analysis_scope.include_stub_files
+
+- kind: source_file
+  target: test/python_ontology/project/phase2_integration_test.exs
+  covers:
+    - python_ontology.project_analysis_scope.include_python_sources
+    - python_ontology.project_analysis_scope.include_stub_files
+    - python_ontology.project_analysis_scope.exclude_environment_dirs
+    - python_ontology.project_analysis_scope.package_detection
+    - python_ontology.project_analysis_scope.namespace_package_detection
+    - python_ontology.project_analysis_scope.test_scope_marking
+    - python_ontology.project_analysis_scope.configurable_globs
+    - python_ontology.project_analysis_scope.no_dependency_traversal_default
+    - python_ontology.project_analysis_scope.deterministic_order
 ```

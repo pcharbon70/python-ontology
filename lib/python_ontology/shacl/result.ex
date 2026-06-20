@@ -5,13 +5,14 @@ defmodule PythonOntology.SHACL.Result do
   """
 
   alias PythonOntology.Validator.Diagnostic
+  alias PythonOntology.Validator.Violation
 
   @type triple :: {String.t(), String.t(), String.t()}
   @type t :: %__MODULE__{
           conforms?: boolean(),
           data_graph: [triple()],
           shapes_graph: term(),
-          violations: [map()],
+          violations: [Violation.t()],
           diagnostics: [Diagnostic.t()],
           metadata: map()
         }

@@ -7,6 +7,7 @@ defmodule PythonOntology.SHACL.Validator do
   alias PythonOntology.SHACL.Result
   alias PythonOntology.Validator.Diagnostic
   alias PythonOntology.Validator.Turtle
+  alias PythonOntology.Validator.Violation
 
   @type triple :: Result.triple()
 
@@ -271,14 +272,18 @@ defmodule PythonOntology.SHACL.Validator do
   end
 
   defp violation(target_node, shape, path, message, opts \\ []) do
-    %{
-      severity: :violation,
+    source = Keyword.get(opts, :source)
+
+    %Violation{
       target_node: target_node,
       shape: shape,
       path: path,
       message: message,
-      source: Keyword.get(opts, :source),
-      stage: :shacl_validation
+      source: source,
+      source_context: source_context(source)
     }
   end
+
+  defp source_context(nil), do: %{}
+  defp source_context(source), do: %{source_node: source}
 end

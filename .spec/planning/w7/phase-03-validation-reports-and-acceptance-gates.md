@@ -19,15 +19,15 @@ Back to index: [README](./README.md)
 [ ] 3 Phase 3 - Validation Reports and Acceptance Gates
   Finalize validation reporting and local acceptance behavior.
 
-  [ ] 3.1 Section - Report Model
+  [x] 3.1 Section - Report Model
     Define structured validation report data.
 
-    [ ] 3.1.1 Task - Implement report fields
+    [x] 3.1.1 Task - Implement report fields
       Preserve enough detail for humans and automation.
 
-      [ ] 3.1.1.1 Subtask - Include status, severity counts, target node, shape, path, message, and source context fields.
-      [ ] 3.1.1.2 Subtask - Include validation stage and source graph metadata.
-      [ ] 3.1.1.3 Subtask - Keep report serialization deterministic.
+      [x] 3.1.1.1 Subtask - Include status, severity counts, target node, shape, path, message, and source context fields.
+      [x] 3.1.1.2 Subtask - Include validation stage and source graph metadata.
+      [x] 3.1.1.3 Subtask - Keep report serialization deterministic.
 
   [ ] 3.2 Section - Acceptance Command Integration
     Wire validation into local gates and user-facing commands.

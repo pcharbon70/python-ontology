@@ -1,0 +1,107 @@
+# covers: python_ontology.ontology_turtle_files.files_present python_ontology.ontology_turtle_files.layered_files python_ontology.ontology_turtle_files.namespace_stability python_ontology.ontology_turtle_files.python_native_boundaries python_ontology.ontology_turtle_files.dynamic_fact_boundary python_ontology.ontology_turtle_files.bootstrap_validity
+@prefix : <https://w3id.org/python-code/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+<https://w3id.org/python-code/core> a owl:Ontology ;
+    dc:title "Python Code Core Ontology"@en ;
+    rdfs:comment "Foundational ontology for Python source files, locations, AST nodes, expressions, statements, scopes, bindings, and fact confidence boundaries."@en .
+
+:PythonCodeElement a owl:Class ;
+    rdfs:label "Python Code Element"@en .
+
+:SourceFile a owl:Class ;
+    rdfs:subClassOf :PythonCodeElement ;
+    rdfs:label "Source File"@en .
+
+:SourceLocation a owl:Class ;
+    rdfs:label "Source Location"@en .
+
+:ASTNode a owl:Class ;
+    rdfs:subClassOf :PythonCodeElement ;
+    rdfs:label "AST Node"@en .
+
+:Statement a owl:Class ;
+    rdfs:subClassOf :ASTNode ;
+    rdfs:label "Statement"@en .
+
+:Expression a owl:Class ;
+    rdfs:subClassOf :ASTNode ;
+    rdfs:label "Expression"@en .
+
+:Literal a owl:Class ;
+    rdfs:subClassOf :Expression ;
+    rdfs:label "Literal"@en .
+
+:ImportStatement a owl:Class ;
+    rdfs:subClassOf :Statement ;
+    rdfs:label "Import Statement"@en .
+
+:Assignment a owl:Class ;
+    rdfs:subClassOf :Statement ;
+    rdfs:label "Assignment"@en .
+
+:CallExpression a owl:Class ;
+    rdfs:subClassOf :Expression ;
+    rdfs:label "Call Expression"@en .
+
+:Comprehension a owl:Class ;
+    rdfs:subClassOf :Expression ;
+    rdfs:label "Comprehension"@en .
+
+:ControlFlowStatement a owl:Class ;
+    rdfs:subClassOf :Statement ;
+    rdfs:label "Control Flow Statement"@en .
+
+:Scope a owl:Class ;
+    rdfs:label "Scope"@en .
+
+:Binding a owl:Class ;
+    rdfs:label "Binding"@en .
+
+:FactAssertion a owl:Class ;
+    rdfs:label "Fact Assertion"@en .
+
+:SourceDeclaredFact a owl:Class ;
+    rdfs:subClassOf :FactAssertion ;
+    rdfs:label "Source Declared Fact"@en .
+
+:StaticallyInferredFact a owl:Class ;
+    rdfs:subClassOf :FactAssertion ;
+    rdfs:label "Statically Inferred Fact"@en .
+
+:UnresolvedFact a owl:Class ;
+    rdfs:subClassOf :FactAssertion ;
+    rdfs:label "Unresolved Fact"@en .
+
+:RuntimeDependentFact a owl:Class ;
+    rdfs:subClassOf :FactAssertion ;
+    rdfs:label "Runtime Dependent Fact"@en .
+
+:hasLocation a owl:ObjectProperty ;
+    rdfs:domain :PythonCodeElement ;
+    rdfs:range :SourceLocation ;
+    rdfs:label "has location"@en .
+
+:line a owl:DatatypeProperty ;
+    rdfs:domain :SourceLocation ;
+    rdfs:range xsd:integer ;
+    rdfs:label "line"@en .
+
+:column a owl:DatatypeProperty ;
+    rdfs:domain :SourceLocation ;
+    rdfs:range xsd:integer ;
+    rdfs:label "column"@en .
+
+:hasScope a owl:ObjectProperty ;
+    rdfs:domain :PythonCodeElement ;
+    rdfs:range :Scope ;
+    rdfs:label "has scope"@en .
+
+:bindsName a owl:DatatypeProperty ;
+    rdfs:domain :Binding ;
+    rdfs:range xsd:string ;
+    rdfs:label "binds name"@en .

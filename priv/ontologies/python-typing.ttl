@@ -1,0 +1,59 @@
+# covers: python_ontology.ontology_turtle_files.layered_files python_ontology.ontology_turtle_files.namespace_stability python_ontology.ontology_turtle_files.import_direction python_ontology.ontology_turtle_files.python_native_boundaries python_ontology.ontology_turtle_files.bootstrap_validity
+@prefix : <https://w3id.org/python-code/typing#> .
+@prefix pystruct: <https://w3id.org/python-code/structure#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+<https://w3id.org/python-code/typing> a owl:Ontology ;
+    owl:imports <https://w3id.org/python-code/structure> ;
+    dc:title "Python Typing Ontology"@en ;
+    rdfs:comment "Ontology for Python annotations, gradual typing, generics, unions, type variables, ParamSpec, TypedDict, Protocol, Literal, and Callable type expressions."@en .
+
+:TypeAnnotation a owl:Class ;
+    rdfs:label "Type Annotation"@en .
+
+:TypeExpression a owl:Class ;
+    rdfs:label "Type Expression"@en .
+
+:GenericType a owl:Class ;
+    rdfs:subClassOf :TypeExpression ;
+    rdfs:label "Generic Type"@en .
+
+:UnionType a owl:Class ;
+    rdfs:subClassOf :TypeExpression ;
+    rdfs:label "Union Type"@en .
+
+:TypeVariable a owl:Class ;
+    rdfs:subClassOf :TypeExpression ;
+    rdfs:label "Type Variable"@en .
+
+:ParamSpec a owl:Class ;
+    rdfs:subClassOf :TypeExpression ;
+    rdfs:label "ParamSpec"@en .
+
+:TypedDict a owl:Class ;
+    rdfs:subClassOf pystruct:Class ;
+    rdfs:label "TypedDict"@en .
+
+:Protocol a owl:Class ;
+    rdfs:subClassOf pystruct:ProtocolClass ;
+    rdfs:label "Protocol"@en .
+
+:LiteralType a owl:Class ;
+    rdfs:subClassOf :TypeExpression ;
+    rdfs:label "Literal Type"@en .
+
+:CallableType a owl:Class ;
+    rdfs:subClassOf :TypeExpression ;
+    rdfs:label "Callable Type"@en .
+
+:hasAnnotation a owl:ObjectProperty ;
+    rdfs:range :TypeAnnotation ;
+    rdfs:label "has annotation"@en .
+
+:annotationText a owl:DatatypeProperty ;
+    rdfs:domain :TypeAnnotation ;
+    rdfs:range xsd:string ;
+    rdfs:label "annotation text"@en .

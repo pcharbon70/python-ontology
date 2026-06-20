@@ -1,0 +1,3423 @@
+{
+  "decisions": {
+    "items": [
+      {
+        "affects": [
+          "python_ontology.extractor_builder_boundary"
+        ],
+        "date": "2026-06-20",
+        "file": ".spec/decisions/python_ontology.decision.extractor_builder_boundary.md",
+        "id": "python_ontology.decision.extractor_builder_boundary",
+        "status": "accepted",
+        "title": "Extractor And Builder Boundary"
+      },
+      {
+        "affects": [
+          "python_ontology.fact_confidence_model",
+          "python_ontology.ontology_turtle_files"
+        ],
+        "date": "2026-06-20",
+        "file": ".spec/decisions/python_ontology.decision.fact_confidence_model.md",
+        "id": "python_ontology.decision.fact_confidence_model",
+        "status": "accepted",
+        "title": "Fact Confidence Model"
+      },
+      {
+        "affects": [
+          "python_ontology.initial_analysis_slice"
+        ],
+        "date": "2026-06-20",
+        "file": ".spec/decisions/python_ontology.decision.initial_analysis_slice.md",
+        "id": "python_ontology.decision.initial_analysis_slice",
+        "status": "accepted",
+        "title": "Initial Analysis Slice"
+      },
+      {
+        "affects": [
+          "package.python_ontology"
+        ],
+        "date": "2026-06-20",
+        "file": ".spec/decisions/python_ontology.decision.initial_python_ontology_architecture.md",
+        "id": "python_ontology.decision.initial_python_ontology_architecture",
+        "status": "accepted",
+        "title": "Initial Python Ontology Architecture"
+      },
+      {
+        "affects": [
+          "python_ontology.iri_identity_strategy",
+          "python_ontology.ontology_turtle_files"
+        ],
+        "date": "2026-06-20",
+        "file": ".spec/decisions/python_ontology.decision.iri_identity_strategy.md",
+        "id": "python_ontology.decision.iri_identity_strategy",
+        "status": "accepted",
+        "title": "IRI Identity Strategy"
+      },
+      {
+        "affects": [
+          "python_ontology.parser",
+          "python_ontology.normalized_syntax_model"
+        ],
+        "date": "2026-06-20",
+        "file": ".spec/decisions/python_ontology.decision.normalized_syntax_model.md",
+        "id": "python_ontology.decision.normalized_syntax_model",
+        "status": "accepted",
+        "title": "Normalized Syntax Model"
+      },
+      {
+        "affects": [
+          "package.python_ontology",
+          "python_ontology.ontology_turtle_files"
+        ],
+        "date": "2026-06-20",
+        "file": ".spec/decisions/python_ontology.decision.ontology_turtle_file_layers.md",
+        "id": "python_ontology.decision.ontology_turtle_file_layers",
+        "status": "accepted",
+        "title": "Ontology Turtle File Layers"
+      },
+      {
+        "affects": [
+          "package.python_ontology",
+          "python_ontology.parser"
+        ],
+        "date": "2026-06-20",
+        "file": ".spec/decisions/python_ontology.decision.parser_bridge_boundary.md",
+        "id": "python_ontology.decision.parser_bridge_boundary",
+        "status": "accepted",
+        "title": "Tree-sitter Parser Boundary"
+      },
+      {
+        "affects": [
+          "python_ontology.project_analysis_scope"
+        ],
+        "date": "2026-06-20",
+        "file": ".spec/decisions/python_ontology.decision.project_analysis_scope.md",
+        "id": "python_ontology.decision.project_analysis_scope",
+        "status": "accepted",
+        "title": "Project Analysis Scope"
+      },
+      {
+        "affects": [
+          "python_ontology.validation_strategy",
+          "python_ontology.ontology_turtle_files"
+        ],
+        "date": "2026-06-20",
+        "file": ".spec/decisions/python_ontology.decision.validation_strategy.md",
+        "id": "python_ontology.decision.validation_strategy",
+        "status": "accepted",
+        "title": "Validation Strategy"
+      }
+    ]
+  },
+  "findings": [],
+  "index": {
+    "exceptions": [],
+    "requirements": [
+      {
+        "file": ".spec/specs/package.spec.md",
+        "id": "package.python_ontology.mix_project",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The repository shall define a Mix project named PythonOntology with OTP application :python_ontology.",
+        "subject_id": "package.python_ontology"
+      },
+      {
+        "file": ".spec/specs/package.spec.md",
+        "id": "package.python_ontology.product_direction",
+        "priority": "must",
+        "stability": "evolving",
+        "statement": "The project shall build a Python-native source ontology and analyzer that follows the broad architecture accepted in python_ontology.decision.initial_python_ontology_architecture.",
+        "subject_id": "package.python_ontology"
+      },
+      {
+        "file": ".spec/specs/package.spec.md",
+        "id": "package.python_ontology.public_namespace",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The PythonOntology module shall expose the OTP application name through app_name/0.",
+        "subject_id": "package.python_ontology"
+      },
+      {
+        "file": ".spec/specs/package.spec.md",
+        "id": "package.python_ontology.specled_dependency",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The Mix project shall include spec_led_ex as a dev/test-only dependency pinned to the shared repository ref.",
+        "subject_id": "package.python_ontology"
+      },
+      {
+        "file": ".spec/specs/package.spec.md",
+        "id": "package.python_ontology.test_baseline",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The project shall include an ExUnit baseline that verifies the public namespace behavior.",
+        "subject_id": "package.python_ontology"
+      },
+      {
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "id": "python_ontology.extractor_builder_boundary.builders_emit_rdf",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Builders shall produce RDF triples from extracted facts and builder context.",
+        "subject_id": "python_ontology.extractor_builder_boundary"
+      },
+      {
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "id": "python_ontology.extractor_builder_boundary.diagnostic_accumulation",
+        "priority": "should",
+        "stability": "evolving",
+        "statement": "Pipeline stages shall accumulate structured diagnostics for recoverable issues.",
+        "subject_id": "python_ontology.extractor_builder_boundary"
+      },
+      {
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "id": "python_ontology.extractor_builder_boundary.extractors_emit_facts",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Extractors shall produce structured Python facts from normalized syntax and analysis context.",
+        "subject_id": "python_ontology.extractor_builder_boundary"
+      },
+      {
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "id": "python_ontology.extractor_builder_boundary.no_parsing_in_builders",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Builders shall not parse source files or traverse raw Tree-sitter cursors.",
+        "subject_id": "python_ontology.extractor_builder_boundary"
+      },
+      {
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "id": "python_ontology.extractor_builder_boundary.no_rdf_in_extractors",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Extractors shall not emit RDF triples directly.",
+        "subject_id": "python_ontology.extractor_builder_boundary"
+      },
+      {
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "id": "python_ontology.extractor_builder_boundary.parser_syntax_only",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Parser stages shall output normalized syntax data rather than extracted semantic facts or RDF triples.",
+        "subject_id": "python_ontology.extractor_builder_boundary"
+      },
+      {
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "id": "python_ontology.extractor_builder_boundary.shared_context",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Extractors and builders shall receive explicit context objects instead of relying on process-global state.",
+        "subject_id": "python_ontology.extractor_builder_boundary"
+      },
+      {
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "id": "python_ontology.extractor_builder_boundary.shared_iri_helper",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Builders shall use shared IRI generation helpers.",
+        "subject_id": "python_ontology.extractor_builder_boundary"
+      },
+      {
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "id": "python_ontology.extractor_builder_boundary.source_evidence_required",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Extracted facts shall carry source evidence and confidence metadata.",
+        "subject_id": "python_ontology.extractor_builder_boundary"
+      },
+      {
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "id": "python_ontology.extractor_builder_boundary.validation_after_build",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Validation shall run after RDF graph building rather than inside parser or extractor stages.",
+        "subject_id": "python_ontology.extractor_builder_boundary"
+      },
+      {
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "id": "python_ontology.fact_confidence_model.builder_propagation",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "RDF builders shall propagate fact confidence into generated triples using ontology classes or properties.",
+        "subject_id": "python_ontology.fact_confidence_model"
+      },
+      {
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "id": "python_ontology.fact_confidence_model.categories",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Generated facts shall support source_declared, statically_inferred, unresolved, and runtime_dependent confidence categories.",
+        "subject_id": "python_ontology.fact_confidence_model"
+      },
+      {
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "id": "python_ontology.fact_confidence_model.dynamic_construct_marking",
+        "priority": "must",
+        "stability": "evolving",
+        "statement": "Dynamic constructs such as dynamic imports, getattr, setattr, monkey patching, decorators, and metaclasses shall preserve their uncertainty boundary.",
+        "subject_id": "python_ontology.fact_confidence_model"
+      },
+      {
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "id": "python_ontology.fact_confidence_model.no_execution_for_confidence",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The analyzer shall not execute analyzed Python code to increase confidence.",
+        "subject_id": "python_ontology.fact_confidence_model"
+      },
+      {
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "id": "python_ontology.fact_confidence_model.queryable_confidence",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Confidence categories shall be queryable in generated RDF graphs.",
+        "subject_id": "python_ontology.fact_confidence_model"
+      },
+      {
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "id": "python_ontology.fact_confidence_model.runtime_dependent_boundary",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Facts requiring Python runtime execution shall be marked runtime_dependent rather than source_declared or statically_inferred.",
+        "subject_id": "python_ontology.fact_confidence_model"
+      },
+      {
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "id": "python_ontology.fact_confidence_model.source_declared_default",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Facts extracted directly from parsed syntax shall default to source_declared confidence.",
+        "subject_id": "python_ontology.fact_confidence_model"
+      },
+      {
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "id": "python_ontology.fact_confidence_model.static_inference_evidence",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Statically inferred facts shall carry deterministic evidence references.",
+        "subject_id": "python_ontology.fact_confidence_model"
+      },
+      {
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "id": "python_ontology.fact_confidence_model.unresolved_queryable",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Relevant but unresolved facts shall be represented in the graph as queryable unresolved facts.",
+        "subject_id": "python_ontology.fact_confidence_model"
+      },
+      {
+        "file": ".spec/specs/implementation_wave_plan.spec.md",
+        "id": "python_ontology.implementation_wave_plan.adr_traceability",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Each phase file shall list the ADRs, specs, and implementation surfaces it is intended to advance.",
+        "subject_id": "python_ontology.implementation_wave_plan"
+      },
+      {
+        "file": ".spec/specs/implementation_wave_plan.spec.md",
+        "id": "python_ontology.implementation_wave_plan.integration_test_sections",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Each phase file shall end with a dedicated integration test section.",
+        "subject_id": "python_ontology.implementation_wave_plan"
+      },
+      {
+        "file": ".spec/specs/implementation_wave_plan.spec.md",
+        "id": "python_ontology.implementation_wave_plan.phase_files",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Each implementation wave shall include multiple phase files for its ADR-backed implementation area.",
+        "subject_id": "python_ontology.implementation_wave_plan"
+      },
+      {
+        "file": ".spec/specs/implementation_wave_plan.spec.md",
+        "id": "python_ontology.implementation_wave_plan.phase_hierarchy",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Each phase file shall use phase, section, task, and subtask hierarchy with a description at each phase, section, and task level.",
+        "subject_id": "python_ontology.implementation_wave_plan"
+      },
+      {
+        "file": ".spec/specs/implementation_wave_plan.spec.md",
+        "id": "python_ontology.implementation_wave_plan.wave_index",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Each implementation wave shall include an index that explains phase order, dependencies, and parallel work lanes for its ADR-backed area.",
+        "subject_id": "python_ontology.implementation_wave_plan"
+      },
+      {
+        "file": ".spec/specs/implementation_wave_plan.spec.md",
+        "id": "python_ontology.implementation_wave_plan.wave_per_adr_area",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Parser, normalization, IRI identity, fact confidence, project scope, extractor/builder, validation, and initial slice planning shall each have a dedicated wave.",
+        "subject_id": "python_ontology.implementation_wave_plan"
+      },
+      {
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "id": "python_ontology.initial_analysis_slice.calls_attributes",
+        "priority": "must",
+        "stability": "evolving",
+        "statement": "The first analysis slice shall extract calls, attributes, and simple call target syntax.",
+        "subject_id": "python_ontology.initial_analysis_slice"
+      },
+      {
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "id": "python_ontology.initial_analysis_slice.classes_bases",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The first analysis slice shall extract classes and base class syntax.",
+        "subject_id": "python_ontology.initial_analysis_slice"
+      },
+      {
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "id": "python_ontology.initial_analysis_slice.decorators_annotations",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The first analysis slice shall extract decorators and annotations as syntax-level facts.",
+        "subject_id": "python_ontology.initial_analysis_slice"
+      },
+      {
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "id": "python_ontology.initial_analysis_slice.first_cli_output",
+        "priority": "must",
+        "stability": "evolving",
+        "statement": "The first analysis slice shall expose a public API or Mix task that writes Turtle output for a file or project.",
+        "subject_id": "python_ontology.initial_analysis_slice"
+      },
+      {
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "id": "python_ontology.initial_analysis_slice.functions_methods",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The first analysis slice shall extract functions and methods.",
+        "subject_id": "python_ontology.initial_analysis_slice"
+      },
+      {
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "id": "python_ontology.initial_analysis_slice.imports_aliases",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The first analysis slice shall extract imports and aliases.",
+        "subject_id": "python_ontology.initial_analysis_slice"
+      },
+      {
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "id": "python_ontology.initial_analysis_slice.modules_packages",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The first analysis slice shall extract modules and packages.",
+        "subject_id": "python_ontology.initial_analysis_slice"
+      },
+      {
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Runtime-dependent behavior, full type reasoning, framework semantics, dataflow, and dynamic import resolution shall remain out of scope for the first slice.",
+        "subject_id": "python_ontology.initial_analysis_slice"
+      },
+      {
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "id": "python_ontology.initial_analysis_slice.parameters_defaults",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The first analysis slice shall extract parameters, defaults, varargs, kwargs, and keyword-only parameters.",
+        "subject_id": "python_ontology.initial_analysis_slice"
+      },
+      {
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "id": "python_ontology.initial_analysis_slice.source_locations",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The first analysis slice shall preserve source files and source locations for extracted entities.",
+        "subject_id": "python_ontology.initial_analysis_slice"
+      },
+      {
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The first analysis slice shall include tests for parser, extractor, builder, and output behavior.",
+        "subject_id": "python_ontology.initial_analysis_slice"
+      },
+      {
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "id": "python_ontology.iri_identity_strategy.class_function_identity",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Class, function, and method identities shall use lexical qualified names rather than runtime object identity or function arity.",
+        "subject_id": "python_ontology.iri_identity_strategy"
+      },
+      {
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "id": "python_ontology.iri_identity_strategy.configurable_base_iri",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Generated analyzed-code resource IRIs shall use a configurable base IRI.",
+        "subject_id": "python_ontology.iri_identity_strategy"
+      },
+      {
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "id": "python_ontology.iri_identity_strategy.expression_span_identity",
+        "priority": "must",
+        "stability": "evolving",
+        "statement": "Expressions, calls, imports, assignments, and source locations shall be identified by containing entity and source span.",
+        "subject_id": "python_ontology.iri_identity_strategy"
+      },
+      {
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "id": "python_ontology.iri_identity_strategy.hash_canonicalization",
+        "priority": "should",
+        "stability": "stable",
+        "statement": "Hash-based IRI fragments shall use documented canonical inputs.",
+        "subject_id": "python_ontology.iri_identity_strategy"
+      },
+      {
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "id": "python_ontology.iri_identity_strategy.module_package_identity",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Package and module identities shall be derived from discovered package roots, dotted names, and source file paths when needed.",
+        "subject_id": "python_ontology.iri_identity_strategy"
+      },
+      {
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "id": "python_ontology.iri_identity_strategy.namespace_resource_separation",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Ontology vocabulary IRIs shall remain separate from generated analyzed-code resource IRIs.",
+        "subject_id": "python_ontology.iri_identity_strategy"
+      },
+      {
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "id": "python_ontology.iri_identity_strategy.nested_scope_identity",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Nested classes and nested functions shall include their lexical parent path in generated identities.",
+        "subject_id": "python_ontology.iri_identity_strategy"
+      },
+      {
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "id": "python_ontology.iri_identity_strategy.no_runtime_identity_claims",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Static IRI generation shall not claim Python runtime object identity without runtime-specific evidence.",
+        "subject_id": "python_ontology.iri_identity_strategy"
+      },
+      {
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "id": "python_ontology.iri_identity_strategy.occurrence_disambiguation",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Ambiguous or repeated source definitions shall be disambiguated by occurrence index and source span.",
+        "subject_id": "python_ontology.iri_identity_strategy"
+      },
+      {
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "id": "python_ontology.iri_identity_strategy.shared_iri_helper",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Builders shall use a shared IRI helper instead of ad hoc string construction.",
+        "subject_id": "python_ontology.iri_identity_strategy"
+      },
+      {
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "id": "python_ontology.iri_identity_strategy.stable_path_normalization",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Source file identities shall use normalized repository-relative POSIX paths.",
+        "subject_id": "python_ontology.iri_identity_strategy"
+      },
+      {
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "id": "python_ontology.normalized_syntax_model.deterministic_normalization",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Normalization shall produce deterministic output for the same source text, parser version, and options.",
+        "subject_id": "python_ontology.normalized_syntax_model"
+      },
+      {
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "id": "python_ontology.normalized_syntax_model.elixir_struct_boundary",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Parser output consumed by extractors shall be represented as stable Elixir structs or maps.",
+        "subject_id": "python_ontology.normalized_syntax_model"
+      },
+      {
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "id": "python_ontology.normalized_syntax_model.no_code_execution",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Normalization shall not import or execute analyzed Python project code.",
+        "subject_id": "python_ontology.normalized_syntax_model"
+      },
+      {
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "id": "python_ontology.normalized_syntax_model.no_rdf_generation",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Normalization shall not emit RDF triples directly.",
+        "subject_id": "python_ontology.normalized_syntax_model"
+      },
+      {
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "id": "python_ontology.normalized_syntax_model.raw_cst_provenance",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Normalized nodes shall retain raw Tree-sitter provenance including node type, named status, child order, and field names when available.",
+        "subject_id": "python_ontology.normalized_syntax_model"
+      },
+      {
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "id": "python_ontology.normalized_syntax_model.source_span_preservation",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Normalized nodes shall preserve source file identity and available byte, line, and column spans.",
+        "subject_id": "python_ontology.normalized_syntax_model"
+      },
+      {
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "id": "python_ontology.normalized_syntax_model.tree_sitter_not_internal_model",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Raw Tree-sitter nodes shall not be the stable internal model consumed by extractors.",
+        "subject_id": "python_ontology.normalized_syntax_model"
+      },
+      {
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "id": "python_ontology.normalized_syntax_model.typed_core_nodes",
+        "priority": "must",
+        "stability": "evolving",
+        "statement": "The normalized model shall provide typed nodes for modules, imports, classes, functions, parameters, decorators, annotations, assignments, calls, attributes, subscripts, literals, identifiers, control flow, and comprehensions.",
+        "subject_id": "python_ontology.normalized_syntax_model"
+      },
+      {
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "id": "python_ontology.normalized_syntax_model.unknown_node_preservation",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Unknown or unsupported parser nodes shall be preserved as generic normalized nodes instead of being silently discarded.",
+        "subject_id": "python_ontology.normalized_syntax_model"
+      },
+      {
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "id": "python_ontology.ontology_turtle_files.bootstrap_validity",
+        "priority": "must",
+        "stability": "evolving",
+        "statement": "Initial Turtle files shall contain parseable ontology declarations, metadata, and representative starter classes or properties for their layer.",
+        "subject_id": "python_ontology.ontology_turtle_files"
+      },
+      {
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "id": "python_ontology.ontology_turtle_files.dynamic_fact_boundary",
+        "priority": "must",
+        "stability": "evolving",
+        "statement": "The ontology shall distinguish source-declared facts, statically inferred facts, unresolved facts, and runtime-dependent dynamic facts.",
+        "subject_id": "python_ontology.ontology_turtle_files"
+      },
+      {
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "id": "python_ontology.ontology_turtle_files.files_present",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The repository shall store authored Python ontology Turtle files under priv/ontologies.",
+        "subject_id": "python_ontology.ontology_turtle_files"
+      },
+      {
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "id": "python_ontology.ontology_turtle_files.import_direction",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Ontology layer imports shall flow from foundational source concepts toward structure, typing, runtime, evolution, and shapes without circular imports.",
+        "subject_id": "python_ontology.ontology_turtle_files"
+      },
+      {
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "id": "python_ontology.ontology_turtle_files.layered_files",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The ontology shall be split into python-core, python-structure, python-typing, python-runtime, python-evolution, and python-shapes Turtle files.",
+        "subject_id": "python_ontology.ontology_turtle_files"
+      },
+      {
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "id": "python_ontology.ontology_turtle_files.namespace_stability",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Each Turtle ontology layer shall use a stable namespace rooted at https://w3id.org/python-code/.",
+        "subject_id": "python_ontology.ontology_turtle_files"
+      },
+      {
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "id": "python_ontology.ontology_turtle_files.python_native_boundaries",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The ontology layers shall model Python-native source concepts rather than directly copying Elixir ontology concepts.",
+        "subject_id": "python_ontology.ontology_turtle_files"
+      },
+      {
+        "file": ".spec/specs/parser.spec.md",
+        "id": "python_ontology.parser.adapter_boundary",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Parser implementations shall conform to an explicit adapter boundary so alternate adapters can be introduced without changing extractors.",
+        "subject_id": "python_ontology.parser"
+      },
+      {
+        "file": ".spec/specs/parser.spec.md",
+        "id": "python_ontology.parser.concrete_syntax_tree_output",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Parser output shall preserve Tree-sitter concrete syntax tree structure and node type names before semantic extraction.",
+        "subject_id": "python_ontology.parser"
+      },
+      {
+        "file": ".spec/specs/parser.spec.md",
+        "id": "python_ontology.parser.elixir_owned_adapter",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The default parser adapter shall be owned by the Elixir project through a Tree-sitter binding or project-owned NIF.",
+        "subject_id": "python_ontology.parser"
+      },
+      {
+        "file": ".spec/specs/parser.spec.md",
+        "id": "python_ontology.parser.error_contract",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Parser failures and Tree-sitter error nodes shall be represented as structured parse errors instead of unclassified runtime failures.",
+        "subject_id": "python_ontology.parser"
+      },
+      {
+        "file": ".spec/specs/parser.spec.md",
+        "id": "python_ontology.parser.no_direct_rdf_output",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The parser layer shall not emit RDF triples directly; RDF generation belongs to extractors and builders.",
+        "subject_id": "python_ontology.parser"
+      },
+      {
+        "file": ".spec/specs/parser.spec.md",
+        "id": "python_ontology.parser.no_project_code_execution",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The parser shall parse Python source without importing or executing the analyzed project code.",
+        "subject_id": "python_ontology.parser"
+      },
+      {
+        "file": ".spec/specs/parser.spec.md",
+        "id": "python_ontology.parser.no_python_runtime_dependency",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The default parser path shall not require an external Python process, embedded CPython, Pythonx, or analyzed project imports.",
+        "subject_id": "python_ontology.parser"
+      },
+      {
+        "file": ".spec/specs/parser.spec.md",
+        "id": "python_ontology.parser.normalized_output",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Parser output shall be normalized into Elixir data structures before extractor logic consumes it.",
+        "subject_id": "python_ontology.parser"
+      },
+      {
+        "file": ".spec/specs/parser.spec.md",
+        "id": "python_ontology.parser.parser_version_reporting",
+        "priority": "should",
+        "stability": "evolving",
+        "statement": "Parser output shall report Tree-sitter grammar or parser version information when available.",
+        "subject_id": "python_ontology.parser"
+      },
+      {
+        "file": ".spec/specs/parser.spec.md",
+        "id": "python_ontology.parser.python_runtime_optional_adapter",
+        "priority": "should",
+        "stability": "evolving",
+        "statement": "CPython ast, LibCST, or Pythonx may be introduced only as optional parser adapters that conform to the same parser contract and are not the default bridge.",
+        "subject_id": "python_ontology.parser"
+      },
+      {
+        "file": ".spec/specs/parser.spec.md",
+        "id": "python_ontology.parser.source_locations",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Parser output shall preserve source file identity and available line and column span information.",
+        "subject_id": "python_ontology.parser"
+      },
+      {
+        "file": ".spec/specs/parser.spec.md",
+        "id": "python_ontology.parser.tree_sitter_python_authority",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The first parser implementation shall use Tree-sitter's Python grammar as the syntax authority.",
+        "subject_id": "python_ontology.parser"
+      },
+      {
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "id": "python_ontology.project_analysis_scope.configurable_globs",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Include and exclude file selection shall be configurable with glob patterns.",
+        "subject_id": "python_ontology.project_analysis_scope"
+      },
+      {
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "id": "python_ontology.project_analysis_scope.deterministic_order",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "File traversal order shall be deterministic.",
+        "subject_id": "python_ontology.project_analysis_scope"
+      },
+      {
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "id": "python_ontology.project_analysis_scope.exclude_environment_dirs",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Project analysis shall exclude common virtualenv, cache, build, distribution, dependency, and VCS directories by default.",
+        "subject_id": "python_ontology.project_analysis_scope"
+      },
+      {
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "id": "python_ontology.project_analysis_scope.include_python_sources",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Project analysis shall include .py files by default.",
+        "subject_id": "python_ontology.project_analysis_scope"
+      },
+      {
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "id": "python_ontology.project_analysis_scope.include_stub_files",
+        "priority": "should",
+        "stability": "evolving",
+        "statement": "Project analysis shall include .pyi stub files by default.",
+        "subject_id": "python_ontology.project_analysis_scope"
+      },
+      {
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "id": "python_ontology.project_analysis_scope.namespace_package_detection",
+        "priority": "should",
+        "stability": "evolving",
+        "statement": "Project analysis shall represent namespace package directories that lack __init__.py but belong to importable package trees.",
+        "subject_id": "python_ontology.project_analysis_scope"
+      },
+      {
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "id": "python_ontology.project_analysis_scope.no_dependency_traversal_default",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Project analysis shall not traverse installed dependencies by default.",
+        "subject_id": "python_ontology.project_analysis_scope"
+      },
+      {
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "id": "python_ontology.project_analysis_scope.package_detection",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Project analysis shall recognize regular Python packages that contain __init__.py files.",
+        "subject_id": "python_ontology.project_analysis_scope"
+      },
+      {
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "id": "python_ontology.project_analysis_scope.root_detection",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Project roots shall be detected from explicit paths, pyproject.toml, setup.cfg, setup.py, or git roots.",
+        "subject_id": "python_ontology.project_analysis_scope"
+      },
+      {
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "id": "python_ontology.project_analysis_scope.single_file_and_project_modes",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The analyzer shall support both single-file analysis and project-root analysis.",
+        "subject_id": "python_ontology.project_analysis_scope"
+      },
+      {
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "id": "python_ontology.project_analysis_scope.test_scope_marking",
+        "priority": "should",
+        "stability": "evolving",
+        "statement": "Test files shall be included by default and marked as test scope.",
+        "subject_id": "python_ontology.project_analysis_scope"
+      },
+      {
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "id": "python_ontology.validation_strategy.command_verification",
+        "priority": "should",
+        "stability": "evolving",
+        "statement": "User-facing gates shall have command verifications once implementation exists.",
+        "subject_id": "python_ontology.validation_strategy"
+      },
+      {
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "id": "python_ontology.validation_strategy.extractor_builder_tests",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Extractor and builder behavior shall be covered by focused tests and integration tests.",
+        "subject_id": "python_ontology.validation_strategy"
+      },
+      {
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "id": "python_ontology.validation_strategy.no_validation_by_execution",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Validation shall not execute analyzed Python project code.",
+        "subject_id": "python_ontology.validation_strategy"
+      },
+      {
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "id": "python_ontology.validation_strategy.owl_open_world",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "OWL ontology declarations shall define vocabulary and semantic relationships without replacing local closed-world checks.",
+        "subject_id": "python_ontology.validation_strategy"
+      },
+      {
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "id": "python_ontology.validation_strategy.parser_unit_tests",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Parser and normalization behavior shall be covered by focused tests.",
+        "subject_id": "python_ontology.validation_strategy"
+      },
+      {
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "id": "python_ontology.validation_strategy.shacl_closed_world",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "SHACL shall validate generated RDF graphs for closed-world completeness and consistency.",
+        "subject_id": "python_ontology.validation_strategy"
+      },
+      {
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "id": "python_ontology.validation_strategy.specled_current_truth",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "SpecLed shall validate current-truth specs, ADRs, and branch coverage.",
+        "subject_id": "python_ontology.validation_strategy"
+      },
+      {
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "id": "python_ontology.validation_strategy.turtle_parse_gate",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Authored Turtle ontology files shall be parseable RDF/Turtle.",
+        "subject_id": "python_ontology.validation_strategy"
+      },
+      {
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "id": "python_ontology.validation_strategy.validation_after_graph_build",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "Generated graph validation shall run after RDF graph building.",
+        "subject_id": "python_ontology.validation_strategy"
+      },
+      {
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "id": "python_ontology.validation_strategy.validation_reports",
+        "priority": "should",
+        "stability": "evolving",
+        "statement": "Validation shall produce structured reports suitable for CLI output and tests.",
+        "subject_id": "python_ontology.validation_strategy"
+      },
+      {
+        "file": ".spec/specs/spec_system.spec.md",
+        "id": "spec.workspace.agent_prime_context",
+        "priority": "should",
+        "stability": "evolving",
+        "statement": "The repository shall include a .spec/AGENTS.md that tells agents to start a session with mix spec.prime before editing current truth.",
+        "subject_id": "spec.system"
+      },
+      {
+        "file": ".spec/specs/spec_system.spec.md",
+        "id": "spec.workspace.agents_present",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The repository shall include a .spec/AGENTS.md that gives local operating guidance for agents working inside the .spec workspace.",
+        "subject_id": "spec.system"
+      },
+      {
+        "file": ".spec/specs/spec_system.spec.md",
+        "id": "spec.workspace.decisions_readme_present",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The repository shall include a .spec/decisions/README.md that explains when durable ADRs belong in the workspace.",
+        "subject_id": "spec.system"
+      },
+      {
+        "file": ".spec/specs/spec_system.spec.md",
+        "id": "spec.workspace.readme_present",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "The repository shall include a .spec/README.md that explains purpose, layout, and workflow.",
+        "subject_id": "spec.system"
+      },
+      {
+        "file": ".spec/specs/spec_system.spec.md",
+        "id": "spec.workspace.state_generated",
+        "priority": "must",
+        "stability": "stable",
+        "statement": "When indexing and validation run, the workspace shall generate .spec/state.json containing indexed subjects, indexed decisions, and verification state.",
+        "subject_id": "spec.system"
+      }
+    ],
+    "scenarios": [
+      {
+        "covers": [
+          "python_ontology.extractor_builder_boundary.extractors_emit_facts",
+          "python_ontology.extractor_builder_boundary.builders_emit_rdf",
+          "python_ontology.extractor_builder_boundary.source_evidence_required"
+        ],
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "given": [
+          "normalized syntax contains an import statement"
+        ],
+        "id": "python_ontology.extractor_builder_boundary.import_flow",
+        "subject_id": "python_ontology.extractor_builder_boundary",
+        "then": [
+          "it emits an import fact with source evidence, and a builder later turns that fact into RDF"
+        ],
+        "when": [
+          "the import extractor runs"
+        ]
+      },
+      {
+        "covers": [
+          "python_ontology.extractor_builder_boundary.no_parsing_in_builders",
+          "python_ontology.extractor_builder_boundary.diagnostic_accumulation"
+        ],
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "given": [
+          "normalization preserves an unsupported node"
+        ],
+        "id": "python_ontology.extractor_builder_boundary_error_flow",
+        "subject_id": "python_ontology.extractor_builder_boundary",
+        "then": [
+          "the pipeline records a diagnostic without forcing builders to parse source text"
+        ],
+        "when": [
+          "extractors process the node"
+        ]
+      },
+      {
+        "covers": [
+          "python_ontology.fact_confidence_model.source_declared_default",
+          "python_ontology.fact_confidence_model.static_inference_evidence"
+        ],
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "given": [
+          "source text contains import pathlib"
+        ],
+        "id": "python_ontology.fact_confidence_model.direct_import_flow",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "then": [
+          "the fact is source_declared and carries source evidence"
+        ],
+        "when": [
+          "extractors produce an import fact"
+        ]
+      },
+      {
+        "covers": [
+          "python_ontology.fact_confidence_model.unresolved_queryable",
+          "python_ontology.fact_confidence_model.runtime_dependent_boundary",
+          "python_ontology.fact_confidence_model.dynamic_construct_marking"
+        ],
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "given": [
+          "source text calls importlib.import_module(name)"
+        ],
+        "id": "python_ontology.fact_confidence_model.dynamic_import_flow",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "then": [
+          "the generated fact remains unresolved or runtime_dependent and queryable"
+        ],
+        "when": [
+          "extractors cannot resolve name statically"
+        ]
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "given": [
+          "a Python module uses dynamic import or decorator behavior that cannot be resolved statically"
+        ],
+        "id": "python_ontology.initial_analysis_slice_runtime_boundary_flow",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "then": [
+          "the behavior remains unresolved or runtime-dependent instead of being over-inferred"
+        ],
+        "when": [
+          "the first analysis slice processes the module"
+        ]
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.modules_packages",
+          "python_ontology.initial_analysis_slice.imports_aliases",
+          "python_ontology.initial_analysis_slice.classes_bases",
+          "python_ontology.initial_analysis_slice.functions_methods",
+          "python_ontology.initial_analysis_slice.parameters_defaults",
+          "python_ontology.initial_analysis_slice.source_locations"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "given": [
+          "a Python module defines imports, a class, and a function"
+        ],
+        "id": "python_ontology.initial_analysis_slice_simple_module_flow",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "then": [
+          "the output graph includes module, import, class, function, parameter, and source location resources"
+        ],
+        "when": [
+          "the first analysis slice processes the module"
+        ]
+      },
+      {
+        "covers": [
+          "python_ontology.iri_identity_strategy.configurable_base_iri",
+          "python_ontology.iri_identity_strategy.stable_path_normalization",
+          "python_ontology.iri_identity_strategy.class_function_identity"
+        ],
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "given": [
+          "a function named parse exists in package/module analyzer/parser.py"
+        ],
+        "id": "python_ontology.iri_identity_strategy.function_identity_flow",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "then": [
+          "the function IRI is derived from the configured base IRI, normalized path or module identity, and lexical function path"
+        ],
+        "when": [
+          "builders generate RDF resources for the function"
+        ]
+      },
+      {
+        "covers": [
+          "python_ontology.iri_identity_strategy.occurrence_disambiguation",
+          "python_ontology.iri_identity_strategy.no_runtime_identity_claims"
+        ],
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "given": [
+          "a Python module defines the same class name twice"
+        ],
+        "id": "python_ontology.iri_identity_strategy_redefinition_flow",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "then": [
+          "occurrence and source span data disambiguate the generated IRIs"
+        ],
+        "when": [
+          "builders generate resources for both definitions"
+        ]
+      },
+      {
+        "covers": [
+          "python_ontology.normalized_syntax_model.elixir_struct_boundary",
+          "python_ontology.normalized_syntax_model.raw_cst_provenance",
+          "python_ontology.normalized_syntax_model.typed_core_nodes",
+          "python_ontology.normalized_syntax_model.source_span_preservation"
+        ],
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "given": [
+          "Tree-sitter returns a Python function definition node"
+        ],
+        "id": "python_ontology.normalized_syntax_model.known_node_flow",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "then": [
+          "the output contains a typed function node with parser provenance and source spans"
+        ],
+        "when": [
+          "the normalization layer processes the parse tree"
+        ]
+      },
+      {
+        "covers": [
+          "python_ontology.normalized_syntax_model.unknown_node_preservation",
+          "python_ontology.normalized_syntax_model.raw_cst_provenance"
+        ],
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "given": [
+          "Tree-sitter returns a node not yet understood by PythonOntology"
+        ],
+        "id": "python_ontology.normalized_syntax_model.unknown_node_flow",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "then": [
+          "the output keeps the node as a generic normalized node with its raw type and children"
+        ],
+        "when": [
+          "the normalization layer processes the parse tree"
+        ]
+      },
+      {
+        "covers": [
+          "python_ontology.parser.no_project_code_execution",
+          "python_ontology.parser.no_python_runtime_dependency"
+        ],
+        "file": ".spec/specs/parser.spec.md",
+        "given": [
+          "a Python source file contains imports or top-level code with side effects"
+        ],
+        "id": "python_ontology.parser.no_execution_flow",
+        "subject_id": "python_ontology.parser",
+        "then": [
+          "the parser reads syntax through Tree-sitter without importing or executing the analyzed project code"
+        ],
+        "when": [
+          "the parser analyzes the file"
+        ]
+      },
+      {
+        "covers": [
+          "python_ontology.parser.error_contract",
+          "python_ontology.parser.source_locations"
+        ],
+        "file": ".spec/specs/parser.spec.md",
+        "given": [
+          "a Python source file contains invalid syntax"
+        ],
+        "id": "python_ontology.parser.syntax_error_flow",
+        "subject_id": "python_ontology.parser",
+        "then": [
+          "Elixir receives structured Tree-sitter error information with location information when available"
+        ],
+        "when": [
+          "the default parser adapter analyzes the file"
+        ]
+      },
+      {
+        "covers": [
+          "python_ontology.parser.tree_sitter_python_authority",
+          "python_ontology.parser.elixir_owned_adapter",
+          "python_ontology.parser.no_python_runtime_dependency",
+          "python_ontology.parser.normalized_output",
+          "python_ontology.parser.concrete_syntax_tree_output",
+          "python_ontology.parser.source_locations",
+          "python_ontology.parser.parser_version_reporting"
+        ],
+        "file": ".spec/specs/parser.spec.md",
+        "given": [
+          "a Python source file can be parsed by Tree-sitter's Python grammar"
+        ],
+        "id": "python_ontology.parser.syntax_success_flow",
+        "subject_id": "python_ontology.parser",
+        "then": [
+          "Elixir receives a successful normalized parse payload with source identity, parser version data when available, and Tree-sitter node data"
+        ],
+        "when": [
+          "the default parser adapter analyzes the file"
+        ]
+      },
+      {
+        "covers": [
+          "python_ontology.project_analysis_scope.root_detection",
+          "python_ontology.project_analysis_scope.include_python_sources",
+          "python_ontology.project_analysis_scope.exclude_environment_dirs",
+          "python_ontology.project_analysis_scope.no_dependency_traversal_default"
+        ],
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "given": [
+          "a repository contains pyproject.toml, src/my_pkg/__init__.py, src/my_pkg/app.py, and .venv/lib/site-packages/pkg.py"
+        ],
+        "id": "python_ontology.project_analysis_scope.default_project_flow",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "then": [
+          "the analyzer includes src/my_pkg files and excludes .venv files"
+        ],
+        "when": [
+          "project analysis runs with default options"
+        ]
+      },
+      {
+        "covers": [
+          "python_ontology.project_analysis_scope.include_stub_files"
+        ],
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "given": [
+          "a project contains package interface stubs in .pyi files"
+        ],
+        "id": "python_ontology.project_analysis_scope_stub_flow",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "then": [
+          "the analyzer includes the stub files and marks them as source artifacts"
+        ],
+        "when": [
+          "project analysis runs with default options"
+        ]
+      },
+      {
+        "covers": [
+          "python_ontology.validation_strategy.shacl_closed_world",
+          "python_ontology.validation_strategy.validation_reports"
+        ],
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "given": [
+          "a generated RDF graph contains a function resource without a qualified name"
+        ],
+        "id": "python_ontology.validation_strategy_generated_graph_flow",
+        "subject_id": "python_ontology.validation_strategy",
+        "then": [
+          "the validation report identifies the missing required property"
+        ],
+        "when": [
+          "SHACL validation runs"
+        ]
+      },
+      {
+        "covers": [
+          "python_ontology.validation_strategy.turtle_parse_gate"
+        ],
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "given": [
+          "an authored ontology Turtle file contains invalid Turtle syntax"
+        ],
+        "id": "python_ontology.validation_strategy_turtle_flow",
+        "subject_id": "python_ontology.validation_strategy",
+        "then": [
+          "the gate fails before graph analysis proceeds"
+        ],
+        "when": [
+          "the ontology validation gate runs"
+        ]
+      }
+    ],
+    "subjects": [
+      {
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "id": "python_ontology.extractor_builder_boundary",
+        "meta": {
+          "decisions": [
+            "python_ontology.decision.normalized_syntax_model",
+            "python_ontology.decision.iri_identity_strategy",
+            "python_ontology.decision.fact_confidence_model",
+            "python_ontology.decision.extractor_builder_boundary"
+          ],
+          "id": "python_ontology.extractor_builder_boundary",
+          "kind": "component",
+          "status": "active",
+          "summary": "Separation of normalized syntax, extracted facts, RDF builders, and validation.",
+          "surface": [
+            ".spec/decisions/python_ontology.decision.extractor_builder_boundary.md",
+            "lib/python_ontology/extractors/**/*.ex",
+            "lib/python_ontology/builders/**/*.ex",
+            "lib/python_ontology/pipeline*.ex",
+            "test/python_ontology/**/*extractor*_test.exs",
+            "test/python_ontology/**/*builder*_test.exs"
+          ],
+          "verification_minimum_strength": null
+        },
+        "title": "Extractor And Builder Boundary"
+      },
+      {
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "id": "python_ontology.fact_confidence_model",
+        "meta": {
+          "decisions": [
+            "python_ontology.decision.ontology_turtle_file_layers",
+            "python_ontology.decision.fact_confidence_model"
+          ],
+          "id": "python_ontology.fact_confidence_model",
+          "kind": "policy",
+          "status": "active",
+          "summary": "Confidence categories for source-declared, inferred, unresolved, and runtime-dependent Python facts.",
+          "surface": [
+            ".spec/decisions/python_ontology.decision.fact_confidence_model.md",
+            "priv/ontologies/python-core.ttl",
+            "lib/python_ontology/extractors/**/*.ex",
+            "lib/python_ontology/builders/**/*.ex",
+            "test/python_ontology/**/*confidence*_test.exs"
+          ],
+          "verification_minimum_strength": null
+        },
+        "title": "Fact Confidence Model"
+      },
+      {
+        "file": ".spec/specs/implementation_wave_plan.spec.md",
+        "id": "python_ontology.implementation_wave_plan",
+        "meta": {
+          "decisions": [
+            "python_ontology.decision.parser_bridge_boundary",
+            "python_ontology.decision.normalized_syntax_model",
+            "python_ontology.decision.iri_identity_strategy",
+            "python_ontology.decision.fact_confidence_model",
+            "python_ontology.decision.project_analysis_scope",
+            "python_ontology.decision.extractor_builder_boundary",
+            "python_ontology.decision.validation_strategy",
+            "python_ontology.decision.initial_analysis_slice"
+          ],
+          "id": "python_ontology.implementation_wave_plan",
+          "kind": "planning",
+          "status": "active",
+          "summary": "ADR-specific phased implementation waves for parser, normalization, identity, confidence, project scope, builders, validation, and the first analysis slice.",
+          "surface": [
+            ".spec/planning/w*/*.md"
+          ],
+          "verification_minimum_strength": null
+        },
+        "title": "Implementation Wave Plans"
+      },
+      {
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "id": "python_ontology.initial_analysis_slice",
+        "meta": {
+          "decisions": [
+            "python_ontology.decision.initial_python_ontology_architecture",
+            "python_ontology.decision.initial_analysis_slice"
+          ],
+          "id": "python_ontology.initial_analysis_slice",
+          "kind": "milestone",
+          "status": "active",
+          "summary": "First implementation slice for ordinary Python modules, classes, functions, imports, calls, and source locations.",
+          "surface": [
+            ".spec/decisions/python_ontology.decision.initial_analysis_slice.md",
+            "lib/python_ontology/**/*.ex",
+            "lib/mix/tasks/python_ontology*.ex",
+            "test/python_ontology/**/*_test.exs"
+          ],
+          "verification_minimum_strength": null
+        },
+        "title": "Initial Analysis Slice"
+      },
+      {
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "id": "python_ontology.iri_identity_strategy",
+        "meta": {
+          "decisions": [
+            "python_ontology.decision.ontology_turtle_file_layers",
+            "python_ontology.decision.iri_identity_strategy"
+          ],
+          "id": "python_ontology.iri_identity_strategy",
+          "kind": "component",
+          "status": "active",
+          "summary": "Deterministic IRI strategy for analyzed Python code resources.",
+          "surface": [
+            ".spec/decisions/python_ontology.decision.iri_identity_strategy.md",
+            "lib/python_ontology/iri*.ex",
+            "lib/python_ontology/builders/**/*.ex",
+            "test/python_ontology/iri*_test.exs"
+          ],
+          "verification_minimum_strength": null
+        },
+        "title": "IRI Identity Strategy"
+      },
+      {
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "id": "python_ontology.normalized_syntax_model",
+        "meta": {
+          "decisions": [
+            "python_ontology.decision.parser_bridge_boundary",
+            "python_ontology.decision.normalized_syntax_model"
+          ],
+          "id": "python_ontology.normalized_syntax_model",
+          "kind": "component",
+          "status": "active",
+          "summary": "Stable normalized Elixir representation of parsed Python syntax.",
+          "surface": [
+            ".spec/decisions/python_ontology.decision.normalized_syntax_model.md",
+            "lib/python_ontology/syntax*.ex",
+            "lib/python_ontology/syntax/*.ex",
+            "test/python_ontology/syntax*_test.exs"
+          ],
+          "verification_minimum_strength": null
+        },
+        "title": "Normalized Syntax Model"
+      },
+      {
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "id": "python_ontology.ontology_turtle_files",
+        "meta": {
+          "decisions": [
+            "python_ontology.decision.initial_python_ontology_architecture",
+            "python_ontology.decision.ontology_turtle_file_layers"
+          ],
+          "id": "python_ontology.ontology_turtle_files",
+          "kind": "ontology",
+          "status": "active",
+          "summary": "Layered Turtle ontology files for Python source-code knowledge graphs.",
+          "surface": [
+            "priv/ontologies/*.ttl"
+          ],
+          "verification_minimum_strength": null
+        },
+        "title": "Ontology Turtle Files"
+      },
+      {
+        "file": ".spec/specs/package.spec.md",
+        "id": "package.python_ontology",
+        "meta": {
+          "decisions": [
+            "python_ontology.decision.initial_python_ontology_architecture"
+          ],
+          "id": "package.python_ontology",
+          "kind": "package",
+          "status": "active",
+          "summary": "Python-native source ontology and analyzer for Python projects.",
+          "surface": [
+            "README.md",
+            "mix.exs",
+            "lib/python_ontology.ex",
+            "test/test_helper.exs",
+            "test/python_ontology_test.exs"
+          ],
+          "verification_minimum_strength": null
+        },
+        "title": "PythonOntology Package"
+      },
+      {
+        "file": ".spec/specs/parser.spec.md",
+        "id": "python_ontology.parser",
+        "meta": {
+          "decisions": [
+            "python_ontology.decision.initial_python_ontology_architecture",
+            "python_ontology.decision.parser_bridge_boundary"
+          ],
+          "id": "python_ontology.parser",
+          "kind": "component",
+          "status": "active",
+          "summary": "Tree-sitter parser boundary from Python source text to normalized Elixir data.",
+          "surface": [
+            ".spec/decisions/python_ontology.decision.parser_bridge_boundary.md",
+            "lib/python_ontology/parser*.ex",
+            "lib/python_ontology/parser/*.ex",
+            "native/*",
+            "priv/tree_sitter/*",
+            "test/python_ontology/parser*_test.exs"
+          ],
+          "verification_minimum_strength": null
+        },
+        "title": "Parser"
+      },
+      {
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "id": "python_ontology.project_analysis_scope",
+        "meta": {
+          "decisions": [
+            "python_ontology.decision.project_analysis_scope"
+          ],
+          "id": "python_ontology.project_analysis_scope",
+          "kind": "component",
+          "status": "active",
+          "summary": "Python project discovery, include/exclude policy, and file traversal scope.",
+          "surface": [
+            ".spec/decisions/python_ontology.decision.project_analysis_scope.md",
+            "lib/python_ontology/analyzer/**/*.ex",
+            "lib/python_ontology/project*.ex",
+            "test/python_ontology/**/*project*_test.exs"
+          ],
+          "verification_minimum_strength": null
+        },
+        "title": "Project Analysis Scope"
+      },
+      {
+        "file": ".spec/specs/spec_system.spec.md",
+        "id": "spec.system",
+        "meta": {
+          "decisions": null,
+          "id": "spec.system",
+          "kind": "policy",
+          "status": "active",
+          "summary": "Canonical workspace contract for authored specs and generated Spec Led state.",
+          "surface": [
+            ".spec/README.md",
+            ".spec/AGENTS.md",
+            ".spec/decisions/README.md",
+            ".spec/specs/*.spec.md",
+            ".spec/decisions/*.md"
+          ],
+          "verification_minimum_strength": null
+        },
+        "title": "Spec System"
+      },
+      {
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "id": "python_ontology.validation_strategy",
+        "meta": {
+          "decisions": [
+            "python_ontology.decision.ontology_turtle_file_layers",
+            "python_ontology.decision.validation_strategy"
+          ],
+          "id": "python_ontology.validation_strategy",
+          "kind": "policy",
+          "status": "active",
+          "summary": "Layered validation strategy for PythonOntology artifacts and generated graphs.",
+          "surface": [
+            ".spec/decisions/python_ontology.decision.validation_strategy.md",
+            "priv/ontologies/*.ttl",
+            "lib/python_ontology/validator*.ex",
+            "lib/python_ontology/shacl/**/*.ex",
+            "test/python_ontology/**/*validation*_test.exs"
+          ],
+          "verification_minimum_strength": null
+        },
+        "title": "Validation Strategy"
+      }
+    ],
+    "verifications": [
+      {
+        "covers": [
+          "package.python_ontology.mix_project",
+          "package.python_ontology.specled_dependency"
+        ],
+        "file": ".spec/specs/package.spec.md",
+        "kind": "source_file",
+        "subject_id": "package.python_ontology",
+        "target": "mix.exs"
+      },
+      {
+        "covers": [
+          "package.python_ontology.public_namespace"
+        ],
+        "file": ".spec/specs/package.spec.md",
+        "kind": "source_file",
+        "subject_id": "package.python_ontology",
+        "target": "lib/python_ontology.ex"
+      },
+      {
+        "covers": [
+          "package.python_ontology.test_baseline"
+        ],
+        "file": ".spec/specs/package.spec.md",
+        "kind": "source_file",
+        "subject_id": "package.python_ontology",
+        "target": "test/test_helper.exs"
+      },
+      {
+        "covers": [
+          "package.python_ontology.test_baseline"
+        ],
+        "file": ".spec/specs/package.spec.md",
+        "kind": "source_file",
+        "subject_id": "package.python_ontology",
+        "target": "test/python_ontology_test.exs"
+      },
+      {
+        "covers": [
+          "package.python_ontology.mix_project",
+          "package.python_ontology.public_namespace",
+          "package.python_ontology.test_baseline"
+        ],
+        "file": ".spec/specs/package.spec.md",
+        "kind": "command",
+        "subject_id": "package.python_ontology",
+        "target": "mix test"
+      },
+      {
+        "covers": [
+          "package.python_ontology.mix_project"
+        ],
+        "file": ".spec/specs/package.spec.md",
+        "kind": "command",
+        "subject_id": "package.python_ontology",
+        "target": "mix format --check-formatted"
+      },
+      {
+        "covers": [
+          "package.python_ontology.product_direction"
+        ],
+        "file": ".spec/specs/package.spec.md",
+        "kind": "source_file",
+        "subject_id": "package.python_ontology",
+        "target": ".spec/decisions/python_ontology.decision.initial_python_ontology_architecture.md"
+      },
+      {
+        "covers": [
+          "python_ontology.extractor_builder_boundary.parser_syntax_only",
+          "python_ontology.extractor_builder_boundary.extractors_emit_facts",
+          "python_ontology.extractor_builder_boundary.builders_emit_rdf",
+          "python_ontology.extractor_builder_boundary.shared_context",
+          "python_ontology.extractor_builder_boundary.shared_iri_helper",
+          "python_ontology.extractor_builder_boundary.no_rdf_in_extractors",
+          "python_ontology.extractor_builder_boundary.no_parsing_in_builders",
+          "python_ontology.extractor_builder_boundary.source_evidence_required",
+          "python_ontology.extractor_builder_boundary.diagnostic_accumulation",
+          "python_ontology.extractor_builder_boundary.validation_after_build"
+        ],
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.extractor_builder_boundary",
+        "target": ".spec/decisions/python_ontology.decision.extractor_builder_boundary.md"
+      },
+      {
+        "covers": [
+          "python_ontology.fact_confidence_model.categories",
+          "python_ontology.fact_confidence_model.source_declared_default",
+          "python_ontology.fact_confidence_model.static_inference_evidence",
+          "python_ontology.fact_confidence_model.unresolved_queryable",
+          "python_ontology.fact_confidence_model.runtime_dependent_boundary",
+          "python_ontology.fact_confidence_model.dynamic_construct_marking",
+          "python_ontology.fact_confidence_model.builder_propagation",
+          "python_ontology.fact_confidence_model.queryable_confidence",
+          "python_ontology.fact_confidence_model.no_execution_for_confidence"
+        ],
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": ".spec/decisions/python_ontology.decision.fact_confidence_model.md"
+      },
+      {
+        "covers": [
+          "python_ontology.implementation_wave_plan.wave_index",
+          "python_ontology.implementation_wave_plan.phase_files",
+          "python_ontology.implementation_wave_plan.phase_hierarchy",
+          "python_ontology.implementation_wave_plan.integration_test_sections",
+          "python_ontology.implementation_wave_plan.adr_traceability",
+          "python_ontology.implementation_wave_plan.wave_per_adr_area"
+        ],
+        "file": ".spec/specs/implementation_wave_plan.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.implementation_wave_plan",
+        "target": ".spec/planning/w1/README.md"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.modules_packages",
+          "python_ontology.initial_analysis_slice.imports_aliases",
+          "python_ontology.initial_analysis_slice.classes_bases",
+          "python_ontology.initial_analysis_slice.functions_methods",
+          "python_ontology.initial_analysis_slice.parameters_defaults",
+          "python_ontology.initial_analysis_slice.decorators_annotations",
+          "python_ontology.initial_analysis_slice.calls_attributes",
+          "python_ontology.initial_analysis_slice.source_locations",
+          "python_ontology.initial_analysis_slice.first_cli_output",
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+          "python_ontology.initial_analysis_slice.tests_for_slice"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": ".spec/decisions/python_ontology.decision.initial_analysis_slice.md"
+      },
+      {
+        "covers": [
+          "python_ontology.iri_identity_strategy.namespace_resource_separation",
+          "python_ontology.iri_identity_strategy.configurable_base_iri",
+          "python_ontology.iri_identity_strategy.stable_path_normalization",
+          "python_ontology.iri_identity_strategy.module_package_identity",
+          "python_ontology.iri_identity_strategy.class_function_identity",
+          "python_ontology.iri_identity_strategy.nested_scope_identity",
+          "python_ontology.iri_identity_strategy.occurrence_disambiguation",
+          "python_ontology.iri_identity_strategy.expression_span_identity",
+          "python_ontology.iri_identity_strategy.hash_canonicalization",
+          "python_ontology.iri_identity_strategy.no_runtime_identity_claims",
+          "python_ontology.iri_identity_strategy.shared_iri_helper"
+        ],
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": ".spec/decisions/python_ontology.decision.iri_identity_strategy.md"
+      },
+      {
+        "covers": [
+          "python_ontology.normalized_syntax_model.tree_sitter_not_internal_model",
+          "python_ontology.normalized_syntax_model.elixir_struct_boundary",
+          "python_ontology.normalized_syntax_model.raw_cst_provenance",
+          "python_ontology.normalized_syntax_model.typed_core_nodes",
+          "python_ontology.normalized_syntax_model.unknown_node_preservation",
+          "python_ontology.normalized_syntax_model.deterministic_normalization",
+          "python_ontology.normalized_syntax_model.no_code_execution",
+          "python_ontology.normalized_syntax_model.no_rdf_generation",
+          "python_ontology.normalized_syntax_model.source_span_preservation"
+        ],
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": ".spec/decisions/python_ontology.decision.normalized_syntax_model.md"
+      },
+      {
+        "covers": [
+          "python_ontology.ontology_turtle_files.files_present",
+          "python_ontology.ontology_turtle_files.layered_files",
+          "python_ontology.ontology_turtle_files.namespace_stability",
+          "python_ontology.ontology_turtle_files.python_native_boundaries",
+          "python_ontology.ontology_turtle_files.dynamic_fact_boundary",
+          "python_ontology.ontology_turtle_files.bootstrap_validity"
+        ],
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-core.ttl"
+      },
+      {
+        "covers": [
+          "python_ontology.ontology_turtle_files.layered_files",
+          "python_ontology.ontology_turtle_files.namespace_stability",
+          "python_ontology.ontology_turtle_files.import_direction",
+          "python_ontology.ontology_turtle_files.python_native_boundaries",
+          "python_ontology.ontology_turtle_files.bootstrap_validity"
+        ],
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-structure.ttl"
+      },
+      {
+        "covers": [
+          "python_ontology.ontology_turtle_files.layered_files",
+          "python_ontology.ontology_turtle_files.namespace_stability",
+          "python_ontology.ontology_turtle_files.import_direction",
+          "python_ontology.ontology_turtle_files.python_native_boundaries",
+          "python_ontology.ontology_turtle_files.bootstrap_validity"
+        ],
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-typing.ttl"
+      },
+      {
+        "covers": [
+          "python_ontology.ontology_turtle_files.layered_files",
+          "python_ontology.ontology_turtle_files.namespace_stability",
+          "python_ontology.ontology_turtle_files.import_direction",
+          "python_ontology.ontology_turtle_files.python_native_boundaries",
+          "python_ontology.ontology_turtle_files.dynamic_fact_boundary",
+          "python_ontology.ontology_turtle_files.bootstrap_validity"
+        ],
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-runtime.ttl"
+      },
+      {
+        "covers": [
+          "python_ontology.ontology_turtle_files.layered_files",
+          "python_ontology.ontology_turtle_files.namespace_stability",
+          "python_ontology.ontology_turtle_files.import_direction",
+          "python_ontology.ontology_turtle_files.bootstrap_validity"
+        ],
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-evolution.ttl"
+      },
+      {
+        "covers": [
+          "python_ontology.ontology_turtle_files.layered_files",
+          "python_ontology.ontology_turtle_files.namespace_stability",
+          "python_ontology.ontology_turtle_files.import_direction",
+          "python_ontology.ontology_turtle_files.bootstrap_validity"
+        ],
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-shapes.ttl"
+      },
+      {
+        "covers": [
+          "python_ontology.parser.tree_sitter_python_authority",
+          "python_ontology.parser.elixir_owned_adapter",
+          "python_ontology.parser.no_python_runtime_dependency",
+          "python_ontology.parser.no_project_code_execution",
+          "python_ontology.parser.adapter_boundary",
+          "python_ontology.parser.normalized_output",
+          "python_ontology.parser.concrete_syntax_tree_output",
+          "python_ontology.parser.source_locations",
+          "python_ontology.parser.error_contract",
+          "python_ontology.parser.parser_version_reporting",
+          "python_ontology.parser.python_runtime_optional_adapter",
+          "python_ontology.parser.no_direct_rdf_output"
+        ],
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.parser",
+        "target": ".spec/decisions/python_ontology.decision.parser_bridge_boundary.md"
+      },
+      {
+        "covers": [
+          "python_ontology.project_analysis_scope.single_file_and_project_modes",
+          "python_ontology.project_analysis_scope.root_detection",
+          "python_ontology.project_analysis_scope.include_python_sources",
+          "python_ontology.project_analysis_scope.include_stub_files",
+          "python_ontology.project_analysis_scope.exclude_environment_dirs",
+          "python_ontology.project_analysis_scope.package_detection",
+          "python_ontology.project_analysis_scope.namespace_package_detection",
+          "python_ontology.project_analysis_scope.test_scope_marking",
+          "python_ontology.project_analysis_scope.configurable_globs",
+          "python_ontology.project_analysis_scope.no_dependency_traversal_default",
+          "python_ontology.project_analysis_scope.deterministic_order"
+        ],
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": ".spec/decisions/python_ontology.decision.project_analysis_scope.md"
+      },
+      {
+        "covers": [
+          "python_ontology.validation_strategy.turtle_parse_gate",
+          "python_ontology.validation_strategy.owl_open_world",
+          "python_ontology.validation_strategy.shacl_closed_world",
+          "python_ontology.validation_strategy.parser_unit_tests",
+          "python_ontology.validation_strategy.extractor_builder_tests",
+          "python_ontology.validation_strategy.specled_current_truth",
+          "python_ontology.validation_strategy.command_verification",
+          "python_ontology.validation_strategy.validation_reports",
+          "python_ontology.validation_strategy.no_validation_by_execution",
+          "python_ontology.validation_strategy.validation_after_graph_build"
+        ],
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": ".spec/decisions/python_ontology.decision.validation_strategy.md"
+      },
+      {
+        "covers": [
+          "spec.workspace.readme_present"
+        ],
+        "file": ".spec/specs/spec_system.spec.md",
+        "kind": "source_file",
+        "subject_id": "spec.system",
+        "target": ".spec/README.md"
+      },
+      {
+        "covers": [
+          "spec.workspace.agents_present",
+          "spec.workspace.agent_prime_context"
+        ],
+        "file": ".spec/specs/spec_system.spec.md",
+        "kind": "source_file",
+        "subject_id": "spec.system",
+        "target": ".spec/AGENTS.md"
+      },
+      {
+        "covers": [
+          "spec.workspace.decisions_readme_present"
+        ],
+        "file": ".spec/specs/spec_system.spec.md",
+        "kind": "source_file",
+        "subject_id": "spec.system",
+        "target": ".spec/decisions/README.md"
+      },
+      {
+        "covers": [
+          "spec.workspace.state_generated"
+        ],
+        "file": ".spec/specs/spec_system.spec.md",
+        "kind": "command",
+        "subject_id": "spec.system",
+        "target": "mix spec.index"
+      },
+      {
+        "covers": [
+          "spec.workspace.state_generated"
+        ],
+        "file": ".spec/specs/spec_system.spec.md",
+        "kind": "command",
+        "subject_id": "spec.system",
+        "target": "mix spec.validate"
+      }
+    ]
+  },
+  "specification_version": "1.0",
+  "summary": {
+    "decision_parse_errors": 0,
+    "decisions": 10,
+    "exceptions": 0,
+    "findings": 0,
+    "requirements": 106,
+    "scenarios": 17,
+    "subjects": 12,
+    "verifications": 27
+  },
+  "verification": {
+    "claims": [
+      {
+        "cover_id": "package.python_ontology.mix_project",
+        "file": ".spec/specs/package.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "package.python_ontology",
+        "target": "mix.exs",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "package.python_ontology.specled_dependency",
+        "file": ".spec/specs/package.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "package.python_ontology",
+        "target": "mix.exs",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "package.python_ontology.public_namespace",
+        "file": ".spec/specs/package.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "package.python_ontology",
+        "target": "lib/python_ontology.ex",
+        "verification_index": 1
+      },
+      {
+        "cover_id": "package.python_ontology.test_baseline",
+        "file": ".spec/specs/package.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "package.python_ontology",
+        "target": "test/test_helper.exs",
+        "verification_index": 2
+      },
+      {
+        "cover_id": "package.python_ontology.test_baseline",
+        "file": ".spec/specs/package.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "package.python_ontology",
+        "target": "test/python_ontology_test.exs",
+        "verification_index": 3
+      },
+      {
+        "cover_id": "package.python_ontology.mix_project",
+        "file": ".spec/specs/package.spec.md",
+        "kind": "command",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "claimed",
+        "subject_id": "package.python_ontology",
+        "target": "mix test",
+        "verification_index": 4
+      },
+      {
+        "cover_id": "package.python_ontology.public_namespace",
+        "file": ".spec/specs/package.spec.md",
+        "kind": "command",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "claimed",
+        "subject_id": "package.python_ontology",
+        "target": "mix test",
+        "verification_index": 4
+      },
+      {
+        "cover_id": "package.python_ontology.test_baseline",
+        "file": ".spec/specs/package.spec.md",
+        "kind": "command",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "claimed",
+        "subject_id": "package.python_ontology",
+        "target": "mix test",
+        "verification_index": 4
+      },
+      {
+        "cover_id": "package.python_ontology.mix_project",
+        "file": ".spec/specs/package.spec.md",
+        "kind": "command",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "claimed",
+        "subject_id": "package.python_ontology",
+        "target": "mix format --check-formatted",
+        "verification_index": 5
+      },
+      {
+        "cover_id": "package.python_ontology.product_direction",
+        "file": ".spec/specs/package.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "package.python_ontology",
+        "target": ".spec/decisions/python_ontology.decision.initial_python_ontology_architecture.md",
+        "verification_index": 6
+      },
+      {
+        "cover_id": "python_ontology.extractor_builder_boundary.builders_emit_rdf",
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.extractor_builder_boundary",
+        "target": ".spec/decisions/python_ontology.decision.extractor_builder_boundary.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.extractor_builder_boundary.diagnostic_accumulation",
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.extractor_builder_boundary",
+        "target": ".spec/decisions/python_ontology.decision.extractor_builder_boundary.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.extractor_builder_boundary.extractors_emit_facts",
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.extractor_builder_boundary",
+        "target": ".spec/decisions/python_ontology.decision.extractor_builder_boundary.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.extractor_builder_boundary.no_parsing_in_builders",
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.extractor_builder_boundary",
+        "target": ".spec/decisions/python_ontology.decision.extractor_builder_boundary.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.extractor_builder_boundary.no_rdf_in_extractors",
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.extractor_builder_boundary",
+        "target": ".spec/decisions/python_ontology.decision.extractor_builder_boundary.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.extractor_builder_boundary.parser_syntax_only",
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.extractor_builder_boundary",
+        "target": ".spec/decisions/python_ontology.decision.extractor_builder_boundary.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.extractor_builder_boundary.shared_context",
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.extractor_builder_boundary",
+        "target": ".spec/decisions/python_ontology.decision.extractor_builder_boundary.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.extractor_builder_boundary.shared_iri_helper",
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.extractor_builder_boundary",
+        "target": ".spec/decisions/python_ontology.decision.extractor_builder_boundary.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.extractor_builder_boundary.source_evidence_required",
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.extractor_builder_boundary",
+        "target": ".spec/decisions/python_ontology.decision.extractor_builder_boundary.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.extractor_builder_boundary.validation_after_build",
+        "file": ".spec/specs/extractor_builder_boundary.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.extractor_builder_boundary",
+        "target": ".spec/decisions/python_ontology.decision.extractor_builder_boundary.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.builder_propagation",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": ".spec/decisions/python_ontology.decision.fact_confidence_model.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.categories",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": ".spec/decisions/python_ontology.decision.fact_confidence_model.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.dynamic_construct_marking",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": ".spec/decisions/python_ontology.decision.fact_confidence_model.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.no_execution_for_confidence",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": ".spec/decisions/python_ontology.decision.fact_confidence_model.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.queryable_confidence",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": ".spec/decisions/python_ontology.decision.fact_confidence_model.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.runtime_dependent_boundary",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": ".spec/decisions/python_ontology.decision.fact_confidence_model.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.source_declared_default",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": ".spec/decisions/python_ontology.decision.fact_confidence_model.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.static_inference_evidence",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": ".spec/decisions/python_ontology.decision.fact_confidence_model.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.unresolved_queryable",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": ".spec/decisions/python_ontology.decision.fact_confidence_model.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.implementation_wave_plan.adr_traceability",
+        "file": ".spec/specs/implementation_wave_plan.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.implementation_wave_plan",
+        "target": ".spec/planning/w1/README.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.implementation_wave_plan.integration_test_sections",
+        "file": ".spec/specs/implementation_wave_plan.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.implementation_wave_plan",
+        "target": ".spec/planning/w1/README.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.implementation_wave_plan.phase_files",
+        "file": ".spec/specs/implementation_wave_plan.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.implementation_wave_plan",
+        "target": ".spec/planning/w1/README.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.implementation_wave_plan.phase_hierarchy",
+        "file": ".spec/specs/implementation_wave_plan.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.implementation_wave_plan",
+        "target": ".spec/planning/w1/README.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.implementation_wave_plan.wave_index",
+        "file": ".spec/specs/implementation_wave_plan.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.implementation_wave_plan",
+        "target": ".spec/planning/w1/README.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.implementation_wave_plan.wave_per_adr_area",
+        "file": ".spec/specs/implementation_wave_plan.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.implementation_wave_plan",
+        "target": ".spec/planning/w1/README.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.calls_attributes",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": ".spec/decisions/python_ontology.decision.initial_analysis_slice.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.classes_bases",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": ".spec/decisions/python_ontology.decision.initial_analysis_slice.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.decorators_annotations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": ".spec/decisions/python_ontology.decision.initial_analysis_slice.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.first_cli_output",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": ".spec/decisions/python_ontology.decision.initial_analysis_slice.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.functions_methods",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": ".spec/decisions/python_ontology.decision.initial_analysis_slice.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.imports_aliases",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": ".spec/decisions/python_ontology.decision.initial_analysis_slice.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.modules_packages",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": ".spec/decisions/python_ontology.decision.initial_analysis_slice.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": ".spec/decisions/python_ontology.decision.initial_analysis_slice.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.parameters_defaults",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": ".spec/decisions/python_ontology.decision.initial_analysis_slice.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.source_locations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": ".spec/decisions/python_ontology.decision.initial_analysis_slice.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": ".spec/decisions/python_ontology.decision.initial_analysis_slice.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.iri_identity_strategy.class_function_identity",
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": ".spec/decisions/python_ontology.decision.iri_identity_strategy.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.iri_identity_strategy.configurable_base_iri",
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": ".spec/decisions/python_ontology.decision.iri_identity_strategy.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.iri_identity_strategy.expression_span_identity",
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": ".spec/decisions/python_ontology.decision.iri_identity_strategy.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.iri_identity_strategy.hash_canonicalization",
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": ".spec/decisions/python_ontology.decision.iri_identity_strategy.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.iri_identity_strategy.module_package_identity",
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": ".spec/decisions/python_ontology.decision.iri_identity_strategy.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.iri_identity_strategy.namespace_resource_separation",
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": ".spec/decisions/python_ontology.decision.iri_identity_strategy.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.iri_identity_strategy.nested_scope_identity",
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": ".spec/decisions/python_ontology.decision.iri_identity_strategy.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.iri_identity_strategy.no_runtime_identity_claims",
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": ".spec/decisions/python_ontology.decision.iri_identity_strategy.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.iri_identity_strategy.occurrence_disambiguation",
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": ".spec/decisions/python_ontology.decision.iri_identity_strategy.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.iri_identity_strategy.shared_iri_helper",
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": ".spec/decisions/python_ontology.decision.iri_identity_strategy.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.iri_identity_strategy.stable_path_normalization",
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": ".spec/decisions/python_ontology.decision.iri_identity_strategy.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.deterministic_normalization",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": ".spec/decisions/python_ontology.decision.normalized_syntax_model.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.elixir_struct_boundary",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": ".spec/decisions/python_ontology.decision.normalized_syntax_model.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.no_code_execution",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": ".spec/decisions/python_ontology.decision.normalized_syntax_model.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.no_rdf_generation",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": ".spec/decisions/python_ontology.decision.normalized_syntax_model.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.raw_cst_provenance",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": ".spec/decisions/python_ontology.decision.normalized_syntax_model.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.source_span_preservation",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": ".spec/decisions/python_ontology.decision.normalized_syntax_model.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.tree_sitter_not_internal_model",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": ".spec/decisions/python_ontology.decision.normalized_syntax_model.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.typed_core_nodes",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": ".spec/decisions/python_ontology.decision.normalized_syntax_model.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.unknown_node_preservation",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": ".spec/decisions/python_ontology.decision.normalized_syntax_model.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.bootstrap_validity",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-core.ttl",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.dynamic_fact_boundary",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-core.ttl",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.files_present",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-core.ttl",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.layered_files",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-core.ttl",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.namespace_stability",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-core.ttl",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.python_native_boundaries",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-core.ttl",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.bootstrap_validity",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-structure.ttl",
+        "verification_index": 1
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.import_direction",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-structure.ttl",
+        "verification_index": 1
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.layered_files",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-structure.ttl",
+        "verification_index": 1
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.namespace_stability",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-structure.ttl",
+        "verification_index": 1
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.python_native_boundaries",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-structure.ttl",
+        "verification_index": 1
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.bootstrap_validity",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-typing.ttl",
+        "verification_index": 2
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.import_direction",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-typing.ttl",
+        "verification_index": 2
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.layered_files",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-typing.ttl",
+        "verification_index": 2
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.namespace_stability",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-typing.ttl",
+        "verification_index": 2
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.python_native_boundaries",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-typing.ttl",
+        "verification_index": 2
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.bootstrap_validity",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-runtime.ttl",
+        "verification_index": 3
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.dynamic_fact_boundary",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-runtime.ttl",
+        "verification_index": 3
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.import_direction",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-runtime.ttl",
+        "verification_index": 3
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.layered_files",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-runtime.ttl",
+        "verification_index": 3
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.namespace_stability",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-runtime.ttl",
+        "verification_index": 3
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.python_native_boundaries",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-runtime.ttl",
+        "verification_index": 3
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.bootstrap_validity",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-evolution.ttl",
+        "verification_index": 4
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.import_direction",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-evolution.ttl",
+        "verification_index": 4
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.layered_files",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-evolution.ttl",
+        "verification_index": 4
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.namespace_stability",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-evolution.ttl",
+        "verification_index": 4
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.bootstrap_validity",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-shapes.ttl",
+        "verification_index": 5
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.import_direction",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-shapes.ttl",
+        "verification_index": 5
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.layered_files",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-shapes.ttl",
+        "verification_index": 5
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.namespace_stability",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-shapes.ttl",
+        "verification_index": 5
+      },
+      {
+        "cover_id": "python_ontology.parser.adapter_boundary",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": ".spec/decisions/python_ontology.decision.parser_bridge_boundary.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.parser.concrete_syntax_tree_output",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": ".spec/decisions/python_ontology.decision.parser_bridge_boundary.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.parser.elixir_owned_adapter",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": ".spec/decisions/python_ontology.decision.parser_bridge_boundary.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.parser.error_contract",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": ".spec/decisions/python_ontology.decision.parser_bridge_boundary.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.parser.no_direct_rdf_output",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": ".spec/decisions/python_ontology.decision.parser_bridge_boundary.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.parser.no_project_code_execution",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": ".spec/decisions/python_ontology.decision.parser_bridge_boundary.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.parser.no_python_runtime_dependency",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": ".spec/decisions/python_ontology.decision.parser_bridge_boundary.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.parser.normalized_output",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": ".spec/decisions/python_ontology.decision.parser_bridge_boundary.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.parser.parser_version_reporting",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": ".spec/decisions/python_ontology.decision.parser_bridge_boundary.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.parser.python_runtime_optional_adapter",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": ".spec/decisions/python_ontology.decision.parser_bridge_boundary.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.parser.source_locations",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": ".spec/decisions/python_ontology.decision.parser_bridge_boundary.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.parser.tree_sitter_python_authority",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": ".spec/decisions/python_ontology.decision.parser_bridge_boundary.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.configurable_globs",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": ".spec/decisions/python_ontology.decision.project_analysis_scope.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.deterministic_order",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": ".spec/decisions/python_ontology.decision.project_analysis_scope.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.exclude_environment_dirs",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": ".spec/decisions/python_ontology.decision.project_analysis_scope.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.include_python_sources",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": ".spec/decisions/python_ontology.decision.project_analysis_scope.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.include_stub_files",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": ".spec/decisions/python_ontology.decision.project_analysis_scope.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.namespace_package_detection",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": ".spec/decisions/python_ontology.decision.project_analysis_scope.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.no_dependency_traversal_default",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": ".spec/decisions/python_ontology.decision.project_analysis_scope.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.package_detection",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": ".spec/decisions/python_ontology.decision.project_analysis_scope.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.root_detection",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": ".spec/decisions/python_ontology.decision.project_analysis_scope.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.single_file_and_project_modes",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": ".spec/decisions/python_ontology.decision.project_analysis_scope.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.test_scope_marking",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": ".spec/decisions/python_ontology.decision.project_analysis_scope.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.command_verification",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": ".spec/decisions/python_ontology.decision.validation_strategy.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.extractor_builder_tests",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": ".spec/decisions/python_ontology.decision.validation_strategy.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.no_validation_by_execution",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": ".spec/decisions/python_ontology.decision.validation_strategy.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.owl_open_world",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": ".spec/decisions/python_ontology.decision.validation_strategy.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.parser_unit_tests",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": ".spec/decisions/python_ontology.decision.validation_strategy.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.shacl_closed_world",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": ".spec/decisions/python_ontology.decision.validation_strategy.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.specled_current_truth",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": ".spec/decisions/python_ontology.decision.validation_strategy.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.turtle_parse_gate",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": ".spec/decisions/python_ontology.decision.validation_strategy.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.validation_after_graph_build",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": ".spec/decisions/python_ontology.decision.validation_strategy.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.validation_reports",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": ".spec/decisions/python_ontology.decision.validation_strategy.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "spec.workspace.readme_present",
+        "file": ".spec/specs/spec_system.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "spec.system",
+        "target": ".spec/README.md",
+        "verification_index": 0
+      },
+      {
+        "cover_id": "spec.workspace.agent_prime_context",
+        "file": ".spec/specs/spec_system.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "spec.system",
+        "target": ".spec/AGENTS.md",
+        "verification_index": 1
+      },
+      {
+        "cover_id": "spec.workspace.agents_present",
+        "file": ".spec/specs/spec_system.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "spec.system",
+        "target": ".spec/AGENTS.md",
+        "verification_index": 1
+      },
+      {
+        "cover_id": "spec.workspace.decisions_readme_present",
+        "file": ".spec/specs/spec_system.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "spec.system",
+        "target": ".spec/decisions/README.md",
+        "verification_index": 2
+      },
+      {
+        "cover_id": "spec.workspace.state_generated",
+        "file": ".spec/specs/spec_system.spec.md",
+        "kind": "command",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "claimed",
+        "subject_id": "spec.system",
+        "target": "mix spec.index",
+        "verification_index": 3
+      },
+      {
+        "cover_id": "spec.workspace.state_generated",
+        "file": ".spec/specs/spec_system.spec.md",
+        "kind": "command",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "claimed",
+        "subject_id": "spec.system",
+        "target": "mix spec.validate",
+        "verification_index": 4
+      }
+    ],
+    "cli_minimum_strength": null,
+    "default_minimum_strength": "claimed",
+    "strength_summary": {
+      "claimed": 6,
+      "executed": 0,
+      "linked": 129
+    },
+    "threshold_failures": 0
+  },
+  "workspace": {
+    "decision_count": 10,
+    "spec_count": 12
+  }
+}

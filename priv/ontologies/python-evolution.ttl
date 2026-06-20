@@ -1,0 +1,57 @@
+# covers: python_ontology.ontology_turtle_files.layered_files python_ontology.ontology_turtle_files.namespace_stability python_ontology.ontology_turtle_files.import_direction python_ontology.ontology_turtle_files.bootstrap_validity
+@prefix : <https://w3id.org/python-code/evolution#> .
+@prefix pycore: <https://w3id.org/python-code/core#> .
+@prefix pystruct: <https://w3id.org/python-code/structure#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+<https://w3id.org/python-code/evolution> a owl:Ontology ;
+    owl:imports <https://w3id.org/python-code/structure> ,
+                <http://www.w3.org/ns/prov-o#> ;
+    dc:title "Python Code Evolution Ontology"@en ;
+    rdfs:comment "Ontology for Python source-code provenance, repositories, commits, snapshots, versioned entities, changesets, and development activities."@en .
+
+:Repository a owl:Class ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:label "Repository"@en .
+
+:Commit a owl:Class ;
+    rdfs:subClassOf prov:Activity ;
+    rdfs:label "Commit"@en .
+
+:CodebaseSnapshot a owl:Class ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:label "Codebase Snapshot"@en .
+
+:VersionedEntity a owl:Class ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:label "Versioned Entity"@en .
+
+:ModuleVersion a owl:Class ;
+    rdfs:subClassOf :VersionedEntity ;
+    rdfs:label "Module Version"@en .
+
+:FunctionVersion a owl:Class ;
+    rdfs:subClassOf :VersionedEntity ;
+    rdfs:label "Function Version"@en .
+
+:ClassVersion a owl:Class ;
+    rdfs:subClassOf :VersionedEntity ;
+    rdfs:label "Class Version"@en .
+
+:ChangeSet a owl:Class ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:label "Change Set"@en .
+
+:changedEntity a owl:ObjectProperty ;
+    rdfs:domain :ChangeSet ;
+    rdfs:range pycore:PythonCodeElement ;
+    rdfs:label "changed entity"@en .
+
+:commitSha a owl:DatatypeProperty ;
+    rdfs:domain :Commit ;
+    rdfs:range xsd:string ;
+    rdfs:label "commit SHA"@en .

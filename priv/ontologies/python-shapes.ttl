@@ -1,0 +1,43 @@
+# covers: python_ontology.ontology_turtle_files.layered_files python_ontology.ontology_turtle_files.namespace_stability python_ontology.ontology_turtle_files.import_direction python_ontology.ontology_turtle_files.bootstrap_validity
+@prefix : <https://w3id.org/python-code/shapes#> .
+@prefix pycore: <https://w3id.org/python-code/core#> .
+@prefix pystruct: <https://w3id.org/python-code/structure#> .
+@prefix pytyping: <https://w3id.org/python-code/typing#> .
+@prefix pyruntime: <https://w3id.org/python-code/runtime#> .
+@prefix pyevo: <https://w3id.org/python-code/evolution#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+<https://w3id.org/python-code/shapes> a owl:Ontology ;
+    owl:imports <https://w3id.org/python-code/core> ,
+                <https://w3id.org/python-code/structure> ,
+                <https://w3id.org/python-code/typing> ,
+                <https://w3id.org/python-code/runtime> ,
+                <https://w3id.org/python-code/evolution> ;
+    dc:title "Python Ontology SHACL Shapes"@en .
+
+:ModuleShape a sh:NodeShape ;
+    sh:targetClass pystruct:Module ;
+    sh:property [
+        sh:path pystruct:moduleName ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string
+    ] .
+
+:FunctionShape a sh:NodeShape ;
+    sh:targetClass pystruct:Function ;
+    sh:property [
+        sh:path pystruct:qualifiedName ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string
+    ] .
+
+:SourceLocationShape a sh:NodeShape ;
+    sh:targetClass pycore:SourceLocation ;
+    sh:property [
+        sh:path pycore:line ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer
+    ] .

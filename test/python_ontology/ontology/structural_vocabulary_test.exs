@@ -12,6 +12,10 @@ defmodule PythonOntology.Ontology.StructuralVocabularyTest do
       assert core =~ term
     end
 
+    for term <- [":AttributeExpression", ":SubscriptExpression"] do
+      assert core =~ term
+    end
+
     for term <- [
           ":BaseClass",
           ":Annotation",

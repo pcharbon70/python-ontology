@@ -36,15 +36,15 @@ Back to index: [README](./README.md)
       [x] 2.1.2.2 Subtask - Assert annotation resources on parameters, returns, and variables where supported.
       [x] 2.1.2.3 Subtask - Keep annotation facts syntax-level without full type reasoning.
 
-  [ ] 2.2 Section - Expression Construct Coverage
+  [x] 2.2 Section - Expression Construct Coverage
     Validate minimal expression resources needed for code navigation.
 
-    [ ] 2.2.1 Task - Cover calls, attributes, and subscripts
+    [x] 2.2.1 Task - Cover calls, attributes, and subscripts
       Add RDF output for navigable expression syntax.
 
-      [ ] 2.2.1.1 Subtask - Assert call resources and simple call target syntax.
-      [ ] 2.2.1.2 Subtask - Assert attribute and subscript resources.
-      [ ] 2.2.1.3 Subtask - Assert unresolved/runtime-dependent confidence for dynamic targets.
+      [x] 2.2.1.1 Subtask - Assert call resources and simple call target syntax.
+      [x] 2.2.1.2 Subtask - Assert attribute and subscript resources.
+      [x] 2.2.1.3 Subtask - Assert unresolved/runtime-dependent confidence for dynamic targets.
 
   [ ] 2.3 Section - Phase 2 Integration Tests
     Prove first-slice source construct coverage across representative fixtures.

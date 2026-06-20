@@ -1,4 +1,4 @@
-# covers: python_ontology.ontology_turtle_files.files_present python_ontology.ontology_turtle_files.layered_files python_ontology.ontology_turtle_files.namespace_stability python_ontology.ontology_turtle_files.python_native_boundaries python_ontology.ontology_turtle_files.dynamic_fact_boundary python_ontology.ontology_turtle_files.bootstrap_validity python_ontology.fact_confidence_model.categories python_ontology.fact_confidence_model.unresolved_queryable python_ontology.fact_confidence_model.runtime_dependent_boundary python_ontology.fact_confidence_model.builder_propagation python_ontology.fact_confidence_model.queryable_confidence python_ontology.validation_strategy.turtle_parse_gate python_ontology.validation_strategy.owl_open_world python_ontology.validation_strategy.no_validation_by_execution python_ontology.initial_analysis_slice.imports_aliases python_ontology.initial_analysis_slice.out_of_scope_runtime
+# covers: python_ontology.ontology_turtle_files.files_present python_ontology.ontology_turtle_files.layered_files python_ontology.ontology_turtle_files.namespace_stability python_ontology.ontology_turtle_files.python_native_boundaries python_ontology.ontology_turtle_files.dynamic_fact_boundary python_ontology.ontology_turtle_files.bootstrap_validity python_ontology.fact_confidence_model.categories python_ontology.fact_confidence_model.unresolved_queryable python_ontology.fact_confidence_model.runtime_dependent_boundary python_ontology.fact_confidence_model.builder_propagation python_ontology.fact_confidence_model.queryable_confidence python_ontology.validation_strategy.turtle_parse_gate python_ontology.validation_strategy.owl_open_world python_ontology.validation_strategy.no_validation_by_execution python_ontology.initial_analysis_slice.imports_aliases python_ontology.initial_analysis_slice.calls_attributes python_ontology.initial_analysis_slice.out_of_scope_runtime
 @prefix : <https://w3id.org/python-code/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -51,6 +51,14 @@
 :CallExpression a owl:Class ;
     rdfs:subClassOf :Expression ;
     rdfs:label "Call Expression"@en .
+
+:AttributeExpression a owl:Class ;
+    rdfs:subClassOf :Expression ;
+    rdfs:label "Attribute Expression"@en .
+
+:SubscriptExpression a owl:Class ;
+    rdfs:subClassOf :Expression ;
+    rdfs:label "Subscript Expression"@en .
 
 :Comprehension a owl:Class ;
     rdfs:subClassOf :Expression ;

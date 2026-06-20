@@ -336,8 +336,11 @@ defmodule PythonOntology.Builders.RDF do
 
   defp class_iri(context, %Fact{kind: :literal}), do: Context.vocabulary(context, :core, :Literal)
 
-  defp class_iri(context, %Fact{kind: kind}) when kind in [:attribute, :subscript],
-    do: Context.vocabulary(context, :core, :Expression)
+  defp class_iri(context, %Fact{kind: :attribute}),
+    do: Context.vocabulary(context, :core, :AttributeExpression)
+
+  defp class_iri(context, %Fact{kind: :subscript}),
+    do: Context.vocabulary(context, :core, :SubscriptExpression)
 
   defp class_iri(context, %Fact{}), do: Context.vocabulary(context, :core, :PythonCodeElement)
 

@@ -364,4 +364,16 @@ decisions:
     - python_ontology.fact_confidence_model.runtime_dependent_boundary
     - python_ontology.fact_confidence_model.dynamic_construct_marking
     - python_ontology.fact_confidence_model.no_execution_for_confidence
+
+- kind: source_file
+  target: lib/python_ontology/builders/rdf.ex
+  covers:
+    - python_ontology.fact_confidence_model.builder_propagation
+    - python_ontology.fact_confidence_model.queryable_confidence
+
+- kind: source_file
+  target: test/python_ontology/builders/rdf_test.exs
+  covers:
+    - python_ontology.fact_confidence_model.builder_propagation
+    - python_ontology.fact_confidence_model.queryable_confidence
 ```

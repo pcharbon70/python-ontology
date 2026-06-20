@@ -20,22 +20,22 @@ Back to index: [README](./README.md)
 [ ] 3 Phase 3 - First Builders and Pipeline Acceptance
   Implement RDF builders for first-slice facts and compose parser-to-builder pipeline stages.
 
-  [ ] 3.1 Section - RDF Builder Implementation
+  [x] 3.1 Section - RDF Builder Implementation
     Convert first-slice facts into RDF triples.
 
-    [ ] 3.1.1 Task - Implement structural builders
+    [x] 3.1.1 Task - Implement structural builders
       Build RDF for source files, modules, packages, imports, classes, and functions.
 
-      [ ] 3.1.1.1 Subtask - Emit source file and source location triples.
-      [ ] 3.1.1.2 Subtask - Emit package, module, import, alias, class, base, function, and method triples.
-      [ ] 3.1.1.3 Subtask - Emit parameter, decorator, annotation, and docstring triples.
+      [x] 3.1.1.1 Subtask - Emit source file and source location triples.
+      [x] 3.1.1.2 Subtask - Emit package, module, import, alias, class, base, function, and method triples.
+      [x] 3.1.1.3 Subtask - Emit parameter, decorator, annotation, and docstring triples.
 
-    [ ] 3.1.2 Task - Implement expression builders
+    [x] 3.1.2 Task - Implement expression builders
       Build RDF for minimal expression facts.
 
-      [ ] 3.1.2.1 Subtask - Emit call, call target, attribute, and subscript triples.
-      [ ] 3.1.2.2 Subtask - Emit confidence and evidence triples consistently.
-      [ ] 3.1.2.3 Subtask - Ensure builders do not parse source text or traverse raw parser nodes.
+      [x] 3.1.2.1 Subtask - Emit call, call target, attribute, and subscript triples.
+      [x] 3.1.2.2 Subtask - Emit confidence and evidence triples consistently.
+      [x] 3.1.2.3 Subtask - Ensure builders do not parse source text or traverse raw parser nodes.
 
   [ ] 3.2 Section - Pipeline Composition
     Wire normalization, extraction, building, and diagnostics together.

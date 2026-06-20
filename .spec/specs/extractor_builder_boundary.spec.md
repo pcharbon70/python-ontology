@@ -290,4 +290,28 @@ decisions:
     - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
     - python_ontology.extractor_builder_boundary.source_evidence_required
     - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: lib/python_ontology/builders/result.ex
+  covers:
+    - python_ontology.extractor_builder_boundary.builders_emit_rdf
+    - python_ontology.extractor_builder_boundary.no_parsing_in_builders
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: lib/python_ontology/builders/rdf.ex
+  covers:
+    - python_ontology.extractor_builder_boundary.builders_emit_rdf
+    - python_ontology.extractor_builder_boundary.shared_iri_helper
+    - python_ontology.extractor_builder_boundary.no_parsing_in_builders
+    - python_ontology.extractor_builder_boundary.source_evidence_required
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: test/python_ontology/builders/rdf_test.exs
+  covers:
+    - python_ontology.extractor_builder_boundary.builders_emit_rdf
+    - python_ontology.extractor_builder_boundary.shared_iri_helper
+    - python_ontology.extractor_builder_boundary.no_parsing_in_builders
+    - python_ontology.extractor_builder_boundary.source_evidence_required
 ```

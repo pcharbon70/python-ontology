@@ -11,6 +11,11 @@ surface:
   - .spec/decisions/python_ontology.decision.project_analysis_scope.md
   - lib/python_ontology/analyzer/**/*.ex
   - lib/python_ontology/project*.ex
+  - test/fixtures/python_projects/**/*
+  - test/fixtures/python_projects/**/.pytest_cache/**/*
+  - test/fixtures/python_projects/**/.venv/**/*
+  - test/fixtures/python_projects/src_layout/.pytest_cache/cached.py
+  - test/fixtures/python_projects/src_layout/.venv/lib/site-packages/installed_dep.py
   - test/python_ontology/**/*project*_test.exs
 decisions:
   - python_ontology.decision.project_analysis_scope

@@ -18,22 +18,22 @@ Back to index: [README](./README.md)
 [ ] 3 Phase 3 - Project Fixtures and Discovery Acceptance
   Build realistic fixture projects and prove discovery behavior end to end.
 
-  [ ] 3.1 Section - Fixture Project Corpus
+  [x] 3.1 Section - Fixture Project Corpus
     Add representative project layouts for file selection tests.
 
-    [ ] 3.1.1 Task - Add source layout fixtures
+    [x] 3.1.1 Task - Add source layout fixtures
       Cover common Python package layouts.
 
-      [ ] 3.1.1.1 Subtask - Add `pyproject.toml` with `src/` layout fixture.
-      [ ] 3.1.1.2 Subtask - Add flat package layout fixture.
-      [ ] 3.1.1.3 Subtask - Add namespace package fixture.
+      [x] 3.1.1.1 Subtask - Add `pyproject.toml` with `src/` layout fixture.
+      [x] 3.1.1.2 Subtask - Add flat package layout fixture.
+      [x] 3.1.1.3 Subtask - Add namespace package fixture.
 
-    [ ] 3.1.2 Task - Add exclusion and role fixtures
+    [x] 3.1.2 Task - Add exclusion and role fixtures
       Cover files that should be skipped or specially marked.
 
-      [ ] 3.1.2.1 Subtask - Add virtualenv/cache/build/site-packages fixture directories.
-      [ ] 3.1.2.2 Subtask - Add test files and directories.
-      [ ] 3.1.2.3 Subtask - Add `.pyi` stub files.
+      [x] 3.1.2.1 Subtask - Add virtualenv/cache/build/site-packages fixture directories.
+      [x] 3.1.2.2 Subtask - Add test files and directories.
+      [x] 3.1.2.3 Subtask - Add `.pyi` stub files.
 
   [ ] 3.2 Section - Discovery Acceptance Behavior
     Prove selected project files can feed parser work.

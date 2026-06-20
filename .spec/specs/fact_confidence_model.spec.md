@@ -185,4 +185,24 @@ decisions:
     - python_ontology.fact_confidence_model.dynamic_construct_marking
     - python_ontology.fact_confidence_model.builder_propagation
     - python_ontology.fact_confidence_model.queryable_confidence
+
+- kind: source_file
+  target: lib/python_ontology/builders/confidence.ex
+  covers:
+    - python_ontology.fact_confidence_model.categories
+    - python_ontology.fact_confidence_model.static_inference_evidence
+    - python_ontology.fact_confidence_model.unresolved_queryable
+    - python_ontology.fact_confidence_model.runtime_dependent_boundary
+    - python_ontology.fact_confidence_model.builder_propagation
+    - python_ontology.fact_confidence_model.queryable_confidence
+
+- kind: source_file
+  target: test/python_ontology/builders/confidence_test.exs
+  covers:
+    - python_ontology.fact_confidence_model.categories
+    - python_ontology.fact_confidence_model.static_inference_evidence
+    - python_ontology.fact_confidence_model.unresolved_queryable
+    - python_ontology.fact_confidence_model.runtime_dependent_boundary
+    - python_ontology.fact_confidence_model.builder_propagation
+    - python_ontology.fact_confidence_model.queryable_confidence
 ```

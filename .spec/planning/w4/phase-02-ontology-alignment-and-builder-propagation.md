@@ -36,15 +36,15 @@ Back to index: [README](./README.md)
       [x] 2.1.2.2 Subtask - Keep runtime-dependent facts queryable without asserting runtime truth.
       [x] 2.1.2.3 Subtask - Parse all Turtle files after edits.
 
-  [ ] 2.2 Section - Builder Propagation Helpers
+  [x] 2.2 Section - Builder Propagation Helpers
     Prepare builders to emit confidence triples consistently.
 
-    [ ] 2.2.1 Task - Implement confidence RDF helpers
+    [x] 2.2.1 Task - Implement confidence RDF helpers
       Centralize confidence triple generation.
 
-      [ ] 2.2.1.1 Subtask - Add helper for confidence class or property triples.
-      [ ] 2.2.1.2 Subtask - Add helper for evidence resource links or literals.
-      [ ] 2.2.1.3 Subtask - Add diagnostics for missing confidence metadata.
+      [x] 2.2.1.1 Subtask - Add helper for confidence class or property triples.
+      [x] 2.2.1.2 Subtask - Add helper for evidence resource links or literals.
+      [x] 2.2.1.3 Subtask - Add diagnostics for missing confidence metadata.
 
   [ ] 2.3 Section - Phase 2 Integration Tests
     Prove ontology and builder helpers can represent queryable confidence.

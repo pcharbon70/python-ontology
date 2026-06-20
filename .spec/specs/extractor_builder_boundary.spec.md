@@ -9,6 +9,7 @@ status: active
 summary: Separation of normalized syntax, extracted facts, RDF builders, and validation.
 surface:
   - .spec/decisions/python_ontology.decision.extractor_builder_boundary.md
+  - lib/python_ontology/extractors.ex
   - lib/python_ontology/extractors/**/*.ex
   - lib/python_ontology/builders/**/*.ex
   - lib/python_ontology/facts/**/*.ex
@@ -265,6 +266,24 @@ decisions:
 
 - kind: source_file
   target: test/python_ontology/extractors/expressions_test.exs
+  covers:
+    - python_ontology.extractor_builder_boundary.parser_syntax_only
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.source_evidence_required
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: lib/python_ontology/extractors.ex
+  covers:
+    - python_ontology.extractor_builder_boundary.parser_syntax_only
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.source_evidence_required
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: test/python_ontology/extractors/phase2_integration_test.exs
   covers:
     - python_ontology.extractor_builder_boundary.parser_syntax_only
     - python_ontology.extractor_builder_boundary.extractors_emit_facts

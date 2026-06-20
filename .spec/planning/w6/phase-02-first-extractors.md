@@ -16,7 +16,7 @@ Back to index: [README](./README.md)
 - Extractors emit structured facts with evidence and confidence.
 - Unsupported syntax records diagnostics instead of disappearing.
 
-[ ] 2 Phase 2 - First Extractors
+[x] 2 Phase 2 - First Extractors
   Implement the first extractor set for source structure and call navigation.
 
   [x] 2.1 Section - Structural Extractors
@@ -53,12 +53,12 @@ Back to index: [README](./README.md)
       [x] 2.2.2.2 Subtask - Record unresolved dynamic construct diagnostics.
       [x] 2.2.2.3 Subtask - Keep diagnostics structured and source-linked.
 
-  [ ] 2.3 Section - Phase 2 Integration Tests
+  [x] 2.3 Section - Phase 2 Integration Tests
     Prove first extractors emit facts and do not emit RDF.
 
-    [ ] 2.3.1 Task - Run extractor checks
+    [x] 2.3.1 Task - Run extractor checks
       Validate first-slice facts from normalized syntax fixtures.
 
-      [ ] 2.3.1.1 Subtask - Add tests for modules, imports, classes, functions, parameters, decorators, annotations, calls, and attributes.
-      [ ] 2.3.1.2 Subtask - Add tests that extractors emit no RDF triples.
-      [ ] 2.3.1.3 Subtask - Run focused extractor tests, full `mix test`, and `mix spec.check`.
+      [x] 2.3.1.1 Subtask - Add tests for modules, imports, classes, functions, parameters, decorators, annotations, calls, and attributes.
+      [x] 2.3.1.2 Subtask - Add tests that extractors emit no RDF triples.
+      [x] 2.3.1.3 Subtask - Run focused extractor tests, full `mix test`, and `mix spec.check`.

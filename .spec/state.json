@@ -2730,6 +2730,16 @@
       },
       {
         "covers": [
+          "python_ontology.initial_analysis_slice.source_locations",
+          "python_ontology.initial_analysis_slice.tests_for_slice"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/project/classifier_test.exs"
+      },
+      {
+        "covers": [
           "python_ontology.iri_identity_strategy.namespace_resource_separation",
           "python_ontology.iri_identity_strategy.configurable_base_iri",
           "python_ontology.iri_identity_strategy.stable_path_normalization",
@@ -3687,6 +3697,18 @@
       },
       {
         "covers": [
+          "python_ontology.project_analysis_scope.package_detection",
+          "python_ontology.project_analysis_scope.namespace_package_detection",
+          "python_ontology.project_analysis_scope.test_scope_marking",
+          "python_ontology.project_analysis_scope.include_stub_files"
+        ],
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "lib/python_ontology/project/classifier.ex"
+      },
+      {
+        "covers": [
           "python_ontology.project_analysis_scope.single_file_and_project_modes",
           "python_ontology.project_analysis_scope.root_detection",
           "python_ontology.project_analysis_scope.include_python_sources",
@@ -3702,6 +3724,9 @@
         "covers": [
           "python_ontology.project_analysis_scope.include_python_sources",
           "python_ontology.project_analysis_scope.include_stub_files",
+          "python_ontology.project_analysis_scope.package_detection",
+          "python_ontology.project_analysis_scope.namespace_package_detection",
+          "python_ontology.project_analysis_scope.test_scope_marking",
           "python_ontology.project_analysis_scope.deterministic_order"
         ],
         "file": ".spec/specs/project_analysis_scope.spec.md",
@@ -3766,6 +3791,18 @@
         "kind": "source_file",
         "subject_id": "python_ontology.project_analysis_scope",
         "target": "test/python_ontology/project/selection_policy_test.exs"
+      },
+      {
+        "covers": [
+          "python_ontology.project_analysis_scope.package_detection",
+          "python_ontology.project_analysis_scope.namespace_package_detection",
+          "python_ontology.project_analysis_scope.test_scope_marking",
+          "python_ontology.project_analysis_scope.include_stub_files"
+        ],
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "test/python_ontology/project/classifier_test.exs"
       },
       {
         "covers": [
@@ -3851,7 +3888,7 @@
     "requirements": 107,
     "scenarios": 17,
     "subjects": 12,
-    "verifications": 191
+    "verifications": 194
   },
   "verification": {
     "claims": [
@@ -7396,6 +7433,28 @@
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/project/selection_policy_test.exs",
         "verification_index": 69
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.source_locations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/project/classifier_test.exs",
+        "verification_index": 70
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/project/classifier_test.exs",
+        "verification_index": 70
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.class_function_identity",
@@ -11589,6 +11648,50 @@
         "verification_index": 4
       },
       {
+        "cover_id": "python_ontology.project_analysis_scope.include_stub_files",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "lib/python_ontology/project/classifier.ex",
+        "verification_index": 5
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.namespace_package_detection",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "lib/python_ontology/project/classifier.ex",
+        "verification_index": 5
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.package_detection",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "lib/python_ontology/project/classifier.ex",
+        "verification_index": 5
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.test_scope_marking",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "lib/python_ontology/project/classifier.ex",
+        "verification_index": 5
+      },
+      {
         "cover_id": "python_ontology.project_analysis_scope.deterministic_order",
         "file": ".spec/specs/project_analysis_scope.spec.md",
         "kind": "source_file",
@@ -11597,7 +11700,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.project_analysis_scope",
         "target": "lib/python_ontology/project/result.ex",
-        "verification_index": 5
+        "verification_index": 6
       },
       {
         "cover_id": "python_ontology.project_analysis_scope.include_python_sources",
@@ -11608,7 +11711,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.project_analysis_scope",
         "target": "lib/python_ontology/project/result.ex",
-        "verification_index": 5
+        "verification_index": 6
       },
       {
         "cover_id": "python_ontology.project_analysis_scope.include_stub_files",
@@ -11619,7 +11722,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.project_analysis_scope",
         "target": "lib/python_ontology/project/result.ex",
-        "verification_index": 5
+        "verification_index": 6
       },
       {
         "cover_id": "python_ontology.project_analysis_scope.root_detection",
@@ -11630,7 +11733,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.project_analysis_scope",
         "target": "lib/python_ontology/project/result.ex",
-        "verification_index": 5
+        "verification_index": 6
       },
       {
         "cover_id": "python_ontology.project_analysis_scope.single_file_and_project_modes",
@@ -11641,7 +11744,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.project_analysis_scope",
         "target": "lib/python_ontology/project/result.ex",
-        "verification_index": 5
+        "verification_index": 6
       },
       {
         "cover_id": "python_ontology.project_analysis_scope.deterministic_order",
@@ -11652,7 +11755,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.project_analysis_scope",
         "target": "lib/python_ontology/project/source_file.ex",
-        "verification_index": 6
+        "verification_index": 7
       },
       {
         "cover_id": "python_ontology.project_analysis_scope.include_python_sources",
@@ -11663,7 +11766,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.project_analysis_scope",
         "target": "lib/python_ontology/project/source_file.ex",
-        "verification_index": 6
+        "verification_index": 7
       },
       {
         "cover_id": "python_ontology.project_analysis_scope.include_stub_files",
@@ -11674,17 +11777,39 @@
         "strength": "linked",
         "subject_id": "python_ontology.project_analysis_scope",
         "target": "lib/python_ontology/project/source_file.ex",
-        "verification_index": 6
+        "verification_index": 7
       },
       {
-        "cover_id": "python_ontology.project_analysis_scope.single_file_and_project_modes",
+        "cover_id": "python_ontology.project_analysis_scope.namespace_package_detection",
         "file": ".spec/specs/project_analysis_scope.spec.md",
         "kind": "source_file",
         "meets_minimum": true,
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.project_analysis_scope",
-        "target": "lib/python_ontology/project/diagnostic.ex",
+        "target": "lib/python_ontology/project/source_file.ex",
+        "verification_index": 7
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.package_detection",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "lib/python_ontology/project/source_file.ex",
+        "verification_index": 7
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.test_scope_marking",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "lib/python_ontology/project/source_file.ex",
         "verification_index": 7
       },
       {
@@ -11695,54 +11820,10 @@
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.project_analysis_scope",
-        "target": "test/python_ontology/project/input_test.exs",
+        "target": "lib/python_ontology/project/diagnostic.ex",
         "verification_index": 8
       },
       {
-        "cover_id": "python_ontology.project_analysis_scope.deterministic_order",
-        "file": ".spec/specs/project_analysis_scope.spec.md",
-        "kind": "source_file",
-        "meets_minimum": true,
-        "required_strength": "claimed",
-        "strength": "linked",
-        "subject_id": "python_ontology.project_analysis_scope",
-        "target": "test/python_ontology/project/discovery_test.exs",
-        "verification_index": 9
-      },
-      {
-        "cover_id": "python_ontology.project_analysis_scope.include_python_sources",
-        "file": ".spec/specs/project_analysis_scope.spec.md",
-        "kind": "source_file",
-        "meets_minimum": true,
-        "required_strength": "claimed",
-        "strength": "linked",
-        "subject_id": "python_ontology.project_analysis_scope",
-        "target": "test/python_ontology/project/discovery_test.exs",
-        "verification_index": 9
-      },
-      {
-        "cover_id": "python_ontology.project_analysis_scope.include_stub_files",
-        "file": ".spec/specs/project_analysis_scope.spec.md",
-        "kind": "source_file",
-        "meets_minimum": true,
-        "required_strength": "claimed",
-        "strength": "linked",
-        "subject_id": "python_ontology.project_analysis_scope",
-        "target": "test/python_ontology/project/discovery_test.exs",
-        "verification_index": 9
-      },
-      {
-        "cover_id": "python_ontology.project_analysis_scope.root_detection",
-        "file": ".spec/specs/project_analysis_scope.spec.md",
-        "kind": "source_file",
-        "meets_minimum": true,
-        "required_strength": "claimed",
-        "strength": "linked",
-        "subject_id": "python_ontology.project_analysis_scope",
-        "target": "test/python_ontology/project/discovery_test.exs",
-        "verification_index": 9
-      },
-      {
         "cover_id": "python_ontology.project_analysis_scope.single_file_and_project_modes",
         "file": ".spec/specs/project_analysis_scope.spec.md",
         "kind": "source_file",
@@ -11750,7 +11831,7 @@
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.project_analysis_scope",
-        "target": "test/python_ontology/project/discovery_test.exs",
+        "target": "test/python_ontology/project/input_test.exs",
         "verification_index": 9
       },
       {
@@ -11761,7 +11842,7 @@
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.project_analysis_scope",
-        "target": "test/python_ontology/project/phase1_integration_test.exs",
+        "target": "test/python_ontology/project/discovery_test.exs",
         "verification_index": 10
       },
       {
@@ -11772,7 +11853,7 @@
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.project_analysis_scope",
-        "target": "test/python_ontology/project/phase1_integration_test.exs",
+        "target": "test/python_ontology/project/discovery_test.exs",
         "verification_index": 10
       },
       {
@@ -11783,7 +11864,7 @@
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.project_analysis_scope",
-        "target": "test/python_ontology/project/phase1_integration_test.exs",
+        "target": "test/python_ontology/project/discovery_test.exs",
         "verification_index": 10
       },
       {
@@ -11794,7 +11875,7 @@
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.project_analysis_scope",
-        "target": "test/python_ontology/project/phase1_integration_test.exs",
+        "target": "test/python_ontology/project/discovery_test.exs",
         "verification_index": 10
       },
       {
@@ -11805,8 +11886,63 @@
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.project_analysis_scope",
-        "target": "test/python_ontology/project/phase1_integration_test.exs",
+        "target": "test/python_ontology/project/discovery_test.exs",
         "verification_index": 10
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.deterministic_order",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "test/python_ontology/project/phase1_integration_test.exs",
+        "verification_index": 11
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.include_python_sources",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "test/python_ontology/project/phase1_integration_test.exs",
+        "verification_index": 11
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.include_stub_files",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "test/python_ontology/project/phase1_integration_test.exs",
+        "verification_index": 11
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.root_detection",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "test/python_ontology/project/phase1_integration_test.exs",
+        "verification_index": 11
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.single_file_and_project_modes",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "test/python_ontology/project/phase1_integration_test.exs",
+        "verification_index": 11
       },
       {
         "cover_id": "python_ontology.project_analysis_scope.configurable_globs",
@@ -11817,7 +11953,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.project_analysis_scope",
         "target": "test/python_ontology/project/selection_policy_test.exs",
-        "verification_index": 11
+        "verification_index": 12
       },
       {
         "cover_id": "python_ontology.project_analysis_scope.deterministic_order",
@@ -11828,7 +11964,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.project_analysis_scope",
         "target": "test/python_ontology/project/selection_policy_test.exs",
-        "verification_index": 11
+        "verification_index": 12
       },
       {
         "cover_id": "python_ontology.project_analysis_scope.exclude_environment_dirs",
@@ -11839,7 +11975,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.project_analysis_scope",
         "target": "test/python_ontology/project/selection_policy_test.exs",
-        "verification_index": 11
+        "verification_index": 12
       },
       {
         "cover_id": "python_ontology.project_analysis_scope.include_python_sources",
@@ -11850,7 +11986,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.project_analysis_scope",
         "target": "test/python_ontology/project/selection_policy_test.exs",
-        "verification_index": 11
+        "verification_index": 12
       },
       {
         "cover_id": "python_ontology.project_analysis_scope.include_stub_files",
@@ -11861,7 +11997,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.project_analysis_scope",
         "target": "test/python_ontology/project/selection_policy_test.exs",
-        "verification_index": 11
+        "verification_index": 12
       },
       {
         "cover_id": "python_ontology.project_analysis_scope.no_dependency_traversal_default",
@@ -11872,7 +12008,51 @@
         "strength": "linked",
         "subject_id": "python_ontology.project_analysis_scope",
         "target": "test/python_ontology/project/selection_policy_test.exs",
-        "verification_index": 11
+        "verification_index": 12
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.include_stub_files",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "test/python_ontology/project/classifier_test.exs",
+        "verification_index": 13
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.namespace_package_detection",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "test/python_ontology/project/classifier_test.exs",
+        "verification_index": 13
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.package_detection",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "test/python_ontology/project/classifier_test.exs",
+        "verification_index": 13
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.test_scope_marking",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "test/python_ontology/project/classifier_test.exs",
+        "verification_index": 13
       },
       {
         "cover_id": "python_ontology.validation_strategy.command_verification",
@@ -12067,7 +12247,7 @@
     "strength_summary": {
       "claimed": 17,
       "executed": 0,
-      "linked": 729
+      "linked": 742
     },
     "threshold_failures": 0
   },

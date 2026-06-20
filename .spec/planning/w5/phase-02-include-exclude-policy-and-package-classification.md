@@ -35,22 +35,22 @@ Back to index: [README](./README.md)
       [x] 2.1.2.2 Subtask - Add exclude glob options.
       [x] 2.1.2.3 Subtask - Define precedence when include and exclude patterns overlap.
 
-  [ ] 2.2 Section - Package And Test Classification
+  [x] 2.2 Section - Package And Test Classification
     Add classification needed by IRI identity and caller filtering.
 
-    [ ] 2.2.1 Task - Detect package forms
+    [x] 2.2.1 Task - Detect package forms
       Classify regular and namespace packages.
 
-      [ ] 2.2.1.1 Subtask - Detect regular packages from `__init__.py`.
-      [ ] 2.2.1.2 Subtask - Detect namespace package candidates without `__init__.py`.
-      [ ] 2.2.1.3 Subtask - Preserve package root and dotted name hints for IRI generation.
+      [x] 2.2.1.1 Subtask - Detect regular packages from `__init__.py`.
+      [x] 2.2.1.2 Subtask - Detect namespace package candidates without `__init__.py`.
+      [x] 2.2.1.3 Subtask - Preserve package root and dotted name hints for IRI generation.
 
-    [ ] 2.2.2 Task - Mark tests and stubs
+    [x] 2.2.2 Task - Mark tests and stubs
       Preserve source role information for filters and graph consumers.
 
-      [ ] 2.2.2.1 Subtask - Mark likely test files and test directories.
-      [ ] 2.2.2.2 Subtask - Mark `.pyi` stub files separately from `.py` implementation files.
-      [ ] 2.2.2.3 Subtask - Keep test files included by default.
+      [x] 2.2.2.1 Subtask - Mark likely test files and test directories.
+      [x] 2.2.2.2 Subtask - Mark `.pyi` stub files separately from `.py` implementation files.
+      [x] 2.2.2.3 Subtask - Keep test files included by default.
 
   [ ] 2.3 Section - Phase 2 Integration Tests
     Validate selection policy, package classification, and configurable globs.

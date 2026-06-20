@@ -5,6 +5,7 @@ defmodule PythonOntology.Project.Discovery do
   """
 
   alias PythonOntology.IRI.Path, as: IRIPath
+  alias PythonOntology.Project.Classifier
   alias PythonOntology.Project.Diagnostic
   alias PythonOntology.Project.Input
   alias PythonOntology.Project.Result
@@ -171,12 +172,17 @@ defmodule PythonOntology.Project.Discovery do
 
   defp source_file(path, root_path) do
     with {:ok, relative_path} <- IRIPath.canonicalize(path, repository_root: root_path) do
+      classification = Classifier.classify(path, relative_path, root_path)
+
       {:ok,
-       %SourceFile{
-         path: path,
-         relative_path: relative_path,
-         extension: Path.extname(path)
-       }}
+       struct!(
+         SourceFile,
+         Map.merge(classification, %{
+           path: path,
+           relative_path: relative_path,
+           extension: Path.extname(path)
+         })
+       )}
     end
   end
 

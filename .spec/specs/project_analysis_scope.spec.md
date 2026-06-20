@@ -157,6 +157,14 @@ decisions:
     - python_ontology.project_analysis_scope.deterministic_order
 
 - kind: source_file
+  target: lib/python_ontology/project/classifier.ex
+  covers:
+    - python_ontology.project_analysis_scope.package_detection
+    - python_ontology.project_analysis_scope.namespace_package_detection
+    - python_ontology.project_analysis_scope.test_scope_marking
+    - python_ontology.project_analysis_scope.include_stub_files
+
+- kind: source_file
   target: lib/python_ontology/project/result.ex
   covers:
     - python_ontology.project_analysis_scope.single_file_and_project_modes
@@ -170,6 +178,9 @@ decisions:
   covers:
     - python_ontology.project_analysis_scope.include_python_sources
     - python_ontology.project_analysis_scope.include_stub_files
+    - python_ontology.project_analysis_scope.package_detection
+    - python_ontology.project_analysis_scope.namespace_package_detection
+    - python_ontology.project_analysis_scope.test_scope_marking
     - python_ontology.project_analysis_scope.deterministic_order
 
 - kind: source_file
@@ -209,4 +220,12 @@ decisions:
     - python_ontology.project_analysis_scope.configurable_globs
     - python_ontology.project_analysis_scope.no_dependency_traversal_default
     - python_ontology.project_analysis_scope.deterministic_order
+
+- kind: source_file
+  target: test/python_ontology/project/classifier_test.exs
+  covers:
+    - python_ontology.project_analysis_scope.package_detection
+    - python_ontology.project_analysis_scope.namespace_package_detection
+    - python_ontology.project_analysis_scope.test_scope_marking
+    - python_ontology.project_analysis_scope.include_stub_files
 ```

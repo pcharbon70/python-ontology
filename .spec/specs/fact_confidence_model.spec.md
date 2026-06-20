@@ -251,4 +251,17 @@ decisions:
   covers:
     - python_ontology.fact_confidence_model.runtime_dependent_boundary
     - python_ontology.fact_confidence_model.no_execution_for_confidence
+
+- kind: source_file
+  target: test/python_ontology/confidence/phase3_integration_test.exs
+  covers:
+    - python_ontology.fact_confidence_model.categories
+    - python_ontology.fact_confidence_model.source_declared_default
+    - python_ontology.fact_confidence_model.static_inference_evidence
+    - python_ontology.fact_confidence_model.unresolved_queryable
+    - python_ontology.fact_confidence_model.runtime_dependent_boundary
+    - python_ontology.fact_confidence_model.dynamic_construct_marking
+    - python_ontology.fact_confidence_model.builder_propagation
+    - python_ontology.fact_confidence_model.queryable_confidence
+    - python_ontology.fact_confidence_model.no_execution_for_confidence
 ```

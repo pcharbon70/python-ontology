@@ -15,7 +15,7 @@ Back to index: [README](./README.md)
 - The analyzer does not execute project code to increase confidence.
 - Confidence categories are queryable in generated RDF.
 
-[ ] 3 Phase 3 - Dynamic Boundary Fixtures and Confidence Acceptance
+[x] 3 Phase 3 - Dynamic Boundary Fixtures and Confidence Acceptance
   Prove confidence behavior with source fixtures that include dynamic Python constructs.
 
   [x] 3.1 Section - Source Fixtures For Confidence
@@ -45,12 +45,12 @@ Back to index: [README](./README.md)
       [x] 3.2.1.2 Subtask - Assert analysis completes without executing the side effect.
       [x] 3.2.1.3 Subtask - Assert confidence remains unresolved or runtime-dependent where appropriate.
 
-  [ ] 3.3 Section - Phase 3 Integration Tests
+  [x] 3.3 Section - Phase 3 Integration Tests
     Prove confidence policy holds across representative dynamic source cases.
 
-    [ ] 3.3.1 Task - Run confidence acceptance
+    [x] 3.3.1 Task - Run confidence acceptance
       Validate direct, inferred, unresolved, and runtime-dependent confidence output.
 
-      [ ] 3.3.1.1 Subtask - Run focused dynamic-boundary fixture tests.
-      [ ] 3.3.1.2 Subtask - Run generated RDF confidence query or graph assertion tests when builders exist.
-      [ ] 3.3.1.3 Subtask - Run full `mix test` and `mix spec.check`.
+      [x] 3.3.1.1 Subtask - Run focused dynamic-boundary fixture tests.
+      [x] 3.3.1.2 Subtask - Run generated RDF confidence query or graph assertion tests when builders exist.
+      [x] 3.3.1.3 Subtask - Run full `mix test` and `mix spec.check`.

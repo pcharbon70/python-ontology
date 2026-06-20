@@ -153,4 +153,10 @@ decisions:
   covers:
     - python_ontology.extractor_builder_boundary.builders_emit_rdf
     - python_ontology.extractor_builder_boundary.shared_iri_helper
+
+- kind: source_file
+  target: test/python_ontology/confidence/phase3_integration_test.exs
+  covers:
+    - python_ontology.extractor_builder_boundary.builders_emit_rdf
+    - python_ontology.extractor_builder_boundary.shared_iri_helper
 ```

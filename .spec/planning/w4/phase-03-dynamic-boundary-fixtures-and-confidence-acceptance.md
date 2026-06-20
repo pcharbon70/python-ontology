@@ -35,15 +35,15 @@ Back to index: [README](./README.md)
       [x] 3.1.2.2 Subtask - Add fixtures for `getattr`, `setattr`, decorators, metaclasses, and monkey patching boundaries.
       [x] 3.1.2.3 Subtask - Assert unresolved/runtime-dependent facts remain queryable.
 
-  [ ] 3.2 Section - Acceptance Behavior
+  [x] 3.2 Section - Acceptance Behavior
     Validate confidence categories across parser, extraction, and builder boundaries.
 
-    [ ] 3.2.1 Task - Verify no execution for confidence
+    [x] 3.2.1 Task - Verify no execution for confidence
       Ensure dynamic fixtures are not evaluated.
 
-      [ ] 3.2.1.1 Subtask - Add fixture with top-level side effect that would fail if executed.
-      [ ] 3.2.1.2 Subtask - Assert analysis completes without executing the side effect.
-      [ ] 3.2.1.3 Subtask - Assert confidence remains unresolved or runtime-dependent where appropriate.
+      [x] 3.2.1.1 Subtask - Add fixture with top-level side effect that would fail if executed.
+      [x] 3.2.1.2 Subtask - Assert analysis completes without executing the side effect.
+      [x] 3.2.1.3 Subtask - Assert confidence remains unresolved or runtime-dependent where appropriate.
 
   [ ] 3.3 Section - Phase 3 Integration Tests
     Prove confidence policy holds across representative dynamic source cases.

@@ -239,4 +239,16 @@ decisions:
     - python_ontology.fact_confidence_model.runtime_dependent_boundary
     - python_ontology.fact_confidence_model.dynamic_construct_marking
     - python_ontology.fact_confidence_model.no_execution_for_confidence
+
+- kind: source_file
+  target: test/fixtures/python_confidence/side_effect_guard.py
+  covers:
+    - python_ontology.fact_confidence_model.runtime_dependent_boundary
+    - python_ontology.fact_confidence_model.no_execution_for_confidence
+
+- kind: source_file
+  target: test/python_ontology/confidence/no_execution_test.exs
+  covers:
+    - python_ontology.fact_confidence_model.runtime_dependent_boundary
+    - python_ontology.fact_confidence_model.no_execution_for_confidence
 ```

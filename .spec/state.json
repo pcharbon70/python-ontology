@@ -1919,6 +1919,26 @@
       },
       {
         "covers": [
+          "python_ontology.fact_confidence_model.runtime_dependent_boundary",
+          "python_ontology.fact_confidence_model.no_execution_for_confidence"
+        ],
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": "test/fixtures/python_confidence/side_effect_guard.py"
+      },
+      {
+        "covers": [
+          "python_ontology.fact_confidence_model.runtime_dependent_boundary",
+          "python_ontology.fact_confidence_model.no_execution_for_confidence"
+        ],
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": "test/python_ontology/confidence/no_execution_test.exs"
+      },
+      {
+        "covers": [
           "python_ontology.implementation_wave_plan.wave_index",
           "python_ontology.implementation_wave_plan.phase_files",
           "python_ontology.implementation_wave_plan.phase_hierarchy",
@@ -2547,6 +2567,26 @@
         "kind": "source_file",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/confidence/source_fixture_test.exs"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.tests_for_slice"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_confidence/side_effect_guard.py"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.source_locations",
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+          "python_ontology.initial_analysis_slice.tests_for_slice"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/confidence/no_execution_test.exs"
       },
       {
         "covers": [
@@ -3537,7 +3577,7 @@
     "requirements": 107,
     "scenarios": 17,
     "subjects": 12,
-    "verifications": 163
+    "verifications": 167
   },
   "verification": {
     "claims": [
@@ -4761,6 +4801,50 @@
         "subject_id": "python_ontology.fact_confidence_model",
         "target": "test/python_ontology/confidence/source_fixture_test.exs",
         "verification_index": 15
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.no_execution_for_confidence",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": "test/fixtures/python_confidence/side_effect_guard.py",
+        "verification_index": 16
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.runtime_dependent_boundary",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": "test/fixtures/python_confidence/side_effect_guard.py",
+        "verification_index": 16
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.no_execution_for_confidence",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": "test/python_ontology/confidence/no_execution_test.exs",
+        "verification_index": 17
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.runtime_dependent_boundary",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": "test/python_ontology/confidence/no_execution_test.exs",
+        "verification_index": 17
       },
       {
         "cover_id": "python_ontology.implementation_wave_plan.adr_traceability",
@@ -6598,6 +6682,50 @@
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/confidence/source_fixture_test.exs",
         "verification_index": 56
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_confidence/side_effect_guard.py",
+        "verification_index": 57
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/confidence/no_execution_test.exs",
+        "verification_index": 58
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.source_locations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/confidence/no_execution_test.exs",
+        "verification_index": 58
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/confidence/no_execution_test.exs",
+        "verification_index": 58
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.class_function_identity",
@@ -10763,7 +10891,7 @@
     "strength_summary": {
       "claimed": 17,
       "executed": 0,
-      "linked": 639
+      "linked": 647
     },
     "threshold_failures": 0
   },

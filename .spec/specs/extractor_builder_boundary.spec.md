@@ -12,6 +12,7 @@ surface:
   - lib/python_ontology/extractors/**/*.ex
   - lib/python_ontology/builders/**/*.ex
   - lib/python_ontology/facts/**/*.ex
+  - lib/python_ontology/facts.ex
   - lib/python_ontology/pipeline*.ex
   - lib/python_ontology/pipeline/**/*.ex
   - test/python_ontology/**/*extractor*_test.exs
@@ -195,5 +196,35 @@ decisions:
   covers:
     - python_ontology.extractor_builder_boundary.shared_context
     - python_ontology.extractor_builder_boundary.shared_iri_helper
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: lib/python_ontology/facts/fact.ex
+  covers:
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.source_evidence_required
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: lib/python_ontology/facts/result.ex
+  covers:
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: lib/python_ontology/facts.ex
+  covers:
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.source_evidence_required
+
+- kind: source_file
+  target: test/python_ontology/facts/fact_test.exs
+  covers:
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.source_evidence_required
     - python_ontology.extractor_builder_boundary.diagnostic_accumulation
 ```

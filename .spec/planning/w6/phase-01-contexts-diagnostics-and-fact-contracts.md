@@ -36,22 +36,22 @@ Back to index: [README](./README.md)
       [x] 1.1.2.2 Subtask - Include namespace/vocabulary helpers.
       [x] 1.1.2.3 Subtask - Include confidence propagation options.
 
-  [ ] 1.2 Section - Fact Contracts
+  [x] 1.2 Section - Fact Contracts
     Define first-slice fact structs shared by extractors and builders.
 
-    [ ] 1.2.1 Task - Define structural facts
+    [x] 1.2.1 Task - Define structural facts
       Add facts for source organization.
 
-      [ ] 1.2.1.1 Subtask - Define source file, package, module, import, class, function, and method facts.
-      [ ] 1.2.1.2 Subtask - Define parameter, decorator, annotation, and base-class facts.
-      [ ] 1.2.1.3 Subtask - Include identity hints, source evidence, confidence, and diagnostics.
+      [x] 1.2.1.1 Subtask - Define source file, package, module, import, class, function, and method facts.
+      [x] 1.2.1.2 Subtask - Define parameter, decorator, annotation, and base-class facts.
+      [x] 1.2.1.3 Subtask - Include identity hints, source evidence, confidence, and diagnostics.
 
-    [ ] 1.2.2 Task - Define expression facts
+    [x] 1.2.2 Task - Define expression facts
       Add minimal facts for source navigation.
 
-      [ ] 1.2.2.1 Subtask - Define call, attribute, subscript, literal, and source-location facts.
-      [ ] 1.2.2.2 Subtask - Include unresolved/runtime-dependent markers.
-      [ ] 1.2.2.3 Subtask - Keep fact contracts independent from RDF triples.
+      [x] 1.2.2.1 Subtask - Define call, attribute, subscript, literal, and source-location facts.
+      [x] 1.2.2.2 Subtask - Include unresolved/runtime-dependent markers.
+      [x] 1.2.2.3 Subtask - Keep fact contracts independent from RDF triples.
 
   [ ] 1.3 Section - Phase 1 Integration Tests
     Validate context and fact contracts before extractor logic depends on them.

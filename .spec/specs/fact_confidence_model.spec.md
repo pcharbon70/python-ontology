@@ -10,6 +10,8 @@ summary: Confidence categories for source-declared, inferred, unresolved, and ru
 surface:
   - .spec/decisions/python_ontology.decision.fact_confidence_model.md
   - priv/ontologies/python-core.ttl
+  - lib/python_ontology/facts/**/*.ex
+  - lib/python_ontology/facts.ex
   - lib/python_ontology/extractors/**/*.ex
   - lib/python_ontology/builders/**/*.ex
   - test/python_ontology/**/*confidence*_test.exs
@@ -284,4 +286,27 @@ decisions:
   target: test/python_ontology/builders/context_test.exs
   covers:
     - python_ontology.fact_confidence_model.builder_propagation
+
+- kind: source_file
+  target: lib/python_ontology/facts/fact.ex
+  covers:
+    - python_ontology.fact_confidence_model.categories
+    - python_ontology.fact_confidence_model.source_declared_default
+    - python_ontology.fact_confidence_model.runtime_dependent_boundary
+    - python_ontology.fact_confidence_model.no_execution_for_confidence
+
+- kind: source_file
+  target: lib/python_ontology/facts.ex
+  covers:
+    - python_ontology.fact_confidence_model.categories
+    - python_ontology.fact_confidence_model.source_declared_default
+    - python_ontology.fact_confidence_model.no_execution_for_confidence
+
+- kind: source_file
+  target: test/python_ontology/facts/fact_test.exs
+  covers:
+    - python_ontology.fact_confidence_model.categories
+    - python_ontology.fact_confidence_model.source_declared_default
+    - python_ontology.fact_confidence_model.runtime_dependent_boundary
+    - python_ontology.fact_confidence_model.no_execution_for_confidence
 ```

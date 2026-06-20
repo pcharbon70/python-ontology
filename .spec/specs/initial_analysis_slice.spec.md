@@ -217,4 +217,15 @@ decisions:
   covers:
     - python_ontology.initial_analysis_slice.source_locations
     - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: lib/python_ontology/syntax/nodes.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+
+- kind: source_file
+  target: test/python_ontology/syntax/typed_nodes_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.tests_for_slice
 ```

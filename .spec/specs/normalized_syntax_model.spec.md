@@ -172,11 +172,28 @@ decisions:
     - python_ontology.normalized_syntax_model.no_rdf_generation
 
 - kind: source_file
+  target: lib/python_ontology/syntax/nodes.ex
+  covers:
+    - python_ontology.normalized_syntax_model.elixir_struct_boundary
+    - python_ontology.normalized_syntax_model.typed_core_nodes
+    - python_ontology.normalized_syntax_model.unknown_node_preservation
+    - python_ontology.normalized_syntax_model.no_rdf_generation
+
+- kind: source_file
   target: test/python_ontology/syntax/shared_fields_test.exs
   covers:
     - python_ontology.normalized_syntax_model.elixir_struct_boundary
     - python_ontology.normalized_syntax_model.raw_cst_provenance
     - python_ontology.normalized_syntax_model.deterministic_normalization
+    - python_ontology.normalized_syntax_model.source_span_preservation
+    - python_ontology.normalized_syntax_model.no_rdf_generation
+
+- kind: source_file
+  target: test/python_ontology/syntax/typed_nodes_test.exs
+  covers:
+    - python_ontology.normalized_syntax_model.elixir_struct_boundary
+    - python_ontology.normalized_syntax_model.typed_core_nodes
+    - python_ontology.normalized_syntax_model.unknown_node_preservation
     - python_ontology.normalized_syntax_model.source_span_preservation
     - python_ontology.normalized_syntax_model.no_rdf_generation
 ```

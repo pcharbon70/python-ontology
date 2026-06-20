@@ -35,22 +35,22 @@ Back to index: [README](./README.md)
       [x] 1.1.2.2 Subtask - Define row/column span struct or field convention.
       [x] 1.1.2.3 Subtask - Define behavior when span data is unavailable.
 
-  [ ] 1.2 Section - First-Slice Typed Nodes
+  [x] 1.2 Section - First-Slice Typed Nodes
     Define typed normalized nodes for constructs required by initial extraction.
 
-    [ ] 1.2.1 Task - Define structural syntax nodes
+    [x] 1.2.1 Task - Define structural syntax nodes
       Add node types for Python source organization.
 
-      [ ] 1.2.1.1 Subtask - Define module, import, alias, class, function, method candidate, and parameter nodes.
-      [ ] 1.2.1.2 Subtask - Define decorator, annotation, base-class, and docstring nodes.
-      [ ] 1.2.1.3 Subtask - Define assignment and source-location carrier nodes.
+      [x] 1.2.1.1 Subtask - Define module, import, alias, class, function, method candidate, and parameter nodes.
+      [x] 1.2.1.2 Subtask - Define decorator, annotation, base-class, and docstring nodes.
+      [x] 1.2.1.3 Subtask - Define assignment and source-location carrier nodes.
 
-    [ ] 1.2.2 Task - Define expression syntax nodes
+    [x] 1.2.2 Task - Define expression syntax nodes
       Add node types for minimal expression analysis.
 
-      [ ] 1.2.2.1 Subtask - Define call, attribute, subscript, literal, and identifier nodes.
-      [ ] 1.2.2.2 Subtask - Define control-flow and comprehension preservation nodes.
-      [ ] 1.2.2.3 Subtask - Define generic node type for unsupported syntax.
+      [x] 1.2.2.1 Subtask - Define call, attribute, subscript, literal, and identifier nodes.
+      [x] 1.2.2.2 Subtask - Define control-flow and comprehension preservation nodes.
+      [x] 1.2.2.3 Subtask - Define generic node type for unsupported syntax.
 
   [ ] 1.3 Section - Phase 1 Integration Tests
     Prove syntax structs compile and can represent first-slice fixture shapes.

@@ -14,9 +14,21 @@ defmodule PythonOntology.Parser.Diagnostic do
           source_id: String.t() | nil,
           path: Path.t() | nil,
           span: map() | nil,
+          raw_node_type: String.t() | nil,
+          field_name: String.t() | nil,
           raw: term()
         }
 
   @enforce_keys [:stage, :severity, :message]
-  defstruct [:stage, :severity, :message, :source_id, :path, :span, :raw]
+  defstruct [
+    :stage,
+    :severity,
+    :message,
+    :source_id,
+    :path,
+    :span,
+    :raw_node_type,
+    :field_name,
+    :raw
+  ]
 end

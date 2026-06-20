@@ -51,14 +51,56 @@ defmodule PythonOntology.Parser do
   end
 
   defp result(parsed, source_id, path, opts) do
+    root = Node.from_native(parsed.root)
+    diagnostics = parser_diagnostics(root, source_id, path)
+
     %Result{
       source_id: source_id,
       path: path,
-      root: Node.from_native(parsed.root),
+      root: root,
       metadata: Metadata.from_native(parsed, opts),
-      diagnostics: [],
-      has_error: parsed.has_error
+      diagnostics: diagnostics,
+      has_error: parsed.has_error or diagnostics != []
     }
+  end
+
+  defp parser_diagnostics(root, source_id, path) do
+    root
+    |> diagnostic_nodes()
+    |> Enum.map(&node_diagnostic(&1, source_id, path))
+  end
+
+  defp diagnostic_nodes(node) do
+    current = if node.error or node.missing, do: [node], else: []
+    current ++ Enum.flat_map(node.children, &diagnostic_nodes/1)
+  end
+
+  defp node_diagnostic(node, source_id, path) do
+    %Diagnostic{
+      stage: :parser,
+      severity: :error,
+      message: node_diagnostic_message(node),
+      source_id: source_id,
+      path: path,
+      span: node.span,
+      raw_node_type: node.kind,
+      field_name: node.field_name,
+      raw: %{
+        kind: node.kind,
+        error: node.error,
+        missing: node.missing,
+        extra: node.extra,
+        has_error: node.has_error
+      }
+    }
+  end
+
+  defp node_diagnostic_message(%{missing: true} = node) do
+    "missing Tree-sitter node #{inspect(node.kind)}"
+  end
+
+  defp node_diagnostic_message(%{error: true} = node) do
+    "Tree-sitter error node #{inspect(node.kind)}"
   end
 
   defp fetch_source_id(opts) do

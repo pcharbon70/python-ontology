@@ -130,6 +130,34 @@ defmodule PythonOntology.ParserTest do
     refute result.has_error
   end
 
+  test "parse_string/2 returns diagnostics for Tree-sitter ERROR nodes and preserves partial tree" do
+    assert {:ok, %Result{} = result} =
+             Parser.parse_string("x = (1 + )\n", source_id: "memory://invalid-expression.py")
+
+    assert result.has_error
+    assert result.root.kind == "module"
+    assert Enum.any?(flatten_kinds(result.root), &(&1 == "ERROR"))
+
+    assert [%Diagnostic{} = diagnostic] = result.diagnostics
+    assert diagnostic.stage == :parser
+    assert diagnostic.raw_node_type == "ERROR"
+    assert diagnostic.raw.error == true
+    assert diagnostic.span.start_line == 0
+    assert diagnostic.span.start_column == 7
+  end
+
+  test "parse_string/2 returns diagnostics for missing Tree-sitter nodes" do
+    assert {:ok, %Result{} = result} =
+             Parser.parse_string("def broken(:\n", source_id: "memory://missing-node.py")
+
+    assert result.has_error
+
+    assert Enum.any?(result.diagnostics, fn diagnostic ->
+             diagnostic.stage == :parser and diagnostic.raw_node_type == ")" and
+               diagnostic.raw.missing == true
+           end)
+  end
+
   defp fixture_path(name) do
     Path.join([System.tmp_dir!(), "python_ontology_parser_test", name])
     |> tap(&File.mkdir_p!(Path.dirname(&1)))

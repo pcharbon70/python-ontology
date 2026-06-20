@@ -19,22 +19,22 @@ Back to index: [README](./README.md)
 [ ] 3 Phase 3 - Error Nodes, Fixtures, and Parser Acceptance
   Prove parser behavior for valid source, invalid source, and reusable fixtures.
 
-  [ ] 3.1 Section - Error Node Handling
+  [x] 3.1 Section - Error Node Handling
     Preserve invalid syntax information without unclassified failures.
 
-    [ ] 3.1.1 Task - Detect parser errors
+    [x] 3.1.1 Task - Detect parser errors
       Surface Tree-sitter error state in parser results.
 
-      [ ] 3.1.1.1 Subtask - Detect root-level parse errors.
-      [ ] 3.1.1.2 Subtask - Detect nested `ERROR` nodes when the binding exposes them.
-      [ ] 3.1.1.3 Subtask - Detect missing nodes or incomplete constructs when the binding exposes them.
+      [x] 3.1.1.1 Subtask - Detect root-level parse errors.
+      [x] 3.1.1.2 Subtask - Detect nested `ERROR` nodes when the binding exposes them.
+      [x] 3.1.1.3 Subtask - Detect missing nodes or incomplete constructs when the binding exposes them.
 
-    [ ] 3.1.2 Task - Return structured diagnostics
+    [x] 3.1.2 Task - Return structured diagnostics
       Convert parser error information into stable Elixir diagnostics.
 
-      [ ] 3.1.2.1 Subtask - Include severity, message, raw node type, source file, and span fields.
-      [ ] 3.1.2.2 Subtask - Keep parser diagnostics separate from file-read and future extractor diagnostics.
-      [ ] 3.1.2.3 Subtask - Preserve partial parse trees when available.
+      [x] 3.1.2.1 Subtask - Include severity, message, raw node type, source file, and span fields.
+      [x] 3.1.2.2 Subtask - Keep parser diagnostics separate from file-read and future extractor diagnostics.
+      [x] 3.1.2.3 Subtask - Preserve partial parse trees when available.
 
   [ ] 3.2 Section - Parser Fixtures
     Create reusable parser fixtures that drive normalization and extractor work.

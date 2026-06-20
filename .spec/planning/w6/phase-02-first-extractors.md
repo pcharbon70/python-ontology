@@ -36,22 +36,22 @@ Back to index: [README](./README.md)
       [x] 2.1.2.2 Subtask - Extract function and method facts with decorators and annotations.
       [x] 2.1.2.3 Subtask - Extract parameter, default, vararg, kwarg, and keyword-only facts.
 
-  [ ] 2.2 Section - Expression Extractors
+  [x] 2.2 Section - Expression Extractors
     Extract minimal expression facts required by the first analysis slice.
 
-    [ ] 2.2.1 Task - Implement call and attribute extraction
+    [x] 2.2.1 Task - Implement call and attribute extraction
       Convert normalized expressions into navigation facts.
 
-      [ ] 2.2.1.1 Subtask - Extract call facts and simple call target syntax.
-      [ ] 2.2.1.2 Subtask - Extract attribute and subscript facts.
-      [ ] 2.2.1.3 Subtask - Mark dynamic or unresolved call targets with confidence metadata.
+      [x] 2.2.1.1 Subtask - Extract call facts and simple call target syntax.
+      [x] 2.2.1.2 Subtask - Extract attribute and subscript facts.
+      [x] 2.2.1.3 Subtask - Mark dynamic or unresolved call targets with confidence metadata.
 
-    [ ] 2.2.2 Task - Preserve diagnostics
+    [x] 2.2.2 Task - Preserve diagnostics
       Accumulate recoverable extraction diagnostics.
 
-      [ ] 2.2.2.1 Subtask - Record unsupported syntax diagnostics.
-      [ ] 2.2.2.2 Subtask - Record unresolved dynamic construct diagnostics.
-      [ ] 2.2.2.3 Subtask - Keep diagnostics structured and source-linked.
+      [x] 2.2.2.1 Subtask - Record unsupported syntax diagnostics.
+      [x] 2.2.2.2 Subtask - Record unresolved dynamic construct diagnostics.
+      [x] 2.2.2.3 Subtask - Keep diagnostics structured and source-linked.
 
   [ ] 2.3 Section - Phase 2 Integration Tests
     Prove first extractors emit facts and do not emit RDF.

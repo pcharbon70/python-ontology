@@ -253,4 +253,22 @@ decisions:
     - python_ontology.extractor_builder_boundary.extractors_emit_facts
     - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
     - python_ontology.extractor_builder_boundary.source_evidence_required
+
+- kind: source_file
+  target: lib/python_ontology/extractors/expressions.ex
+  covers:
+    - python_ontology.extractor_builder_boundary.parser_syntax_only
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.source_evidence_required
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: test/python_ontology/extractors/expressions_test.exs
+  covers:
+    - python_ontology.extractor_builder_boundary.parser_syntax_only
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.source_evidence_required
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
 ```

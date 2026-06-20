@@ -1,4 +1,4 @@
-# covers: python_ontology.ontology_turtle_files.layered_files python_ontology.ontology_turtle_files.namespace_stability python_ontology.ontology_turtle_files.import_direction python_ontology.ontology_turtle_files.python_native_boundaries python_ontology.ontology_turtle_files.bootstrap_validity
+# covers: python_ontology.ontology_turtle_files.layered_files python_ontology.ontology_turtle_files.namespace_stability python_ontology.ontology_turtle_files.import_direction python_ontology.ontology_turtle_files.python_native_boundaries python_ontology.ontology_turtle_files.bootstrap_validity python_ontology.validation_strategy.turtle_parse_gate python_ontology.validation_strategy.owl_open_world python_ontology.validation_strategy.no_validation_by_execution python_ontology.initial_analysis_slice.classes_bases python_ontology.initial_analysis_slice.parameters_defaults python_ontology.initial_analysis_slice.decorators_annotations python_ontology.initial_analysis_slice.out_of_scope_runtime
 @prefix : <https://w3id.org/python-code/structure#> .
 @prefix pycore: <https://w3id.org/python-code/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -34,9 +34,18 @@
 :Parameter a owl:Class ;
     rdfs:label "Parameter"@en .
 
+:BaseClass a owl:Class ;
+    rdfs:subClassOf pycore:Expression ;
+    rdfs:label "Base Class"@en .
+
 :Decorator a owl:Class ;
     rdfs:subClassOf pycore:Expression ;
     rdfs:label "Decorator"@en .
+
+:Annotation a owl:Class ;
+    rdfs:subClassOf pycore:Expression ;
+    rdfs:comment "Syntax-level annotation resource; it does not imply resolved type semantics."@en ;
+    rdfs:label "Annotation"@en .
 
 :Docstring a owl:Class ;
     rdfs:subClassOf pycore:Literal ;
@@ -81,6 +90,25 @@
     rdfs:range :Parameter ;
     rdfs:label "has parameter"@en .
 
+:parameterKind a owl:DatatypeProperty ;
+    rdfs:domain :Parameter ;
+    rdfs:range xsd:string ;
+    rdfs:label "parameter kind"@en .
+
+:defaultText a owl:DatatypeProperty ;
+    rdfs:domain :Parameter ;
+    rdfs:range xsd:string ;
+    rdfs:label "default text"@en .
+
 :hasDecorator a owl:ObjectProperty ;
     rdfs:range :Decorator ;
     rdfs:label "has decorator"@en .
+
+:hasBaseClass a owl:ObjectProperty ;
+    rdfs:domain :Class ;
+    rdfs:range :BaseClass ;
+    rdfs:label "has base class"@en .
+
+:hasAnnotation a owl:ObjectProperty ;
+    rdfs:range :Annotation ;
+    rdfs:label "has annotation"@en .

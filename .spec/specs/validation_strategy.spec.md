@@ -100,6 +100,12 @@ decisions:
     - python_ontology.validation_strategy.turtle_parse_gate
 ```
 
+## Implementation Notes
+
+Authored ontology validation covers both the foundational and structural Turtle files as their
+starter vocabulary expands. The parse gate remains static and does not execute analyzed Python
+project code.
+
 ## Verification
 
 ```spec-verification
@@ -203,6 +209,20 @@ decisions:
   covers:
     - python_ontology.validation_strategy.shacl_closed_world
     - python_ontology.validation_strategy.validation_after_graph_build
+
+- kind: source_file
+  target: priv/ontologies/python-core.ttl
+  covers:
+    - python_ontology.validation_strategy.turtle_parse_gate
+    - python_ontology.validation_strategy.owl_open_world
+    - python_ontology.validation_strategy.no_validation_by_execution
+
+- kind: source_file
+  target: priv/ontologies/python-structure.ttl
+  covers:
+    - python_ontology.validation_strategy.turtle_parse_gate
+    - python_ontology.validation_strategy.owl_open_world
+    - python_ontology.validation_strategy.no_validation_by_execution
 
 - kind: source_file
   target: test/python_ontology/validation/shacl_shape_validation_test.exs

@@ -95,6 +95,12 @@ decisions:
     - python_ontology.normalized_syntax_model.raw_cst_provenance
 ```
 
+## Implementation Notes
+
+Parameter normalization tracks the parameter-list mode implied by `*args` or a bare `*`.
+Ordinary parameters that appear after that marker are represented as `:keyword_only` while
+the vararg and kwarg parameters keep their explicit `:vararg` and `:kwarg` kinds.
+
 ## Verification
 
 ```spec-verification

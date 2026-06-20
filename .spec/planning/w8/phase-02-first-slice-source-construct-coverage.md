@@ -19,22 +19,22 @@ Back to index: [README](./README.md)
 [ ] 2 Phase 2 - First Slice Source Construct Coverage
   Ensure the end-to-end pipeline covers the first committed Python source constructs.
 
-  [ ] 2.1 Section - Structural Construct Coverage
+  [x] 2.1 Section - Structural Construct Coverage
     Validate graph output for ordinary Python declarations.
 
-    [ ] 2.1.1 Task - Cover modules, packages, imports, classes, and functions
+    [x] 2.1.1 Task - Cover modules, packages, imports, classes, and functions
       Prove the most common source structure appears in generated RDF.
 
-      [ ] 2.1.1.1 Subtask - Assert module, package, source file, and source location resources.
-      [ ] 2.1.1.2 Subtask - Assert import, alias, class, and base class resources.
-      [ ] 2.1.1.3 Subtask - Assert function, method, parameter, default, vararg, kwarg, and keyword-only resources.
+      [x] 2.1.1.1 Subtask - Assert module, package, source file, and source location resources.
+      [x] 2.1.1.2 Subtask - Assert import, alias, class, and base class resources.
+      [x] 2.1.1.3 Subtask - Assert function, method, parameter, default, vararg, kwarg, and keyword-only resources.
 
-    [ ] 2.1.2 Task - Cover decorators and annotations
+    [x] 2.1.2 Task - Cover decorators and annotations
       Preserve syntax-level type and decorator information.
 
-      [ ] 2.1.2.1 Subtask - Assert decorator resources on classes and functions.
-      [ ] 2.1.2.2 Subtask - Assert annotation resources on parameters, returns, and variables where supported.
-      [ ] 2.1.2.3 Subtask - Keep annotation facts syntax-level without full type reasoning.
+      [x] 2.1.2.1 Subtask - Assert decorator resources on classes and functions.
+      [x] 2.1.2.2 Subtask - Assert annotation resources on parameters, returns, and variables where supported.
+      [x] 2.1.2.3 Subtask - Keep annotation facts syntax-level without full type reasoning.
 
   [ ] 2.2 Section - Expression Construct Coverage
     Validate minimal expression resources needed for code navigation.

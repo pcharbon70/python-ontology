@@ -93,6 +93,10 @@ defmodule PythonOntology.Builders.RDF do
     span_resource(fact, context, state, &IRI.import_statement/2)
   end
 
+  defp resource_iri(%Fact{kind: :import_alias} = fact, context, _state) do
+    Context.resource(context, ["import-alias", fact.source_id || fact.id, fact.node_id || fact.id])
+  end
+
   defp resource_iri(%Fact{kind: :call} = fact, context, state) do
     span_resource(fact, context, state, &IRI.call/2)
   end
@@ -149,6 +153,7 @@ defmodule PythonOntology.Builders.RDF do
     |> append_literal(context, :structure, :rawText, fact.raw_text)
     |> append_literal(context, :structure, :targetText, fact.target_text)
     |> append_literal(context, :structure, :literalValue, literal_value(fact))
+    |> append_attribute_literals(context, fact)
     |> append_relationships(fact, context, state, resource_iri)
     |> Kernel.++(location)
   end
@@ -211,6 +216,40 @@ defmodule PythonOntology.Builders.RDF do
     end
   end
 
+  defp append_relationships(
+         triples,
+         %Fact{kind: :import_alias} = fact,
+         context,
+         state,
+         resource_iri
+       ) do
+    parent_iri = fact.parent_id && state.resources[fact.parent_id]
+
+    if parent_iri do
+      triples ++
+        [{parent_iri, Context.vocabulary(context, :core, :hasImportAlias), resource_iri}]
+    else
+      triples
+    end
+  end
+
+  defp append_relationships(
+         triples,
+         %Fact{kind: :annotation} = fact,
+         context,
+         state,
+         resource_iri
+       ) do
+    parent_iri = fact.parent_id && state.resources[fact.parent_id]
+
+    if parent_iri do
+      triples ++
+        [{parent_iri, Context.vocabulary(context, :structure, :hasAnnotation), resource_iri}]
+    else
+      triples
+    end
+  end
+
   defp append_relationships(triples, _fact, _context, _state, _resource_iri), do: triples
 
   defp confidence_triples(fact, context, resource_iri, class_iri) do
@@ -265,6 +304,9 @@ defmodule PythonOntology.Builders.RDF do
   defp class_iri(context, %Fact{kind: :module}),
     do: Context.vocabulary(context, :structure, :Module)
 
+  defp class_iri(context, %Fact{kind: :import_alias}),
+    do: Context.vocabulary(context, :core, :ImportAlias)
+
   defp class_iri(context, %Fact{kind: :class}),
     do: Context.vocabulary(context, :structure, :Class)
 
@@ -308,6 +350,26 @@ defmodule PythonOntology.Builders.RDF do
          to_string(value)}
       ]
   end
+
+  defp append_attribute_literals(triples, context, %Fact{kind: :import_alias} = fact) do
+    triples
+    |> append_literal(context, :core, :importName, fact.attributes[:imported_name])
+    |> append_literal(context, :core, :aliasName, fact.attributes[:alias])
+    |> append_literal(context, :core, :bindsName, fact.name)
+  end
+
+  defp append_attribute_literals(triples, context, %Fact{kind: :parameter} = fact) do
+    triples
+    |> append_literal(context, :structure, :parameterKind, fact.attributes[:kind])
+    |> append_literal(context, :structure, :defaultText, fact.attributes[:default])
+    |> append_literal(context, :typing, :annotationText, fact.attributes[:annotation])
+  end
+
+  defp append_attribute_literals(triples, context, %Fact{kind: :annotation} = fact) do
+    append_literal(triples, context, :typing, :annotationText, fact.raw_text)
+  end
+
+  defp append_attribute_literals(triples, _context, %Fact{}), do: triples
 
   defp module_name_literal(%Fact{kind: :module, name: name}), do: name
   defp module_name_literal(%Fact{}), do: nil

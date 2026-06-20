@@ -36,6 +36,10 @@ defmodule PythonOntology.Extractors.StructuralTest do
              Enum.any?(fact.aliases, &(&1.name == "sys" and &1.as == "system"))
            end)
 
+    aliases = Enum.filter(facts, &(&1.kind == :import_alias))
+    assert Enum.any?(aliases, &(&1.name == "system" and &1.attributes.imported_name == "sys"))
+    assert Enum.any?(aliases, &(&1.name == "FilePath" and &1.attributes.imported_name == "Path"))
+
     class = fact(facts, :class)
     assert class.name == "Example"
     assert class.bases == ["Base"]
@@ -52,13 +56,14 @@ defmodule PythonOntology.Extractors.StructuralTest do
              {"self", :positional},
              {"name", :positional},
              {"args", :vararg},
-             {"enabled", :positional},
+             {"enabled", :keyword_only},
              {"kwargs", :kwarg}
            ]
 
     assert Enum.any?(facts, &(&1.kind == :decorator and &1.raw_text == "@decorator(\"value\")"))
     assert Enum.any?(facts, &(&1.kind == :base_class and &1.raw_text == "Base"))
     assert Enum.any?(facts, &(&1.kind == :annotation and &1.raw_text == "str"))
+    assert Enum.any?(facts, &(&1.kind == :annotation and &1.raw_text == "int"))
 
     assert Enum.all?(facts, &match?(%Fact{}, &1))
     refute Enum.any?(facts, &match?({_, _, _}, &1))

@@ -26,6 +26,7 @@ defmodule PythonOntology.PipelinePhase3IntegrationTest do
           :source_file,
           :module,
           :import,
+          :import_alias,
           :class,
           :method,
           :parameter,

@@ -19,22 +19,22 @@ Back to index: [README](./README.md)
 [ ] 2 Phase 2 - Ontology Alignment and Builder Propagation
   Align confidence vocabulary with RDF builder behavior.
 
-  [ ] 2.1 Section - Turtle Vocabulary Review
+  [x] 2.1 Section - Turtle Vocabulary Review
     Ensure authored ontologies can represent confidence categories and evidence.
 
-    [ ] 2.1.1 Task - Review `python-core.ttl`
+    [x] 2.1.1 Task - Review `python-core.ttl`
       Confirm and refine fact confidence vocabulary.
 
-      [ ] 2.1.1.1 Subtask - Confirm classes for source-declared, statically-inferred, unresolved, and runtime-dependent facts.
-      [ ] 2.1.1.2 Subtask - Add object/datatype properties for confidence category and evidence references if needed.
-      [ ] 2.1.1.3 Subtask - Add comments that distinguish static source facts from runtime-dependent facts.
+      [x] 2.1.1.1 Subtask - Confirm classes for source-declared, statically-inferred, unresolved, and runtime-dependent facts.
+      [x] 2.1.1.2 Subtask - Add object/datatype properties for confidence category and evidence references if needed.
+      [x] 2.1.1.3 Subtask - Add comments that distinguish static source facts from runtime-dependent facts.
 
-    [ ] 2.1.2 Task - Align runtime ontology
+    [x] 2.1.2 Task - Align runtime ontology
       Keep dynamic boundaries consistent across core and runtime layers.
 
-      [ ] 2.1.2.1 Subtask - Connect dynamic import, monkey patching, and runtime boundary concepts to confidence categories.
-      [ ] 2.1.2.2 Subtask - Keep runtime-dependent facts queryable without asserting runtime truth.
-      [ ] 2.1.2.3 Subtask - Parse all Turtle files after edits.
+      [x] 2.1.2.1 Subtask - Connect dynamic import, monkey patching, and runtime boundary concepts to confidence categories.
+      [x] 2.1.2.2 Subtask - Keep runtime-dependent facts queryable without asserting runtime truth.
+      [x] 2.1.2.3 Subtask - Parse all Turtle files after edits.
 
   [ ] 2.2 Section - Builder Propagation Helpers
     Prepare builders to emit confidence triples consistently.

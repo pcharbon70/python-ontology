@@ -1773,6 +1773,44 @@
       },
       {
         "covers": [
+          "python_ontology.fact_confidence_model.categories",
+          "python_ontology.fact_confidence_model.unresolved_queryable",
+          "python_ontology.fact_confidence_model.runtime_dependent_boundary",
+          "python_ontology.fact_confidence_model.builder_propagation",
+          "python_ontology.fact_confidence_model.queryable_confidence"
+        ],
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": "priv/ontologies/python-core.ttl"
+      },
+      {
+        "covers": [
+          "python_ontology.fact_confidence_model.runtime_dependent_boundary",
+          "python_ontology.fact_confidence_model.dynamic_construct_marking",
+          "python_ontology.fact_confidence_model.queryable_confidence"
+        ],
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": "priv/ontologies/python-runtime.ttl"
+      },
+      {
+        "covers": [
+          "python_ontology.fact_confidence_model.categories",
+          "python_ontology.fact_confidence_model.unresolved_queryable",
+          "python_ontology.fact_confidence_model.runtime_dependent_boundary",
+          "python_ontology.fact_confidence_model.dynamic_construct_marking",
+          "python_ontology.fact_confidence_model.builder_propagation",
+          "python_ontology.fact_confidence_model.queryable_confidence"
+        ],
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": "test/python_ontology/ontology/confidence_vocabulary_test.exs"
+      },
+      {
+        "covers": [
           "python_ontology.implementation_wave_plan.wave_index",
           "python_ontology.implementation_wave_plan.phase_files",
           "python_ontology.implementation_wave_plan.phase_hierarchy",
@@ -2932,6 +2970,16 @@
       },
       {
         "covers": [
+          "python_ontology.ontology_turtle_files.dynamic_fact_boundary",
+          "python_ontology.ontology_turtle_files.bootstrap_validity"
+        ],
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "test/python_ontology/ontology/confidence_vocabulary_test.exs"
+      },
+      {
+        "covers": [
           "python_ontology.parser.tree_sitter_python_authority",
           "python_ontology.parser.elixir_owned_adapter",
           "python_ontology.parser.no_python_runtime_dependency",
@@ -3237,6 +3285,15 @@
       },
       {
         "covers": [
+          "python_ontology.validation_strategy.command_verification"
+        ],
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "test/python_ontology/ontology/confidence_vocabulary_test.exs"
+      },
+      {
+        "covers": [
           "spec.workspace.readme_present"
         ],
         "file": ".spec/specs/spec_system.spec.md",
@@ -3292,7 +3349,7 @@
     "requirements": 107,
     "scenarios": 17,
     "subjects": 12,
-    "verifications": 141
+    "verifications": 146
   },
   "verification": {
     "claims": [
@@ -3966,6 +4023,160 @@
         "subject_id": "python_ontology.fact_confidence_model",
         "target": "test/python_ontology/confidence/phase1_integration_test.exs",
         "verification_index": 6
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.builder_propagation",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": "priv/ontologies/python-core.ttl",
+        "verification_index": 7
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.categories",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": "priv/ontologies/python-core.ttl",
+        "verification_index": 7
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.queryable_confidence",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": "priv/ontologies/python-core.ttl",
+        "verification_index": 7
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.runtime_dependent_boundary",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": "priv/ontologies/python-core.ttl",
+        "verification_index": 7
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.unresolved_queryable",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": "priv/ontologies/python-core.ttl",
+        "verification_index": 7
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.dynamic_construct_marking",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": "priv/ontologies/python-runtime.ttl",
+        "verification_index": 8
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.queryable_confidence",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": "priv/ontologies/python-runtime.ttl",
+        "verification_index": 8
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.runtime_dependent_boundary",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": "priv/ontologies/python-runtime.ttl",
+        "verification_index": 8
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.builder_propagation",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": "test/python_ontology/ontology/confidence_vocabulary_test.exs",
+        "verification_index": 9
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.categories",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": "test/python_ontology/ontology/confidence_vocabulary_test.exs",
+        "verification_index": 9
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.dynamic_construct_marking",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": "test/python_ontology/ontology/confidence_vocabulary_test.exs",
+        "verification_index": 9
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.queryable_confidence",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": "test/python_ontology/ontology/confidence_vocabulary_test.exs",
+        "verification_index": 9
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.runtime_dependent_boundary",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": "test/python_ontology/ontology/confidence_vocabulary_test.exs",
+        "verification_index": 9
+      },
+      {
+        "cover_id": "python_ontology.fact_confidence_model.unresolved_queryable",
+        "file": ".spec/specs/fact_confidence_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.fact_confidence_model",
+        "target": "test/python_ontology/ontology/confidence_vocabulary_test.exs",
+        "verification_index": 9
       },
       {
         "cover_id": "python_ontology.implementation_wave_plan.adr_traceability",
@@ -8269,6 +8480,28 @@
         "verification_index": 5
       },
       {
+        "cover_id": "python_ontology.ontology_turtle_files.bootstrap_validity",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "test/python_ontology/ontology/confidence_vocabulary_test.exs",
+        "verification_index": 6
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.dynamic_fact_boundary",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "test/python_ontology/ontology/confidence_vocabulary_test.exs",
+        "verification_index": 6
+      },
+      {
         "cover_id": "python_ontology.parser.adapter_boundary",
         "file": ".spec/specs/parser.spec.md",
         "kind": "source_file",
@@ -9688,6 +9921,17 @@
         "verification_index": 0
       },
       {
+        "cover_id": "python_ontology.validation_strategy.command_verification",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "test/python_ontology/ontology/confidence_vocabulary_test.exs",
+        "verification_index": 1
+      },
+      {
         "cover_id": "spec.workspace.readme_present",
         "file": ".spec/specs/spec_system.spec.md",
         "kind": "source_file",
@@ -9759,7 +10003,7 @@
     "strength_summary": {
       "claimed": 17,
       "executed": 0,
-      "linked": 570
+      "linked": 587
     },
     "threshold_failures": 0
   },

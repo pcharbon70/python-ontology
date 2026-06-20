@@ -1,4 +1,4 @@
-# covers: python_ontology.ontology_turtle_files.files_present python_ontology.ontology_turtle_files.layered_files python_ontology.ontology_turtle_files.namespace_stability python_ontology.ontology_turtle_files.python_native_boundaries python_ontology.ontology_turtle_files.dynamic_fact_boundary python_ontology.ontology_turtle_files.bootstrap_validity
+# covers: python_ontology.ontology_turtle_files.files_present python_ontology.ontology_turtle_files.layered_files python_ontology.ontology_turtle_files.namespace_stability python_ontology.ontology_turtle_files.python_native_boundaries python_ontology.ontology_turtle_files.dynamic_fact_boundary python_ontology.ontology_turtle_files.bootstrap_validity python_ontology.fact_confidence_model.categories python_ontology.fact_confidence_model.unresolved_queryable python_ontology.fact_confidence_model.runtime_dependent_boundary python_ontology.fact_confidence_model.builder_propagation python_ontology.fact_confidence_model.queryable_confidence
 @prefix : <https://w3id.org/python-code/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -63,23 +63,47 @@
     rdfs:label "Binding"@en .
 
 :FactAssertion a owl:Class ;
+    rdfs:comment "A generated assertion about Python source, annotated with confidence and evidence so consumers can query certainty explicitly."@en ;
     rdfs:label "Fact Assertion"@en .
 
 :SourceDeclaredFact a owl:Class ;
     rdfs:subClassOf :FactAssertion ;
+    rdfs:comment "A fact directly present in parsed source syntax."@en ;
     rdfs:label "Source Declared Fact"@en .
 
 :StaticallyInferredFact a owl:Class ;
     rdfs:subClassOf :FactAssertion ;
+    rdfs:comment "A fact derived by deterministic static analysis from source-declared evidence."@en ;
     rdfs:label "Statically Inferred Fact"@en .
 
 :UnresolvedFact a owl:Class ;
     rdfs:subClassOf :FactAssertion ;
+    rdfs:comment "A relevant fact that was recognized but could not be resolved statically."@en ;
     rdfs:label "Unresolved Fact"@en .
 
 :RuntimeDependentFact a owl:Class ;
     rdfs:subClassOf :FactAssertion ;
+    rdfs:comment "A fact whose truth depends on executing Python code or observing runtime state."@en ;
     rdfs:label "Runtime Dependent Fact"@en .
+
+:Evidence a owl:Class ;
+    rdfs:label "Evidence"@en .
+
+:SourceEvidence a owl:Class ;
+    rdfs:subClassOf :Evidence ;
+    rdfs:label "Source Evidence"@en .
+
+:InferenceEvidence a owl:Class ;
+    rdfs:subClassOf :Evidence ;
+    rdfs:label "Inference Evidence"@en .
+
+:UnresolvedEvidence a owl:Class ;
+    rdfs:subClassOf :Evidence ;
+    rdfs:label "Unresolved Evidence"@en .
+
+:RuntimeEvidence a owl:Class ;
+    rdfs:subClassOf :Evidence ;
+    rdfs:label "Runtime Evidence"@en .
 
 :hasLocation a owl:ObjectProperty ;
     rdfs:domain :PythonCodeElement ;
@@ -105,3 +129,28 @@
     rdfs:domain :Binding ;
     rdfs:range xsd:string ;
     rdfs:label "binds name"@en .
+
+:confidenceCategory a owl:DatatypeProperty ;
+    rdfs:domain :FactAssertion ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Machine-readable confidence category such as source_declared, statically_inferred, unresolved, or runtime_dependent."@en ;
+    rdfs:label "confidence category"@en .
+
+:hasEvidence a owl:ObjectProperty ;
+    rdfs:domain :FactAssertion ;
+    rdfs:range :Evidence ;
+    rdfs:label "has evidence"@en .
+
+:evidenceKind a owl:DatatypeProperty ;
+    rdfs:domain :Evidence ;
+    rdfs:range xsd:string ;
+    rdfs:label "evidence kind"@en .
+
+:evidenceReason a owl:DatatypeProperty ;
+    rdfs:domain :Evidence ;
+    rdfs:range xsd:string ;
+    rdfs:label "evidence reason"@en .
+
+:evidenceSource a owl:ObjectProperty ;
+    rdfs:domain :Evidence ;
+    rdfs:label "evidence source"@en .

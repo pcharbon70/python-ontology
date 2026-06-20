@@ -17,7 +17,7 @@ Back to index: [README](./README.md)
 - Turtle serialization is parseable.
 - SHACL validation runs after graph building.
 
-[ ] 3 Phase 3 - End-to-End Turtle Output and Acceptance
+[x] 3 Phase 3 - End-to-End Turtle Output and Acceptance
   Prove the first slice works from Python source input to validated Turtle output.
 
   [x] 3.1 Section - Turtle Serialization
@@ -47,12 +47,12 @@ Back to index: [README](./README.md)
       [x] 3.2.2.2 Subtask - Analyze the fixture project through the Mix task.
       [x] 3.2.2.3 Subtask - Assert output graph, Turtle serialization, validation status, and diagnostics.
 
-  [ ] 3.3 Section - Phase 3 Integration Tests
+  [x] 3.3 Section - Phase 3 Integration Tests
     Run final first-slice acceptance across formatting, tests, generated output, validation, and SpecLed.
 
-    [ ] 3.3.1 Task - Run final W8 acceptance
+    [x] 3.3.1 Task - Run final W8 acceptance
       Prove the first analysis slice is ready as the implementation foundation.
 
-      [ ] 3.3.1.1 Subtask - Run `mix format --check-formatted`.
-      [ ] 3.3.1.2 Subtask - Run full `mix test`, Turtle parse validation, and generated graph SHACL validation.
-      [ ] 3.3.1.3 Subtask - Run `mix spec.check` and confirm `mix spec.status --no-run-commands` has no warnings or uncovered files.
+      [x] 3.3.1.1 Subtask - Run `mix format --check-formatted`.
+      [x] 3.3.1.2 Subtask - Run full `mix test`, Turtle parse validation, and generated graph SHACL validation.
+      [x] 3.3.1.3 Subtask - Run `mix spec.check` and confirm `mix spec.status --no-run-commands` has no warnings or uncovered files.

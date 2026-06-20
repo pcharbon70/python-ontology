@@ -215,4 +215,28 @@ decisions:
     - python_ontology.fact_confidence_model.runtime_dependent_boundary
     - python_ontology.fact_confidence_model.builder_propagation
     - python_ontology.fact_confidence_model.queryable_confidence
+
+- kind: source_file
+  target: test/fixtures/python_confidence/direct_and_inferred.py
+  covers:
+    - python_ontology.fact_confidence_model.source_declared_default
+    - python_ontology.fact_confidence_model.static_inference_evidence
+
+- kind: source_file
+  target: test/fixtures/python_confidence/dynamic_boundaries.py
+  covers:
+    - python_ontology.fact_confidence_model.unresolved_queryable
+    - python_ontology.fact_confidence_model.runtime_dependent_boundary
+    - python_ontology.fact_confidence_model.dynamic_construct_marking
+    - python_ontology.fact_confidence_model.no_execution_for_confidence
+
+- kind: source_file
+  target: test/python_ontology/confidence/source_fixture_test.exs
+  covers:
+    - python_ontology.fact_confidence_model.source_declared_default
+    - python_ontology.fact_confidence_model.static_inference_evidence
+    - python_ontology.fact_confidence_model.unresolved_queryable
+    - python_ontology.fact_confidence_model.runtime_dependent_boundary
+    - python_ontology.fact_confidence_model.dynamic_construct_marking
+    - python_ontology.fact_confidence_model.no_execution_for_confidence
 ```

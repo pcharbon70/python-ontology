@@ -18,22 +18,22 @@ Back to index: [README](./README.md)
 [ ] 3 Phase 3 - Dynamic Boundary Fixtures and Confidence Acceptance
   Prove confidence behavior with source fixtures that include dynamic Python constructs.
 
-  [ ] 3.1 Section - Source Fixtures For Confidence
+  [x] 3.1 Section - Source Fixtures For Confidence
     Create representative examples of direct, inferred, unresolved, and runtime-dependent facts.
 
-    [ ] 3.1.1 Task - Add direct and inferred fixtures
+    [x] 3.1.1 Task - Add direct and inferred fixtures
       Cover facts that should be source-declared or statically inferred.
 
-      [ ] 3.1.1.1 Subtask - Add fixture for direct imports, class definitions, and function definitions.
-      [ ] 3.1.1.2 Subtask - Add fixture for a bounded static inference such as simple alias resolution when supported.
-      [ ] 3.1.1.3 Subtask - Assert evidence points back to source syntax.
+      [x] 3.1.1.1 Subtask - Add fixture for direct imports, class definitions, and function definitions.
+      [x] 3.1.1.2 Subtask - Add fixture for a bounded static inference such as simple alias resolution when supported.
+      [x] 3.1.1.3 Subtask - Assert evidence points back to source syntax.
 
-    [ ] 3.1.2 Task - Add dynamic fixtures
+    [x] 3.1.2 Task - Add dynamic fixtures
       Cover facts that should not be over-inferred.
 
-      [ ] 3.1.2.1 Subtask - Add fixture for `importlib.import_module(name)`.
-      [ ] 3.1.2.2 Subtask - Add fixtures for `getattr`, `setattr`, decorators, metaclasses, and monkey patching boundaries.
-      [ ] 3.1.2.3 Subtask - Assert unresolved/runtime-dependent facts remain queryable.
+      [x] 3.1.2.1 Subtask - Add fixture for `importlib.import_module(name)`.
+      [x] 3.1.2.2 Subtask - Add fixtures for `getattr`, `setattr`, decorators, metaclasses, and monkey patching boundaries.
+      [x] 3.1.2.3 Subtask - Assert unresolved/runtime-dependent facts remain queryable.
 
   [ ] 3.2 Section - Acceptance Behavior
     Validate confidence categories across parser, extraction, and builder boundaries.

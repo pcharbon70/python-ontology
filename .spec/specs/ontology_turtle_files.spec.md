@@ -115,4 +115,10 @@ decisions:
   covers:
     - python_ontology.ontology_turtle_files.dynamic_fact_boundary
     - python_ontology.ontology_turtle_files.bootstrap_validity
+
+- kind: source_file
+  target: test/python_ontology/confidence/phase2_integration_test.exs
+  covers:
+    - python_ontology.ontology_turtle_files.dynamic_fact_boundary
+    - python_ontology.ontology_turtle_files.bootstrap_validity
 ```

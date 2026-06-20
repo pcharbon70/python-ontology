@@ -16,7 +16,7 @@ Back to index: [README](./README.md)
 - The ontology already contains starter confidence classes.
 - Builders are responsible for RDF propagation.
 
-[ ] 2 Phase 2 - Ontology Alignment and Builder Propagation
+[x] 2 Phase 2 - Ontology Alignment and Builder Propagation
   Align confidence vocabulary with RDF builder behavior.
 
   [x] 2.1 Section - Turtle Vocabulary Review
@@ -46,12 +46,12 @@ Back to index: [README](./README.md)
       [x] 2.2.1.2 Subtask - Add helper for evidence resource links or literals.
       [x] 2.2.1.3 Subtask - Add diagnostics for missing confidence metadata.
 
-  [ ] 2.3 Section - Phase 2 Integration Tests
+  [x] 2.3 Section - Phase 2 Integration Tests
     Prove ontology and builder helpers can represent queryable confidence.
 
-    [ ] 2.3.1 Task - Run confidence RDF checks
+    [x] 2.3.1 Task - Run confidence RDF checks
       Validate Turtle vocabulary and helper output.
 
-      [ ] 2.3.1.1 Subtask - Add tests that confidence helper emits expected triples.
-      [ ] 2.3.1.2 Subtask - Run Turtle parse validation for all ontology files.
-      [ ] 2.3.1.3 Subtask - Run focused confidence RDF tests, full `mix test`, and `mix spec.check`.
+      [x] 2.3.1.1 Subtask - Add tests that confidence helper emits expected triples.
+      [x] 2.3.1.2 Subtask - Run Turtle parse validation for all ontology files.
+      [x] 2.3.1.3 Subtask - Run focused confidence RDF tests, full `mix test`, and `mix spec.check`.

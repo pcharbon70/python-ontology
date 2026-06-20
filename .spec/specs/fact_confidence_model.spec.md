@@ -205,4 +205,14 @@ decisions:
     - python_ontology.fact_confidence_model.runtime_dependent_boundary
     - python_ontology.fact_confidence_model.builder_propagation
     - python_ontology.fact_confidence_model.queryable_confidence
+
+- kind: source_file
+  target: test/python_ontology/confidence/phase2_integration_test.exs
+  covers:
+    - python_ontology.fact_confidence_model.categories
+    - python_ontology.fact_confidence_model.static_inference_evidence
+    - python_ontology.fact_confidence_model.unresolved_queryable
+    - python_ontology.fact_confidence_model.runtime_dependent_boundary
+    - python_ontology.fact_confidence_model.builder_propagation
+    - python_ontology.fact_confidence_model.queryable_confidence
 ```

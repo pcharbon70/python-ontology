@@ -52,6 +52,41 @@ defmodule PythonOntology.IRI do
   defdelegate function(context, opts), to: Identity
 
   @doc """
+  Builds an import statement resource IRI.
+  """
+  defdelegate import_statement(context, opts), to: Identity
+
+  @doc """
+  Builds an assignment resource IRI.
+  """
+  defdelegate assignment(context, opts), to: Identity
+
+  @doc """
+  Builds a call expression resource IRI.
+  """
+  defdelegate call(context, opts), to: Identity
+
+  @doc """
+  Builds an attribute expression resource IRI.
+  """
+  defdelegate attribute(context, opts), to: Identity
+
+  @doc """
+  Builds a subscript expression resource IRI.
+  """
+  defdelegate subscript(context, opts), to: Identity
+
+  @doc """
+  Builds a generic expression resource IRI.
+  """
+  defdelegate expression(context, opts), to: Identity
+
+  @doc """
+  Builds a source location resource IRI.
+  """
+  defdelegate source_location(context, opts), to: Identity
+
+  @doc """
   Returns the ontology document IRI for a Python ontology layer.
   """
   @spec ontology_iri(atom() | String.t()) :: String.t()

@@ -152,6 +152,12 @@ decisions:
     - python_ontology.iri_identity_strategy.shared_iri_helper
 
 - kind: source_file
+  target: lib/python_ontology/iri/fragment.ex
+  covers:
+    - python_ontology.iri_identity_strategy.hash_canonicalization
+    - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
   target: lib/python_ontology/iri/identity.ex
   covers:
     - python_ontology.iri_identity_strategy.configurable_base_iri
@@ -160,6 +166,8 @@ decisions:
     - python_ontology.iri_identity_strategy.class_function_identity
     - python_ontology.iri_identity_strategy.nested_scope_identity
     - python_ontology.iri_identity_strategy.occurrence_disambiguation
+    - python_ontology.iri_identity_strategy.expression_span_identity
+    - python_ontology.iri_identity_strategy.hash_canonicalization
     - python_ontology.iri_identity_strategy.no_runtime_identity_claims
     - python_ontology.iri_identity_strategy.shared_iri_helper
 
@@ -214,5 +222,12 @@ decisions:
     - python_ontology.iri_identity_strategy.nested_scope_identity
     - python_ontology.iri_identity_strategy.occurrence_disambiguation
     - python_ontology.iri_identity_strategy.no_runtime_identity_claims
+    - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: test/python_ontology/iri/span_bound_identity_test.exs
+  covers:
+    - python_ontology.iri_identity_strategy.expression_span_identity
+    - python_ontology.iri_identity_strategy.hash_canonicalization
     - python_ontology.iri_identity_strategy.shared_iri_helper
 ```

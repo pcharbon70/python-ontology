@@ -18,22 +18,22 @@ Back to index: [README](./README.md)
 [ ] 3 Phase 3 - Span-Bound Identity and Builder Adoption
   Add identity helpers for span-bound resources and prepare builders to use the shared strategy.
 
-  [ ] 3.1 Section - Span-Bound Resource Identity
+  [x] 3.1 Section - Span-Bound Resource Identity
     Generate identities for imports, calls, assignments, expressions, and locations.
 
-    [ ] 3.1.1 Task - Implement expression and statement IDs
+    [x] 3.1.1 Task - Implement expression and statement IDs
       Use containing entity and source span as identity inputs.
 
-      [ ] 3.1.1.1 Subtask - Generate import and assignment IDs.
-      [ ] 3.1.1.2 Subtask - Generate call, attribute, subscript, and expression IDs.
-      [ ] 3.1.1.3 Subtask - Generate source-location IDs.
+      [x] 3.1.1.1 Subtask - Generate import and assignment IDs.
+      [x] 3.1.1.2 Subtask - Generate call, attribute, subscript, and expression IDs.
+      [x] 3.1.1.3 Subtask - Generate source-location IDs.
 
-    [ ] 3.1.2 Task - Implement fragment escaping and hashing
+    [x] 3.1.2 Task - Implement fragment escaping and hashing
       Keep generated IRIs valid and deterministic.
 
-      [ ] 3.1.2.1 Subtask - Escape safe short fragments consistently.
-      [ ] 3.1.2.2 Subtask - Hash long or unsafe fragments from documented canonical inputs.
-      [ ] 3.1.2.3 Subtask - Add diagnostics for missing identity inputs.
+      [x] 3.1.2.1 Subtask - Escape safe short fragments consistently.
+      [x] 3.1.2.2 Subtask - Hash long or unsafe fragments from documented canonical inputs.
+      [x] 3.1.2.3 Subtask - Add diagnostics for missing identity inputs.
 
   [ ] 3.2 Section - Builder Adoption Contract
     Prepare RDF builders to use the shared identity helpers.

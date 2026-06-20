@@ -2031,9 +2031,20 @@
       },
       {
         "covers": [
+          "python_ontology.initial_analysis_slice.first_cli_output"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/iri/fragment.ex"
+      },
+      {
+        "covers": [
           "python_ontology.initial_analysis_slice.modules_packages",
+          "python_ontology.initial_analysis_slice.imports_aliases",
           "python_ontology.initial_analysis_slice.classes_bases",
           "python_ontology.initial_analysis_slice.functions_methods",
+          "python_ontology.initial_analysis_slice.calls_attributes",
           "python_ontology.initial_analysis_slice.source_locations",
           "python_ontology.initial_analysis_slice.first_cli_output",
           "python_ontology.initial_analysis_slice.out_of_scope_runtime"
@@ -2122,6 +2133,19 @@
       },
       {
         "covers": [
+          "python_ontology.initial_analysis_slice.imports_aliases",
+          "python_ontology.initial_analysis_slice.calls_attributes",
+          "python_ontology.initial_analysis_slice.source_locations",
+          "python_ontology.initial_analysis_slice.first_cli_output",
+          "python_ontology.initial_analysis_slice.tests_for_slice"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/iri/span_bound_identity_test.exs"
+      },
+      {
+        "covers": [
           "python_ontology.iri_identity_strategy.namespace_resource_separation",
           "python_ontology.iri_identity_strategy.configurable_base_iri",
           "python_ontology.iri_identity_strategy.stable_path_normalization",
@@ -2187,12 +2211,24 @@
       },
       {
         "covers": [
+          "python_ontology.iri_identity_strategy.hash_canonicalization",
+          "python_ontology.iri_identity_strategy.shared_iri_helper"
+        ],
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": "lib/python_ontology/iri/fragment.ex"
+      },
+      {
+        "covers": [
           "python_ontology.iri_identity_strategy.configurable_base_iri",
           "python_ontology.iri_identity_strategy.stable_path_normalization",
           "python_ontology.iri_identity_strategy.module_package_identity",
           "python_ontology.iri_identity_strategy.class_function_identity",
           "python_ontology.iri_identity_strategy.nested_scope_identity",
           "python_ontology.iri_identity_strategy.occurrence_disambiguation",
+          "python_ontology.iri_identity_strategy.expression_span_identity",
+          "python_ontology.iri_identity_strategy.hash_canonicalization",
           "python_ontology.iri_identity_strategy.no_runtime_identity_claims",
           "python_ontology.iri_identity_strategy.shared_iri_helper"
         ],
@@ -2277,6 +2313,17 @@
         "kind": "source_file",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/phase2_integration_test.exs"
+      },
+      {
+        "covers": [
+          "python_ontology.iri_identity_strategy.expression_span_identity",
+          "python_ontology.iri_identity_strategy.hash_canonicalization",
+          "python_ontology.iri_identity_strategy.shared_iri_helper"
+        ],
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": "test/python_ontology/iri/span_bound_identity_test.exs"
       },
       {
         "covers": [
@@ -3009,7 +3056,7 @@
     "requirements": 107,
     "scenarios": 17,
     "subjects": 12,
-    "verifications": 116
+    "verifications": 120
   },
   "verification": {
     "claims": [
@@ -4323,6 +4370,28 @@
         "verification_index": 32
       },
       {
+        "cover_id": "python_ontology.initial_analysis_slice.first_cli_output",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/iri/fragment.ex",
+        "verification_index": 33
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.calls_attributes",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/iri/identity.ex",
+        "verification_index": 34
+      },
+      {
         "cover_id": "python_ontology.initial_analysis_slice.classes_bases",
         "file": ".spec/specs/initial_analysis_slice.spec.md",
         "kind": "source_file",
@@ -4331,7 +4400,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "lib/python_ontology/iri/identity.ex",
-        "verification_index": 33
+        "verification_index": 34
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.first_cli_output",
@@ -4342,7 +4411,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "lib/python_ontology/iri/identity.ex",
-        "verification_index": 33
+        "verification_index": 34
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.functions_methods",
@@ -4353,7 +4422,18 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "lib/python_ontology/iri/identity.ex",
-        "verification_index": 33
+        "verification_index": 34
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.imports_aliases",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/iri/identity.ex",
+        "verification_index": 34
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.modules_packages",
@@ -4364,7 +4444,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "lib/python_ontology/iri/identity.ex",
-        "verification_index": 33
+        "verification_index": 34
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
@@ -4375,7 +4455,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "lib/python_ontology/iri/identity.ex",
-        "verification_index": 33
+        "verification_index": 34
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.source_locations",
@@ -4386,7 +4466,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "lib/python_ontology/iri/identity.ex",
-        "verification_index": 33
+        "verification_index": 34
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.first_cli_output",
@@ -4397,7 +4477,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/base_iri_test.exs",
-        "verification_index": 34
+        "verification_index": 35
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
@@ -4408,7 +4488,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/base_iri_test.exs",
-        "verification_index": 34
+        "verification_index": 35
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.source_locations",
@@ -4419,7 +4499,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/base_iri_test.exs",
-        "verification_index": 34
+        "verification_index": 35
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
@@ -4430,7 +4510,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/base_iri_test.exs",
-        "verification_index": 34
+        "verification_index": 35
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.first_cli_output",
@@ -4441,7 +4521,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/path_test.exs",
-        "verification_index": 35
+        "verification_index": 36
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.source_locations",
@@ -4452,7 +4532,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/path_test.exs",
-        "verification_index": 35
+        "verification_index": 36
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
@@ -4463,7 +4543,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/path_test.exs",
-        "verification_index": 35
+        "verification_index": 36
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.first_cli_output",
@@ -4474,7 +4554,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/phase1_integration_test.exs",
-        "verification_index": 36
+        "verification_index": 37
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
@@ -4485,7 +4565,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/phase1_integration_test.exs",
-        "verification_index": 36
+        "verification_index": 37
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.source_locations",
@@ -4496,7 +4576,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/phase1_integration_test.exs",
-        "verification_index": 36
+        "verification_index": 37
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
@@ -4507,7 +4587,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/phase1_integration_test.exs",
-        "verification_index": 36
+        "verification_index": 37
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.first_cli_output",
@@ -4518,7 +4598,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/structural_container_identity_test.exs",
-        "verification_index": 37
+        "verification_index": 38
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.modules_packages",
@@ -4529,7 +4609,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/structural_container_identity_test.exs",
-        "verification_index": 37
+        "verification_index": 38
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
@@ -4540,7 +4620,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/structural_container_identity_test.exs",
-        "verification_index": 37
+        "verification_index": 38
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.source_locations",
@@ -4551,7 +4631,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/structural_container_identity_test.exs",
-        "verification_index": 37
+        "verification_index": 38
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
@@ -4562,7 +4642,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/structural_container_identity_test.exs",
-        "verification_index": 37
+        "verification_index": 38
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.classes_bases",
@@ -4573,7 +4653,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/structural_declaration_identity_test.exs",
-        "verification_index": 38
+        "verification_index": 39
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.first_cli_output",
@@ -4584,7 +4664,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/structural_declaration_identity_test.exs",
-        "verification_index": 38
+        "verification_index": 39
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.functions_methods",
@@ -4595,7 +4675,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/structural_declaration_identity_test.exs",
-        "verification_index": 38
+        "verification_index": 39
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
@@ -4606,7 +4686,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/structural_declaration_identity_test.exs",
-        "verification_index": 38
+        "verification_index": 39
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.source_locations",
@@ -4617,7 +4697,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/structural_declaration_identity_test.exs",
-        "verification_index": 38
+        "verification_index": 39
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
@@ -4628,7 +4708,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/structural_declaration_identity_test.exs",
-        "verification_index": 38
+        "verification_index": 39
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.classes_bases",
@@ -4639,7 +4719,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/phase2_integration_test.exs",
-        "verification_index": 39
+        "verification_index": 40
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.first_cli_output",
@@ -4650,7 +4730,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/phase2_integration_test.exs",
-        "verification_index": 39
+        "verification_index": 40
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.functions_methods",
@@ -4661,7 +4741,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/phase2_integration_test.exs",
-        "verification_index": 39
+        "verification_index": 40
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.modules_packages",
@@ -4672,7 +4752,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/phase2_integration_test.exs",
-        "verification_index": 39
+        "verification_index": 40
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
@@ -4683,7 +4763,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/phase2_integration_test.exs",
-        "verification_index": 39
+        "verification_index": 40
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.source_locations",
@@ -4694,7 +4774,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/phase2_integration_test.exs",
-        "verification_index": 39
+        "verification_index": 40
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
@@ -4705,7 +4785,62 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/iri/phase2_integration_test.exs",
-        "verification_index": 39
+        "verification_index": 40
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.calls_attributes",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/iri/span_bound_identity_test.exs",
+        "verification_index": 41
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.first_cli_output",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/iri/span_bound_identity_test.exs",
+        "verification_index": 41
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.imports_aliases",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/iri/span_bound_identity_test.exs",
+        "verification_index": 41
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.source_locations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/iri/span_bound_identity_test.exs",
+        "verification_index": 41
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/iri/span_bound_identity_test.exs",
+        "verification_index": 41
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.class_function_identity",
@@ -4983,69 +5118,14 @@
         "verification_index": 4
       },
       {
-        "cover_id": "python_ontology.iri_identity_strategy.class_function_identity",
+        "cover_id": "python_ontology.iri_identity_strategy.hash_canonicalization",
         "file": ".spec/specs/iri_identity_strategy.spec.md",
         "kind": "source_file",
         "meets_minimum": true,
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
-        "target": "lib/python_ontology/iri/identity.ex",
-        "verification_index": 5
-      },
-      {
-        "cover_id": "python_ontology.iri_identity_strategy.configurable_base_iri",
-        "file": ".spec/specs/iri_identity_strategy.spec.md",
-        "kind": "source_file",
-        "meets_minimum": true,
-        "required_strength": "claimed",
-        "strength": "linked",
-        "subject_id": "python_ontology.iri_identity_strategy",
-        "target": "lib/python_ontology/iri/identity.ex",
-        "verification_index": 5
-      },
-      {
-        "cover_id": "python_ontology.iri_identity_strategy.module_package_identity",
-        "file": ".spec/specs/iri_identity_strategy.spec.md",
-        "kind": "source_file",
-        "meets_minimum": true,
-        "required_strength": "claimed",
-        "strength": "linked",
-        "subject_id": "python_ontology.iri_identity_strategy",
-        "target": "lib/python_ontology/iri/identity.ex",
-        "verification_index": 5
-      },
-      {
-        "cover_id": "python_ontology.iri_identity_strategy.nested_scope_identity",
-        "file": ".spec/specs/iri_identity_strategy.spec.md",
-        "kind": "source_file",
-        "meets_minimum": true,
-        "required_strength": "claimed",
-        "strength": "linked",
-        "subject_id": "python_ontology.iri_identity_strategy",
-        "target": "lib/python_ontology/iri/identity.ex",
-        "verification_index": 5
-      },
-      {
-        "cover_id": "python_ontology.iri_identity_strategy.no_runtime_identity_claims",
-        "file": ".spec/specs/iri_identity_strategy.spec.md",
-        "kind": "source_file",
-        "meets_minimum": true,
-        "required_strength": "claimed",
-        "strength": "linked",
-        "subject_id": "python_ontology.iri_identity_strategy",
-        "target": "lib/python_ontology/iri/identity.ex",
-        "verification_index": 5
-      },
-      {
-        "cover_id": "python_ontology.iri_identity_strategy.occurrence_disambiguation",
-        "file": ".spec/specs/iri_identity_strategy.spec.md",
-        "kind": "source_file",
-        "meets_minimum": true,
-        "required_strength": "claimed",
-        "strength": "linked",
-        "subject_id": "python_ontology.iri_identity_strategy",
-        "target": "lib/python_ontology/iri/identity.ex",
+        "target": "lib/python_ontology/iri/fragment.ex",
         "verification_index": 5
       },
       {
@@ -5056,8 +5136,107 @@
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
-        "target": "lib/python_ontology/iri/identity.ex",
+        "target": "lib/python_ontology/iri/fragment.ex",
         "verification_index": 5
+      },
+      {
+        "cover_id": "python_ontology.iri_identity_strategy.class_function_identity",
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": "lib/python_ontology/iri/identity.ex",
+        "verification_index": 6
+      },
+      {
+        "cover_id": "python_ontology.iri_identity_strategy.configurable_base_iri",
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": "lib/python_ontology/iri/identity.ex",
+        "verification_index": 6
+      },
+      {
+        "cover_id": "python_ontology.iri_identity_strategy.expression_span_identity",
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": "lib/python_ontology/iri/identity.ex",
+        "verification_index": 6
+      },
+      {
+        "cover_id": "python_ontology.iri_identity_strategy.hash_canonicalization",
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": "lib/python_ontology/iri/identity.ex",
+        "verification_index": 6
+      },
+      {
+        "cover_id": "python_ontology.iri_identity_strategy.module_package_identity",
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": "lib/python_ontology/iri/identity.ex",
+        "verification_index": 6
+      },
+      {
+        "cover_id": "python_ontology.iri_identity_strategy.nested_scope_identity",
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": "lib/python_ontology/iri/identity.ex",
+        "verification_index": 6
+      },
+      {
+        "cover_id": "python_ontology.iri_identity_strategy.no_runtime_identity_claims",
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": "lib/python_ontology/iri/identity.ex",
+        "verification_index": 6
+      },
+      {
+        "cover_id": "python_ontology.iri_identity_strategy.occurrence_disambiguation",
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": "lib/python_ontology/iri/identity.ex",
+        "verification_index": 6
+      },
+      {
+        "cover_id": "python_ontology.iri_identity_strategy.shared_iri_helper",
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": "lib/python_ontology/iri/identity.ex",
+        "verification_index": 6
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.stable_path_normalization",
@@ -5068,7 +5247,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "lib/python_ontology/iri/identity.ex",
-        "verification_index": 5
+        "verification_index": 6
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.configurable_base_iri",
@@ -5079,7 +5258,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/base_iri_test.exs",
-        "verification_index": 6
+        "verification_index": 7
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.namespace_resource_separation",
@@ -5090,7 +5269,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/base_iri_test.exs",
-        "verification_index": 6
+        "verification_index": 7
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.no_runtime_identity_claims",
@@ -5101,7 +5280,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/base_iri_test.exs",
-        "verification_index": 6
+        "verification_index": 7
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.shared_iri_helper",
@@ -5112,7 +5291,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/base_iri_test.exs",
-        "verification_index": 6
+        "verification_index": 7
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.shared_iri_helper",
@@ -5123,7 +5302,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/path_test.exs",
-        "verification_index": 7
+        "verification_index": 8
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.stable_path_normalization",
@@ -5134,7 +5313,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/path_test.exs",
-        "verification_index": 7
+        "verification_index": 8
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.configurable_base_iri",
@@ -5145,7 +5324,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/phase1_integration_test.exs",
-        "verification_index": 8
+        "verification_index": 9
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.namespace_resource_separation",
@@ -5156,7 +5335,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/phase1_integration_test.exs",
-        "verification_index": 8
+        "verification_index": 9
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.shared_iri_helper",
@@ -5167,7 +5346,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/phase1_integration_test.exs",
-        "verification_index": 8
+        "verification_index": 9
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.stable_path_normalization",
@@ -5178,7 +5357,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/phase1_integration_test.exs",
-        "verification_index": 8
+        "verification_index": 9
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.configurable_base_iri",
@@ -5189,7 +5368,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/structural_container_identity_test.exs",
-        "verification_index": 9
+        "verification_index": 10
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.module_package_identity",
@@ -5200,7 +5379,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/structural_container_identity_test.exs",
-        "verification_index": 9
+        "verification_index": 10
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.no_runtime_identity_claims",
@@ -5211,7 +5390,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/structural_container_identity_test.exs",
-        "verification_index": 9
+        "verification_index": 10
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.shared_iri_helper",
@@ -5222,7 +5401,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/structural_container_identity_test.exs",
-        "verification_index": 9
+        "verification_index": 10
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.stable_path_normalization",
@@ -5233,7 +5412,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/structural_container_identity_test.exs",
-        "verification_index": 9
+        "verification_index": 10
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.class_function_identity",
@@ -5244,7 +5423,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/structural_declaration_identity_test.exs",
-        "verification_index": 10
+        "verification_index": 11
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.configurable_base_iri",
@@ -5255,7 +5434,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/structural_declaration_identity_test.exs",
-        "verification_index": 10
+        "verification_index": 11
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.nested_scope_identity",
@@ -5266,7 +5445,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/structural_declaration_identity_test.exs",
-        "verification_index": 10
+        "verification_index": 11
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.no_runtime_identity_claims",
@@ -5277,7 +5456,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/structural_declaration_identity_test.exs",
-        "verification_index": 10
+        "verification_index": 11
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.occurrence_disambiguation",
@@ -5288,7 +5467,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/structural_declaration_identity_test.exs",
-        "verification_index": 10
+        "verification_index": 11
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.shared_iri_helper",
@@ -5299,7 +5478,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/structural_declaration_identity_test.exs",
-        "verification_index": 10
+        "verification_index": 11
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.class_function_identity",
@@ -5310,7 +5489,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/phase2_integration_test.exs",
-        "verification_index": 11
+        "verification_index": 12
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.configurable_base_iri",
@@ -5321,7 +5500,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/phase2_integration_test.exs",
-        "verification_index": 11
+        "verification_index": 12
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.module_package_identity",
@@ -5332,7 +5511,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/phase2_integration_test.exs",
-        "verification_index": 11
+        "verification_index": 12
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.nested_scope_identity",
@@ -5343,7 +5522,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/phase2_integration_test.exs",
-        "verification_index": 11
+        "verification_index": 12
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.no_runtime_identity_claims",
@@ -5354,7 +5533,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/phase2_integration_test.exs",
-        "verification_index": 11
+        "verification_index": 12
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.occurrence_disambiguation",
@@ -5365,7 +5544,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/phase2_integration_test.exs",
-        "verification_index": 11
+        "verification_index": 12
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.shared_iri_helper",
@@ -5376,7 +5555,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/phase2_integration_test.exs",
-        "verification_index": 11
+        "verification_index": 12
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.stable_path_normalization",
@@ -5387,7 +5566,40 @@
         "strength": "linked",
         "subject_id": "python_ontology.iri_identity_strategy",
         "target": "test/python_ontology/iri/phase2_integration_test.exs",
-        "verification_index": 11
+        "verification_index": 12
+      },
+      {
+        "cover_id": "python_ontology.iri_identity_strategy.expression_span_identity",
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": "test/python_ontology/iri/span_bound_identity_test.exs",
+        "verification_index": 13
+      },
+      {
+        "cover_id": "python_ontology.iri_identity_strategy.hash_canonicalization",
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": "test/python_ontology/iri/span_bound_identity_test.exs",
+        "verification_index": 13
+      },
+      {
+        "cover_id": "python_ontology.iri_identity_strategy.shared_iri_helper",
+        "file": ".spec/specs/iri_identity_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.iri_identity_strategy",
+        "target": "test/python_ontology/iri/span_bound_identity_test.exs",
+        "verification_index": 13
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.deterministic_normalization",
@@ -8563,7 +8775,7 @@
     "strength_summary": {
       "claimed": 17,
       "executed": 0,
-      "linked": 487
+      "linked": 502
     },
     "threshold_failures": 0
   },

@@ -1,9 +1,10 @@
-# covers: python_ontology.iri_identity_strategy.configurable_base_iri python_ontology.iri_identity_strategy.stable_path_normalization python_ontology.iri_identity_strategy.module_package_identity python_ontology.iri_identity_strategy.class_function_identity python_ontology.iri_identity_strategy.nested_scope_identity python_ontology.iri_identity_strategy.occurrence_disambiguation python_ontology.iri_identity_strategy.no_runtime_identity_claims python_ontology.iri_identity_strategy.shared_iri_helper python_ontology.initial_analysis_slice.modules_packages python_ontology.initial_analysis_slice.classes_bases python_ontology.initial_analysis_slice.functions_methods python_ontology.initial_analysis_slice.source_locations python_ontology.initial_analysis_slice.first_cli_output python_ontology.initial_analysis_slice.out_of_scope_runtime
+# covers: python_ontology.iri_identity_strategy.configurable_base_iri python_ontology.iri_identity_strategy.stable_path_normalization python_ontology.iri_identity_strategy.module_package_identity python_ontology.iri_identity_strategy.class_function_identity python_ontology.iri_identity_strategy.nested_scope_identity python_ontology.iri_identity_strategy.occurrence_disambiguation python_ontology.iri_identity_strategy.expression_span_identity python_ontology.iri_identity_strategy.hash_canonicalization python_ontology.iri_identity_strategy.no_runtime_identity_claims python_ontology.iri_identity_strategy.shared_iri_helper python_ontology.initial_analysis_slice.modules_packages python_ontology.initial_analysis_slice.imports_aliases python_ontology.initial_analysis_slice.classes_bases python_ontology.initial_analysis_slice.functions_methods python_ontology.initial_analysis_slice.calls_attributes python_ontology.initial_analysis_slice.source_locations python_ontology.initial_analysis_slice.first_cli_output python_ontology.initial_analysis_slice.out_of_scope_runtime
 defmodule PythonOntology.IRI.Identity do
   @moduledoc false
 
   alias PythonOntology.IRI.Context
   alias PythonOntology.IRI.Diagnostic
+  alias PythonOntology.IRI.Fragment
   alias PythonOntology.IRI.Path
 
   @doc false
@@ -45,6 +46,30 @@ defmodule PythonOntology.IRI.Identity do
       build_from(module_iri, [kind] ++ lexical_path ++ disambiguation_segments(opts))
     end
   end
+
+  @doc false
+  def import_statement(%Context{} = _context, opts), do: span_bound_resource(opts, "import")
+
+  @doc false
+  def assignment(%Context{} = _context, opts), do: span_bound_resource(opts, "assignment")
+
+  @doc false
+  def call(%Context{} = _context, opts), do: span_bound_resource(opts, "call")
+
+  @doc false
+  def attribute(%Context{} = _context, opts), do: span_bound_resource(opts, "attribute")
+
+  @doc false
+  def subscript(%Context{} = _context, opts), do: span_bound_resource(opts, "subscript")
+
+  @doc false
+  def expression(%Context{} = _context, opts) do
+    expression_kind = Keyword.get(opts, :kind, "expression")
+    span_bound_resource(opts, ["expression", expression_kind])
+  end
+
+  @doc false
+  def source_location(%Context{} = _context, opts), do: span_bound_resource(opts, "location")
 
   defp package_path_segments(context, :regular, opts) do
     with {:ok, source_path} <- required_path(context, opts, :source_path) do
@@ -135,6 +160,30 @@ defmodule PythonOntology.IRI.Identity do
   defp span_bytes(%{start_byte: start_byte, end_byte: end_byte}), do: {start_byte, end_byte}
   defp span_bytes(_span), do: nil
 
+  defp span_bound_resource(opts, kind) do
+    with {:ok, container_iri} <- required_string(opts, :container_iri),
+         {:ok, span_segment} <- required_span_segment(opts) do
+      kind_segments = List.wrap(kind)
+      build_from(container_iri, kind_segments ++ [span_segment])
+    end
+  end
+
+  defp required_span_segment(opts) do
+    case Keyword.fetch(opts, :span) do
+      {:ok, span} ->
+        case span_bytes(span) do
+          {start_byte, end_byte} ->
+            {:ok, "b#{start_byte}-#{end_byte}"}
+
+          nil ->
+            identity_error(:span, span, "span must include byte start and end")
+        end
+
+      :error ->
+        identity_error(:span, nil, "span is required")
+    end
+  end
+
   defp required_path(context, opts, key) do
     with {:ok, value} <- required_string(opts, key) do
       Path.canonicalize(value, context)
@@ -165,9 +214,5 @@ defmodule PythonOntology.IRI.Identity do
      }}
   end
 
-  defp encode_segment(segment) do
-    segment
-    |> to_string()
-    |> URI.encode(&URI.char_unreserved?/1)
-  end
+  defp encode_segment(segment), do: Fragment.encode(segment)
 end

@@ -16,7 +16,7 @@ Back to index: [README](./README.md)
 - Parser APIs return tagged results instead of raising for parse errors.
 - Source identity and spans must be preserved before normalization.
 
-[ ] 2 Phase 2 - Parser API, Metadata, and Source Spans
+[x] 2 Phase 2 - Parser API, Metadata, and Source Spans
   Expose the Elixir parser API that callers and normalization will use.
 
   [x] 2.1 Section - Parser Entry Points
@@ -53,12 +53,12 @@ Back to index: [README](./README.md)
       [x] 2.2.2.2 Subtask - Extract row/column start/end positions for representative nodes.
       [x] 2.2.2.3 Subtask - Preserve child order and field names when available.
 
-  [ ] 2.3 Section - Phase 2 Integration Tests
+  [x] 2.3 Section - Phase 2 Integration Tests
     Validate parser API behavior and span preservation against representative source.
 
-    [ ] 2.3.1 Task - Run parser API checks
+    [x] 2.3.1 Task - Run parser API checks
       Prove source parsing and file parsing produce deterministic metadata and spans.
 
-      [ ] 2.3.1.1 Subtask - Add tests for `parse_string/2` with imports, class, function, and call syntax.
-      [ ] 2.3.1.2 Subtask - Add tests for `parse_file/2` success and file-read diagnostics.
-      [ ] 2.3.1.3 Subtask - Run focused parser API tests, full `mix test`, and `mix spec.check`.
+      [x] 2.3.1.1 Subtask - Add tests for `parse_string/2` with imports, class, function, and call syntax.
+      [x] 2.3.1.2 Subtask - Add tests for `parse_file/2` success and file-read diagnostics.
+      [x] 2.3.1.3 Subtask - Run focused parser API tests, full `mix test`, and `mix spec.check`.

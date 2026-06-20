@@ -103,6 +103,33 @@ defmodule PythonOntology.ParserTest do
     assert Enum.find(function_definition.children, &(&1.field_name == "body")).kind == "block"
   end
 
+  test "parse_string/2 covers representative Python source constructs" do
+    source = """
+    import os
+    from pkg import thing as alias
+
+    @decorator
+    class Example(Base):
+        def method(self, value: int = 1) -> str:
+            return alias(value).name
+    """
+
+    assert {:ok, %Result{} = result} =
+             Parser.parse_string(source, source_id: "memory://representative.py")
+
+    kinds = flatten_kinds(result.root)
+
+    assert "import_statement" in kinds
+    assert "import_from_statement" in kinds
+    assert "decorated_definition" in kinds
+    assert "class_definition" in kinds
+    assert "function_definition" in kinds
+    assert "typed_default_parameter" in kinds
+    assert "call" in kinds
+    assert "attribute" in kinds
+    refute result.has_error
+  end
+
   defp fixture_path(name) do
     Path.join([System.tmp_dir!(), "python_ontology_parser_test", name])
     |> tap(&File.mkdir_p!(Path.dirname(&1)))
@@ -112,5 +139,9 @@ defmodule PythonOntology.ParserTest do
     fixture_path(name)
     |> Path.dirname()
     |> File.rm_rf()
+  end
+
+  defp flatten_kinds(node) do
+    [node.kind | Enum.flat_map(node.children, &flatten_kinds/1)]
   end
 end

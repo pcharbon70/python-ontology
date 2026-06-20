@@ -329,6 +329,12 @@ decisions:
     - python_ontology.initial_analysis_slice.first_cli_output
 
 - kind: source_file
+  target: lib/python_ontology/iri/builder.ex
+  covers:
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
   target: lib/python_ontology/iri/identity.ex
   covers:
     - python_ontology.initial_analysis_slice.modules_packages
@@ -400,5 +406,12 @@ decisions:
     - python_ontology.initial_analysis_slice.calls_attributes
     - python_ontology.initial_analysis_slice.source_locations
     - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/iri/builder_contract_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
     - python_ontology.initial_analysis_slice.tests_for_slice
 ```

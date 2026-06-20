@@ -35,15 +35,15 @@ Back to index: [README](./README.md)
       [x] 3.1.2.2 Subtask - Hash long or unsafe fragments from documented canonical inputs.
       [x] 3.1.2.3 Subtask - Add diagnostics for missing identity inputs.
 
-  [ ] 3.2 Section - Builder Adoption Contract
+  [x] 3.2 Section - Builder Adoption Contract
     Prepare RDF builders to use the shared identity helpers.
 
-    [ ] 3.2.1 Task - Add builder helper API
+    [x] 3.2.1 Task - Add builder helper API
       Expose helper functions expected by future builders.
 
-      [ ] 3.2.1.1 Subtask - Add helpers for vocabulary IRIs versus generated resource IRIs.
-      [ ] 3.2.1.2 Subtask - Add helpers for fact resource IRIs.
-      [ ] 3.2.1.3 Subtask - Add tests that builders do not use ad hoc string construction once builders exist.
+      [x] 3.2.1.1 Subtask - Add helpers for vocabulary IRIs versus generated resource IRIs.
+      [x] 3.2.1.2 Subtask - Add helpers for fact resource IRIs.
+      [x] 3.2.1.3 Subtask - Add tests that builders do not use ad hoc string construction once builders exist.
 
   [ ] 3.3 Section - Phase 3 Integration Tests
     Prove span-bound identity works and is ready for builder integration.

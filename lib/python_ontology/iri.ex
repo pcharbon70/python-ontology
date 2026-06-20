@@ -4,6 +4,7 @@ defmodule PythonOntology.IRI do
   Shared IRI helpers for ontology vocabulary and analyzed-code resources.
   """
 
+  alias PythonOntology.IRI.Builder
   alias PythonOntology.IRI.Context
   alias PythonOntology.IRI.Identity
   alias PythonOntology.IRI.Path
@@ -85,6 +86,21 @@ defmodule PythonOntology.IRI do
   Builds a source location resource IRI.
   """
   defdelegate source_location(context, opts), to: Identity
+
+  @doc """
+  Builds a generated analyzed-code resource IRI from canonical segments.
+  """
+  defdelegate resource(context, segments), to: Builder
+
+  @doc """
+  Builds a fact resource IRI.
+  """
+  defdelegate fact(context, opts), to: Builder
+
+  @doc """
+  Returns a builder-facing ontology vocabulary IRI.
+  """
+  defdelegate builder_vocabulary(layer, term), to: Builder, as: :vocabulary
 
   @doc """
   Returns the ontology document IRI for a Python ontology layer.

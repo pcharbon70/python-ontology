@@ -16,7 +16,7 @@ Back to index: [README](./README.md)
 - The parser does not depend on Pythonx, CPython, or project imports.
 - The adapter must expose enough data for normalization to avoid raw parser cursor coupling.
 
-[ ] 1 Phase 1 - Adapter Choice and Dependency Baseline
+[x] 1 Phase 1 - Adapter Choice and Dependency Baseline
   Select and install the first Tree-sitter access path for Python source parsing from Elixir.
 
   [x] 1.1 Section - Candidate Binding Evaluation
@@ -53,12 +53,12 @@ Back to index: [README](./README.md)
       [x] 1.2.2.2 Subtask - Run `mix compile` and capture native build failures as bounded diagnostics.
       [x] 1.2.2.3 Subtask - Document any required system packages or compiler prerequisites.
 
-  [ ] 1.3 Section - Phase 1 Integration Tests
+  [x] 1.3 Section - Phase 1 Integration Tests
     Validate the selected Tree-sitter adapter can be loaded and does not require Python runtime execution.
 
-    [ ] 1.3.1 Task - Run adapter smoke checks
+    [x] 1.3.1 Task - Run adapter smoke checks
       Prove the parser dependency is usable before building higher-level APIs.
 
-      [ ] 1.3.1.1 Subtask - Add a smoke test that loads the adapter and Python grammar.
-      [ ] 1.3.1.2 Subtask - Add a smoke test that parses a one-line Python module without invoking Python.
-      [ ] 1.3.1.3 Subtask - Run `mix format --check-formatted`, focused adapter tests, full `mix test`, and `mix spec.check`.
+      [x] 1.3.1.1 Subtask - Add a smoke test that loads the adapter and Python grammar.
+      [x] 1.3.1.2 Subtask - Add a smoke test that parses a one-line Python module without invoking Python.
+      [x] 1.3.1.3 Subtask - Run `mix format --check-formatted`, focused adapter tests, full `mix test`, and `mix spec.check`.

@@ -19,22 +19,22 @@ Back to index: [README](./README.md)
 [ ] 1 Phase 1 - Public API and Mix Task Surface
   Expose the first end-to-end analysis path to callers.
 
-  [ ] 1.1 Section - Public API
+  [x] 1.1 Section - Public API
     Add stable file and project analysis functions.
 
-    [ ] 1.1.1 Task - Implement file analysis API
+    [x] 1.1.1 Task - Implement file analysis API
       Analyze one Python source file through the full pipeline.
 
-      [ ] 1.1.1.1 Subtask - Add `analyze_file/2` or equivalent.
-      [ ] 1.1.1.2 Subtask - Return graph, diagnostics, selected options, and validation status.
-      [ ] 1.1.1.3 Subtask - Support base IRI and validation options.
+      [x] 1.1.1.1 Subtask - Add `analyze_file/2` or equivalent.
+      [x] 1.1.1.2 Subtask - Return graph, diagnostics, selected options, and validation status.
+      [x] 1.1.1.3 Subtask - Support base IRI and validation options.
 
-    [ ] 1.1.2 Task - Implement project analysis API
+    [x] 1.1.2 Task - Implement project analysis API
       Analyze selected project files through the full pipeline.
 
-      [ ] 1.1.2.1 Subtask - Add `analyze_project/2` or equivalent.
-      [ ] 1.1.2.2 Subtask - Use W5 project discovery for file selection.
-      [ ] 1.1.2.3 Subtask - Merge per-file graphs and diagnostics deterministically.
+      [x] 1.1.2.1 Subtask - Add `analyze_project/2` or equivalent.
+      [x] 1.1.2.2 Subtask - Use W5 project discovery for file selection.
+      [x] 1.1.2.3 Subtask - Merge per-file graphs and diagnostics deterministically.
 
   [ ] 1.2 Section - Mix Task Surface
     Add a command-line analysis path.

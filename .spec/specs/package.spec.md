@@ -45,6 +45,11 @@ decisions:
   priority: must
   stability: stable
 
+- id: package.python_ontology.public_analysis_api
+  statement: The PythonOntology module shall expose stable file and project analysis entrypoints.
+  priority: must
+  stability: evolving
+
 - id: package.python_ontology.test_baseline
   statement: The project shall include an ExUnit baseline that verifies the public namespace behavior.
   priority: must
@@ -71,6 +76,7 @@ decisions:
   target: lib/python_ontology.ex
   covers:
     - package.python_ontology.public_namespace
+    - package.python_ontology.public_analysis_api
 
 - kind: source_file
   target: test/test_helper.exs
@@ -87,7 +93,13 @@ decisions:
   covers:
     - package.python_ontology.mix_project
     - package.python_ontology.public_namespace
+    - package.python_ontology.public_analysis_api
     - package.python_ontology.test_baseline
+
+- kind: source_file
+  target: test/python_ontology/analysis/public_api_test.exs
+  covers:
+    - package.python_ontology.public_analysis_api
 
 - kind: command
   target: mix format --check-formatted

@@ -227,4 +227,13 @@ decisions:
     - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
     - python_ontology.extractor_builder_boundary.source_evidence_required
     - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: test/python_ontology/extractors/phase1_integration_test.exs
+  covers:
+    - python_ontology.extractor_builder_boundary.shared_context
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.source_evidence_required
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
 ```

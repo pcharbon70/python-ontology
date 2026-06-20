@@ -309,4 +309,10 @@ decisions:
     - python_ontology.fact_confidence_model.source_declared_default
     - python_ontology.fact_confidence_model.runtime_dependent_boundary
     - python_ontology.fact_confidence_model.no_execution_for_confidence
+
+- kind: source_file
+  target: test/python_ontology/extractors/phase1_integration_test.exs
+  covers:
+    - python_ontology.fact_confidence_model.categories
+    - python_ontology.fact_confidence_model.source_declared_default
 ```

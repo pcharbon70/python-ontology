@@ -16,7 +16,7 @@ Back to index: [README](./README.md)
 - Builders emit RDF, not parser traversal.
 - Context and diagnostics are explicit data, not process-global state.
 
-[ ] 1 Phase 1 - Contexts, Diagnostics, and Fact Contracts
+[x] 1 Phase 1 - Contexts, Diagnostics, and Fact Contracts
   Define shared contracts for extraction, building, and pipeline diagnostics.
 
   [x] 1.1 Section - Context Models
@@ -53,12 +53,12 @@ Back to index: [README](./README.md)
       [x] 1.2.2.2 Subtask - Include unresolved/runtime-dependent markers.
       [x] 1.2.2.3 Subtask - Keep fact contracts independent from RDF triples.
 
-  [ ] 1.3 Section - Phase 1 Integration Tests
+  [x] 1.3 Section - Phase 1 Integration Tests
     Validate context and fact contracts before extractor logic depends on them.
 
-    [ ] 1.3.1 Task - Run contract checks
+    [x] 1.3.1 Task - Run contract checks
       Prove contexts and facts enforce required metadata.
 
-      [ ] 1.3.1.1 Subtask - Add tests for analysis and builder context construction.
-      [ ] 1.3.1.2 Subtask - Add tests for required fact fields, source evidence, and confidence metadata.
-      [ ] 1.3.1.3 Subtask - Run focused contract tests, full `mix test`, and `mix spec.check`.
+      [x] 1.3.1.1 Subtask - Add tests for analysis and builder context construction.
+      [x] 1.3.1.2 Subtask - Add tests for required fact fields, source evidence, and confidence metadata.
+      [x] 1.3.1.3 Subtask - Run focused contract tests, full `mix test`, and `mix spec.check`.

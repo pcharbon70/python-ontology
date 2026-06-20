@@ -18,22 +18,22 @@ Back to index: [README](./README.md)
 [ ] 2 Phase 2 - Structural Entity Identity Helpers
   Implement package, module, class, function, and nested entity identity helpers.
 
-  [ ] 2.1 Section - Package And Module Identity
+  [x] 2.1 Section - Package And Module Identity
     Generate stable identities for project source containers.
 
-    [ ] 2.1.1 Task - Implement package identity
+    [x] 2.1.1 Task - Implement package identity
       Derive package identity from project discovery and path context.
 
-      [ ] 2.1.1.1 Subtask - Generate regular package IDs from package roots and `__init__.py` paths.
-      [ ] 2.1.1.2 Subtask - Generate namespace package IDs from discovered namespace roots.
-      [ ] 2.1.1.3 Subtask - Include source path fallback for ambiguous package names.
+      [x] 2.1.1.1 Subtask - Generate regular package IDs from package roots and `__init__.py` paths.
+      [x] 2.1.1.2 Subtask - Generate namespace package IDs from discovered namespace roots.
+      [x] 2.1.1.3 Subtask - Include source path fallback for ambiguous package names.
 
-    [ ] 2.1.2 Task - Implement module identity
+    [x] 2.1.2 Task - Implement module identity
       Derive module identity from dotted name and file identity.
 
-      [ ] 2.1.2.1 Subtask - Generate module IDs for ordinary `.py` modules.
-      [ ] 2.1.2.2 Subtask - Generate module IDs for `.pyi` stub modules.
-      [ ] 2.1.2.3 Subtask - Include source path fallback for duplicate or ambiguous modules.
+      [x] 2.1.2.1 Subtask - Generate module IDs for ordinary `.py` modules.
+      [x] 2.1.2.2 Subtask - Generate module IDs for `.pyi` stub modules.
+      [x] 2.1.2.3 Subtask - Include source path fallback for duplicate or ambiguous modules.
 
   [ ] 2.2 Section - Class And Function Identity
     Generate stable lexical identities for Python declarations.

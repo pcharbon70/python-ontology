@@ -5,6 +5,7 @@ defmodule PythonOntology.IRI do
   """
 
   alias PythonOntology.IRI.Context
+  alias PythonOntology.IRI.Identity
   alias PythonOntology.IRI.Path
 
   @ontology_root "https://w3id.org/python-code/"
@@ -29,6 +30,16 @@ defmodule PythonOntology.IRI do
   Converts a source path to a repository-relative POSIX path.
   """
   defdelegate source_path(path, opts \\ []), to: Path, as: :canonicalize
+
+  @doc """
+  Builds a package resource IRI.
+  """
+  defdelegate package(context, opts), to: Identity
+
+  @doc """
+  Builds a module resource IRI.
+  """
+  defdelegate module(context, opts), to: Identity
 
   @doc """
   Returns the ontology document IRI for a Python ontology layer.

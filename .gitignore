@@ -3,6 +3,8 @@
 /deps/
 /doc/
 /.elixir_ls/
+/native/*/target/
+/priv/native/
 erl_crash.dump
 *.ez
 *.beam

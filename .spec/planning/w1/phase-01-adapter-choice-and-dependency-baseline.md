@@ -36,22 +36,22 @@ Back to index: [README](./README.md)
       [x] 1.1.2.2 Subtask - Choose a project-owned NIF only if package bindings cannot satisfy required data access.
       [x] 1.1.2.3 Subtask - Keep the selected adapter behind a project-local behavior or module boundary.
 
-  [ ] 1.2 Section - Dependency And Build Integration
+  [x] 1.2 Section - Dependency And Build Integration
     Add the selected dependency and prove the project still builds reproducibly.
 
-    [ ] 1.2.1 Task - Add dependency and assets
+    [x] 1.2.1 Task - Add dependency and assets
       Introduce the selected parser dependency without adding a Python runtime dependency.
 
-      [ ] 1.2.1.1 Subtask - Update `mix.exs` and lockfile with the selected dependency.
-      [ ] 1.2.1.2 Subtask - Add native or grammar assets under `native/` or `priv/tree_sitter/` only when needed.
-      [ ] 1.2.1.3 Subtask - Ensure generated build artifacts remain ignored and do not enter source control.
+      [x] 1.2.1.1 Subtask - Update `mix.exs` and lockfile with the selected dependency.
+      [x] 1.2.1.2 Subtask - Add native or grammar assets under `native/` or `priv/tree_sitter/` only when needed.
+      [x] 1.2.1.3 Subtask - Ensure generated build artifacts remain ignored and do not enter source control.
 
-    [ ] 1.2.2 Task - Verify clean build behavior
+    [x] 1.2.2 Task - Verify clean build behavior
       Prove the dependency compiles in the local environment.
 
-      [ ] 1.2.2.1 Subtask - Run `mix deps.get` from a clean dependency state.
-      [ ] 1.2.2.2 Subtask - Run `mix compile` and capture native build failures as bounded diagnostics.
-      [ ] 1.2.2.3 Subtask - Document any required system packages or compiler prerequisites.
+      [x] 1.2.2.1 Subtask - Run `mix deps.get` from a clean dependency state.
+      [x] 1.2.2.2 Subtask - Run `mix compile` and capture native build failures as bounded diagnostics.
+      [x] 1.2.2.3 Subtask - Document any required system packages or compiler prerequisites.
 
   [ ] 1.3 Section - Phase 1 Integration Tests
     Validate the selected Tree-sitter adapter can be loaded and does not require Python runtime execution.

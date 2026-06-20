@@ -42,6 +42,11 @@ defmodule PythonOntology.Builders.RDFTest do
     assert {module_iri, Context.vocabulary(builder_context, :structure, :moduleName),
             "pkg.example"} in result.triples
 
+    refute Enum.any?(result.triples, fn {_subject, predicate, object} ->
+             predicate == Context.vocabulary(builder_context, :structure, :moduleName) and
+               object == "false"
+           end)
+
     assert {module_iri, Context.vocabulary(builder_context, :structure, :definesClass), class_iri} in result.triples
 
     assert {module_iri, Context.vocabulary(builder_context, :structure, :definesFunction),

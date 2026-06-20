@@ -55,7 +55,7 @@ defmodule PythonOntology.Syntax.StructuralMappingTest do
              {"self", :positional},
              {"name", :positional},
              {"args", :vararg},
-             {"enabled", :positional},
+             {"enabled", :keyword_only},
              {"kwargs", :kwarg}
            ]
 

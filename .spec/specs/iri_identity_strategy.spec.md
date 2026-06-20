@@ -103,6 +103,11 @@ decisions:
     - python_ontology.iri_identity_strategy.no_runtime_identity_claims
 ```
 
+## Implementation Notes
+
+RDF builder changes for optional literal emission must continue to route generated resource
+identity through the shared IRI helper rather than constructing resource IRIs ad hoc.
+
 ## Verification
 
 ```spec-verification

@@ -13,6 +13,7 @@ defmodule PythonOntology.Facts.Fact do
     :package,
     :module,
     :import,
+    :import_alias,
     :class,
     :function,
     :method,

@@ -131,6 +131,14 @@
       },
       {
         "file": ".spec/specs/package.spec.md",
+        "id": "package.python_ontology.public_analysis_api",
+        "priority": "must",
+        "stability": "evolving",
+        "statement": "The PythonOntology module shall expose stable file and project analysis entrypoints.",
+        "subject_id": "package.python_ontology"
+      },
+      {
+        "file": ".spec/specs/package.spec.md",
         "id": "package.python_ontology.public_namespace",
         "priority": "must",
         "stability": "stable",
@@ -1612,7 +1620,8 @@
       },
       {
         "covers": [
-          "package.python_ontology.public_namespace"
+          "package.python_ontology.public_namespace",
+          "package.python_ontology.public_analysis_api"
         ],
         "file": ".spec/specs/package.spec.md",
         "kind": "source_file",
@@ -1641,12 +1650,22 @@
         "covers": [
           "package.python_ontology.mix_project",
           "package.python_ontology.public_namespace",
+          "package.python_ontology.public_analysis_api",
           "package.python_ontology.test_baseline"
         ],
         "file": ".spec/specs/package.spec.md",
         "kind": "command",
         "subject_id": "package.python_ontology",
         "target": "mix test"
+      },
+      {
+        "covers": [
+          "package.python_ontology.public_analysis_api"
+        ],
+        "file": ".spec/specs/package.spec.md",
+        "kind": "source_file",
+        "subject_id": "package.python_ontology",
+        "target": "test/python_ontology/analysis/public_api_test.exs"
       },
       {
         "covers": [
@@ -3794,6 +3813,296 @@
       },
       {
         "covers": [
+          "python_ontology.initial_analysis_slice.first_cli_output",
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology.ex"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.modules_packages",
+          "python_ontology.initial_analysis_slice.imports_aliases",
+          "python_ontology.initial_analysis_slice.classes_bases",
+          "python_ontology.initial_analysis_slice.functions_methods",
+          "python_ontology.initial_analysis_slice.parameters_defaults",
+          "python_ontology.initial_analysis_slice.decorators_annotations",
+          "python_ontology.initial_analysis_slice.calls_attributes",
+          "python_ontology.initial_analysis_slice.source_locations",
+          "python_ontology.initial_analysis_slice.first_cli_output",
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/analysis.ex"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.modules_packages",
+          "python_ontology.initial_analysis_slice.imports_aliases",
+          "python_ontology.initial_analysis_slice.classes_bases",
+          "python_ontology.initial_analysis_slice.functions_methods",
+          "python_ontology.initial_analysis_slice.parameters_defaults",
+          "python_ontology.initial_analysis_slice.decorators_annotations",
+          "python_ontology.initial_analysis_slice.calls_attributes",
+          "python_ontology.initial_analysis_slice.source_locations",
+          "python_ontology.initial_analysis_slice.first_cli_output",
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/analysis/result.ex"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.modules_packages",
+          "python_ontology.initial_analysis_slice.imports_aliases",
+          "python_ontology.initial_analysis_slice.classes_bases",
+          "python_ontology.initial_analysis_slice.functions_methods",
+          "python_ontology.initial_analysis_slice.parameters_defaults",
+          "python_ontology.initial_analysis_slice.decorators_annotations",
+          "python_ontology.initial_analysis_slice.calls_attributes",
+          "python_ontology.initial_analysis_slice.source_locations",
+          "python_ontology.initial_analysis_slice.first_cli_output",
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+          "python_ontology.initial_analysis_slice.tests_for_slice"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/public_api_test.exs"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.first_cli_output",
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/mix/tasks/python_ontology.analyze.ex"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.first_cli_output",
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+          "python_ontology.initial_analysis_slice.tests_for_slice"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase1_integration_test.exs"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.imports_aliases",
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "priv/ontologies/python-core.ttl"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.classes_bases",
+          "python_ontology.initial_analysis_slice.parameters_defaults",
+          "python_ontology.initial_analysis_slice.decorators_annotations",
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "priv/ontologies/python-structure.ttl"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.modules_packages",
+          "python_ontology.initial_analysis_slice.imports_aliases",
+          "python_ontology.initial_analysis_slice.classes_bases",
+          "python_ontology.initial_analysis_slice.functions_methods",
+          "python_ontology.initial_analysis_slice.parameters_defaults",
+          "python_ontology.initial_analysis_slice.decorators_annotations",
+          "python_ontology.initial_analysis_slice.source_locations",
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+          "python_ontology.initial_analysis_slice.tests_for_slice"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/structural_coverage_test.exs"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.imports_aliases",
+          "python_ontology.initial_analysis_slice.classes_bases",
+          "python_ontology.initial_analysis_slice.parameters_defaults",
+          "python_ontology.initial_analysis_slice.decorators_annotations",
+          "python_ontology.initial_analysis_slice.tests_for_slice"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/ontology/structural_vocabulary_test.exs"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.calls_attributes",
+          "python_ontology.initial_analysis_slice.source_locations",
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+          "python_ontology.initial_analysis_slice.tests_for_slice"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/expression_coverage_test.exs"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.modules_packages",
+          "python_ontology.initial_analysis_slice.tests_for_slice"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/src/initial_slice_pkg/__init__.py"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.modules_packages",
+          "python_ontology.initial_analysis_slice.tests_for_slice"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/pyproject.toml"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.modules_packages",
+          "python_ontology.initial_analysis_slice.imports_aliases",
+          "python_ontology.initial_analysis_slice.classes_bases",
+          "python_ontology.initial_analysis_slice.functions_methods",
+          "python_ontology.initial_analysis_slice.parameters_defaults",
+          "python_ontology.initial_analysis_slice.decorators_annotations",
+          "python_ontology.initial_analysis_slice.calls_attributes",
+          "python_ontology.initial_analysis_slice.source_locations",
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+          "python_ontology.initial_analysis_slice.tests_for_slice"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/src/initial_slice_pkg/complete.py"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.functions_methods",
+          "python_ontology.initial_analysis_slice.parameters_defaults",
+          "python_ontology.initial_analysis_slice.decorators_annotations",
+          "python_ontology.initial_analysis_slice.tests_for_slice"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/src/initial_slice_pkg/api.pyi"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.imports_aliases",
+          "python_ontology.initial_analysis_slice.functions_methods",
+          "python_ontology.initial_analysis_slice.calls_attributes",
+          "python_ontology.initial_analysis_slice.tests_for_slice"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/tests/test_complete.py"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+          "python_ontology.initial_analysis_slice.tests_for_slice"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/build/generated.py"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+          "python_ontology.initial_analysis_slice.tests_for_slice"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/.venv/lib/site-packages/installed_dep.py"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.modules_packages",
+          "python_ontology.initial_analysis_slice.imports_aliases",
+          "python_ontology.initial_analysis_slice.classes_bases",
+          "python_ontology.initial_analysis_slice.functions_methods",
+          "python_ontology.initial_analysis_slice.parameters_defaults",
+          "python_ontology.initial_analysis_slice.decorators_annotations",
+          "python_ontology.initial_analysis_slice.calls_attributes",
+          "python_ontology.initial_analysis_slice.source_locations",
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+          "python_ontology.initial_analysis_slice.tests_for_slice"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase2_integration_test.exs"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.modules_packages",
+          "python_ontology.initial_analysis_slice.imports_aliases",
+          "python_ontology.initial_analysis_slice.classes_bases",
+          "python_ontology.initial_analysis_slice.functions_methods",
+          "python_ontology.initial_analysis_slice.parameters_defaults",
+          "python_ontology.initial_analysis_slice.decorators_annotations",
+          "python_ontology.initial_analysis_slice.calls_attributes",
+          "python_ontology.initial_analysis_slice.source_locations",
+          "python_ontology.initial_analysis_slice.first_cli_output",
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+          "python_ontology.initial_analysis_slice.tests_for_slice"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase3_project_acceptance_test.exs"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.first_cli_output",
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/output/turtle.ex"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.first_cli_output",
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+          "python_ontology.initial_analysis_slice.tests_for_slice"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/output/turtle_test.exs"
+      },
+      {
+        "covers": [
           "python_ontology.iri_identity_strategy.namespace_resource_separation",
           "python_ontology.iri_identity_strategy.configurable_base_iri",
           "python_ontology.iri_identity_strategy.stable_path_normalization",
@@ -4477,6 +4786,16 @@
       },
       {
         "covers": [
+          "python_ontology.ontology_turtle_files.python_native_boundaries",
+          "python_ontology.ontology_turtle_files.bootstrap_validity"
+        ],
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "test/python_ontology/ontology/structural_vocabulary_test.exs"
+      },
+      {
+        "covers": [
           "python_ontology.parser.tree_sitter_python_authority",
           "python_ontology.parser.elixir_owned_adapter",
           "python_ontology.parser.no_python_runtime_dependency",
@@ -4974,6 +5293,23 @@
       },
       {
         "covers": [
+          "python_ontology.project_analysis_scope.single_file_and_project_modes",
+          "python_ontology.project_analysis_scope.root_detection",
+          "python_ontology.project_analysis_scope.include_python_sources",
+          "python_ontology.project_analysis_scope.include_stub_files",
+          "python_ontology.project_analysis_scope.exclude_environment_dirs",
+          "python_ontology.project_analysis_scope.package_detection",
+          "python_ontology.project_analysis_scope.test_scope_marking",
+          "python_ontology.project_analysis_scope.no_dependency_traversal_default",
+          "python_ontology.project_analysis_scope.deterministic_order"
+        ],
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "test/python_ontology/analysis/phase3_project_acceptance_test.exs"
+      },
+      {
+        "covers": [
           "python_ontology.validation_strategy.turtle_parse_gate",
           "python_ontology.validation_strategy.owl_open_world",
           "python_ontology.validation_strategy.shacl_closed_world",
@@ -5128,6 +5464,28 @@
         "kind": "source_file",
         "subject_id": "python_ontology.validation_strategy",
         "target": "priv/ontologies/python-shapes.ttl"
+      },
+      {
+        "covers": [
+          "python_ontology.validation_strategy.turtle_parse_gate",
+          "python_ontology.validation_strategy.owl_open_world",
+          "python_ontology.validation_strategy.no_validation_by_execution"
+        ],
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "priv/ontologies/python-core.ttl"
+      },
+      {
+        "covers": [
+          "python_ontology.validation_strategy.turtle_parse_gate",
+          "python_ontology.validation_strategy.owl_open_world",
+          "python_ontology.validation_strategy.no_validation_by_execution"
+        ],
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "priv/ontologies/python-structure.ttl"
       },
       {
         "covers": [
@@ -5296,10 +5654,10 @@
     "decisions": 10,
     "exceptions": 0,
     "findings": 0,
-    "requirements": 109,
+    "requirements": 110,
     "scenarios": 17,
     "subjects": 12,
-    "verifications": 312
+    "verifications": 339
   },
   "verification": {
     "claims": [
@@ -5348,6 +5706,17 @@
         "verification_index": 0
       },
       {
+        "cover_id": "package.python_ontology.public_analysis_api",
+        "file": ".spec/specs/package.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "package.python_ontology",
+        "target": "lib/python_ontology.ex",
+        "verification_index": 1
+      },
+      {
         "cover_id": "package.python_ontology.public_namespace",
         "file": ".spec/specs/package.spec.md",
         "kind": "source_file",
@@ -5392,6 +5761,17 @@
         "verification_index": 4
       },
       {
+        "cover_id": "package.python_ontology.public_analysis_api",
+        "file": ".spec/specs/package.spec.md",
+        "kind": "command",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "claimed",
+        "subject_id": "package.python_ontology",
+        "target": "mix test",
+        "verification_index": 4
+      },
+      {
         "cover_id": "package.python_ontology.public_namespace",
         "file": ".spec/specs/package.spec.md",
         "kind": "command",
@@ -5414,6 +5794,17 @@
         "verification_index": 4
       },
       {
+        "cover_id": "package.python_ontology.public_analysis_api",
+        "file": ".spec/specs/package.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "package.python_ontology",
+        "target": "test/python_ontology/analysis/public_api_test.exs",
+        "verification_index": 5
+      },
+      {
         "cover_id": "package.python_ontology.mix_project",
         "file": ".spec/specs/package.spec.md",
         "kind": "command",
@@ -5422,7 +5813,7 @@
         "strength": "claimed",
         "subject_id": "package.python_ontology",
         "target": "mix format --check-formatted",
-        "verification_index": 5
+        "verification_index": 6
       },
       {
         "cover_id": "package.python_ontology.product_direction",
@@ -5433,7 +5824,7 @@
         "strength": "linked",
         "subject_id": "package.python_ontology",
         "target": ".spec/decisions/python_ontology.decision.initial_python_ontology_architecture.md",
-        "verification_index": 6
+        "verification_index": 7
       },
       {
         "cover_id": "python_ontology.extractor_builder_boundary.builders_emit_rdf",
@@ -12542,6 +12933,1260 @@
         "verification_index": 114
       },
       {
+        "cover_id": "python_ontology.initial_analysis_slice.first_cli_output",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology.ex",
+        "verification_index": 115
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology.ex",
+        "verification_index": 115
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.calls_attributes",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/analysis.ex",
+        "verification_index": 116
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.classes_bases",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/analysis.ex",
+        "verification_index": 116
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.decorators_annotations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/analysis.ex",
+        "verification_index": 116
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.first_cli_output",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/analysis.ex",
+        "verification_index": 116
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.functions_methods",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/analysis.ex",
+        "verification_index": 116
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.imports_aliases",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/analysis.ex",
+        "verification_index": 116
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.modules_packages",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/analysis.ex",
+        "verification_index": 116
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/analysis.ex",
+        "verification_index": 116
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.parameters_defaults",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/analysis.ex",
+        "verification_index": 116
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.source_locations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/analysis.ex",
+        "verification_index": 116
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.calls_attributes",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/analysis/result.ex",
+        "verification_index": 117
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.classes_bases",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/analysis/result.ex",
+        "verification_index": 117
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.decorators_annotations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/analysis/result.ex",
+        "verification_index": 117
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.first_cli_output",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/analysis/result.ex",
+        "verification_index": 117
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.functions_methods",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/analysis/result.ex",
+        "verification_index": 117
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.imports_aliases",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/analysis/result.ex",
+        "verification_index": 117
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.modules_packages",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/analysis/result.ex",
+        "verification_index": 117
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/analysis/result.ex",
+        "verification_index": 117
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.parameters_defaults",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/analysis/result.ex",
+        "verification_index": 117
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.source_locations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/analysis/result.ex",
+        "verification_index": 117
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.calls_attributes",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/public_api_test.exs",
+        "verification_index": 118
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.classes_bases",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/public_api_test.exs",
+        "verification_index": 118
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.decorators_annotations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/public_api_test.exs",
+        "verification_index": 118
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.first_cli_output",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/public_api_test.exs",
+        "verification_index": 118
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.functions_methods",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/public_api_test.exs",
+        "verification_index": 118
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.imports_aliases",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/public_api_test.exs",
+        "verification_index": 118
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.modules_packages",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/public_api_test.exs",
+        "verification_index": 118
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/public_api_test.exs",
+        "verification_index": 118
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.parameters_defaults",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/public_api_test.exs",
+        "verification_index": 118
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.source_locations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/public_api_test.exs",
+        "verification_index": 118
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/public_api_test.exs",
+        "verification_index": 118
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.first_cli_output",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/mix/tasks/python_ontology.analyze.ex",
+        "verification_index": 119
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/mix/tasks/python_ontology.analyze.ex",
+        "verification_index": 119
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.first_cli_output",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase1_integration_test.exs",
+        "verification_index": 120
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase1_integration_test.exs",
+        "verification_index": 120
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase1_integration_test.exs",
+        "verification_index": 120
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.imports_aliases",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "priv/ontologies/python-core.ttl",
+        "verification_index": 121
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "priv/ontologies/python-core.ttl",
+        "verification_index": 121
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.classes_bases",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "priv/ontologies/python-structure.ttl",
+        "verification_index": 122
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.decorators_annotations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "priv/ontologies/python-structure.ttl",
+        "verification_index": 122
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "priv/ontologies/python-structure.ttl",
+        "verification_index": 122
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.parameters_defaults",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "priv/ontologies/python-structure.ttl",
+        "verification_index": 122
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.classes_bases",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/structural_coverage_test.exs",
+        "verification_index": 123
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.decorators_annotations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/structural_coverage_test.exs",
+        "verification_index": 123
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.functions_methods",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/structural_coverage_test.exs",
+        "verification_index": 123
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.imports_aliases",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/structural_coverage_test.exs",
+        "verification_index": 123
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.modules_packages",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/structural_coverage_test.exs",
+        "verification_index": 123
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/structural_coverage_test.exs",
+        "verification_index": 123
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.parameters_defaults",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/structural_coverage_test.exs",
+        "verification_index": 123
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.source_locations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/structural_coverage_test.exs",
+        "verification_index": 123
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/structural_coverage_test.exs",
+        "verification_index": 123
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.classes_bases",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/ontology/structural_vocabulary_test.exs",
+        "verification_index": 124
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.decorators_annotations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/ontology/structural_vocabulary_test.exs",
+        "verification_index": 124
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.imports_aliases",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/ontology/structural_vocabulary_test.exs",
+        "verification_index": 124
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.parameters_defaults",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/ontology/structural_vocabulary_test.exs",
+        "verification_index": 124
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/ontology/structural_vocabulary_test.exs",
+        "verification_index": 124
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.calls_attributes",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/expression_coverage_test.exs",
+        "verification_index": 125
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/expression_coverage_test.exs",
+        "verification_index": 125
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.source_locations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/expression_coverage_test.exs",
+        "verification_index": 125
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/expression_coverage_test.exs",
+        "verification_index": 125
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.modules_packages",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/src/initial_slice_pkg/__init__.py",
+        "verification_index": 126
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/src/initial_slice_pkg/__init__.py",
+        "verification_index": 126
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.modules_packages",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/pyproject.toml",
+        "verification_index": 127
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/pyproject.toml",
+        "verification_index": 127
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.calls_attributes",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/src/initial_slice_pkg/complete.py",
+        "verification_index": 128
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.classes_bases",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/src/initial_slice_pkg/complete.py",
+        "verification_index": 128
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.decorators_annotations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/src/initial_slice_pkg/complete.py",
+        "verification_index": 128
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.functions_methods",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/src/initial_slice_pkg/complete.py",
+        "verification_index": 128
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.imports_aliases",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/src/initial_slice_pkg/complete.py",
+        "verification_index": 128
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.modules_packages",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/src/initial_slice_pkg/complete.py",
+        "verification_index": 128
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/src/initial_slice_pkg/complete.py",
+        "verification_index": 128
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.parameters_defaults",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/src/initial_slice_pkg/complete.py",
+        "verification_index": 128
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.source_locations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/src/initial_slice_pkg/complete.py",
+        "verification_index": 128
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/src/initial_slice_pkg/complete.py",
+        "verification_index": 128
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.decorators_annotations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/src/initial_slice_pkg/api.pyi",
+        "verification_index": 129
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.functions_methods",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/src/initial_slice_pkg/api.pyi",
+        "verification_index": 129
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.parameters_defaults",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/src/initial_slice_pkg/api.pyi",
+        "verification_index": 129
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/src/initial_slice_pkg/api.pyi",
+        "verification_index": 129
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.calls_attributes",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/tests/test_complete.py",
+        "verification_index": 130
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.functions_methods",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/tests/test_complete.py",
+        "verification_index": 130
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.imports_aliases",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/tests/test_complete.py",
+        "verification_index": 130
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/tests/test_complete.py",
+        "verification_index": 130
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/build/generated.py",
+        "verification_index": 131
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/build/generated.py",
+        "verification_index": 131
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/.venv/lib/site-packages/installed_dep.py",
+        "verification_index": 132
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/fixtures/python_initial_slice/project/.venv/lib/site-packages/installed_dep.py",
+        "verification_index": 132
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.calls_attributes",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase2_integration_test.exs",
+        "verification_index": 133
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.classes_bases",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase2_integration_test.exs",
+        "verification_index": 133
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.decorators_annotations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase2_integration_test.exs",
+        "verification_index": 133
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.functions_methods",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase2_integration_test.exs",
+        "verification_index": 133
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.imports_aliases",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase2_integration_test.exs",
+        "verification_index": 133
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.modules_packages",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase2_integration_test.exs",
+        "verification_index": 133
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase2_integration_test.exs",
+        "verification_index": 133
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.parameters_defaults",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase2_integration_test.exs",
+        "verification_index": 133
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.source_locations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase2_integration_test.exs",
+        "verification_index": 133
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase2_integration_test.exs",
+        "verification_index": 133
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.calls_attributes",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase3_project_acceptance_test.exs",
+        "verification_index": 134
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.classes_bases",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase3_project_acceptance_test.exs",
+        "verification_index": 134
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.decorators_annotations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase3_project_acceptance_test.exs",
+        "verification_index": 134
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.first_cli_output",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase3_project_acceptance_test.exs",
+        "verification_index": 134
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.functions_methods",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase3_project_acceptance_test.exs",
+        "verification_index": 134
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.imports_aliases",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase3_project_acceptance_test.exs",
+        "verification_index": 134
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.modules_packages",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase3_project_acceptance_test.exs",
+        "verification_index": 134
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase3_project_acceptance_test.exs",
+        "verification_index": 134
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.parameters_defaults",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase3_project_acceptance_test.exs",
+        "verification_index": 134
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.source_locations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase3_project_acceptance_test.exs",
+        "verification_index": 134
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/analysis/phase3_project_acceptance_test.exs",
+        "verification_index": 134
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.first_cli_output",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/output/turtle.ex",
+        "verification_index": 135
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/output/turtle.ex",
+        "verification_index": 135
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.first_cli_output",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/output/turtle_test.exs",
+        "verification_index": 136
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/output/turtle_test.exs",
+        "verification_index": 136
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/output/turtle_test.exs",
+        "verification_index": 136
+      },
+      {
         "cover_id": "python_ontology.iri_identity_strategy.class_function_identity",
         "file": ".spec/specs/iri_identity_strategy.spec.md",
         "kind": "source_file",
@@ -15303,6 +16948,28 @@
         "verification_index": 7
       },
       {
+        "cover_id": "python_ontology.ontology_turtle_files.bootstrap_validity",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "test/python_ontology/ontology/structural_vocabulary_test.exs",
+        "verification_index": 8
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.python_native_boundaries",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "test/python_ontology/ontology/structural_vocabulary_test.exs",
+        "verification_index": 8
+      },
+      {
         "cover_id": "python_ontology.parser.adapter_boundary",
         "file": ".spec/specs/parser.spec.md",
         "kind": "source_file",
@@ -17514,6 +19181,105 @@
         "verification_index": 16
       },
       {
+        "cover_id": "python_ontology.project_analysis_scope.deterministic_order",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "test/python_ontology/analysis/phase3_project_acceptance_test.exs",
+        "verification_index": 17
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.exclude_environment_dirs",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "test/python_ontology/analysis/phase3_project_acceptance_test.exs",
+        "verification_index": 17
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.include_python_sources",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "test/python_ontology/analysis/phase3_project_acceptance_test.exs",
+        "verification_index": 17
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.include_stub_files",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "test/python_ontology/analysis/phase3_project_acceptance_test.exs",
+        "verification_index": 17
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.no_dependency_traversal_default",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "test/python_ontology/analysis/phase3_project_acceptance_test.exs",
+        "verification_index": 17
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.package_detection",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "test/python_ontology/analysis/phase3_project_acceptance_test.exs",
+        "verification_index": 17
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.root_detection",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "test/python_ontology/analysis/phase3_project_acceptance_test.exs",
+        "verification_index": 17
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.single_file_and_project_modes",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "test/python_ontology/analysis/phase3_project_acceptance_test.exs",
+        "verification_index": 17
+      },
+      {
+        "cover_id": "python_ontology.project_analysis_scope.test_scope_marking",
+        "file": ".spec/specs/project_analysis_scope.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.project_analysis_scope",
+        "target": "test/python_ontology/analysis/phase3_project_acceptance_test.exs",
+        "verification_index": 17
+      },
+      {
         "cover_id": "python_ontology.validation_strategy.command_verification",
         "file": ".spec/specs/validation_strategy.spec.md",
         "kind": "source_file",
@@ -18016,40 +19782,29 @@
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
-        "target": "test/python_ontology/validation/shacl_shape_validation_test.exs",
+        "target": "priv/ontologies/python-core.ttl",
         "verification_index": 14
       },
       {
-        "cover_id": "python_ontology.validation_strategy.shacl_closed_world",
+        "cover_id": "python_ontology.validation_strategy.owl_open_world",
         "file": ".spec/specs/validation_strategy.spec.md",
         "kind": "source_file",
         "meets_minimum": true,
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
-        "target": "test/python_ontology/validation/shacl_shape_validation_test.exs",
+        "target": "priv/ontologies/python-core.ttl",
         "verification_index": 14
       },
       {
-        "cover_id": "python_ontology.validation_strategy.validation_after_graph_build",
+        "cover_id": "python_ontology.validation_strategy.turtle_parse_gate",
         "file": ".spec/specs/validation_strategy.spec.md",
         "kind": "source_file",
         "meets_minimum": true,
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
-        "target": "test/python_ontology/validation/shacl_shape_validation_test.exs",
-        "verification_index": 14
-      },
-      {
-        "cover_id": "python_ontology.validation_strategy.validation_reports",
-        "file": ".spec/specs/validation_strategy.spec.md",
-        "kind": "source_file",
-        "meets_minimum": true,
-        "required_strength": "claimed",
-        "strength": "linked",
-        "subject_id": "python_ontology.validation_strategy",
-        "target": "test/python_ontology/validation/shacl_shape_validation_test.exs",
+        "target": "priv/ontologies/python-core.ttl",
         "verification_index": 14
       },
       {
@@ -18060,8 +19815,85 @@
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
-        "target": "test/python_ontology/validation/phase2_integration_test.exs",
+        "target": "priv/ontologies/python-structure.ttl",
         "verification_index": 15
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.owl_open_world",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "priv/ontologies/python-structure.ttl",
+        "verification_index": 15
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.turtle_parse_gate",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "priv/ontologies/python-structure.ttl",
+        "verification_index": 15
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.no_validation_by_execution",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "test/python_ontology/validation/shacl_shape_validation_test.exs",
+        "verification_index": 16
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.shacl_closed_world",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "test/python_ontology/validation/shacl_shape_validation_test.exs",
+        "verification_index": 16
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.validation_after_graph_build",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "test/python_ontology/validation/shacl_shape_validation_test.exs",
+        "verification_index": 16
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.validation_reports",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "test/python_ontology/validation/shacl_shape_validation_test.exs",
+        "verification_index": 16
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.no_validation_by_execution",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "test/python_ontology/validation/phase2_integration_test.exs",
+        "verification_index": 17
       },
       {
         "cover_id": "python_ontology.validation_strategy.shacl_closed_world",
@@ -18072,7 +19904,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
         "target": "test/python_ontology/validation/phase2_integration_test.exs",
-        "verification_index": 15
+        "verification_index": 17
       },
       {
         "cover_id": "python_ontology.validation_strategy.validation_after_graph_build",
@@ -18083,7 +19915,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
         "target": "test/python_ontology/validation/phase2_integration_test.exs",
-        "verification_index": 15
+        "verification_index": 17
       },
       {
         "cover_id": "python_ontology.validation_strategy.validation_reports",
@@ -18094,7 +19926,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
         "target": "test/python_ontology/validation/phase2_integration_test.exs",
-        "verification_index": 15
+        "verification_index": 17
       },
       {
         "cover_id": "python_ontology.validation_strategy.shacl_closed_world",
@@ -18105,7 +19937,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
         "target": "lib/python_ontology/validator/violation.ex",
-        "verification_index": 16
+        "verification_index": 18
       },
       {
         "cover_id": "python_ontology.validation_strategy.validation_after_graph_build",
@@ -18116,7 +19948,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
         "target": "lib/python_ontology/validator/violation.ex",
-        "verification_index": 16
+        "verification_index": 18
       },
       {
         "cover_id": "python_ontology.validation_strategy.validation_reports",
@@ -18127,7 +19959,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
         "target": "lib/python_ontology/validator/violation.ex",
-        "verification_index": 16
+        "verification_index": 18
       },
       {
         "cover_id": "python_ontology.validation_strategy.validation_after_graph_build",
@@ -18138,7 +19970,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
         "target": "lib/python_ontology/validator/report.ex",
-        "verification_index": 17
+        "verification_index": 19
       },
       {
         "cover_id": "python_ontology.validation_strategy.validation_reports",
@@ -18149,7 +19981,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
         "target": "lib/python_ontology/validator/report.ex",
-        "verification_index": 17
+        "verification_index": 19
       },
       {
         "cover_id": "python_ontology.validation_strategy.validation_after_graph_build",
@@ -18160,7 +19992,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
         "target": "test/python_ontology/validation/report_model_validation_test.exs",
-        "verification_index": 18
+        "verification_index": 20
       },
       {
         "cover_id": "python_ontology.validation_strategy.validation_reports",
@@ -18171,72 +20003,6 @@
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
         "target": "test/python_ontology/validation/report_model_validation_test.exs",
-        "verification_index": 18
-      },
-      {
-        "cover_id": "python_ontology.validation_strategy.command_verification",
-        "file": ".spec/specs/validation_strategy.spec.md",
-        "kind": "source_file",
-        "meets_minimum": true,
-        "required_strength": "claimed",
-        "strength": "linked",
-        "subject_id": "python_ontology.validation_strategy",
-        "target": "lib/python_ontology/validator/report_formatter.ex",
-        "verification_index": 19
-      },
-      {
-        "cover_id": "python_ontology.validation_strategy.validation_after_graph_build",
-        "file": ".spec/specs/validation_strategy.spec.md",
-        "kind": "source_file",
-        "meets_minimum": true,
-        "required_strength": "claimed",
-        "strength": "linked",
-        "subject_id": "python_ontology.validation_strategy",
-        "target": "lib/python_ontology/validator/report_formatter.ex",
-        "verification_index": 19
-      },
-      {
-        "cover_id": "python_ontology.validation_strategy.validation_reports",
-        "file": ".spec/specs/validation_strategy.spec.md",
-        "kind": "source_file",
-        "meets_minimum": true,
-        "required_strength": "claimed",
-        "strength": "linked",
-        "subject_id": "python_ontology.validation_strategy",
-        "target": "lib/python_ontology/validator/report_formatter.ex",
-        "verification_index": 19
-      },
-      {
-        "cover_id": "python_ontology.validation_strategy.command_verification",
-        "file": ".spec/specs/validation_strategy.spec.md",
-        "kind": "source_file",
-        "meets_minimum": true,
-        "required_strength": "claimed",
-        "strength": "linked",
-        "subject_id": "python_ontology.validation_strategy",
-        "target": "lib/python_ontology/validator/command_result.ex",
-        "verification_index": 20
-      },
-      {
-        "cover_id": "python_ontology.validation_strategy.validation_after_graph_build",
-        "file": ".spec/specs/validation_strategy.spec.md",
-        "kind": "source_file",
-        "meets_minimum": true,
-        "required_strength": "claimed",
-        "strength": "linked",
-        "subject_id": "python_ontology.validation_strategy",
-        "target": "lib/python_ontology/validator/command_result.ex",
-        "verification_index": 20
-      },
-      {
-        "cover_id": "python_ontology.validation_strategy.validation_reports",
-        "file": ".spec/specs/validation_strategy.spec.md",
-        "kind": "source_file",
-        "meets_minimum": true,
-        "required_strength": "claimed",
-        "strength": "linked",
-        "subject_id": "python_ontology.validation_strategy",
-        "target": "lib/python_ontology/validator/command_result.ex",
         "verification_index": 20
       },
       {
@@ -18247,7 +20013,7 @@
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
-        "target": "lib/python_ontology/validator/command.ex",
+        "target": "lib/python_ontology/validator/report_formatter.ex",
         "verification_index": 21
       },
       {
@@ -18258,7 +20024,7 @@
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
-        "target": "lib/python_ontology/validator/command.ex",
+        "target": "lib/python_ontology/validator/report_formatter.ex",
         "verification_index": 21
       },
       {
@@ -18269,7 +20035,7 @@
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
-        "target": "lib/python_ontology/validator/command.ex",
+        "target": "lib/python_ontology/validator/report_formatter.ex",
         "verification_index": 21
       },
       {
@@ -18280,7 +20046,7 @@
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
-        "target": "test/python_ontology/validation/report_formatting_validation_test.exs",
+        "target": "lib/python_ontology/validator/command_result.ex",
         "verification_index": 22
       },
       {
@@ -18291,7 +20057,7 @@
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
-        "target": "test/python_ontology/validation/report_formatting_validation_test.exs",
+        "target": "lib/python_ontology/validator/command_result.ex",
         "verification_index": 22
       },
       {
@@ -18302,8 +20068,74 @@
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
-        "target": "test/python_ontology/validation/report_formatting_validation_test.exs",
+        "target": "lib/python_ontology/validator/command_result.ex",
         "verification_index": 22
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.command_verification",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "lib/python_ontology/validator/command.ex",
+        "verification_index": 23
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.validation_after_graph_build",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "lib/python_ontology/validator/command.ex",
+        "verification_index": 23
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.validation_reports",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "lib/python_ontology/validator/command.ex",
+        "verification_index": 23
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.command_verification",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "test/python_ontology/validation/report_formatting_validation_test.exs",
+        "verification_index": 24
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.validation_after_graph_build",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "test/python_ontology/validation/report_formatting_validation_test.exs",
+        "verification_index": 24
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.validation_reports",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "test/python_ontology/validation/report_formatting_validation_test.exs",
+        "verification_index": 24
       },
       {
         "cover_id": "python_ontology.validation_strategy.command_verification",
@@ -18314,7 +20146,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
         "target": "test/python_ontology/validation/phase3_integration_test.exs",
-        "verification_index": 23
+        "verification_index": 25
       },
       {
         "cover_id": "python_ontology.validation_strategy.no_validation_by_execution",
@@ -18325,7 +20157,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
         "target": "test/python_ontology/validation/phase3_integration_test.exs",
-        "verification_index": 23
+        "verification_index": 25
       },
       {
         "cover_id": "python_ontology.validation_strategy.shacl_closed_world",
@@ -18336,7 +20168,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
         "target": "test/python_ontology/validation/phase3_integration_test.exs",
-        "verification_index": 23
+        "verification_index": 25
       },
       {
         "cover_id": "python_ontology.validation_strategy.turtle_parse_gate",
@@ -18347,7 +20179,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
         "target": "test/python_ontology/validation/phase3_integration_test.exs",
-        "verification_index": 23
+        "verification_index": 25
       },
       {
         "cover_id": "python_ontology.validation_strategy.validation_after_graph_build",
@@ -18358,7 +20190,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
         "target": "test/python_ontology/validation/phase3_integration_test.exs",
-        "verification_index": 23
+        "verification_index": 25
       },
       {
         "cover_id": "python_ontology.validation_strategy.validation_reports",
@@ -18369,7 +20201,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.validation_strategy",
         "target": "test/python_ontology/validation/phase3_integration_test.exs",
-        "verification_index": 23
+        "verification_index": 25
       },
       {
         "cover_id": "spec.workspace.readme_present",
@@ -18441,9 +20273,9 @@
     "cli_minimum_strength": null,
     "default_minimum_strength": "claimed",
     "strength_summary": {
-      "claimed": 19,
+      "claimed": 20,
       "executed": 0,
-      "linked": 1175
+      "linked": 1308
     },
     "threshold_failures": 0
   },

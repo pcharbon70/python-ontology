@@ -100,9 +100,11 @@ defmodule PythonOntology.Extractors.Structural do
         %{name: alias_node.name, as: alias_node.as, node_id: alias_node.info.id}
       end)
 
+    import_id = "import:#{import.info.id}"
+
     [
       syntax_fact(:import, import, context,
-        id: "import:#{import.info.id}",
+        id: import_id,
         module_name: module_name(context),
         aliases: aliases,
         attributes: %{
@@ -113,7 +115,7 @@ defmodule PythonOntology.Extractors.Structural do
         },
         identity: %{container_id: "module:#{module_name(context)}"}
       )
-    ]
+    ] ++ import_alias_facts(import.names, context, import_id, import)
   end
 
   defp node_facts(%Syntax.Class{} = class, context, lexical_path) do
@@ -173,7 +175,35 @@ defmodule PythonOntology.Extractors.Structural do
       declaration_facts(function.body, context, function_path)
   end
 
+  defp node_facts(%Syntax.Assignment{} = assignment, context, lexical_path) do
+    assignment_id =
+      "assignment:#{module_name(context)}:#{Enum.join(lexical_path, ".")}:#{assignment.info.id}"
+
+    annotation_facts(assignment.annotation, context, assignment_id, "variable")
+  end
+
   defp node_facts(_node, _context, _lexical_path), do: []
+
+  defp import_alias_facts(aliases, context, import_id, %Syntax.Import{} = import) do
+    aliases
+    |> Enum.with_index(1)
+    |> Enum.map(fn {alias_node, index} ->
+      syntax_fact(:import_alias, alias_node, context,
+        id: "#{import_id}:alias:#{index}:#{alias_node.name}",
+        parent_id: import_id,
+        name: alias_node.as || alias_node.name,
+        raw_text: alias_node.name,
+        module_name: module_name(context),
+        attributes: %{
+          imported_name: alias_node.name,
+          alias: alias_node.as,
+          module: import.module,
+          position: index,
+          relative_level: import.relative_level
+        }
+      )
+    end)
+  end
 
   defp base_facts(%Syntax.Class{} = class, context, class_id) do
     class.bases

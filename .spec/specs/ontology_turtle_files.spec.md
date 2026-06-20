@@ -58,6 +58,12 @@ decisions:
   stability: evolving
 ```
 
+## Implementation Notes
+
+The starter vocabulary includes first-slice structural terms for import aliases, base classes,
+decorators, syntax-level annotations, parameter kinds, and parameter defaults. These terms stay
+source-syntax focused and do not imply runtime import resolution or full type reasoning.
+
 ## Verification
 
 ```spec-verification
@@ -126,5 +132,11 @@ decisions:
   target: test/python_ontology/confidence/phase2_integration_test.exs
   covers:
     - python_ontology.ontology_turtle_files.dynamic_fact_boundary
+    - python_ontology.ontology_turtle_files.bootstrap_validity
+
+- kind: source_file
+  target: test/python_ontology/ontology/structural_vocabulary_test.exs
+  covers:
+    - python_ontology.ontology_turtle_files.python_native_boundaries
     - python_ontology.ontology_turtle_files.bootstrap_validity
 ```

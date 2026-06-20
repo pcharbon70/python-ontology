@@ -325,11 +325,28 @@ defmodule PythonOntology.Syntax.Normalizer do
   end
 
   defp parameter_nodes(node, context) do
-    node
-    |> named_children()
-    |> Enum.map(fn child ->
-      parameter_node(child, child_context(node, context, child_index(node, child)))
-    end)
+    {parameters, _mode} =
+      node.children
+      |> Enum.with_index()
+      |> Enum.reduce({[], :positional}, fn {child, index}, {parameters, mode} ->
+        cond do
+          child.named ->
+            parameter =
+              child
+              |> parameter_node(child_context(node, context, index))
+              |> apply_parameter_mode(mode)
+
+            {parameters ++ [parameter], next_parameter_mode(mode, parameter)}
+
+          child.kind == "*" ->
+            {parameters, :keyword_only}
+
+          true ->
+            {parameters, mode}
+        end
+      end)
+
+    parameters
   end
 
   defp parameter_node(%Parser.Node{kind: "typed_parameter"} = node, context) do
@@ -375,6 +392,14 @@ defmodule PythonOntology.Syntax.Normalizer do
   defp parameter_node(node, context) do
     %Syntax.Parameter{info: info(node, context), name: raw_text(node, context), kind: :positional}
   end
+
+  defp apply_parameter_mode(%Syntax.Parameter{kind: :positional} = parameter, :keyword_only),
+    do: %{parameter | kind: :keyword_only}
+
+  defp apply_parameter_mode(parameter, _mode), do: parameter
+
+  defp next_parameter_mode(_mode, %Syntax.Parameter{kind: :vararg}), do: :keyword_only
+  defp next_parameter_mode(mode, _parameter), do: mode
 
   defp annotation_node(nil, _context), do: nil
 

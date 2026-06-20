@@ -8,19 +8,25 @@ defmodule PythonOntology.Validation.ShaclEntrypointValidationTest do
 
   @rdf_type "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
   @module "https://analysis.example/python/module/sample"
+  @location "https://analysis.example/python/module/sample/location"
   @module_class "https://w3id.org/python-code/structure#Module"
+  @source_location_class "https://w3id.org/python-code/core#SourceLocation"
 
   test "validates a generated graph input and loads the default shapes graph" do
     triples = [
       {@module, @rdf_type, @module_class},
-      {@module, "https://w3id.org/python-code/structure#moduleName", "sample"}
+      {@module, "https://w3id.org/python-code/structure#moduleName", "sample"},
+      {@module, "https://w3id.org/python-code/core#hasLocation", @location},
+      {@location, @rdf_type, @source_location_class},
+      {@location, "https://w3id.org/python-code/core#line", "1"},
+      {@location, "https://w3id.org/python-code/core#column", "0"}
     ]
 
     assert {:ok, %Result{} = result} = Validator.validate_graph(%{triples: triples})
     assert result.conforms?
     assert result.data_graph == triples
     assert result.shapes_graph
-    assert result.metadata.data_triple_count == 2
+    assert result.metadata.data_triple_count == 6
     assert String.ends_with?(result.metadata.shapes_path, "python-shapes.ttl")
     assert result.metadata.shapes_triple_count > 0
   end

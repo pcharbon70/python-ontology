@@ -51,6 +51,11 @@ decisions:
   statement: Initial Turtle files shall contain parseable ontology declarations, metadata, and representative starter classes or properties for their layer.
   priority: must
   stability: evolving
+
+- id: python_ontology.ontology_turtle_files.starter_shacl_shapes
+  statement: The shapes ontology shall declare starter SHACL shapes for first-slice modules, functions, parameters, and source locations.
+  priority: must
+  stability: evolving
 ```
 
 ## Verification
@@ -109,6 +114,7 @@ decisions:
     - python_ontology.ontology_turtle_files.namespace_stability
     - python_ontology.ontology_turtle_files.import_direction
     - python_ontology.ontology_turtle_files.bootstrap_validity
+    - python_ontology.ontology_turtle_files.starter_shacl_shapes
 
 - kind: source_file
   target: test/python_ontology/ontology/confidence_vocabulary_test.exs

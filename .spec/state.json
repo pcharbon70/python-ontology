@@ -674,6 +674,14 @@
         "subject_id": "python_ontology.ontology_turtle_files"
       },
       {
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "id": "python_ontology.ontology_turtle_files.starter_shacl_shapes",
+        "priority": "must",
+        "stability": "evolving",
+        "statement": "The shapes ontology shall declare starter SHACL shapes for first-slice modules, functions, parameters, and source locations.",
+        "subject_id": "python_ontology.ontology_turtle_files"
+      },
+      {
         "file": ".spec/specs/parser.spec.md",
         "id": "python_ontology.parser.adapter_boundary",
         "priority": "must",
@@ -3673,6 +3681,17 @@
       },
       {
         "covers": [
+          "python_ontology.initial_analysis_slice.first_cli_output",
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+          "python_ontology.initial_analysis_slice.tests_for_slice"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/validation/shacl_shape_validation_test.exs"
+      },
+      {
+        "covers": [
           "python_ontology.iri_identity_strategy.namespace_resource_separation",
           "python_ontology.iri_identity_strategy.configurable_base_iri",
           "python_ontology.iri_identity_strategy.stable_path_normalization",
@@ -4326,7 +4345,8 @@
           "python_ontology.ontology_turtle_files.layered_files",
           "python_ontology.ontology_turtle_files.namespace_stability",
           "python_ontology.ontology_turtle_files.import_direction",
-          "python_ontology.ontology_turtle_files.bootstrap_validity"
+          "python_ontology.ontology_turtle_files.bootstrap_validity",
+          "python_ontology.ontology_turtle_files.starter_shacl_shapes"
         ],
         "file": ".spec/specs/ontology_turtle_files.spec.md",
         "kind": "source_file",
@@ -4999,6 +5019,28 @@
       },
       {
         "covers": [
+          "python_ontology.validation_strategy.shacl_closed_world",
+          "python_ontology.validation_strategy.validation_after_graph_build"
+        ],
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "priv/ontologies/python-shapes.ttl"
+      },
+      {
+        "covers": [
+          "python_ontology.validation_strategy.shacl_closed_world",
+          "python_ontology.validation_strategy.validation_reports",
+          "python_ontology.validation_strategy.no_validation_by_execution",
+          "python_ontology.validation_strategy.validation_after_graph_build"
+        ],
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "test/python_ontology/validation/shacl_shape_validation_test.exs"
+      },
+      {
+        "covers": [
           "spec.workspace.readme_present"
         ],
         "file": ".spec/specs/spec_system.spec.md",
@@ -5051,10 +5093,10 @@
     "decisions": 10,
     "exceptions": 0,
     "findings": 0,
-    "requirements": 108,
+    "requirements": 109,
     "scenarios": 17,
     "subjects": 12,
-    "verifications": 291
+    "verifications": 294
   },
   "verification": {
     "claims": [
@@ -11934,6 +11976,39 @@
         "verification_index": 104
       },
       {
+        "cover_id": "python_ontology.initial_analysis_slice.first_cli_output",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/validation/shacl_shape_validation_test.exs",
+        "verification_index": 105
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/validation/shacl_shape_validation_test.exs",
+        "verification_index": 105
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/validation/shacl_shape_validation_test.exs",
+        "verification_index": 105
+      },
+      {
         "cover_id": "python_ontology.iri_identity_strategy.class_function_identity",
         "file": ".spec/specs/iri_identity_strategy.spec.md",
         "kind": "source_file",
@@ -14630,6 +14705,17 @@
       },
       {
         "cover_id": "python_ontology.ontology_turtle_files.namespace_stability",
+        "file": ".spec/specs/ontology_turtle_files.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.ontology_turtle_files",
+        "target": "priv/ontologies/python-shapes.ttl",
+        "verification_index": 5
+      },
+      {
+        "cover_id": "python_ontology.ontology_turtle_files.starter_shacl_shapes",
         "file": ".spec/specs/ontology_turtle_files.spec.md",
         "kind": "source_file",
         "meets_minimum": true,
@@ -17368,6 +17454,72 @@
         "verification_index": 12
       },
       {
+        "cover_id": "python_ontology.validation_strategy.shacl_closed_world",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "priv/ontologies/python-shapes.ttl",
+        "verification_index": 13
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.validation_after_graph_build",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "priv/ontologies/python-shapes.ttl",
+        "verification_index": 13
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.no_validation_by_execution",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "test/python_ontology/validation/shacl_shape_validation_test.exs",
+        "verification_index": 14
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.shacl_closed_world",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "test/python_ontology/validation/shacl_shape_validation_test.exs",
+        "verification_index": 14
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.validation_after_graph_build",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "test/python_ontology/validation/shacl_shape_validation_test.exs",
+        "verification_index": 14
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.validation_reports",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "test/python_ontology/validation/shacl_shape_validation_test.exs",
+        "verification_index": 14
+      },
+      {
         "cover_id": "spec.workspace.readme_present",
         "file": ".spec/specs/spec_system.spec.md",
         "kind": "source_file",
@@ -17439,7 +17591,7 @@
     "strength_summary": {
       "claimed": 19,
       "executed": 0,
-      "linked": 1106
+      "linked": 1116
     },
     "threshold_failures": 0
   },

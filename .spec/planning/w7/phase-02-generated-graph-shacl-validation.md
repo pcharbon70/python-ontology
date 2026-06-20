@@ -29,15 +29,15 @@ Back to index: [README](./README.md)
       [x] 2.1.1.2 Subtask - Load `python-shapes.ttl` as the shapes graph.
       [x] 2.1.1.3 Subtask - Return pass/fail status and structured results.
 
-  [ ] 2.2 Section - First SHACL Shape Coverage
+  [x] 2.2 Section - First SHACL Shape Coverage
     Validate first-slice generated resources.
 
-    [ ] 2.2.1 Task - Implement first closed-world checks
+    [x] 2.2.1 Task - Implement first closed-world checks
       Check required first-slice resource properties.
 
-      [ ] 2.2.1.1 Subtask - Validate module names and source file links.
-      [ ] 2.2.1.2 Subtask - Validate function qualified names and parameter structure.
-      [ ] 2.2.1.3 Subtask - Validate source location line/column datatypes.
+      [x] 2.2.1.1 Subtask - Validate module names and source file links.
+      [x] 2.2.1.2 Subtask - Validate function qualified names and parameter structure.
+      [x] 2.2.1.3 Subtask - Validate source location line/column datatypes.
 
   [ ] 2.3 Section - Phase 2 Integration Tests
     Prove generated graph validation catches malformed graph output.

@@ -250,14 +250,12 @@ defmodule PythonOntology.Syntax.Normalizer do
   defp map_children(node, context) do
     node.children
     |> Enum.with_index()
-    |> Enum.reject(fn {child, _index} -> child.extra end)
     |> Enum.map(fn {child, index} -> map_node(child, child_context(node, context, index)) end)
   end
 
   defp map_block_children(node, context) do
     node.children
     |> Enum.with_index()
-    |> Enum.reject(fn {child, _index} -> child.extra end)
     |> Enum.map(fn {child, index} -> map_node(child, child_context(node, context, index)) end)
   end
 

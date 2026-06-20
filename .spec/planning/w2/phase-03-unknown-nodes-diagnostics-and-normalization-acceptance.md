@@ -18,22 +18,22 @@ Back to index: [README](./README.md)
 [ ] 3 Phase 3 - Unknown Nodes, Diagnostics, and Normalization Acceptance
   Complete normalization behavior for unsupported syntax, parser errors, and local acceptance.
 
-  [ ] 3.1 Section - Unknown Node Preservation
+  [x] 3.1 Section - Unknown Node Preservation
     Ensure unsupported Tree-sitter nodes are not silently lost.
 
-    [ ] 3.1.1 Task - Implement generic normalized nodes
+    [x] 3.1.1 Task - Implement generic normalized nodes
       Preserve raw node data for unsupported syntax.
 
-      [ ] 3.1.1.1 Subtask - Store raw node type, field name, named status, spans, and children.
-      [ ] 3.1.1.2 Subtask - Preserve relative order among known and generic child nodes.
-      [ ] 3.1.1.3 Subtask - Add diagnostics only when unsupported syntax affects required first-slice extraction.
+      [x] 3.1.1.1 Subtask - Store raw node type, field name, named status, spans, and children.
+      [x] 3.1.1.2 Subtask - Preserve relative order among known and generic child nodes.
+      [x] 3.1.1.3 Subtask - Add diagnostics only when unsupported syntax affects required first-slice extraction.
 
-    [ ] 3.1.2 Task - Preserve parser diagnostics
+    [x] 3.1.2 Task - Preserve parser diagnostics
       Carry Tree-sitter errors through normalization.
 
-      [ ] 3.1.2.1 Subtask - Attach parser diagnostics to normalized root nodes.
-      [ ] 3.1.2.2 Subtask - Preserve partial syntax trees for invalid source when available.
-      [ ] 3.1.2.3 Subtask - Keep parser diagnostics separate from future extractor diagnostics.
+      [x] 3.1.2.1 Subtask - Attach parser diagnostics to normalized root nodes.
+      [x] 3.1.2.2 Subtask - Preserve partial syntax trees for invalid source when available.
+      [x] 3.1.2.3 Subtask - Keep parser diagnostics separate from future extractor diagnostics.
 
   [ ] 3.2 Section - Normalization Contract Cleanup
     Make the normalized model ready for extractors.

@@ -15,6 +15,7 @@ defmodule PythonOntology.Syntax.StructuralMappingTest do
     assert module.info.source.id == @fixture
 
     assert Enum.map(module.body, & &1.info.provenance.raw_type) == [
+             "comment",
              "import_statement",
              "import_statement",
              "import_from_statement",

@@ -18,15 +18,15 @@ Back to index: [README](./README.md)
 [ ] 1 Phase 1 - Base IRI and Path Canonicalization
   Implement base IRI configuration and source path normalization.
 
-  [ ] 1.1 Section - Base IRI Configuration
+  [x] 1.1 Section - Base IRI Configuration
     Define how generated resources choose their IRI root.
 
-    [ ] 1.1.1 Task - Implement base IRI config
+    [x] 1.1.1 Task - Implement base IRI config
       Add a shared configuration path for generated resource IRIs.
 
-      [ ] 1.1.1.1 Subtask - Add default base IRI behavior for tests and local analysis.
-      [ ] 1.1.1.2 Subtask - Add validation for missing, malformed, or unsafe base IRIs.
-      [ ] 1.1.1.3 Subtask - Keep ontology namespace helpers separate from generated-resource helpers.
+      [x] 1.1.1.1 Subtask - Add default base IRI behavior for tests and local analysis.
+      [x] 1.1.1.2 Subtask - Add validation for missing, malformed, or unsafe base IRIs.
+      [x] 1.1.1.3 Subtask - Keep ontology namespace helpers separate from generated-resource helpers.
 
   [ ] 1.2 Section - Source Path Canonicalization
     Normalize source file paths before resource identity is built.

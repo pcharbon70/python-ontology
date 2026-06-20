@@ -120,4 +120,36 @@ decisions:
     - python_ontology.iri_identity_strategy.hash_canonicalization
     - python_ontology.iri_identity_strategy.no_runtime_identity_claims
     - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: lib/python_ontology/iri.ex
+  covers:
+    - python_ontology.iri_identity_strategy.namespace_resource_separation
+    - python_ontology.iri_identity_strategy.configurable_base_iri
+    - python_ontology.iri_identity_strategy.no_runtime_identity_claims
+    - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: lib/python_ontology/iri/context.ex
+  covers:
+    - python_ontology.iri_identity_strategy.namespace_resource_separation
+    - python_ontology.iri_identity_strategy.configurable_base_iri
+    - python_ontology.iri_identity_strategy.no_runtime_identity_claims
+    - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: lib/python_ontology/iri/diagnostic.ex
+  covers:
+    - python_ontology.iri_identity_strategy.configurable_base_iri
+    - python_ontology.iri_identity_strategy.stable_path_normalization
+    - python_ontology.iri_identity_strategy.hash_canonicalization
+    - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: test/python_ontology/iri/base_iri_test.exs
+  covers:
+    - python_ontology.iri_identity_strategy.namespace_resource_separation
+    - python_ontology.iri_identity_strategy.configurable_base_iri
+    - python_ontology.iri_identity_strategy.no_runtime_identity_claims
+    - python_ontology.iri_identity_strategy.shared_iri_helper
 ```

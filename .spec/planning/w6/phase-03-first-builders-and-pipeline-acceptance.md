@@ -37,15 +37,15 @@ Back to index: [README](./README.md)
       [x] 3.1.2.2 Subtask - Emit confidence and evidence triples consistently.
       [x] 3.1.2.3 Subtask - Ensure builders do not parse source text or traverse raw parser nodes.
 
-  [ ] 3.2 Section - Pipeline Composition
+  [x] 3.2 Section - Pipeline Composition
     Wire normalization, extraction, building, and diagnostics together.
 
-    [ ] 3.2.1 Task - Compose file pipeline
+    [x] 3.2.1 Task - Compose file pipeline
       Create a single-file path through parser, normalization, extraction, and builders.
 
-      [ ] 3.2.1.1 Subtask - Accept parser result and normalized syntax.
-      [ ] 3.2.1.2 Subtask - Run extractors and collect facts/diagnostics.
-      [ ] 3.2.1.3 Subtask - Run builders and return RDF graph plus diagnostics.
+      [x] 3.2.1.1 Subtask - Accept parser result and normalized syntax.
+      [x] 3.2.1.2 Subtask - Run extractors and collect facts/diagnostics.
+      [x] 3.2.1.3 Subtask - Run builders and return RDF graph plus diagnostics.
 
   [ ] 3.3 Section - Phase 3 Integration Tests
     Prove builders and pipeline produce RDF from extracted facts while preserving stage boundaries.

@@ -282,4 +282,14 @@ decisions:
   target: test/python_ontology/builders/rdf_test.exs
   covers:
     - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: lib/python_ontology/pipeline.ex
+  covers:
+    - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: test/python_ontology/pipeline_test.exs
+  covers:
+    - python_ontology.iri_identity_strategy.shared_iri_helper
 ```

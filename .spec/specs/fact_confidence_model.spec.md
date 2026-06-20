@@ -376,4 +376,14 @@ decisions:
   covers:
     - python_ontology.fact_confidence_model.builder_propagation
     - python_ontology.fact_confidence_model.queryable_confidence
+
+- kind: source_file
+  target: lib/python_ontology/pipeline.ex
+  covers:
+    - python_ontology.fact_confidence_model.builder_propagation
+
+- kind: source_file
+  target: test/python_ontology/pipeline_test.exs
+  covers:
+    - python_ontology.fact_confidence_model.builder_propagation
 ```

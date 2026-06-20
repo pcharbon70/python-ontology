@@ -315,4 +315,16 @@ decisions:
   covers:
     - python_ontology.fact_confidence_model.categories
     - python_ontology.fact_confidence_model.source_declared_default
+
+- kind: source_file
+  target: lib/python_ontology/extractors/structural.ex
+  covers:
+    - python_ontology.fact_confidence_model.source_declared_default
+    - python_ontology.fact_confidence_model.no_execution_for_confidence
+
+- kind: source_file
+  target: test/python_ontology/extractors/structural_test.exs
+  covers:
+    - python_ontology.fact_confidence_model.source_declared_default
+    - python_ontology.fact_confidence_model.no_execution_for_confidence
 ```

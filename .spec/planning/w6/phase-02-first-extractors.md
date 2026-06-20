@@ -19,22 +19,22 @@ Back to index: [README](./README.md)
 [ ] 2 Phase 2 - First Extractors
   Implement the first extractor set for source structure and call navigation.
 
-  [ ] 2.1 Section - Structural Extractors
+  [x] 2.1 Section - Structural Extractors
     Extract source files, modules, imports, classes, and functions.
 
-    [ ] 2.1.1 Task - Implement module and import extraction
+    [x] 2.1.1 Task - Implement module and import extraction
       Convert normalized module/import syntax into facts.
 
-      [ ] 2.1.1.1 Subtask - Extract source file and module facts.
-      [ ] 2.1.1.2 Subtask - Extract `import` and `from ... import ...` facts with aliases.
-      [ ] 2.1.1.3 Subtask - Preserve unresolved relative or dynamic import details.
+      [x] 2.1.1.1 Subtask - Extract source file and module facts.
+      [x] 2.1.1.2 Subtask - Extract `import` and `from ... import ...` facts with aliases.
+      [x] 2.1.1.3 Subtask - Preserve unresolved relative or dynamic import details.
 
-    [ ] 2.1.2 Task - Implement class and function extraction
+    [x] 2.1.2 Task - Implement class and function extraction
       Convert declarations into structural facts.
 
-      [ ] 2.1.2.1 Subtask - Extract class facts with base class syntax and decorators.
-      [ ] 2.1.2.2 Subtask - Extract function and method facts with decorators and annotations.
-      [ ] 2.1.2.3 Subtask - Extract parameter, default, vararg, kwarg, and keyword-only facts.
+      [x] 2.1.2.1 Subtask - Extract class facts with base class syntax and decorators.
+      [x] 2.1.2.2 Subtask - Extract function and method facts with decorators and annotations.
+      [x] 2.1.2.3 Subtask - Extract parameter, default, vararg, kwarg, and keyword-only facts.
 
   [ ] 2.2 Section - Expression Extractors
     Extract minimal expression facts required by the first analysis slice.

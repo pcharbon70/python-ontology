@@ -16,7 +16,7 @@ Back to index: [README](./README.md)
 - Generated graph validation runs after RDF building.
 - Validation failures return structured reports.
 
-[ ] 2 Phase 2 - Generated Graph SHACL Validation
+[x] 2 Phase 2 - Generated Graph SHACL Validation
   Validate generated RDF graphs against PythonOntology SHACL shapes.
 
   [x] 2.1 Section - SHACL Entrypoint
@@ -39,12 +39,12 @@ Back to index: [README](./README.md)
       [x] 2.2.1.2 Subtask - Validate function qualified names and parameter structure.
       [x] 2.2.1.3 Subtask - Validate source location line/column datatypes.
 
-  [ ] 2.3 Section - Phase 2 Integration Tests
+  [x] 2.3 Section - Phase 2 Integration Tests
     Prove generated graph validation catches malformed graph output.
 
-    [ ] 2.3.1 Task - Run SHACL validation checks
+    [x] 2.3.1 Task - Run SHACL validation checks
       Validate passing and failing graph fixtures.
 
-      [ ] 2.3.1.1 Subtask - Add a passing generated graph fixture for first-slice resources.
-      [ ] 2.3.1.2 Subtask - Add a failing fixture with missing required properties.
-      [ ] 2.3.1.3 Subtask - Run focused SHACL tests, full `mix test`, and `mix spec.check`.
+      [x] 2.3.1.1 Subtask - Add a passing generated graph fixture for first-slice resources.
+      [x] 2.3.1.2 Subtask - Add a failing fixture with missing required properties.
+      [x] 2.3.1.3 Subtask - Run focused SHACL tests, full `mix test`, and `mix spec.check`.

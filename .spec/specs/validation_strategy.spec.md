@@ -211,4 +211,12 @@ decisions:
     - python_ontology.validation_strategy.validation_reports
     - python_ontology.validation_strategy.no_validation_by_execution
     - python_ontology.validation_strategy.validation_after_graph_build
+
+- kind: source_file
+  target: test/python_ontology/validation/phase2_integration_test.exs
+  covers:
+    - python_ontology.validation_strategy.shacl_closed_world
+    - python_ontology.validation_strategy.validation_reports
+    - python_ontology.validation_strategy.no_validation_by_execution
+    - python_ontology.validation_strategy.validation_after_graph_build
 ```

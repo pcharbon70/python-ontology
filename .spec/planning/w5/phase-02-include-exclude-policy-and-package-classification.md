@@ -18,22 +18,22 @@ Back to index: [README](./README.md)
 [ ] 2 Phase 2 - Include Exclude Policy and Package Classification
   Implement selection policy and source classification for Python project files.
 
-  [ ] 2.1 Section - Include And Exclude Globs
+  [x] 2.1 Section - Include And Exclude Globs
     Make file selection configurable while keeping safe defaults.
 
-    [ ] 2.1.1 Task - Implement default exclusions
+    [x] 2.1.1 Task - Implement default exclusions
       Avoid accidental dependency and generated file analysis.
 
-      [ ] 2.1.1.1 Subtask - Exclude `.git`, `.venv`, `venv`, `env`, `__pycache__`, `.mypy_cache`, `.pytest_cache`, `.tox`, `.nox`, `build`, `dist`, `site-packages`, and `node_modules`.
-      [ ] 2.1.1.2 Subtask - Exclude generated output directories configured by callers.
-      [ ] 2.1.1.3 Subtask - Report selected and skipped counts in project analysis metadata.
+      [x] 2.1.1.1 Subtask - Exclude `.git`, `.venv`, `venv`, `env`, `__pycache__`, `.mypy_cache`, `.pytest_cache`, `.tox`, `.nox`, `build`, `dist`, `site-packages`, and `node_modules`.
+      [x] 2.1.1.2 Subtask - Exclude generated output directories configured by callers.
+      [x] 2.1.1.3 Subtask - Report selected and skipped counts in project analysis metadata.
 
-    [ ] 2.1.2 Task - Implement configurable globs
+    [x] 2.1.2 Task - Implement configurable globs
       Allow callers to tune source selection.
 
-      [ ] 2.1.2.1 Subtask - Add include glob options.
-      [ ] 2.1.2.2 Subtask - Add exclude glob options.
-      [ ] 2.1.2.3 Subtask - Define precedence when include and exclude patterns overlap.
+      [x] 2.1.2.1 Subtask - Add include glob options.
+      [x] 2.1.2.2 Subtask - Add exclude glob options.
+      [x] 2.1.2.3 Subtask - Define precedence when include and exclude patterns overlap.
 
   [ ] 2.2 Section - Package And Test Classification
     Add classification needed by IRI identity and caller filtering.

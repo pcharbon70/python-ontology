@@ -141,6 +141,19 @@ decisions:
     - python_ontology.project_analysis_scope.root_detection
     - python_ontology.project_analysis_scope.include_python_sources
     - python_ontology.project_analysis_scope.include_stub_files
+    - python_ontology.project_analysis_scope.exclude_environment_dirs
+    - python_ontology.project_analysis_scope.configurable_globs
+    - python_ontology.project_analysis_scope.no_dependency_traversal_default
+    - python_ontology.project_analysis_scope.deterministic_order
+
+- kind: source_file
+  target: lib/python_ontology/project/selection_policy.ex
+  covers:
+    - python_ontology.project_analysis_scope.include_python_sources
+    - python_ontology.project_analysis_scope.include_stub_files
+    - python_ontology.project_analysis_scope.exclude_environment_dirs
+    - python_ontology.project_analysis_scope.configurable_globs
+    - python_ontology.project_analysis_scope.no_dependency_traversal_default
     - python_ontology.project_analysis_scope.deterministic_order
 
 - kind: source_file
@@ -185,5 +198,15 @@ decisions:
     - python_ontology.project_analysis_scope.root_detection
     - python_ontology.project_analysis_scope.include_python_sources
     - python_ontology.project_analysis_scope.include_stub_files
+    - python_ontology.project_analysis_scope.deterministic_order
+
+- kind: source_file
+  target: test/python_ontology/project/selection_policy_test.exs
+  covers:
+    - python_ontology.project_analysis_scope.include_python_sources
+    - python_ontology.project_analysis_scope.include_stub_files
+    - python_ontology.project_analysis_scope.exclude_environment_dirs
+    - python_ontology.project_analysis_scope.configurable_globs
+    - python_ontology.project_analysis_scope.no_dependency_traversal_default
     - python_ontology.project_analysis_scope.deterministic_order
 ```

@@ -15,7 +15,7 @@ Back to index: [README](./README.md)
 - Parser error nodes are preserved as diagnostics and partial syntax when possible.
 - Normalization does not emit RDF.
 
-[ ] 3 Phase 3 - Unknown Nodes, Diagnostics, and Normalization Acceptance
+[x] 3 Phase 3 - Unknown Nodes, Diagnostics, and Normalization Acceptance
   Complete normalization behavior for unsupported syntax, parser errors, and local acceptance.
 
   [x] 3.1 Section - Unknown Node Preservation
@@ -45,12 +45,12 @@ Back to index: [README](./README.md)
       [x] 3.2.1.2 Subtask - Hide raw Tree-sitter cursor APIs from extractor modules.
       [x] 3.2.1.3 Subtask - Document which normalized node types are stable for W6 extractors.
 
-  [ ] 3.3 Section - Phase 3 Integration Tests
+  [x] 3.3 Section - Phase 3 Integration Tests
     Prove normalization acceptance before extractor implementation begins.
 
-    [ ] 3.3.1 Task - Run normalization acceptance
+    [x] 3.3.1 Task - Run normalization acceptance
       Validate known, unknown, and error-node behavior against parser fixtures.
 
-      [ ] 3.3.1.1 Subtask - Add tests that unsupported nodes are preserved as generic nodes.
-      [ ] 3.3.1.2 Subtask - Add tests that invalid syntax preserves diagnostics and partial trees.
-      [ ] 3.3.1.3 Subtask - Run focused normalization tests, full `mix test`, and `mix spec.check`.
+      [x] 3.3.1.1 Subtask - Add tests that unsupported nodes are preserved as generic nodes.
+      [x] 3.3.1.2 Subtask - Add tests that invalid syntax preserves diagnostics and partial trees.
+      [x] 3.3.1.3 Subtask - Run focused normalization tests, full `mix test`, and `mix spec.check`.

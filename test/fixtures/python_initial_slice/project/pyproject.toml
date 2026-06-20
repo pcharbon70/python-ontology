@@ -1,0 +1,4 @@
+# covers: python_ontology.initial_analysis_slice.modules_packages python_ontology.initial_analysis_slice.tests_for_slice
+[project]
+name = "initial-slice-fixture"
+version = "0.1.0"

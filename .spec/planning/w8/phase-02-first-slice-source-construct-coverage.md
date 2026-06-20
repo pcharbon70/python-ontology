@@ -16,7 +16,7 @@ Back to index: [README](./README.md)
 - Runtime-dependent behavior remains unresolved or runtime-dependent.
 - Full type reasoning, dataflow, and framework semantics remain out of scope.
 
-[ ] 2 Phase 2 - First Slice Source Construct Coverage
+[x] 2 Phase 2 - First Slice Source Construct Coverage
   Ensure the end-to-end pipeline covers the first committed Python source constructs.
 
   [x] 2.1 Section - Structural Construct Coverage
@@ -46,12 +46,12 @@ Back to index: [README](./README.md)
       [x] 2.2.1.2 Subtask - Assert attribute and subscript resources.
       [x] 2.2.1.3 Subtask - Assert unresolved/runtime-dependent confidence for dynamic targets.
 
-  [ ] 2.3 Section - Phase 2 Integration Tests
+  [x] 2.3 Section - Phase 2 Integration Tests
     Prove first-slice source construct coverage across representative fixtures.
 
-    [ ] 2.3.1 Task - Run first-slice coverage checks
+    [x] 2.3.1 Task - Run first-slice coverage checks
       Validate expected graph resources and out-of-scope boundaries.
 
-      [ ] 2.3.1.1 Subtask - Add a Python fixture module with all first-slice constructs.
-      [ ] 2.3.1.2 Subtask - Add graph assertions for each first-slice requirement.
-      [ ] 2.3.1.3 Subtask - Run focused first-slice tests, full `mix test`, and `mix spec.check`.
+      [x] 2.3.1.1 Subtask - Add a Python fixture module with all first-slice constructs.
+      [x] 2.3.1.2 Subtask - Add graph assertions for each first-slice requirement.
+      [x] 2.3.1.3 Subtask - Run focused first-slice tests, full `mix test`, and `mix spec.check`.

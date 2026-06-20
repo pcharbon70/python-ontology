@@ -19,22 +19,22 @@ Back to index: [README](./README.md)
 [ ] 2 Phase 2 - Tree-sitter To Syntax Mapping
   Convert Tree-sitter parse output into normalized syntax nodes.
 
-  [ ] 2.1 Section - Structural Mapping
+  [x] 2.1 Section - Structural Mapping
     Map Python source organization constructs into typed syntax nodes.
 
-    [ ] 2.1.1 Task - Map module and import syntax
+    [x] 2.1.1 Task - Map module and import syntax
       Normalize root modules and import statements.
 
-      [ ] 2.1.1.1 Subtask - Map module root and top-level statement order.
-      [ ] 2.1.1.2 Subtask - Map `import` statements with aliases.
-      [ ] 2.1.1.3 Subtask - Map `from ... import ...` statements with relative import level when available.
+      [x] 2.1.1.1 Subtask - Map module root and top-level statement order.
+      [x] 2.1.1.2 Subtask - Map `import` statements with aliases.
+      [x] 2.1.1.3 Subtask - Map `from ... import ...` statements with relative import level when available.
 
-    [ ] 2.1.2 Task - Map class and function syntax
+    [x] 2.1.2 Task - Map class and function syntax
       Normalize declarations and their child syntax.
 
-      [ ] 2.1.2.1 Subtask - Map class names, base class syntax, decorators, and body children.
-      [ ] 2.1.2.2 Subtask - Map function names, decorators, parameters, annotations, defaults, and body children.
-      [ ] 2.1.2.3 Subtask - Map async function syntax as a function variant or marker.
+      [x] 2.1.2.1 Subtask - Map class names, base class syntax, decorators, and body children.
+      [x] 2.1.2.2 Subtask - Map function names, decorators, parameters, annotations, defaults, and body children.
+      [x] 2.1.2.3 Subtask - Map async function syntax as a function variant or marker.
 
   [ ] 2.2 Section - Expression Mapping
     Map first-slice expression constructs into normalized syntax.

@@ -30,6 +30,11 @@ decisions:
   priority: must
   stability: stable
 
+- id: package.python_ontology.tree_sitter_parser_dependency
+  statement: The Mix project shall include Rustler support for the project-owned Tree-sitter parser NIF.
+  priority: must
+  stability: evolving
+
 - id: package.python_ontology.public_namespace
   statement: The PythonOntology module shall expose the OTP application name through app_name/0.
   priority: must
@@ -54,6 +59,7 @@ decisions:
   covers:
     - package.python_ontology.mix_project
     - package.python_ontology.specled_dependency
+    - package.python_ontology.tree_sitter_parser_dependency
 
 - kind: source_file
   target: lib/python_ontology.ex

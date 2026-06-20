@@ -160,6 +160,36 @@ decisions:
     - python_ontology.parser.no_direct_rdf_output
 
 - kind: source_file
+  target: lib/python_ontology/parser.ex
+  covers:
+    - python_ontology.parser.no_python_runtime_dependency
+    - python_ontology.parser.no_project_code_execution
+    - python_ontology.parser.adapter_boundary
+    - python_ontology.parser.normalized_output
+    - python_ontology.parser.concrete_syntax_tree_output
+    - python_ontology.parser.source_locations
+    - python_ontology.parser.error_contract
+    - python_ontology.parser.parser_version_reporting
+    - python_ontology.parser.no_direct_rdf_output
+
+- kind: source_file
+  target: lib/python_ontology/parser/result.ex
+  covers:
+    - python_ontology.parser.normalized_output
+    - python_ontology.parser.concrete_syntax_tree_output
+    - python_ontology.parser.source_locations
+    - python_ontology.parser.error_contract
+    - python_ontology.parser.parser_version_reporting
+    - python_ontology.parser.no_direct_rdf_output
+
+- kind: source_file
+  target: lib/python_ontology/parser/diagnostic.ex
+  covers:
+    - python_ontology.parser.error_contract
+    - python_ontology.parser.source_locations
+    - python_ontology.parser.no_direct_rdf_output
+
+- kind: source_file
   target: lib/python_ontology/parser/native.ex
   covers:
     - python_ontology.parser.elixir_owned_adapter
@@ -181,6 +211,19 @@ decisions:
     - python_ontology.parser.no_python_runtime_dependency
     - python_ontology.parser.no_project_code_execution
     - python_ontology.parser.adapter_boundary
+    - python_ontology.parser.concrete_syntax_tree_output
+    - python_ontology.parser.source_locations
+    - python_ontology.parser.error_contract
+    - python_ontology.parser.parser_version_reporting
+    - python_ontology.parser.no_direct_rdf_output
+
+- kind: source_file
+  target: test/python_ontology/parser_test.exs
+  covers:
+    - python_ontology.parser.no_python_runtime_dependency
+    - python_ontology.parser.no_project_code_execution
+    - python_ontology.parser.adapter_boundary
+    - python_ontology.parser.normalized_output
     - python_ontology.parser.concrete_syntax_tree_output
     - python_ontology.parser.source_locations
     - python_ontology.parser.error_contract

@@ -19,22 +19,22 @@ Back to index: [README](./README.md)
 [ ] 2 Phase 2 - Parser API, Metadata, and Source Spans
   Expose the Elixir parser API that callers and normalization will use.
 
-  [ ] 2.1 Section - Parser Entry Points
+  [x] 2.1 Section - Parser Entry Points
     Define source-string and file-based parsing functions.
 
-    [ ] 2.1.1 Task - Implement source parsing
+    [x] 2.1.1 Task - Implement source parsing
       Parse Python source text with explicit source identity.
 
-      [ ] 2.1.1.1 Subtask - Add `parse_string/2` or equivalent with source text, source identity, and options.
-      [ ] 2.1.1.2 Subtask - Return parser result structs or maps with root node, metadata, and diagnostics.
-      [ ] 2.1.1.3 Subtask - Ensure parsing does not import or execute analyzed Python code.
+      [x] 2.1.1.1 Subtask - Add `parse_string/2` or equivalent with source text, source identity, and options.
+      [x] 2.1.1.2 Subtask - Return parser result structs or maps with root node, metadata, and diagnostics.
+      [x] 2.1.1.3 Subtask - Ensure parsing does not import or execute analyzed Python code.
 
-    [ ] 2.1.2 Task - Implement file parsing
+    [x] 2.1.2 Task - Implement file parsing
       Parse Python source files while separating file-read failures from parser failures.
 
-      [ ] 2.1.2.1 Subtask - Add `parse_file/2` or equivalent.
-      [ ] 2.1.2.2 Subtask - Return structured file-read diagnostics for missing or unreadable files.
-      [ ] 2.1.2.3 Subtask - Preserve normalized file path identity in parser results.
+      [x] 2.1.2.1 Subtask - Add `parse_file/2` or equivalent.
+      [x] 2.1.2.2 Subtask - Return structured file-read diagnostics for missing or unreadable files.
+      [x] 2.1.2.3 Subtask - Preserve normalized file path identity in parser results.
 
   [ ] 2.2 Section - Metadata And Spans
     Preserve parser metadata and location data for every downstream stage.

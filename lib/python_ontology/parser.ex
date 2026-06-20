@@ -5,6 +5,8 @@ defmodule PythonOntology.Parser do
   """
 
   alias PythonOntology.Parser.Diagnostic
+  alias PythonOntology.Parser.Metadata
+  alias PythonOntology.Parser.Node
   alias PythonOntology.Parser.Result
   alias PythonOntology.Parser.TreeSitter
 
@@ -52,31 +54,11 @@ defmodule PythonOntology.Parser do
     %Result{
       source_id: source_id,
       path: path,
-      root: parsed.root,
-      metadata: metadata(parsed, opts),
+      root: Node.from_native(parsed.root),
+      metadata: Metadata.from_native(parsed, opts),
       diagnostics: [],
       has_error: parsed.has_error
     }
-  end
-
-  defp metadata(parsed, opts) do
-    parsed
-    |> Map.take([
-      :adapter,
-      :language,
-      :grammar,
-      :tree_sitter_language_version,
-      :tree_sitter_min_compatible_language_version,
-      :grammar_abi_version,
-      :tree_sitter_python_crate_version
-    ])
-    |> Map.put(:options, public_options(opts))
-  end
-
-  defp public_options(opts) do
-    opts
-    |> Keyword.drop([:adapter])
-    |> Map.new()
   end
 
   defp fetch_source_id(opts) do

@@ -5,12 +5,14 @@ defmodule PythonOntology.Parser.Result do
   """
 
   alias PythonOntology.Parser.Diagnostic
+  alias PythonOntology.Parser.Metadata
+  alias PythonOntology.Parser.Node
 
   @type t :: %__MODULE__{
           source_id: String.t(),
           path: Path.t() | nil,
-          root: map(),
-          metadata: map(),
+          root: Node.t(),
+          metadata: Metadata.t(),
           diagnostics: [Diagnostic.t()],
           has_error: boolean()
         }

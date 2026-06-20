@@ -183,6 +183,29 @@ decisions:
     - python_ontology.parser.no_direct_rdf_output
 
 - kind: source_file
+  target: lib/python_ontology/parser/metadata.ex
+  covers:
+    - python_ontology.parser.normalized_output
+    - python_ontology.parser.parser_version_reporting
+    - python_ontology.parser.no_direct_rdf_output
+
+- kind: source_file
+  target: lib/python_ontology/parser/node.ex
+  covers:
+    - python_ontology.parser.normalized_output
+    - python_ontology.parser.concrete_syntax_tree_output
+    - python_ontology.parser.source_locations
+    - python_ontology.parser.error_contract
+    - python_ontology.parser.no_direct_rdf_output
+
+- kind: source_file
+  target: lib/python_ontology/parser/span.ex
+  covers:
+    - python_ontology.parser.normalized_output
+    - python_ontology.parser.source_locations
+    - python_ontology.parser.no_direct_rdf_output
+
+- kind: source_file
   target: lib/python_ontology/parser/diagnostic.ex
   covers:
     - python_ontology.parser.error_contract

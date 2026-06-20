@@ -4,7 +4,10 @@ defmodule PythonOntology.ParserTest do
 
   alias PythonOntology.Parser
   alias PythonOntology.Parser.Diagnostic
+  alias PythonOntology.Parser.Metadata
+  alias PythonOntology.Parser.Node
   alias PythonOntology.Parser.Result
+  alias PythonOntology.Parser.Span
 
   test "parse_string/2 returns a tagged parser result with source identity" do
     assert {:ok, %Result{} = result} =
@@ -15,6 +18,9 @@ defmodule PythonOntology.ParserTest do
     assert result.diagnostics == []
     refute result.has_error
     assert result.root.kind == "module"
+    assert %Node{} = result.root
+    assert %Span{} = result.root.span
+    assert %Metadata{} = result.metadata
     assert result.metadata.adapter == "PythonOntology.Parser.TreeSitter"
     assert result.metadata.options.source_id == "memory://entry_points.py"
   end
@@ -51,6 +57,50 @@ defmodule PythonOntology.ParserTest do
     assert diagnostic.path == Path.expand(path)
     assert diagnostic.source_id == Path.expand(path)
     assert diagnostic.raw == :enoent
+  end
+
+  test "parse_string/2 preserves metadata, spans, child order, and field names" do
+    source = """
+    class Example:
+        def method(self, value):
+            return value.call()
+    """
+
+    assert {:ok, %Result{} = result} = Parser.parse_string(source, source_id: "memory://shape.py")
+
+    assert result.metadata.language == "python"
+    assert result.metadata.grammar == "tree-sitter-python"
+    assert result.metadata.grammar_abi_version in 13..result.metadata.tree_sitter_language_version
+
+    source_bytes = byte_size(source)
+
+    assert %Span{
+             start_byte: 0,
+             end_byte: ^source_bytes,
+             start_line: 0,
+             start_column: 0,
+             end_line: 3,
+             end_column: 0
+           } = result.root.span
+
+    assert ["class_definition"] = Enum.map(result.root.children, & &1.kind)
+
+    class_definition = hd(result.root.children)
+    assert class_definition.span.start_line == 0
+    assert class_definition.span.end_line == 2
+
+    assert ["class", "identifier", ":", "block"] =
+             Enum.map(class_definition.children, & &1.kind)
+
+    assert Enum.find(class_definition.children, &(&1.field_name == "name")).kind == "identifier"
+
+    class_body = Enum.find(class_definition.children, &(&1.field_name == "body"))
+    function_definition = hd(class_body.children)
+
+    assert Enum.find(function_definition.children, &(&1.field_name == "parameters")).kind ==
+             "parameters"
+
+    assert Enum.find(function_definition.children, &(&1.field_name == "body")).kind == "block"
   end
 
   defp fixture_path(name) do

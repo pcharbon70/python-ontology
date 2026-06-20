@@ -248,4 +248,13 @@ decisions:
     - python_ontology.iri_identity_strategy.hash_canonicalization
     - python_ontology.iri_identity_strategy.no_runtime_identity_claims
     - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: test/python_ontology/iri/phase3_integration_test.exs
+  covers:
+    - python_ontology.iri_identity_strategy.configurable_base_iri
+    - python_ontology.iri_identity_strategy.stable_path_normalization
+    - python_ontology.iri_identity_strategy.expression_span_identity
+    - python_ontology.iri_identity_strategy.hash_canonicalization
+    - python_ontology.iri_identity_strategy.shared_iri_helper
 ```

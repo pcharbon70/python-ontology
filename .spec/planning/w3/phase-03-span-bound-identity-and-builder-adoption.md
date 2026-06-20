@@ -15,7 +15,7 @@ Back to index: [README](./README.md)
 - Hash-based fragments use documented canonical inputs.
 - Builders use shared IRI helpers.
 
-[ ] 3 Phase 3 - Span-Bound Identity and Builder Adoption
+[x] 3 Phase 3 - Span-Bound Identity and Builder Adoption
   Add identity helpers for span-bound resources and prepare builders to use the shared strategy.
 
   [x] 3.1 Section - Span-Bound Resource Identity
@@ -45,12 +45,12 @@ Back to index: [README](./README.md)
       [x] 3.2.1.2 Subtask - Add helpers for fact resource IRIs.
       [x] 3.2.1.3 Subtask - Add tests that builders do not use ad hoc string construction once builders exist.
 
-  [ ] 3.3 Section - Phase 3 Integration Tests
+  [x] 3.3 Section - Phase 3 Integration Tests
     Prove span-bound identity works and is ready for builder integration.
 
-    [ ] 3.3.1 Task - Run span-bound identity checks
+    [x] 3.3.1 Task - Run span-bound identity checks
       Validate expression and source-location identity behavior.
 
-      [ ] 3.3.1.1 Subtask - Add tests for import, call, assignment, expression, and source-location IRIs.
-      [ ] 3.3.1.2 Subtask - Add tests for canonical hash inputs and deterministic output.
-      [ ] 3.3.1.3 Subtask - Run focused IRI tests, full `mix test`, and `mix spec.check`.
+      [x] 3.3.1.1 Subtask - Add tests for import, call, assignment, expression, and source-location IRIs.
+      [x] 3.3.1.2 Subtask - Add tests for canonical hash inputs and deterministic output.
+      [x] 3.3.1.3 Subtask - Run focused IRI tests, full `mix test`, and `mix spec.check`.

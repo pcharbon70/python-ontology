@@ -15,7 +15,7 @@ Back to index: [README](./README.md)
 - Static inference requires evidence.
 - Runtime-dependent behavior is not promoted to static truth.
 
-[ ] 1 Phase 1 - Confidence Categories and Evidence Model
+[x] 1 Phase 1 - Confidence Categories and Evidence Model
   Define internal confidence and evidence data structures.
 
   [x] 1.1 Section - Category Model
@@ -45,12 +45,12 @@ Back to index: [README](./README.md)
       [x] 1.2.2.2 Subtask - Define unresolved reasons for unknown names and dynamic targets.
       [x] 1.2.2.3 Subtask - Define runtime-dependent reasons for imports, decorators, metaclasses, monkey patching, and reflection.
 
-  [ ] 1.3 Section - Phase 1 Integration Tests
+  [x] 1.3 Section - Phase 1 Integration Tests
     Validate category and evidence construction before extractors use the model.
 
-    [ ] 1.3.1 Task - Run confidence model checks
+    [x] 1.3.1 Task - Run confidence model checks
       Prove categories and evidence references are valid and deterministic.
 
-      [ ] 1.3.1.1 Subtask - Add tests for category validation and defaults.
-      [ ] 1.3.1.2 Subtask - Add tests for source, inferred, unresolved, and runtime-dependent evidence records.
-      [ ] 1.3.1.3 Subtask - Run focused confidence tests, full `mix test`, and `mix spec.check`.
+      [x] 1.3.1.1 Subtask - Add tests for category validation and defaults.
+      [x] 1.3.1.2 Subtask - Add tests for source, inferred, unresolved, and runtime-dependent evidence records.
+      [x] 1.3.1.3 Subtask - Run focused confidence tests, full `mix test`, and `mix spec.check`.

@@ -19,22 +19,22 @@ Back to index: [README](./README.md)
 [ ] 1 Phase 1 - Contexts, Diagnostics, and Fact Contracts
   Define shared contracts for extraction, building, and pipeline diagnostics.
 
-  [ ] 1.1 Section - Context Models
+  [x] 1.1 Section - Context Models
     Define explicit context data for extractors and builders.
 
-    [ ] 1.1.1 Task - Define analysis context
+    [x] 1.1.1 Task - Define analysis context
       Carry project, parser, syntax, and option metadata through the pipeline.
 
-      [ ] 1.1.1.1 Subtask - Include project root, source file, package hints, parser metadata, and analysis options.
-      [ ] 1.1.1.2 Subtask - Include base IRI and namespace configuration.
-      [ ] 1.1.1.3 Subtask - Include diagnostic accumulator fields.
+      [x] 1.1.1.1 Subtask - Include project root, source file, package hints, parser metadata, and analysis options.
+      [x] 1.1.1.2 Subtask - Include base IRI and namespace configuration.
+      [x] 1.1.1.3 Subtask - Include diagnostic accumulator fields.
 
-    [ ] 1.1.2 Task - Define builder context
+    [x] 1.1.2 Task - Define builder context
       Carry graph-building configuration and helper access.
 
-      [ ] 1.1.2.1 Subtask - Include IRI helper configuration.
-      [ ] 1.1.2.2 Subtask - Include namespace/vocabulary helpers.
-      [ ] 1.1.2.3 Subtask - Include confidence propagation options.
+      [x] 1.1.2.1 Subtask - Include IRI helper configuration.
+      [x] 1.1.2.2 Subtask - Include namespace/vocabulary helpers.
+      [x] 1.1.2.3 Subtask - Include confidence propagation options.
 
   [ ] 1.2 Section - Fact Contracts
     Define first-slice fact structs shared by extractors and builders.

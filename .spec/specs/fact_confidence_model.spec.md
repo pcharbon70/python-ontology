@@ -264,4 +264,24 @@ decisions:
     - python_ontology.fact_confidence_model.builder_propagation
     - python_ontology.fact_confidence_model.queryable_confidence
     - python_ontology.fact_confidence_model.no_execution_for_confidence
+
+- kind: source_file
+  target: lib/python_ontology/extractors/context.ex
+  covers:
+    - python_ontology.fact_confidence_model.source_declared_default
+
+- kind: source_file
+  target: lib/python_ontology/builders/context.ex
+  covers:
+    - python_ontology.fact_confidence_model.builder_propagation
+
+- kind: source_file
+  target: test/python_ontology/extractors/context_test.exs
+  covers:
+    - python_ontology.fact_confidence_model.source_declared_default
+
+- kind: source_file
+  target: test/python_ontology/builders/context_test.exs
+  covers:
+    - python_ontology.fact_confidence_model.builder_propagation
 ```

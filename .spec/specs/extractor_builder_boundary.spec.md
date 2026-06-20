@@ -11,9 +11,12 @@ surface:
   - .spec/decisions/python_ontology.decision.extractor_builder_boundary.md
   - lib/python_ontology/extractors/**/*.ex
   - lib/python_ontology/builders/**/*.ex
+  - lib/python_ontology/facts/**/*.ex
   - lib/python_ontology/pipeline*.ex
+  - lib/python_ontology/pipeline/**/*.ex
   - test/python_ontology/**/*extractor*_test.exs
   - test/python_ontology/**/*builder*_test.exs
+  - test/python_ontology/**/*pipeline*_test.exs
 decisions:
   - python_ontology.decision.normalized_syntax_model
   - python_ontology.decision.iri_identity_strategy
@@ -159,4 +162,38 @@ decisions:
   covers:
     - python_ontology.extractor_builder_boundary.builders_emit_rdf
     - python_ontology.extractor_builder_boundary.shared_iri_helper
+
+- kind: source_file
+  target: lib/python_ontology/extractors/context.ex
+  covers:
+    - python_ontology.extractor_builder_boundary.shared_context
+    - python_ontology.extractor_builder_boundary.shared_iri_helper
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: lib/python_ontology/builders/context.ex
+  covers:
+    - python_ontology.extractor_builder_boundary.shared_context
+    - python_ontology.extractor_builder_boundary.shared_iri_helper
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: lib/python_ontology/pipeline/diagnostic.ex
+  covers:
+    - python_ontology.extractor_builder_boundary.shared_context
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: test/python_ontology/extractors/context_test.exs
+  covers:
+    - python_ontology.extractor_builder_boundary.shared_context
+    - python_ontology.extractor_builder_boundary.shared_iri_helper
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: test/python_ontology/builders/context_test.exs
+  covers:
+    - python_ontology.extractor_builder_boundary.shared_context
+    - python_ontology.extractor_builder_boundary.shared_iri_helper
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
 ```

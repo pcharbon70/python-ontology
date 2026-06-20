@@ -109,4 +109,25 @@ decisions:
     - python_ontology.fact_confidence_model.builder_propagation
     - python_ontology.fact_confidence_model.queryable_confidence
     - python_ontology.fact_confidence_model.no_execution_for_confidence
+
+- kind: source_file
+  target: lib/python_ontology/confidence.ex
+  covers:
+    - python_ontology.fact_confidence_model.categories
+    - python_ontology.fact_confidence_model.source_declared_default
+    - python_ontology.fact_confidence_model.no_execution_for_confidence
+
+- kind: source_file
+  target: lib/python_ontology/confidence/category.ex
+  covers:
+    - python_ontology.fact_confidence_model.categories
+    - python_ontology.fact_confidence_model.source_declared_default
+    - python_ontology.fact_confidence_model.no_execution_for_confidence
+
+- kind: source_file
+  target: test/python_ontology/confidence/category_test.exs
+  covers:
+    - python_ontology.fact_confidence_model.categories
+    - python_ontology.fact_confidence_model.source_declared_default
+    - python_ontology.fact_confidence_model.no_execution_for_confidence
 ```

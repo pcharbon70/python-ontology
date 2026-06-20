@@ -18,15 +18,15 @@ Back to index: [README](./README.md)
 [ ] 1 Phase 1 - Confidence Categories and Evidence Model
   Define internal confidence and evidence data structures.
 
-  [ ] 1.1 Section - Category Model
+  [x] 1.1 Section - Category Model
     Implement the finite confidence category set.
 
-    [ ] 1.1.1 Task - Define category values
+    [x] 1.1.1 Task - Define category values
       Provide stable category atoms or structs.
 
-      [ ] 1.1.1.1 Subtask - Define `source_declared`, `statically_inferred`, `unresolved`, and `runtime_dependent`.
-      [ ] 1.1.1.2 Subtask - Add validation for unknown category values.
-      [ ] 1.1.1.3 Subtask - Define default category selection for direct syntax facts.
+      [x] 1.1.1.1 Subtask - Define `source_declared`, `statically_inferred`, `unresolved`, and `runtime_dependent`.
+      [x] 1.1.1.2 Subtask - Add validation for unknown category values.
+      [x] 1.1.1.3 Subtask - Define default category selection for direct syntax facts.
 
   [ ] 1.2 Section - Evidence Model
     Represent why a fact has its confidence category.

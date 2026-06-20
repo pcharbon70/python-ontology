@@ -40,4 +40,6 @@ Extractors must return evidence metadata, not just bare facts.
 
 Some facts that other tools might infer optimistically will remain unresolved until the project has deterministic evidence.
 
+W4 implements the policy through the `PythonOntology.Confidence` modules. The first implementation defines the finite category set, direct-syntax defaulting, and validation before extractors and builders start emitting confidence metadata.
+
 <!-- covers: python_ontology.fact_confidence_model.categories python_ontology.fact_confidence_model.source_declared_default python_ontology.fact_confidence_model.static_inference_evidence python_ontology.fact_confidence_model.unresolved_queryable python_ontology.fact_confidence_model.runtime_dependent_boundary python_ontology.fact_confidence_model.dynamic_construct_marking python_ontology.fact_confidence_model.builder_propagation python_ontology.fact_confidence_model.queryable_confidence python_ontology.fact_confidence_model.no_execution_for_confidence -->

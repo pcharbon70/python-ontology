@@ -5,6 +5,7 @@ defmodule PythonOntology.Confidence do
   """
 
   alias PythonOntology.Confidence.Category
+  alias PythonOntology.Confidence.Evidence
 
   @doc """
   Returns all supported confidence categories.
@@ -20,4 +21,36 @@ defmodule PythonOntology.Confidence do
   Validates a confidence category.
   """
   defdelegate validate_category(category), to: Category, as: :validate
+
+  @doc """
+  Builds source file/span evidence.
+  """
+  defdelegate source_evidence(opts), to: Evidence, as: :source
+
+  @doc """
+  Builds normalized syntax node evidence.
+  """
+  defdelegate syntax_evidence(input), to: Evidence, as: :syntax_node
+
+  @doc """
+  Builds static inference evidence.
+  """
+  defdelegate static_inference_evidence(reason, inputs, opts \\ []),
+    to: Evidence,
+    as: :static_inference
+
+  @doc """
+  Builds unresolved evidence.
+  """
+  defdelegate unresolved_evidence(reason, opts \\ []), to: Evidence, as: :unresolved
+
+  @doc """
+  Builds runtime-dependent evidence.
+  """
+  defdelegate runtime_evidence(reason, opts \\ []), to: Evidence, as: :runtime_dependent
+
+  @doc """
+  Validates an evidence list.
+  """
+  defdelegate evidence_list(evidence), to: Evidence, as: :list
 end

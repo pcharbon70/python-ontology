@@ -28,22 +28,22 @@ Back to index: [README](./README.md)
       [x] 1.1.1.2 Subtask - Add validation for unknown category values.
       [x] 1.1.1.3 Subtask - Define default category selection for direct syntax facts.
 
-  [ ] 1.2 Section - Evidence Model
+  [x] 1.2 Section - Evidence Model
     Represent why a fact has its confidence category.
 
-    [ ] 1.2.1 Task - Define source evidence
+    [x] 1.2.1 Task - Define source evidence
       Point facts at syntax and source spans.
 
-      [ ] 1.2.1.1 Subtask - Define source file and span evidence references.
-      [ ] 1.2.1.2 Subtask - Define syntax node evidence references.
-      [ ] 1.2.1.3 Subtask - Define evidence lists for facts with multiple source contributors.
+      [x] 1.2.1.1 Subtask - Define source file and span evidence references.
+      [x] 1.2.1.2 Subtask - Define syntax node evidence references.
+      [x] 1.2.1.3 Subtask - Define evidence lists for facts with multiple source contributors.
 
-    [ ] 1.2.2 Task - Define inferred and dynamic evidence
+    [x] 1.2.2 Task - Define inferred and dynamic evidence
       Preserve reasons for inferred, unresolved, and runtime-dependent facts.
 
-      [ ] 1.2.2.1 Subtask - Define static-inference evidence that references source-declared inputs.
-      [ ] 1.2.2.2 Subtask - Define unresolved reasons for unknown names and dynamic targets.
-      [ ] 1.2.2.3 Subtask - Define runtime-dependent reasons for imports, decorators, metaclasses, monkey patching, and reflection.
+      [x] 1.2.2.1 Subtask - Define static-inference evidence that references source-declared inputs.
+      [x] 1.2.2.2 Subtask - Define unresolved reasons for unknown names and dynamic targets.
+      [x] 1.2.2.3 Subtask - Define runtime-dependent reasons for imports, decorators, metaclasses, monkey patching, and reflection.
 
   [ ] 1.3 Section - Phase 1 Integration Tests
     Validate category and evidence construction before extractors use the model.

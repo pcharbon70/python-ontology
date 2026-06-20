@@ -16,7 +16,7 @@ Back to index: [README](./README.md)
 - Parser failures and syntax errors are structured diagnostics.
 - Parser acceptance should produce stable fixtures for the normalized syntax wave.
 
-[ ] 3 Phase 3 - Error Nodes, Fixtures, and Parser Acceptance
+[x] 3 Phase 3 - Error Nodes, Fixtures, and Parser Acceptance
   Prove parser behavior for valid source, invalid source, and reusable fixtures.
 
   [x] 3.1 Section - Error Node Handling
@@ -53,12 +53,12 @@ Back to index: [README](./README.md)
       [x] 3.2.2.2 Subtask - Assert error diagnostics include source spans where available.
       [x] 3.2.2.3 Subtask - Assert no Python runtime is invoked for invalid syntax.
 
-  [ ] 3.3 Section - Phase 3 Integration Tests
+  [x] 3.3 Section - Phase 3 Integration Tests
     Validate parser acceptance criteria before normalization work depends on parser output.
 
-    [ ] 3.3.1 Task - Run parser acceptance
+    [x] 3.3.1 Task - Run parser acceptance
       Prove parser success, error handling, fixture coverage, and local gates.
 
-      [ ] 3.3.1.1 Subtask - Run valid and invalid parser fixture tests.
-      [ ] 3.3.1.2 Subtask - Run `mix format --check-formatted` and full `mix test`.
-      [ ] 3.3.1.3 Subtask - Run `mix spec.check` and update parser specs only if implementation materially changes the contract.
+      [x] 3.3.1.1 Subtask - Run valid and invalid parser fixture tests.
+      [x] 3.3.1.2 Subtask - Run `mix format --check-formatted` and full `mix test`.
+      [x] 3.3.1.3 Subtask - Run `mix spec.check` and update parser specs only if implementation materially changes the contract.

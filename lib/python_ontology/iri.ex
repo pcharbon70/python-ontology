@@ -5,6 +5,7 @@ defmodule PythonOntology.IRI do
   """
 
   alias PythonOntology.IRI.Context
+  alias PythonOntology.IRI.Path
 
   @ontology_root "https://w3id.org/python-code/"
   @known_layers ~w(core structure typing runtime evolution shapes)
@@ -23,6 +24,11 @@ defmodule PythonOntology.IRI do
   Validates a generated-resource base IRI.
   """
   defdelegate validate_base_iri(base_iri), to: Context
+
+  @doc """
+  Converts a source path to a repository-relative POSIX path.
+  """
+  defdelegate source_path(path, opts \\ []), to: Path, as: :canonicalize
 
   @doc """
   Returns the ontology document IRI for a Python ontology layer.

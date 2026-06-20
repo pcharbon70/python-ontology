@@ -42,6 +42,16 @@ defmodule PythonOntology.IRI do
   defdelegate module(context, opts), to: Identity
 
   @doc """
+  Builds a class resource IRI.
+  """
+  defdelegate class(context, opts), to: Identity
+
+  @doc """
+  Builds a function or method resource IRI.
+  """
+  defdelegate function(context, opts), to: Identity
+
+  @doc """
   Returns the ontology document IRI for a Python ontology layer.
   """
   @spec ontology_iri(atom() | String.t()) :: String.t()

@@ -35,22 +35,22 @@ Back to index: [README](./README.md)
       [x] 2.1.2.2 Subtask - Generate module IDs for `.pyi` stub modules.
       [x] 2.1.2.3 Subtask - Include source path fallback for duplicate or ambiguous modules.
 
-  [ ] 2.2 Section - Class And Function Identity
+  [x] 2.2 Section - Class And Function Identity
     Generate stable lexical identities for Python declarations.
 
-    [ ] 2.2.1 Task - Implement class identity
+    [x] 2.2.1 Task - Implement class identity
       Build class IDs from module identity and lexical class path.
 
-      [ ] 2.2.1.1 Subtask - Generate top-level class IDs.
-      [ ] 2.2.1.2 Subtask - Generate nested class IDs.
-      [ ] 2.2.1.3 Subtask - Disambiguate repeated class names with occurrence and span data.
+      [x] 2.2.1.1 Subtask - Generate top-level class IDs.
+      [x] 2.2.1.2 Subtask - Generate nested class IDs.
+      [x] 2.2.1.3 Subtask - Disambiguate repeated class names with occurrence and span data.
 
-    [ ] 2.2.2 Task - Implement function and method identity
+    [x] 2.2.2 Task - Implement function and method identity
       Build function IDs from lexical path without using arity.
 
-      [ ] 2.2.2.1 Subtask - Generate top-level function IDs.
-      [ ] 2.2.2.2 Subtask - Generate method and nested function IDs.
-      [ ] 2.2.2.3 Subtask - Disambiguate repeated function names with occurrence and span data.
+      [x] 2.2.2.1 Subtask - Generate top-level function IDs.
+      [x] 2.2.2.2 Subtask - Generate method and nested function IDs.
+      [x] 2.2.2.3 Subtask - Disambiguate repeated function names with occurrence and span data.
 
   [ ] 2.3 Section - Phase 2 Integration Tests
     Validate structural identity across ordinary, nested, repeated, and ambiguous definitions.

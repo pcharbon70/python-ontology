@@ -171,4 +171,50 @@ decisions:
     - python_ontology.initial_analysis_slice.source_locations
     - python_ontology.initial_analysis_slice.out_of_scope_runtime
     - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: lib/python_ontology/syntax/source.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+
+- kind: source_file
+  target: lib/python_ontology/syntax/provenance.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+
+- kind: source_file
+  target: lib/python_ontology/syntax/node_id.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+
+- kind: source_file
+  target: lib/python_ontology/syntax/node_info.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+
+- kind: source_file
+  target: lib/python_ontology/syntax/span.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+
+- kind: source_file
+  target: lib/python_ontology/syntax/byte_span.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+
+- kind: source_file
+  target: lib/python_ontology/syntax/point.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+
+- kind: source_file
+  target: lib/python_ontology/syntax/point_span.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+
+- kind: source_file
+  target: test/python_ontology/syntax/shared_fields_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.tests_for_slice
 ```

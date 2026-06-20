@@ -18,22 +18,22 @@ Back to index: [README](./README.md)
 [ ] 1 Phase 1 - Core Syntax Structs and Shared Fields
   Define the normalized syntax structs and shared metadata fields.
 
-  [ ] 1.1 Section - Shared Node Fields
+  [x] 1.1 Section - Shared Node Fields
     Establish the common shape every normalized syntax node carries.
 
-    [ ] 1.1.1 Task - Define provenance and identity fields
+    [x] 1.1.1 Task - Define provenance and identity fields
       Make raw parser origin and source identity explicit.
 
-      [ ] 1.1.1.1 Subtask - Define source file identity and parser metadata fields.
-      [ ] 1.1.1.2 Subtask - Define raw Tree-sitter type, named status, field name, child order, and parent path fields.
-      [ ] 1.1.1.3 Subtask - Define stable node IDs for normalized nodes within a file.
+      [x] 1.1.1.1 Subtask - Define source file identity and parser metadata fields.
+      [x] 1.1.1.2 Subtask - Define raw Tree-sitter type, named status, field name, child order, and parent path fields.
+      [x] 1.1.1.3 Subtask - Define stable node IDs for normalized nodes within a file.
 
-    [ ] 1.1.2 Task - Define source span fields
+    [x] 1.1.2 Task - Define source span fields
       Preserve byte and row/column positions for syntax nodes.
 
-      [ ] 1.1.2.1 Subtask - Define byte span struct or field convention.
-      [ ] 1.1.2.2 Subtask - Define row/column span struct or field convention.
-      [ ] 1.1.2.3 Subtask - Define behavior when span data is unavailable.
+      [x] 1.1.2.1 Subtask - Define byte span struct or field convention.
+      [x] 1.1.2.2 Subtask - Define row/column span struct or field convention.
+      [x] 1.1.2.3 Subtask - Define behavior when span data is unavailable.
 
   [ ] 1.2 Section - First-Slice Typed Nodes
     Define typed normalized nodes for constructs required by initial extraction.

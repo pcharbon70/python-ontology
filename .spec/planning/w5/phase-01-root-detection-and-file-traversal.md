@@ -18,15 +18,15 @@ Back to index: [README](./README.md)
 [ ] 1 Phase 1 - Root Detection and File Traversal
   Implement the basic project boundary and deterministic file traversal behavior.
 
-  [ ] 1.1 Section - Analysis Mode Detection
+  [x] 1.1 Section - Analysis Mode Detection
     Identify whether the caller requested file or project analysis.
 
-    [ ] 1.1.1 Task - Implement path classification
+    [x] 1.1.1 Task - Implement path classification
       Distinguish source files, directories, and invalid paths.
 
-      [ ] 1.1.1.1 Subtask - Detect explicit `.py` and `.pyi` file paths.
-      [ ] 1.1.1.2 Subtask - Detect explicit directory paths.
-      [ ] 1.1.1.3 Subtask - Return structured diagnostics for missing, unreadable, or unsupported paths.
+      [x] 1.1.1.1 Subtask - Detect explicit `.py` and `.pyi` file paths.
+      [x] 1.1.1.2 Subtask - Detect explicit directory paths.
+      [x] 1.1.1.3 Subtask - Return structured diagnostics for missing, unreadable, or unsupported paths.
 
   [ ] 1.2 Section - Root Detection
     Infer project roots when the caller passes a nested path.

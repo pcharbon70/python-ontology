@@ -119,4 +119,24 @@ decisions:
     - python_ontology.project_analysis_scope.configurable_globs
     - python_ontology.project_analysis_scope.no_dependency_traversal_default
     - python_ontology.project_analysis_scope.deterministic_order
+
+- kind: source_file
+  target: lib/python_ontology/project.ex
+  covers:
+    - python_ontology.project_analysis_scope.single_file_and_project_modes
+
+- kind: source_file
+  target: lib/python_ontology/project/input.ex
+  covers:
+    - python_ontology.project_analysis_scope.single_file_and_project_modes
+
+- kind: source_file
+  target: lib/python_ontology/project/diagnostic.ex
+  covers:
+    - python_ontology.project_analysis_scope.single_file_and_project_modes
+
+- kind: source_file
+  target: test/python_ontology/project/input_test.exs
+  covers:
+    - python_ontology.project_analysis_scope.single_file_and_project_modes
 ```

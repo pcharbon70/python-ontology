@@ -29,15 +29,15 @@ Back to index: [README](./README.md)
       [x] 3.1.1.2 Subtask - Include validation stage and source graph metadata.
       [x] 3.1.1.3 Subtask - Keep report serialization deterministic.
 
-  [ ] 3.2 Section - Acceptance Command Integration
+  [x] 3.2 Section - Acceptance Command Integration
     Wire validation into local gates and user-facing commands.
 
-    [ ] 3.2.1 Task - Add command behavior
+    [x] 3.2.1 Task - Add command behavior
       Make validation usable from tests and future Mix tasks.
 
-      [ ] 3.2.1.1 Subtask - Add human-readable report formatting.
-      [ ] 3.2.1.2 Subtask - Add machine-readable report formatting.
-      [ ] 3.2.1.3 Subtask - Define non-zero exit behavior for validation failures in future CLI flows.
+      [x] 3.2.1.1 Subtask - Add human-readable report formatting.
+      [x] 3.2.1.2 Subtask - Add machine-readable report formatting.
+      [x] 3.2.1.3 Subtask - Define non-zero exit behavior for validation failures in future CLI flows.
 
   [ ] 3.3 Section - Phase 3 Integration Tests
     Prove validation reports and gates are stable.

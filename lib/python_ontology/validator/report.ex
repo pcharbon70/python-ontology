@@ -47,6 +47,22 @@ defmodule PythonOntology.Validator.Report do
   end
 
   @doc """
+  Builds a failing report from validation diagnostics.
+  """
+  @spec from_diagnostics([Diagnostic.t()], map()) :: t()
+  def from_diagnostics(diagnostics, metadata \\ %{}) when is_list(diagnostics) do
+    diagnostics = Enum.sort_by(diagnostics, &diagnostic_sort_key/1)
+
+    %__MODULE__{
+      status: :fail,
+      stage: :validation,
+      severity_counts: severity_counts([], diagnostics),
+      diagnostics: diagnostics,
+      metadata: Map.new(metadata)
+    }
+  end
+
+  @doc """
   Returns a deterministic map representation.
   """
   @spec to_map(t()) :: map()

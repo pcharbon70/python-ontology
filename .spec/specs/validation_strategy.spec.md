@@ -238,4 +238,32 @@ decisions:
   covers:
     - python_ontology.validation_strategy.validation_reports
     - python_ontology.validation_strategy.validation_after_graph_build
+
+- kind: source_file
+  target: lib/python_ontology/validator/report_formatter.ex
+  covers:
+    - python_ontology.validation_strategy.validation_reports
+    - python_ontology.validation_strategy.command_verification
+    - python_ontology.validation_strategy.validation_after_graph_build
+
+- kind: source_file
+  target: lib/python_ontology/validator/command_result.ex
+  covers:
+    - python_ontology.validation_strategy.validation_reports
+    - python_ontology.validation_strategy.command_verification
+    - python_ontology.validation_strategy.validation_after_graph_build
+
+- kind: source_file
+  target: lib/python_ontology/validator/command.ex
+  covers:
+    - python_ontology.validation_strategy.validation_reports
+    - python_ontology.validation_strategy.command_verification
+    - python_ontology.validation_strategy.validation_after_graph_build
+
+- kind: source_file
+  target: test/python_ontology/validation/report_formatting_validation_test.exs
+  covers:
+    - python_ontology.validation_strategy.validation_reports
+    - python_ontology.validation_strategy.command_verification
+    - python_ontology.validation_strategy.validation_after_graph_build
 ```

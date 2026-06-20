@@ -1,0 +1,86 @@
+# covers: python_ontology.ontology_turtle_files.layered_files python_ontology.ontology_turtle_files.namespace_stability python_ontology.ontology_turtle_files.import_direction python_ontology.ontology_turtle_files.python_native_boundaries python_ontology.ontology_turtle_files.bootstrap_validity
+@prefix : <https://w3id.org/python-code/structure#> .
+@prefix pycore: <https://w3id.org/python-code/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+<https://w3id.org/python-code/structure> a owl:Ontology ;
+    owl:imports <https://w3id.org/python-code/core> ;
+    dc:title "Python Code Structure Ontology"@en ;
+    rdfs:comment "Ontology for Python packages, modules, classes, functions, methods, decorators, parameters, docstrings, dataclasses, properties, protocols, and metaclasses."@en .
+
+:Package a owl:Class ;
+    rdfs:subClassOf pycore:PythonCodeElement ;
+    rdfs:label "Package"@en .
+
+:Module a owl:Class ;
+    rdfs:subClassOf pycore:PythonCodeElement ;
+    rdfs:label "Module"@en .
+
+:Class a owl:Class ;
+    rdfs:subClassOf pycore:Statement ;
+    rdfs:label "Class"@en .
+
+:Function a owl:Class ;
+    rdfs:subClassOf pycore:Statement ;
+    rdfs:label "Function"@en .
+
+:Method a owl:Class ;
+    rdfs:subClassOf :Function ;
+    rdfs:label "Method"@en .
+
+:Parameter a owl:Class ;
+    rdfs:label "Parameter"@en .
+
+:Decorator a owl:Class ;
+    rdfs:subClassOf pycore:Expression ;
+    rdfs:label "Decorator"@en .
+
+:Docstring a owl:Class ;
+    rdfs:subClassOf pycore:Literal ;
+    rdfs:label "Docstring"@en .
+
+:Dataclass a owl:Class ;
+    rdfs:subClassOf :Class ;
+    rdfs:label "Dataclass"@en .
+
+:Property a owl:Class ;
+    rdfs:subClassOf :Method ;
+    rdfs:label "Property"@en .
+
+:ProtocolClass a owl:Class ;
+    rdfs:subClassOf :Class ;
+    rdfs:label "Protocol Class"@en .
+
+:Metaclass a owl:Class ;
+    rdfs:subClassOf :Class ;
+    rdfs:label "Metaclass"@en .
+
+:moduleName a owl:DatatypeProperty ;
+    rdfs:domain :Module ;
+    rdfs:range xsd:string ;
+    rdfs:label "module name"@en .
+
+:qualifiedName a owl:DatatypeProperty ;
+    rdfs:range xsd:string ;
+    rdfs:label "qualified name"@en .
+
+:definesClass a owl:ObjectProperty ;
+    rdfs:domain :Module ;
+    rdfs:range :Class ;
+    rdfs:label "defines class"@en .
+
+:definesFunction a owl:ObjectProperty ;
+    rdfs:range :Function ;
+    rdfs:label "defines function"@en .
+
+:hasParameter a owl:ObjectProperty ;
+    rdfs:domain :Function ;
+    rdfs:range :Parameter ;
+    rdfs:label "has parameter"@en .
+
+:hasDecorator a owl:ObjectProperty ;
+    rdfs:range :Decorator ;
+    rdfs:label "has decorator"@en .

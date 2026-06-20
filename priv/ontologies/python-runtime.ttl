@@ -1,0 +1,52 @@
+# covers: python_ontology.ontology_turtle_files.layered_files python_ontology.ontology_turtle_files.namespace_stability python_ontology.ontology_turtle_files.import_direction python_ontology.ontology_turtle_files.python_native_boundaries python_ontology.ontology_turtle_files.dynamic_fact_boundary python_ontology.ontology_turtle_files.bootstrap_validity
+@prefix : <https://w3id.org/python-code/runtime#> .
+@prefix pycore: <https://w3id.org/python-code/core#> .
+@prefix pystruct: <https://w3id.org/python-code/structure#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+<https://w3id.org/python-code/runtime> a owl:Ontology ;
+    owl:imports <https://w3id.org/python-code/structure> ;
+    dc:title "Python Runtime Pattern Ontology"@en ;
+    rdfs:comment "Ontology for source-visible Python runtime patterns including async, await, generators, context managers, exceptions, dynamic imports, monkey patching boundaries, and runtime-dependent facts."@en .
+
+:AsyncFunction a owl:Class ;
+    rdfs:subClassOf pystruct:Function ;
+    rdfs:label "Async Function"@en .
+
+:AwaitExpression a owl:Class ;
+    rdfs:subClassOf pycore:Expression ;
+    rdfs:label "Await Expression"@en .
+
+:GeneratorFunction a owl:Class ;
+    rdfs:subClassOf pystruct:Function ;
+    rdfs:label "Generator Function"@en .
+
+:YieldExpression a owl:Class ;
+    rdfs:subClassOf pycore:Expression ;
+    rdfs:label "Yield Expression"@en .
+
+:ContextManagerUse a owl:Class ;
+    rdfs:subClassOf pycore:Statement ;
+    rdfs:label "Context Manager Use"@en .
+
+:ExceptionHandler a owl:Class ;
+    rdfs:subClassOf pycore:Statement ;
+    rdfs:label "Exception Handler"@en .
+
+:DynamicImport a owl:Class ;
+    rdfs:subClassOf pycore:ImportStatement ;
+    rdfs:label "Dynamic Import"@en .
+
+:MonkeyPatch a owl:Class ;
+    rdfs:subClassOf pycore:RuntimeDependentFact ;
+    rdfs:label "Monkey Patch"@en .
+
+:RuntimeBoundary a owl:Class ;
+    rdfs:subClassOf pycore:RuntimeDependentFact ;
+    rdfs:label "Runtime Boundary"@en .
+
+:hasRuntimeBoundary a owl:ObjectProperty ;
+    rdfs:range :RuntimeBoundary ;
+    rdfs:label "has runtime boundary"@en .

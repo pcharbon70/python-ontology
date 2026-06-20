@@ -97,6 +97,12 @@ decisions:
     - python_ontology.fact_confidence_model.dynamic_construct_marking
 ```
 
+## Implementation Notes
+
+Confidence propagation is emitted by the RDF builder independently of optional structural
+literals. A fix to structural literal applicability must preserve queryable confidence triples
+and evidence resources.
+
 ## Verification
 
 ```spec-verification

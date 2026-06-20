@@ -107,6 +107,12 @@ decisions:
     - python_ontology.extractor_builder_boundary.diagnostic_accumulation
 ```
 
+## Implementation Notes
+
+RDF builders omit optional property literals when the source fact does not semantically carry
+that property. Boolean guard expressions must not leak into RDF output as placeholder literal
+values for unrelated fact kinds.
+
 ## Verification
 
 ```spec-verification

@@ -36,15 +36,15 @@ Back to index: [README](./README.md)
       [x] 1.1.2.2 Subtask - Use W5 project discovery for file selection.
       [x] 1.1.2.3 Subtask - Merge per-file graphs and diagnostics deterministically.
 
-  [ ] 1.2 Section - Mix Task Surface
+  [x] 1.2 Section - Mix Task Surface
     Add a command-line analysis path.
 
-    [ ] 1.2.1 Task - Implement analysis Mix task
+    [x] 1.2.1 Task - Implement analysis Mix task
       Provide a user-facing command for file or project analysis.
 
-      [ ] 1.2.1.1 Subtask - Accept file or project path.
-      [ ] 1.2.1.2 Subtask - Support output path, base IRI, include/exclude globs, and validation flags.
-      [ ] 1.2.1.3 Subtask - Define non-zero exit behavior for unreadable paths and validation failures.
+      [x] 1.2.1.1 Subtask - Accept file or project path.
+      [x] 1.2.1.2 Subtask - Support output path, base IRI, include/exclude globs, and validation flags.
+      [x] 1.2.1.3 Subtask - Define non-zero exit behavior for unreadable paths and validation failures.
 
   [ ] 1.3 Section - Phase 1 Integration Tests
     Prove the public API and Mix task can run the pipeline on minimal input.

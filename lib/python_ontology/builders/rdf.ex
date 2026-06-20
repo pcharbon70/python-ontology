@@ -144,7 +144,7 @@ defmodule PythonOntology.Builders.RDF do
       {resource_iri, @rdf_type, class_iri}
     ]
     |> append_literal(context, :structure, :qualifiedName, fact.qualified_name)
-    |> append_literal(context, :structure, :moduleName, fact.kind == :module && fact.name)
+    |> append_literal(context, :structure, :moduleName, module_name_literal(fact))
     |> append_literal(context, :structure, :name, fact.name)
     |> append_literal(context, :structure, :rawText, fact.raw_text)
     |> append_literal(context, :structure, :targetText, fact.target_text)
@@ -308,6 +308,9 @@ defmodule PythonOntology.Builders.RDF do
          to_string(value)}
       ]
   end
+
+  defp module_name_literal(%Fact{kind: :module, name: name}), do: name
+  defp module_name_literal(%Fact{}), do: nil
 
   defp literal_value(%Fact{value: nil}), do: nil
   defp literal_value(%Fact{value: value}), do: inspect(value)

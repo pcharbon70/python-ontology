@@ -28,15 +28,15 @@ Back to index: [README](./README.md)
       [x] 1.1.1.2 Subtask - Report file path and parse error details for malformed Turtle.
       [x] 1.1.1.3 Subtask - Keep parse validation independent from generated graph validation.
 
-  [ ] 1.2 Section - SpecLed Gate Integration
+  [x] 1.2 Section - SpecLed Gate Integration
     Keep current truth aligned with implementation changes.
 
-    [ ] 1.2.1 Task - Preserve SpecLed local gate behavior
+    [x] 1.2.1 Task - Preserve SpecLed local gate behavior
       Make `mix spec.check` part of acceptance.
 
-      [ ] 1.2.1.1 Subtask - Document `mix spec.check` as a local gate in relevant planning or README material.
-      [ ] 1.2.1.2 Subtask - Add command verification to specs once command surfaces stabilize.
-      [ ] 1.2.1.3 Subtask - Record unrelated baseline findings separately if a branch starts dirty.
+      [x] 1.2.1.1 Subtask - Document `mix spec.check` as a local gate in relevant planning or README material.
+      [x] 1.2.1.2 Subtask - Add command verification to specs once command surfaces stabilize.
+      [x] 1.2.1.3 Subtask - Record unrelated baseline findings separately if a branch starts dirty.
 
   [ ] 1.3 Section - Phase 1 Integration Tests
     Validate authored ontology and SpecLed checks before generated graph validation exists.

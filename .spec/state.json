@@ -4868,6 +4868,26 @@
       },
       {
         "covers": [
+          "python_ontology.validation_strategy.specled_current_truth",
+          "python_ontology.validation_strategy.command_verification"
+        ],
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": ".spec/planning/w7/README.md"
+      },
+      {
+        "covers": [
+          "python_ontology.validation_strategy.specled_current_truth",
+          "python_ontology.validation_strategy.command_verification"
+        ],
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "command",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "mix spec.check"
+      },
+      {
+        "covers": [
           "spec.workspace.readme_present"
         ],
         "file": ".spec/specs/spec_system.spec.md",
@@ -4923,7 +4943,7 @@
     "requirements": 108,
     "scenarios": 17,
     "subjects": 12,
-    "verifications": 279
+    "verifications": 281
   },
   "verification": {
     "claims": [
@@ -16852,6 +16872,50 @@
         "verification_index": 5
       },
       {
+        "cover_id": "python_ontology.validation_strategy.command_verification",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": ".spec/planning/w7/README.md",
+        "verification_index": 6
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.specled_current_truth",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": ".spec/planning/w7/README.md",
+        "verification_index": 6
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.command_verification",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "command",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "claimed",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "mix spec.check",
+        "verification_index": 7
+      },
+      {
+        "cover_id": "python_ontology.validation_strategy.specled_current_truth",
+        "file": ".spec/specs/validation_strategy.spec.md",
+        "kind": "command",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "claimed",
+        "subject_id": "python_ontology.validation_strategy",
+        "target": "mix spec.check",
+        "verification_index": 7
+      },
+      {
         "cover_id": "spec.workspace.readme_present",
         "file": ".spec/specs/spec_system.spec.md",
         "kind": "source_file",
@@ -16921,9 +16985,9 @@
     "cli_minimum_strength": null,
     "default_minimum_strength": "claimed",
     "strength_summary": {
-      "claimed": 17,
+      "claimed": 19,
       "executed": 0,
-      "linked": 1073
+      "linked": 1075
     },
     "threshold_failures": 0
   },

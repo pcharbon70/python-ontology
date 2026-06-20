@@ -146,4 +146,16 @@ decisions:
     - python_ontology.validation_strategy.turtle_parse_gate
     - python_ontology.validation_strategy.owl_open_world
     - python_ontology.validation_strategy.no_validation_by_execution
+
+- kind: source_file
+  target: .spec/planning/w7/README.md
+  covers:
+    - python_ontology.validation_strategy.specled_current_truth
+    - python_ontology.validation_strategy.command_verification
+
+- kind: command
+  target: mix spec.check
+  covers:
+    - python_ontology.validation_strategy.specled_current_truth
+    - python_ontology.validation_strategy.command_verification
 ```

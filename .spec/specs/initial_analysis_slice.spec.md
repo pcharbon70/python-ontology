@@ -530,12 +530,36 @@ decisions:
     - python_ontology.initial_analysis_slice.out_of_scope_runtime
 
 - kind: source_file
+  target: lib/python_ontology/project/discovery.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: lib/python_ontology/project/result.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: lib/python_ontology/project/source_file.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+
+- kind: source_file
   target: lib/python_ontology/project/diagnostic.ex
   covers:
     - python_ontology.initial_analysis_slice.out_of_scope_runtime
 
 - kind: source_file
   target: test/python_ontology/project/input_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/project/discovery_test.exs
   covers:
     - python_ontology.initial_analysis_slice.source_locations
     - python_ontology.initial_analysis_slice.out_of_scope_runtime

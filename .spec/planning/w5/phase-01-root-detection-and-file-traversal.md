@@ -28,22 +28,22 @@ Back to index: [README](./README.md)
       [x] 1.1.1.2 Subtask - Detect explicit directory paths.
       [x] 1.1.1.3 Subtask - Return structured diagnostics for missing, unreadable, or unsupported paths.
 
-  [ ] 1.2 Section - Root Detection
+  [x] 1.2 Section - Root Detection
     Infer project roots when the caller passes a nested path.
 
-    [ ] 1.2.1 Task - Implement metadata root discovery
+    [x] 1.2.1 Task - Implement metadata root discovery
       Find roots from common Python project metadata.
 
-      [ ] 1.2.1.1 Subtask - Detect `pyproject.toml`.
-      [ ] 1.2.1.2 Subtask - Detect `setup.cfg` and `setup.py`.
-      [ ] 1.2.1.3 Subtask - Fall back to `.git` or explicit path roots when metadata is absent.
+      [x] 1.2.1.1 Subtask - Detect `pyproject.toml`.
+      [x] 1.2.1.2 Subtask - Detect `setup.cfg` and `setup.py`.
+      [x] 1.2.1.3 Subtask - Fall back to `.git` or explicit path roots when metadata is absent.
 
-    [ ] 1.2.2 Task - Implement deterministic file traversal
+    [x] 1.2.2 Task - Implement deterministic file traversal
       Walk selected files in stable order.
 
-      [ ] 1.2.2.1 Subtask - Include `.py` files by default.
-      [ ] 1.2.2.2 Subtask - Include `.pyi` files by default.
-      [ ] 1.2.2.3 Subtask - Sort files by normalized repository-relative POSIX path.
+      [x] 1.2.2.1 Subtask - Include `.py` files by default.
+      [x] 1.2.2.2 Subtask - Include `.pyi` files by default.
+      [x] 1.2.2.3 Subtask - Sort files by normalized repository-relative POSIX path.
 
   [ ] 1.3 Section - Phase 1 Integration Tests
     Validate root detection and traversal before exclusion and package classification are added.

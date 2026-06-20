@@ -15,7 +15,7 @@ Back to index: [README](./README.md)
 - Project roots can be explicit or inferred from Python metadata and Git.
 - Traversal order is deterministic.
 
-[ ] 1 Phase 1 - Root Detection and File Traversal
+[x] 1 Phase 1 - Root Detection and File Traversal
   Implement the basic project boundary and deterministic file traversal behavior.
 
   [x] 1.1 Section - Analysis Mode Detection
@@ -45,12 +45,12 @@ Back to index: [README](./README.md)
       [x] 1.2.2.2 Subtask - Include `.pyi` files by default.
       [x] 1.2.2.3 Subtask - Sort files by normalized repository-relative POSIX path.
 
-  [ ] 1.3 Section - Phase 1 Integration Tests
+  [x] 1.3 Section - Phase 1 Integration Tests
     Validate root detection and traversal before exclusion and package classification are added.
 
-    [ ] 1.3.1 Task - Run root/traversal checks
+    [x] 1.3.1 Task - Run root/traversal checks
       Prove file and project analysis inputs produce deterministic file lists.
 
-      [ ] 1.3.1.1 Subtask - Add tests for explicit file, explicit directory, metadata root, and Git fallback detection.
-      [ ] 1.3.1.2 Subtask - Add tests for deterministic `.py` and `.pyi` ordering.
-      [ ] 1.3.1.3 Subtask - Run focused project tests, full `mix test`, and `mix spec.check`.
+      [x] 1.3.1.1 Subtask - Add tests for explicit file, explicit directory, metadata root, and Git fallback detection.
+      [x] 1.3.1.2 Subtask - Add tests for deterministic `.py` and `.pyi` ordering.
+      [x] 1.3.1.3 Subtask - Run focused project tests, full `mix test`, and `mix spec.check`.

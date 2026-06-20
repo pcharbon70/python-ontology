@@ -177,4 +177,13 @@ decisions:
     - python_ontology.project_analysis_scope.include_python_sources
     - python_ontology.project_analysis_scope.include_stub_files
     - python_ontology.project_analysis_scope.deterministic_order
+
+- kind: source_file
+  target: test/python_ontology/project/phase1_integration_test.exs
+  covers:
+    - python_ontology.project_analysis_scope.single_file_and_project_modes
+    - python_ontology.project_analysis_scope.root_detection
+    - python_ontology.project_analysis_scope.include_python_sources
+    - python_ontology.project_analysis_scope.include_stub_files
+    - python_ontology.project_analysis_scope.deterministic_order
 ```

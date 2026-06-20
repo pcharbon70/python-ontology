@@ -15,7 +15,7 @@ Back to index: [README](./README.md)
 - Traversal must be deterministic across repeated runs.
 - Installed dependencies are skipped unless explicitly configured.
 
-[ ] 3 Phase 3 - Project Fixtures and Discovery Acceptance
+[x] 3 Phase 3 - Project Fixtures and Discovery Acceptance
   Build realistic fixture projects and prove discovery behavior end to end.
 
   [x] 3.1 Section - Fixture Project Corpus
@@ -45,12 +45,12 @@ Back to index: [README](./README.md)
       [x] 3.2.1.2 Subtask - Ensure results can be passed to parser APIs without additional path normalization.
       [x] 3.2.1.3 Subtask - Add summary metadata for selected, skipped, test, stub, and package counts.
 
-  [ ] 3.3 Section - Phase 3 Integration Tests
+  [x] 3.3 Section - Phase 3 Integration Tests
     Prove project discovery acceptance across realistic layouts.
 
-    [ ] 3.3.1 Task - Run project discovery acceptance
+    [x] 3.3.1 Task - Run project discovery acceptance
       Validate fixture project traversal and parser handoff readiness.
 
-      [ ] 3.3.1.1 Subtask - Add fixture project acceptance tests.
-      [ ] 3.3.1.2 Subtask - Add determinism tests for repeated traversal.
-      [ ] 3.3.1.3 Subtask - Run focused project tests, full `mix test`, and `mix spec.check`.
+      [x] 3.3.1.1 Subtask - Add fixture project acceptance tests.
+      [x] 3.3.1.2 Subtask - Add determinism tests for repeated traversal.
+      [x] 3.3.1.3 Subtask - Run focused project tests, full `mix test`, and `mix spec.check`.

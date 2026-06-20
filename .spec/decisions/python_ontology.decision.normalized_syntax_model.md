@@ -23,6 +23,8 @@ The Tree-sitter adapter may expose raw parse nodes internally, but parser output
 
 The normalized model shall preserve raw parser provenance: original Tree-sitter node type, whether the node is named, source byte spans, row/column spans, child order, field names when available, and the source file identity.
 
+The first implementation defines these shared fields as Elixir structs for source identity, parser provenance, deterministic node IDs, and byte plus row/column spans before introducing first-slice typed syntax nodes.
+
 The normalized model shall provide typed nodes for the first implementation slice: modules, imports, classes, functions, parameters, decorators, annotations, assignments, calls, attributes, subscripts, literals, identifiers, control-flow statements, and comprehensions.
 
 Unknown or unsupported Tree-sitter nodes shall remain visible as generic normalized nodes rather than being dropped.

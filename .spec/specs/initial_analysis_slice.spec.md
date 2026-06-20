@@ -171,4 +171,129 @@ decisions:
     - python_ontology.initial_analysis_slice.source_locations
     - python_ontology.initial_analysis_slice.out_of_scope_runtime
     - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: lib/python_ontology/syntax/source.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+
+- kind: source_file
+  target: lib/python_ontology/syntax/provenance.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+
+- kind: source_file
+  target: lib/python_ontology/syntax/node_id.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+
+- kind: source_file
+  target: lib/python_ontology/syntax/node_info.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+
+- kind: source_file
+  target: lib/python_ontology/syntax/span.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+
+- kind: source_file
+  target: lib/python_ontology/syntax/byte_span.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+
+- kind: source_file
+  target: lib/python_ontology/syntax/point.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+
+- kind: source_file
+  target: lib/python_ontology/syntax/point_span.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+
+- kind: source_file
+  target: test/python_ontology/syntax/shared_fields_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: lib/python_ontology/syntax/nodes.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+
+- kind: source_file
+  target: test/python_ontology/syntax/typed_nodes_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: lib/python_ontology/syntax.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: lib/python_ontology/syntax/normalizer.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: lib/python_ontology/syntax/traversal.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: test/python_ontology/syntax/structural_mapping_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/syntax/expression_mapping_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.calls_attributes
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/syntax/normalization_integration_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.imports_aliases
+    - python_ontology.initial_analysis_slice.classes_bases
+    - python_ontology.initial_analysis_slice.functions_methods
+    - python_ontology.initial_analysis_slice.parameters_defaults
+    - python_ontology.initial_analysis_slice.decorators_annotations
+    - python_ontology.initial_analysis_slice.calls_attributes
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/syntax/unknown_preservation_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/syntax/traversal_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.calls_attributes
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/syntax/normalization_acceptance_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
 ```

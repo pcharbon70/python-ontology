@@ -35,15 +35,15 @@ Back to index: [README](./README.md)
       [x] 3.1.2.2 Subtask - Preserve partial syntax trees for invalid source when available.
       [x] 3.1.2.3 Subtask - Keep parser diagnostics separate from future extractor diagnostics.
 
-  [ ] 3.2 Section - Normalization Contract Cleanup
+  [x] 3.2 Section - Normalization Contract Cleanup
     Make the normalized model ready for extractors.
 
-    [ ] 3.2.1 Task - Review extractor-facing API shape
+    [x] 3.2.1 Task - Review extractor-facing API shape
       Ensure extractors can traverse syntax without parser binding knowledge.
 
-      [ ] 3.2.1.1 Subtask - Add traversal helpers for children, descendants, and source text slices when needed.
-      [ ] 3.2.1.2 Subtask - Hide raw Tree-sitter cursor APIs from extractor modules.
-      [ ] 3.2.1.3 Subtask - Document which normalized node types are stable for W6 extractors.
+      [x] 3.2.1.1 Subtask - Add traversal helpers for children, descendants, and source text slices when needed.
+      [x] 3.2.1.2 Subtask - Hide raw Tree-sitter cursor APIs from extractor modules.
+      [x] 3.2.1.3 Subtask - Document which normalized node types are stable for W6 extractors.
 
   [ ] 3.3 Section - Phase 3 Integration Tests
     Prove normalization acceptance before extractor implementation begins.

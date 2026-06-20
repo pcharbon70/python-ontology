@@ -1906,6 +1906,16 @@
       {
         "covers": [
           "python_ontology.initial_analysis_slice.source_locations",
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "lib/python_ontology/syntax/traversal.ex"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.source_locations",
           "python_ontology.initial_analysis_slice.out_of_scope_runtime",
           "python_ontology.initial_analysis_slice.tests_for_slice"
         ],
@@ -1953,6 +1963,18 @@
         "kind": "source_file",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/syntax/unknown_preservation_test.exs"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.calls_attributes",
+          "python_ontology.initial_analysis_slice.source_locations",
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+          "python_ontology.initial_analysis_slice.tests_for_slice"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/syntax/traversal_test.exs"
       },
       {
         "covers": [
@@ -2129,6 +2151,20 @@
       },
       {
         "covers": [
+          "python_ontology.normalized_syntax_model.tree_sitter_not_internal_model",
+          "python_ontology.normalized_syntax_model.elixir_struct_boundary",
+          "python_ontology.normalized_syntax_model.typed_core_nodes",
+          "python_ontology.normalized_syntax_model.unknown_node_preservation",
+          "python_ontology.normalized_syntax_model.no_rdf_generation",
+          "python_ontology.normalized_syntax_model.source_span_preservation"
+        ],
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": "lib/python_ontology/syntax/traversal.ex"
+      },
+      {
+        "covers": [
           "python_ontology.normalized_syntax_model.elixir_struct_boundary",
           "python_ontology.normalized_syntax_model.raw_cst_provenance",
           "python_ontology.normalized_syntax_model.deterministic_normalization",
@@ -2203,6 +2239,22 @@
         "kind": "source_file",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/unknown_preservation_test.exs"
+      },
+      {
+        "covers": [
+          "python_ontology.normalized_syntax_model.tree_sitter_not_internal_model",
+          "python_ontology.normalized_syntax_model.elixir_struct_boundary",
+          "python_ontology.normalized_syntax_model.typed_core_nodes",
+          "python_ontology.normalized_syntax_model.unknown_node_preservation",
+          "python_ontology.normalized_syntax_model.deterministic_normalization",
+          "python_ontology.normalized_syntax_model.no_code_execution",
+          "python_ontology.normalized_syntax_model.no_rdf_generation",
+          "python_ontology.normalized_syntax_model.source_span_preservation"
+        ],
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": "test/python_ontology/syntax/traversal_test.exs"
       },
       {
         "covers": [
@@ -2657,7 +2709,7 @@
     "requirements": 107,
     "scenarios": 17,
     "subjects": 12,
-    "verifications": 88
+    "verifications": 92
   },
   "verification": {
     "claims": [
@@ -3560,7 +3612,7 @@
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
-        "target": "test/python_ontology/syntax/structural_mapping_test.exs",
+        "target": "lib/python_ontology/syntax/traversal.ex",
         "verification_index": 22
       },
       {
@@ -3571,8 +3623,30 @@
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
-        "target": "test/python_ontology/syntax/structural_mapping_test.exs",
+        "target": "lib/python_ontology/syntax/traversal.ex",
         "verification_index": 22
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/syntax/structural_mapping_test.exs",
+        "verification_index": 23
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.source_locations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/syntax/structural_mapping_test.exs",
+        "verification_index": 23
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
@@ -3583,7 +3657,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/syntax/structural_mapping_test.exs",
-        "verification_index": 22
+        "verification_index": 23
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.calls_attributes",
@@ -3594,7 +3668,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/syntax/expression_mapping_test.exs",
-        "verification_index": 23
+        "verification_index": 24
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
@@ -3605,7 +3679,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/syntax/expression_mapping_test.exs",
-        "verification_index": 23
+        "verification_index": 24
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.source_locations",
@@ -3616,7 +3690,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/syntax/expression_mapping_test.exs",
-        "verification_index": 23
+        "verification_index": 24
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
@@ -3627,7 +3701,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/syntax/expression_mapping_test.exs",
-        "verification_index": 23
+        "verification_index": 24
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.calls_attributes",
@@ -3638,7 +3712,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/syntax/normalization_integration_test.exs",
-        "verification_index": 24
+        "verification_index": 25
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.classes_bases",
@@ -3649,7 +3723,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/syntax/normalization_integration_test.exs",
-        "verification_index": 24
+        "verification_index": 25
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.decorators_annotations",
@@ -3660,7 +3734,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/syntax/normalization_integration_test.exs",
-        "verification_index": 24
+        "verification_index": 25
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.functions_methods",
@@ -3671,7 +3745,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/syntax/normalization_integration_test.exs",
-        "verification_index": 24
+        "verification_index": 25
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.imports_aliases",
@@ -3682,7 +3756,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/syntax/normalization_integration_test.exs",
-        "verification_index": 24
+        "verification_index": 25
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
@@ -3693,7 +3767,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/syntax/normalization_integration_test.exs",
-        "verification_index": 24
+        "verification_index": 25
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.parameters_defaults",
@@ -3704,7 +3778,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/syntax/normalization_integration_test.exs",
-        "verification_index": 24
+        "verification_index": 25
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.source_locations",
@@ -3715,7 +3789,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/syntax/normalization_integration_test.exs",
-        "verification_index": 24
+        "verification_index": 25
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
@@ -3726,7 +3800,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/syntax/normalization_integration_test.exs",
-        "verification_index": 24
+        "verification_index": 25
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
@@ -3737,7 +3811,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/syntax/unknown_preservation_test.exs",
-        "verification_index": 25
+        "verification_index": 26
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.source_locations",
@@ -3748,7 +3822,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/syntax/unknown_preservation_test.exs",
-        "verification_index": 25
+        "verification_index": 26
       },
       {
         "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
@@ -3759,7 +3833,51 @@
         "strength": "linked",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/syntax/unknown_preservation_test.exs",
-        "verification_index": 25
+        "verification_index": 26
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.calls_attributes",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/syntax/traversal_test.exs",
+        "verification_index": 27
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/syntax/traversal_test.exs",
+        "verification_index": 27
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.source_locations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/syntax/traversal_test.exs",
+        "verification_index": 27
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/syntax/traversal_test.exs",
+        "verification_index": 27
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.class_function_identity",
@@ -4521,17 +4639,6 @@
         "verification_index": 11
       },
       {
-        "cover_id": "python_ontology.normalized_syntax_model.deterministic_normalization",
-        "file": ".spec/specs/normalized_syntax_model.spec.md",
-        "kind": "source_file",
-        "meets_minimum": true,
-        "required_strength": "claimed",
-        "strength": "linked",
-        "subject_id": "python_ontology.normalized_syntax_model",
-        "target": "test/python_ontology/syntax/shared_fields_test.exs",
-        "verification_index": 12
-      },
-      {
         "cover_id": "python_ontology.normalized_syntax_model.elixir_struct_boundary",
         "file": ".spec/specs/normalized_syntax_model.spec.md",
         "kind": "source_file",
@@ -4539,7 +4646,7 @@
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
-        "target": "test/python_ontology/syntax/shared_fields_test.exs",
+        "target": "lib/python_ontology/syntax/traversal.ex",
         "verification_index": 12
       },
       {
@@ -4550,18 +4657,7 @@
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
-        "target": "test/python_ontology/syntax/shared_fields_test.exs",
-        "verification_index": 12
-      },
-      {
-        "cover_id": "python_ontology.normalized_syntax_model.raw_cst_provenance",
-        "file": ".spec/specs/normalized_syntax_model.spec.md",
-        "kind": "source_file",
-        "meets_minimum": true,
-        "required_strength": "claimed",
-        "strength": "linked",
-        "subject_id": "python_ontology.normalized_syntax_model",
-        "target": "test/python_ontology/syntax/shared_fields_test.exs",
+        "target": "lib/python_ontology/syntax/traversal.ex",
         "verification_index": 12
       },
       {
@@ -4572,7 +4668,40 @@
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
-        "target": "test/python_ontology/syntax/shared_fields_test.exs",
+        "target": "lib/python_ontology/syntax/traversal.ex",
+        "verification_index": 12
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.tree_sitter_not_internal_model",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": "lib/python_ontology/syntax/traversal.ex",
+        "verification_index": 12
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.typed_core_nodes",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": "lib/python_ontology/syntax/traversal.ex",
+        "verification_index": 12
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.unknown_node_preservation",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": "lib/python_ontology/syntax/traversal.ex",
         "verification_index": 12
       },
       {
@@ -4583,7 +4712,7 @@
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
-        "target": "test/python_ontology/syntax/structural_mapping_test.exs",
+        "target": "test/python_ontology/syntax/shared_fields_test.exs",
         "verification_index": 13
       },
       {
@@ -4594,8 +4723,63 @@
         "required_strength": "claimed",
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
-        "target": "test/python_ontology/syntax/structural_mapping_test.exs",
+        "target": "test/python_ontology/syntax/shared_fields_test.exs",
         "verification_index": 13
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.no_rdf_generation",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": "test/python_ontology/syntax/shared_fields_test.exs",
+        "verification_index": 13
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.raw_cst_provenance",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": "test/python_ontology/syntax/shared_fields_test.exs",
+        "verification_index": 13
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.source_span_preservation",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": "test/python_ontology/syntax/shared_fields_test.exs",
+        "verification_index": 13
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.deterministic_normalization",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": "test/python_ontology/syntax/structural_mapping_test.exs",
+        "verification_index": 14
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.elixir_struct_boundary",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": "test/python_ontology/syntax/structural_mapping_test.exs",
+        "verification_index": 14
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.no_code_execution",
@@ -4606,7 +4790,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/structural_mapping_test.exs",
-        "verification_index": 13
+        "verification_index": 14
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.no_rdf_generation",
@@ -4617,7 +4801,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/structural_mapping_test.exs",
-        "verification_index": 13
+        "verification_index": 14
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.raw_cst_provenance",
@@ -4628,7 +4812,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/structural_mapping_test.exs",
-        "verification_index": 13
+        "verification_index": 14
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.source_span_preservation",
@@ -4639,7 +4823,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/structural_mapping_test.exs",
-        "verification_index": 13
+        "verification_index": 14
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.tree_sitter_not_internal_model",
@@ -4650,7 +4834,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/structural_mapping_test.exs",
-        "verification_index": 13
+        "verification_index": 14
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.typed_core_nodes",
@@ -4661,7 +4845,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/structural_mapping_test.exs",
-        "verification_index": 13
+        "verification_index": 14
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.deterministic_normalization",
@@ -4672,7 +4856,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/expression_mapping_test.exs",
-        "verification_index": 14
+        "verification_index": 15
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.elixir_struct_boundary",
@@ -4683,7 +4867,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/expression_mapping_test.exs",
-        "verification_index": 14
+        "verification_index": 15
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.no_code_execution",
@@ -4694,7 +4878,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/expression_mapping_test.exs",
-        "verification_index": 14
+        "verification_index": 15
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.no_rdf_generation",
@@ -4705,7 +4889,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/expression_mapping_test.exs",
-        "verification_index": 14
+        "verification_index": 15
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.raw_cst_provenance",
@@ -4716,7 +4900,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/expression_mapping_test.exs",
-        "verification_index": 14
+        "verification_index": 15
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.source_span_preservation",
@@ -4727,7 +4911,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/expression_mapping_test.exs",
-        "verification_index": 14
+        "verification_index": 15
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.tree_sitter_not_internal_model",
@@ -4738,7 +4922,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/expression_mapping_test.exs",
-        "verification_index": 14
+        "verification_index": 15
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.typed_core_nodes",
@@ -4749,7 +4933,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/expression_mapping_test.exs",
-        "verification_index": 14
+        "verification_index": 15
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.deterministic_normalization",
@@ -4760,7 +4944,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/normalization_integration_test.exs",
-        "verification_index": 15
+        "verification_index": 16
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.elixir_struct_boundary",
@@ -4771,7 +4955,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/normalization_integration_test.exs",
-        "verification_index": 15
+        "verification_index": 16
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.no_code_execution",
@@ -4782,7 +4966,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/normalization_integration_test.exs",
-        "verification_index": 15
+        "verification_index": 16
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.no_rdf_generation",
@@ -4793,7 +4977,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/normalization_integration_test.exs",
-        "verification_index": 15
+        "verification_index": 16
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.raw_cst_provenance",
@@ -4804,7 +4988,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/normalization_integration_test.exs",
-        "verification_index": 15
+        "verification_index": 16
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.source_span_preservation",
@@ -4815,7 +4999,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/normalization_integration_test.exs",
-        "verification_index": 15
+        "verification_index": 16
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.tree_sitter_not_internal_model",
@@ -4826,7 +5010,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/normalization_integration_test.exs",
-        "verification_index": 15
+        "verification_index": 16
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.typed_core_nodes",
@@ -4837,7 +5021,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/normalization_integration_test.exs",
-        "verification_index": 15
+        "verification_index": 16
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.deterministic_normalization",
@@ -4848,7 +5032,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/unknown_preservation_test.exs",
-        "verification_index": 16
+        "verification_index": 17
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.elixir_struct_boundary",
@@ -4859,7 +5043,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/unknown_preservation_test.exs",
-        "verification_index": 16
+        "verification_index": 17
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.no_code_execution",
@@ -4870,7 +5054,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/unknown_preservation_test.exs",
-        "verification_index": 16
+        "verification_index": 17
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.no_rdf_generation",
@@ -4881,7 +5065,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/unknown_preservation_test.exs",
-        "verification_index": 16
+        "verification_index": 17
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.raw_cst_provenance",
@@ -4892,7 +5076,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/unknown_preservation_test.exs",
-        "verification_index": 16
+        "verification_index": 17
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.source_span_preservation",
@@ -4903,7 +5087,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/unknown_preservation_test.exs",
-        "verification_index": 16
+        "verification_index": 17
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.tree_sitter_not_internal_model",
@@ -4914,7 +5098,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/unknown_preservation_test.exs",
-        "verification_index": 16
+        "verification_index": 17
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.unknown_node_preservation",
@@ -4925,7 +5109,95 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/unknown_preservation_test.exs",
-        "verification_index": 16
+        "verification_index": 17
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.deterministic_normalization",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": "test/python_ontology/syntax/traversal_test.exs",
+        "verification_index": 18
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.elixir_struct_boundary",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": "test/python_ontology/syntax/traversal_test.exs",
+        "verification_index": 18
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.no_code_execution",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": "test/python_ontology/syntax/traversal_test.exs",
+        "verification_index": 18
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.no_rdf_generation",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": "test/python_ontology/syntax/traversal_test.exs",
+        "verification_index": 18
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.source_span_preservation",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": "test/python_ontology/syntax/traversal_test.exs",
+        "verification_index": 18
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.tree_sitter_not_internal_model",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": "test/python_ontology/syntax/traversal_test.exs",
+        "verification_index": 18
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.typed_core_nodes",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": "test/python_ontology/syntax/traversal_test.exs",
+        "verification_index": 18
+      },
+      {
+        "cover_id": "python_ontology.normalized_syntax_model.unknown_node_preservation",
+        "file": ".spec/specs/normalized_syntax_model.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.normalized_syntax_model",
+        "target": "test/python_ontology/syntax/traversal_test.exs",
+        "verification_index": 18
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.elixir_struct_boundary",
@@ -4936,7 +5208,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/typed_nodes_test.exs",
-        "verification_index": 17
+        "verification_index": 19
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.no_rdf_generation",
@@ -4947,7 +5219,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/typed_nodes_test.exs",
-        "verification_index": 17
+        "verification_index": 19
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.source_span_preservation",
@@ -4958,7 +5230,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/typed_nodes_test.exs",
-        "verification_index": 17
+        "verification_index": 19
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.typed_core_nodes",
@@ -4969,7 +5241,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/typed_nodes_test.exs",
-        "verification_index": 17
+        "verification_index": 19
       },
       {
         "cover_id": "python_ontology.normalized_syntax_model.unknown_node_preservation",
@@ -4980,7 +5252,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.normalized_syntax_model",
         "target": "test/python_ontology/syntax/typed_nodes_test.exs",
-        "verification_index": 17
+        "verification_index": 19
       },
       {
         "cover_id": "python_ontology.ontology_turtle_files.bootstrap_validity",
@@ -6803,7 +7075,7 @@
     "strength_summary": {
       "claimed": 17,
       "executed": 0,
-      "linked": 359
+      "linked": 379
     },
     "threshold_failures": 0
   },

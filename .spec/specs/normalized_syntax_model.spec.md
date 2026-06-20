@@ -205,6 +205,16 @@ decisions:
     - python_ontology.normalized_syntax_model.source_span_preservation
 
 - kind: source_file
+  target: lib/python_ontology/syntax/traversal.ex
+  covers:
+    - python_ontology.normalized_syntax_model.tree_sitter_not_internal_model
+    - python_ontology.normalized_syntax_model.elixir_struct_boundary
+    - python_ontology.normalized_syntax_model.typed_core_nodes
+    - python_ontology.normalized_syntax_model.unknown_node_preservation
+    - python_ontology.normalized_syntax_model.no_rdf_generation
+    - python_ontology.normalized_syntax_model.source_span_preservation
+
+- kind: source_file
   target: test/python_ontology/syntax/shared_fields_test.exs
   covers:
     - python_ontology.normalized_syntax_model.elixir_struct_boundary
@@ -255,6 +265,18 @@ decisions:
     - python_ontology.normalized_syntax_model.tree_sitter_not_internal_model
     - python_ontology.normalized_syntax_model.elixir_struct_boundary
     - python_ontology.normalized_syntax_model.raw_cst_provenance
+    - python_ontology.normalized_syntax_model.unknown_node_preservation
+    - python_ontology.normalized_syntax_model.deterministic_normalization
+    - python_ontology.normalized_syntax_model.no_code_execution
+    - python_ontology.normalized_syntax_model.no_rdf_generation
+    - python_ontology.normalized_syntax_model.source_span_preservation
+
+- kind: source_file
+  target: test/python_ontology/syntax/traversal_test.exs
+  covers:
+    - python_ontology.normalized_syntax_model.tree_sitter_not_internal_model
+    - python_ontology.normalized_syntax_model.elixir_struct_boundary
+    - python_ontology.normalized_syntax_model.typed_core_nodes
     - python_ontology.normalized_syntax_model.unknown_node_preservation
     - python_ontology.normalized_syntax_model.deterministic_normalization
     - python_ontology.normalized_syntax_model.no_code_execution

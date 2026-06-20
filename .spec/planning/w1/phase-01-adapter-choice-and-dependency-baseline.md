@@ -19,22 +19,22 @@ Back to index: [README](./README.md)
 [ ] 1 Phase 1 - Adapter Choice and Dependency Baseline
   Select and install the first Tree-sitter access path for Python source parsing from Elixir.
 
-  [ ] 1.1 Section - Candidate Binding Evaluation
+  [x] 1.1 Section - Candidate Binding Evaluation
     Compare available Tree-sitter integration options before taking a dependency.
 
-    [ ] 1.1.1 Task - Evaluate Elixir Tree-sitter packages
+    [x] 1.1.1 Task - Evaluate Elixir Tree-sitter packages
       Confirm which packages can parse Python and expose the data PythonOntology needs.
 
-      [ ] 1.1.1.1 Subtask - Check `ex_tree_sitter`, `elixir_tree_sitter`, and language-pack packages for Python grammar support.
-      [ ] 1.1.1.2 Subtask - Verify access to named nodes, field names, child order, byte spans, point spans, and error nodes.
-      [ ] 1.1.1.3 Subtask - Record unsupported capabilities and fallback options in implementation notes or ADR follow-up comments.
+      [x] 1.1.1.1 Subtask - Check `ex_tree_sitter`, `elixir_tree_sitter`, and language-pack packages for Python grammar support.
+      [x] 1.1.1.2 Subtask - Verify access to named nodes, field names, child order, byte spans, point spans, and error nodes.
+      [x] 1.1.1.3 Subtask - Record unsupported capabilities and fallback options in implementation notes or ADR follow-up comments.
 
-    [ ] 1.1.2 Task - Select the initial adapter path
+    [x] 1.1.2 Task - Select the initial adapter path
       Pick the binding or project-owned NIF approach that best satisfies the parser spec.
 
-      [ ] 1.1.2.1 Subtask - Prefer a maintained package when it exposes required parser data.
-      [ ] 1.1.2.2 Subtask - Choose a project-owned NIF only if package bindings cannot satisfy required data access.
-      [ ] 1.1.2.3 Subtask - Keep the selected adapter behind a project-local behavior or module boundary.
+      [x] 1.1.2.1 Subtask - Prefer a maintained package when it exposes required parser data.
+      [x] 1.1.2.2 Subtask - Choose a project-owned NIF only if package bindings cannot satisfy required data access.
+      [x] 1.1.2.3 Subtask - Keep the selected adapter behind a project-local behavior or module boundary.
 
   [ ] 1.2 Section - Dependency And Build Integration
     Add the selected dependency and prove the project still builds reproducibly.

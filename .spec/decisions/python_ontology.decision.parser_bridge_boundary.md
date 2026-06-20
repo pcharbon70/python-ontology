@@ -29,6 +29,8 @@ Use Tree-sitter's Python grammar as the default parser engine.
 
 The default parser adapter shall be Elixir-owned. It may call an existing Tree-sitter Elixir binding or a project-owned NIF, but it shall not depend on an external Python process, embedded CPython, Pythonx, or analyzed project imports.
 
+The initial implementation uses a project-owned Rustler NIF wrapping the Rust `tree-sitter` and `tree-sitter-python` crates. `tree_sitter_language_pack` was evaluated, and its high-level Python `process/2` path worked locally, but its raw parser functions in version 1.9.1 were stubs and did not expose the concrete syntax tree boundary required by this decision.
+
 The parser shall parse source text without importing or executing the analyzed project.
 
 The parser output shall preserve:

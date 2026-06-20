@@ -15,7 +15,7 @@ Back to index: [README](./README.md)
 - Generated analyzed-code resources use a configurable base IRI.
 - Source paths are repository-relative POSIX paths.
 
-[ ] 1 Phase 1 - Base IRI and Path Canonicalization
+[x] 1 Phase 1 - Base IRI and Path Canonicalization
   Implement base IRI configuration and source path normalization.
 
   [x] 1.1 Section - Base IRI Configuration
@@ -38,12 +38,12 @@ Back to index: [README](./README.md)
       [x] 1.2.1.2 Subtask - Normalize `.` and `..` segments without escaping analysis root.
       [x] 1.2.1.3 Subtask - Diagnose absolute or out-of-root paths when a repository root is required.
 
-  [ ] 1.3 Section - Phase 1 Integration Tests
+  [x] 1.3 Section - Phase 1 Integration Tests
     Validate base IRI and path canonicalization before entity-specific helpers depend on them.
 
-    [ ] 1.3.1 Task - Run base identity checks
+    [x] 1.3.1 Task - Run base identity checks
       Prove generated resource roots and path fragments are deterministic.
 
-      [ ] 1.3.1.1 Subtask - Add tests for valid and invalid base IRIs.
-      [ ] 1.3.1.2 Subtask - Add tests for POSIX path normalization and out-of-root diagnostics.
-      [ ] 1.3.1.3 Subtask - Run focused IRI tests, full `mix test`, and `mix spec.check`.
+      [x] 1.3.1.1 Subtask - Add tests for valid and invalid base IRIs.
+      [x] 1.3.1.2 Subtask - Add tests for POSIX path normalization and out-of-root diagnostics.
+      [x] 1.3.1.3 Subtask - Run focused IRI tests, full `mix test`, and `mix spec.check`.

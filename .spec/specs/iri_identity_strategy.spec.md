@@ -164,4 +164,12 @@ decisions:
   covers:
     - python_ontology.iri_identity_strategy.stable_path_normalization
     - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: test/python_ontology/iri/phase1_integration_test.exs
+  covers:
+    - python_ontology.iri_identity_strategy.namespace_resource_separation
+    - python_ontology.iri_identity_strategy.configurable_base_iri
+    - python_ontology.iri_identity_strategy.stable_path_normalization
+    - python_ontology.iri_identity_strategy.shared_iri_helper
 ```

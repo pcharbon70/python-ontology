@@ -15,7 +15,7 @@ Back to index: [README](./README.md)
 - Nested classes and functions include lexical parent paths.
 - Static identity does not claim runtime object identity.
 
-[ ] 2 Phase 2 - Structural Entity Identity Helpers
+[x] 2 Phase 2 - Structural Entity Identity Helpers
   Implement package, module, class, function, and nested entity identity helpers.
 
   [x] 2.1 Section - Package And Module Identity
@@ -52,12 +52,12 @@ Back to index: [README](./README.md)
       [x] 2.2.2.2 Subtask - Generate method and nested function IDs.
       [x] 2.2.2.3 Subtask - Disambiguate repeated function names with occurrence and span data.
 
-  [ ] 2.3 Section - Phase 2 Integration Tests
+  [x] 2.3 Section - Phase 2 Integration Tests
     Validate structural identity across ordinary, nested, repeated, and ambiguous definitions.
 
-    [ ] 2.3.1 Task - Run structural identity checks
+    [x] 2.3.1 Task - Run structural identity checks
       Prove structural IRIs are deterministic and lexical.
 
-      [ ] 2.3.1.1 Subtask - Add tests for package, module, class, function, method, and nested identities.
-      [ ] 2.3.1.2 Subtask - Add tests that arity changes do not define Python function identity.
-      [ ] 2.3.1.3 Subtask - Run focused IRI tests, full `mix test`, and `mix spec.check`.
+      [x] 2.3.1.1 Subtask - Add tests for package, module, class, function, method, and nested identities.
+      [x] 2.3.1.2 Subtask - Add tests that arity changes do not define Python function identity.
+      [x] 2.3.1.3 Subtask - Run focused IRI tests, full `mix test`, and `mix spec.check`.

@@ -18,15 +18,15 @@ Back to index: [README](./README.md)
 [ ] 1 Phase 1 - Authored Ontology and Spec Gates
   Add fail-fast checks for authored ontology and SpecLed artifacts.
 
-  [ ] 1.1 Section - Turtle Parse Gate
+  [x] 1.1 Section - Turtle Parse Gate
     Parse all authored ontology files deterministically.
 
-    [ ] 1.1.1 Task - Implement Turtle parse check
+    [x] 1.1.1 Task - Implement Turtle parse check
       Provide a reusable test helper or Mix task.
 
-      [ ] 1.1.1.1 Subtask - Load each `priv/ontologies/*.ttl` file.
-      [ ] 1.1.1.2 Subtask - Report file path and parse error details for malformed Turtle.
-      [ ] 1.1.1.3 Subtask - Keep parse validation independent from generated graph validation.
+      [x] 1.1.1.1 Subtask - Load each `priv/ontologies/*.ttl` file.
+      [x] 1.1.1.2 Subtask - Report file path and parse error details for malformed Turtle.
+      [x] 1.1.1.3 Subtask - Keep parse validation independent from generated graph validation.
 
   [ ] 1.2 Section - SpecLed Gate Integration
     Keep current truth aligned with implementation changes.

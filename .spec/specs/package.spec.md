@@ -35,6 +35,11 @@ decisions:
   priority: must
   stability: evolving
 
+- id: package.python_ontology.rdf_validation_dependency
+  statement: The Mix project shall include RDF.ex support for authored Turtle parsing and validation gates.
+  priority: must
+  stability: evolving
+
 - id: package.python_ontology.public_namespace
   statement: The PythonOntology module shall expose the OTP application name through app_name/0.
   priority: must
@@ -60,6 +65,7 @@ decisions:
     - package.python_ontology.mix_project
     - package.python_ontology.specled_dependency
     - package.python_ontology.tree_sitter_parser_dependency
+    - package.python_ontology.rdf_validation_dependency
 
 - kind: source_file
   target: lib/python_ontology.ex

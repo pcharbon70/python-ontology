@@ -35,15 +35,15 @@ Back to index: [README](./README.md)
       [x] 3.1.2.2 Subtask - Add test files and directories.
       [x] 3.1.2.3 Subtask - Add `.pyi` stub files.
 
-  [ ] 3.2 Section - Discovery Acceptance Behavior
+  [x] 3.2 Section - Discovery Acceptance Behavior
     Prove selected project files can feed parser work.
 
-    [ ] 3.2.1 Task - Connect discovery to parser inputs
+    [x] 3.2.1 Task - Connect discovery to parser inputs
       Ensure file selection result shape is ready for later analysis APIs.
 
-      [ ] 3.2.1.1 Subtask - Return selected file records with path, role, package hints, and diagnostics.
-      [ ] 3.2.1.2 Subtask - Ensure results can be passed to parser APIs without additional path normalization.
-      [ ] 3.2.1.3 Subtask - Add summary metadata for selected, skipped, test, stub, and package counts.
+      [x] 3.2.1.1 Subtask - Return selected file records with path, role, package hints, and diagnostics.
+      [x] 3.2.1.2 Subtask - Ensure results can be passed to parser APIs without additional path normalization.
+      [x] 3.2.1.3 Subtask - Add summary metadata for selected, skipped, test, stub, and package counts.
 
   [ ] 3.3 Section - Phase 3 Integration Tests
     Prove project discovery acceptance across realistic layouts.

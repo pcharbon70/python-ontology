@@ -36,7 +36,7 @@ defmodule PythonOntology.Project.Discovery do
          root_marker: root_marker,
          files: files,
          diagnostics: diagnostics,
-         metadata: Map.put(selection_metadata, :file_count, length(files))
+         metadata: result_metadata(selection_metadata, files)
        }}
     end
   end
@@ -239,5 +239,32 @@ defmodule PythonOntology.Project.Discovery do
       skipped_reasons:
         Map.merge(left.skipped_reasons, right.skipped_reasons, fn _key, a, b -> a + b end)
     }
+  end
+
+  defp result_metadata(selection_metadata, files) do
+    selection_metadata
+    |> Map.put(:file_count, length(files))
+    |> Map.merge(classification_metadata(files))
+  end
+
+  defp classification_metadata(files) do
+    packages =
+      files
+      |> Enum.filter(& &1.package_kind)
+      |> Enum.map(&{&1.package_kind, &1.package_name})
+      |> MapSet.new()
+
+    %{
+      source_file_count: Enum.count(files, &(&1.role == :source)),
+      test_file_count: Enum.count(files, & &1.test?),
+      stub_file_count: Enum.count(files, & &1.stub?),
+      package_file_count: Enum.count(files, & &1.package_kind),
+      regular_package_count: count_packages(packages, :regular),
+      namespace_package_count: count_packages(packages, :namespace)
+    }
+  end
+
+  defp count_packages(packages, kind) do
+    Enum.count(packages, fn {package_kind, _package_name} -> package_kind == kind end)
   end
 end

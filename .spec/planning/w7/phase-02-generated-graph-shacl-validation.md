@@ -19,15 +19,15 @@ Back to index: [README](./README.md)
 [ ] 2 Phase 2 - Generated Graph SHACL Validation
   Validate generated RDF graphs against PythonOntology SHACL shapes.
 
-  [ ] 2.1 Section - SHACL Entrypoint
+  [x] 2.1 Section - SHACL Entrypoint
     Load data graphs and shapes graphs for validation.
 
-    [ ] 2.1.1 Task - Implement validation API
+    [x] 2.1.1 Task - Implement validation API
       Add a public validator entrypoint for generated RDF graphs.
 
-      [ ] 2.1.1.1 Subtask - Load or accept an RDF data graph.
-      [ ] 2.1.1.2 Subtask - Load `python-shapes.ttl` as the shapes graph.
-      [ ] 2.1.1.3 Subtask - Return pass/fail status and structured results.
+      [x] 2.1.1.1 Subtask - Load or accept an RDF data graph.
+      [x] 2.1.1.2 Subtask - Load `python-shapes.ttl` as the shapes graph.
+      [x] 2.1.1.3 Subtask - Return pass/fail status and structured results.
 
   [ ] 2.2 Section - First SHACL Shape Coverage
     Validate first-slice generated resources.

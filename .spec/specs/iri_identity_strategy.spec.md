@@ -292,4 +292,10 @@ decisions:
   target: test/python_ontology/pipeline_test.exs
   covers:
     - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: test/python_ontology/pipeline_phase3_integration_test.exs
+  covers:
+    - python_ontology.iri_identity_strategy.configurable_base_iri
+    - python_ontology.iri_identity_strategy.shared_iri_helper
 ```

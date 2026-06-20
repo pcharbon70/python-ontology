@@ -386,4 +386,10 @@ decisions:
   target: test/python_ontology/pipeline_test.exs
   covers:
     - python_ontology.fact_confidence_model.builder_propagation
+
+- kind: source_file
+  target: test/python_ontology/pipeline_phase3_integration_test.exs
+  covers:
+    - python_ontology.fact_confidence_model.builder_propagation
+    - python_ontology.fact_confidence_model.queryable_confidence
 ```

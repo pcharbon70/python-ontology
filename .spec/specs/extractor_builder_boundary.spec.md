@@ -346,4 +346,18 @@ decisions:
     - python_ontology.extractor_builder_boundary.no_parsing_in_builders
     - python_ontology.extractor_builder_boundary.diagnostic_accumulation
     - python_ontology.extractor_builder_boundary.validation_after_build
+
+- kind: source_file
+  target: test/python_ontology/pipeline_phase3_integration_test.exs
+  covers:
+    - python_ontology.extractor_builder_boundary.parser_syntax_only
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.builders_emit_rdf
+    - python_ontology.extractor_builder_boundary.shared_context
+    - python_ontology.extractor_builder_boundary.shared_iri_helper
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.no_parsing_in_builders
+    - python_ontology.extractor_builder_boundary.source_evidence_required
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+    - python_ontology.extractor_builder_boundary.validation_after_build
 ```

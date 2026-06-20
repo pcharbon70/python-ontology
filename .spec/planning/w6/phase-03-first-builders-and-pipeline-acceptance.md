@@ -17,7 +17,7 @@ Back to index: [README](./README.md)
 - Builders use shared IRI and confidence helpers.
 - Validation runs after graph building.
 
-[ ] 3 Phase 3 - First Builders and Pipeline Acceptance
+[x] 3 Phase 3 - First Builders and Pipeline Acceptance
   Implement RDF builders for first-slice facts and compose parser-to-builder pipeline stages.
 
   [x] 3.1 Section - RDF Builder Implementation
@@ -47,12 +47,12 @@ Back to index: [README](./README.md)
       [x] 3.2.1.2 Subtask - Run extractors and collect facts/diagnostics.
       [x] 3.2.1.3 Subtask - Run builders and return RDF graph plus diagnostics.
 
-  [ ] 3.3 Section - Phase 3 Integration Tests
+  [x] 3.3 Section - Phase 3 Integration Tests
     Prove builders and pipeline produce RDF from extracted facts while preserving stage boundaries.
 
-    [ ] 3.3.1 Task - Run builder and pipeline acceptance
+    [x] 3.3.1 Task - Run builder and pipeline acceptance
       Validate RDF output, stage separation, and local gates.
 
-      [ ] 3.3.1.1 Subtask - Add tests that builders emit expected RDF triples for first-slice facts.
-      [ ] 3.3.1.2 Subtask - Add tests that builders use shared IRI and confidence helpers.
-      [ ] 3.3.1.3 Subtask - Run focused builder/pipeline tests, Turtle parse checks, full `mix test`, and `mix spec.check`.
+      [x] 3.3.1.1 Subtask - Add tests that builders emit expected RDF triples for first-slice facts.
+      [x] 3.3.1.2 Subtask - Add tests that builders use shared IRI and confidence helpers.
+      [x] 3.3.1.3 Subtask - Run focused builder/pipeline tests, Turtle parse checks, full `mix test`, and `mix spec.check`.

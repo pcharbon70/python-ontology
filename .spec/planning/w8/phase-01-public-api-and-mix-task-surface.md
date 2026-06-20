@@ -16,7 +16,7 @@ Back to index: [README](./README.md)
 - Public APIs return graph output plus structured diagnostics.
 - Mix task behavior is suitable for local use and tests.
 
-[ ] 1 Phase 1 - Public API and Mix Task Surface
+[x] 1 Phase 1 - Public API and Mix Task Surface
   Expose the first end-to-end analysis path to callers.
 
   [x] 1.1 Section - Public API
@@ -46,12 +46,12 @@ Back to index: [README](./README.md)
       [x] 1.2.1.2 Subtask - Support output path, base IRI, include/exclude globs, and validation flags.
       [x] 1.2.1.3 Subtask - Define non-zero exit behavior for unreadable paths and validation failures.
 
-  [ ] 1.3 Section - Phase 1 Integration Tests
+  [x] 1.3 Section - Phase 1 Integration Tests
     Prove the public API and Mix task can run the pipeline on minimal input.
 
-    [ ] 1.3.1 Task - Run API and command checks
+    [x] 1.3.1 Task - Run API and command checks
       Validate caller-facing behavior before broad fixture acceptance.
 
-      [ ] 1.3.1.1 Subtask - Add tests for `analyze_file/2` or equivalent on a tiny source fixture.
-      [ ] 1.3.1.2 Subtask - Add tests for the Mix task writing Turtle output.
-      [ ] 1.3.1.3 Subtask - Run focused API/task tests, full `mix test`, and `mix spec.check`.
+      [x] 1.3.1.1 Subtask - Add tests for `analyze_file/2` or equivalent on a tiny source fixture.
+      [x] 1.3.1.2 Subtask - Add tests for the Mix task writing Turtle output.
+      [x] 1.3.1.3 Subtask - Run focused API/task tests, full `mix test`, and `mix spec.check`.

@@ -994,4 +994,11 @@ decisions:
   covers:
     - python_ontology.initial_analysis_slice.first_cli_output
     - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: test/python_ontology/analysis/phase1_integration_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
 ```

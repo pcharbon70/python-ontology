@@ -120,4 +120,141 @@ decisions:
     - python_ontology.iri_identity_strategy.hash_canonicalization
     - python_ontology.iri_identity_strategy.no_runtime_identity_claims
     - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: lib/python_ontology/iri.ex
+  covers:
+    - python_ontology.iri_identity_strategy.namespace_resource_separation
+    - python_ontology.iri_identity_strategy.configurable_base_iri
+    - python_ontology.iri_identity_strategy.no_runtime_identity_claims
+    - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: lib/python_ontology/iri/context.ex
+  covers:
+    - python_ontology.iri_identity_strategy.namespace_resource_separation
+    - python_ontology.iri_identity_strategy.configurable_base_iri
+    - python_ontology.iri_identity_strategy.no_runtime_identity_claims
+    - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: lib/python_ontology/iri/diagnostic.ex
+  covers:
+    - python_ontology.iri_identity_strategy.configurable_base_iri
+    - python_ontology.iri_identity_strategy.stable_path_normalization
+    - python_ontology.iri_identity_strategy.hash_canonicalization
+    - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: lib/python_ontology/iri/path.ex
+  covers:
+    - python_ontology.iri_identity_strategy.stable_path_normalization
+    - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: lib/python_ontology/iri/fragment.ex
+  covers:
+    - python_ontology.iri_identity_strategy.hash_canonicalization
+    - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: lib/python_ontology/iri/builder.ex
+  covers:
+    - python_ontology.iri_identity_strategy.namespace_resource_separation
+    - python_ontology.iri_identity_strategy.configurable_base_iri
+    - python_ontology.iri_identity_strategy.hash_canonicalization
+    - python_ontology.iri_identity_strategy.no_runtime_identity_claims
+    - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: lib/python_ontology/iri/identity.ex
+  covers:
+    - python_ontology.iri_identity_strategy.configurable_base_iri
+    - python_ontology.iri_identity_strategy.stable_path_normalization
+    - python_ontology.iri_identity_strategy.module_package_identity
+    - python_ontology.iri_identity_strategy.class_function_identity
+    - python_ontology.iri_identity_strategy.nested_scope_identity
+    - python_ontology.iri_identity_strategy.occurrence_disambiguation
+    - python_ontology.iri_identity_strategy.expression_span_identity
+    - python_ontology.iri_identity_strategy.hash_canonicalization
+    - python_ontology.iri_identity_strategy.no_runtime_identity_claims
+    - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: test/python_ontology/iri/base_iri_test.exs
+  covers:
+    - python_ontology.iri_identity_strategy.namespace_resource_separation
+    - python_ontology.iri_identity_strategy.configurable_base_iri
+    - python_ontology.iri_identity_strategy.no_runtime_identity_claims
+    - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: test/python_ontology/iri/path_test.exs
+  covers:
+    - python_ontology.iri_identity_strategy.stable_path_normalization
+    - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: test/python_ontology/iri/phase1_integration_test.exs
+  covers:
+    - python_ontology.iri_identity_strategy.namespace_resource_separation
+    - python_ontology.iri_identity_strategy.configurable_base_iri
+    - python_ontology.iri_identity_strategy.stable_path_normalization
+    - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: test/python_ontology/iri/structural_container_identity_test.exs
+  covers:
+    - python_ontology.iri_identity_strategy.configurable_base_iri
+    - python_ontology.iri_identity_strategy.stable_path_normalization
+    - python_ontology.iri_identity_strategy.module_package_identity
+    - python_ontology.iri_identity_strategy.no_runtime_identity_claims
+    - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: test/python_ontology/iri/structural_declaration_identity_test.exs
+  covers:
+    - python_ontology.iri_identity_strategy.configurable_base_iri
+    - python_ontology.iri_identity_strategy.class_function_identity
+    - python_ontology.iri_identity_strategy.nested_scope_identity
+    - python_ontology.iri_identity_strategy.occurrence_disambiguation
+    - python_ontology.iri_identity_strategy.no_runtime_identity_claims
+    - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: test/python_ontology/iri/phase2_integration_test.exs
+  covers:
+    - python_ontology.iri_identity_strategy.configurable_base_iri
+    - python_ontology.iri_identity_strategy.stable_path_normalization
+    - python_ontology.iri_identity_strategy.module_package_identity
+    - python_ontology.iri_identity_strategy.class_function_identity
+    - python_ontology.iri_identity_strategy.nested_scope_identity
+    - python_ontology.iri_identity_strategy.occurrence_disambiguation
+    - python_ontology.iri_identity_strategy.no_runtime_identity_claims
+    - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: test/python_ontology/iri/span_bound_identity_test.exs
+  covers:
+    - python_ontology.iri_identity_strategy.expression_span_identity
+    - python_ontology.iri_identity_strategy.hash_canonicalization
+    - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: test/python_ontology/iri/builder_contract_test.exs
+  covers:
+    - python_ontology.iri_identity_strategy.namespace_resource_separation
+    - python_ontology.iri_identity_strategy.configurable_base_iri
+    - python_ontology.iri_identity_strategy.hash_canonicalization
+    - python_ontology.iri_identity_strategy.no_runtime_identity_claims
+    - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: test/python_ontology/iri/phase3_integration_test.exs
+  covers:
+    - python_ontology.iri_identity_strategy.configurable_base_iri
+    - python_ontology.iri_identity_strategy.stable_path_normalization
+    - python_ontology.iri_identity_strategy.expression_span_identity
+    - python_ontology.iri_identity_strategy.hash_canonicalization
+    - python_ontology.iri_identity_strategy.shared_iri_helper
 ```

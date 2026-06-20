@@ -15,42 +15,42 @@ Back to index: [README](./README.md)
 - Hash-based fragments use documented canonical inputs.
 - Builders use shared IRI helpers.
 
-[ ] 3 Phase 3 - Span-Bound Identity and Builder Adoption
+[x] 3 Phase 3 - Span-Bound Identity and Builder Adoption
   Add identity helpers for span-bound resources and prepare builders to use the shared strategy.
 
-  [ ] 3.1 Section - Span-Bound Resource Identity
+  [x] 3.1 Section - Span-Bound Resource Identity
     Generate identities for imports, calls, assignments, expressions, and locations.
 
-    [ ] 3.1.1 Task - Implement expression and statement IDs
+    [x] 3.1.1 Task - Implement expression and statement IDs
       Use containing entity and source span as identity inputs.
 
-      [ ] 3.1.1.1 Subtask - Generate import and assignment IDs.
-      [ ] 3.1.1.2 Subtask - Generate call, attribute, subscript, and expression IDs.
-      [ ] 3.1.1.3 Subtask - Generate source-location IDs.
+      [x] 3.1.1.1 Subtask - Generate import and assignment IDs.
+      [x] 3.1.1.2 Subtask - Generate call, attribute, subscript, and expression IDs.
+      [x] 3.1.1.3 Subtask - Generate source-location IDs.
 
-    [ ] 3.1.2 Task - Implement fragment escaping and hashing
+    [x] 3.1.2 Task - Implement fragment escaping and hashing
       Keep generated IRIs valid and deterministic.
 
-      [ ] 3.1.2.1 Subtask - Escape safe short fragments consistently.
-      [ ] 3.1.2.2 Subtask - Hash long or unsafe fragments from documented canonical inputs.
-      [ ] 3.1.2.3 Subtask - Add diagnostics for missing identity inputs.
+      [x] 3.1.2.1 Subtask - Escape safe short fragments consistently.
+      [x] 3.1.2.2 Subtask - Hash long or unsafe fragments from documented canonical inputs.
+      [x] 3.1.2.3 Subtask - Add diagnostics for missing identity inputs.
 
-  [ ] 3.2 Section - Builder Adoption Contract
+  [x] 3.2 Section - Builder Adoption Contract
     Prepare RDF builders to use the shared identity helpers.
 
-    [ ] 3.2.1 Task - Add builder helper API
+    [x] 3.2.1 Task - Add builder helper API
       Expose helper functions expected by future builders.
 
-      [ ] 3.2.1.1 Subtask - Add helpers for vocabulary IRIs versus generated resource IRIs.
-      [ ] 3.2.1.2 Subtask - Add helpers for fact resource IRIs.
-      [ ] 3.2.1.3 Subtask - Add tests that builders do not use ad hoc string construction once builders exist.
+      [x] 3.2.1.1 Subtask - Add helpers for vocabulary IRIs versus generated resource IRIs.
+      [x] 3.2.1.2 Subtask - Add helpers for fact resource IRIs.
+      [x] 3.2.1.3 Subtask - Add tests that builders do not use ad hoc string construction once builders exist.
 
-  [ ] 3.3 Section - Phase 3 Integration Tests
+  [x] 3.3 Section - Phase 3 Integration Tests
     Prove span-bound identity works and is ready for builder integration.
 
-    [ ] 3.3.1 Task - Run span-bound identity checks
+    [x] 3.3.1 Task - Run span-bound identity checks
       Validate expression and source-location identity behavior.
 
-      [ ] 3.3.1.1 Subtask - Add tests for import, call, assignment, expression, and source-location IRIs.
-      [ ] 3.3.1.2 Subtask - Add tests for canonical hash inputs and deterministic output.
-      [ ] 3.3.1.3 Subtask - Run focused IRI tests, full `mix test`, and `mix spec.check`.
+      [x] 3.3.1.1 Subtask - Add tests for import, call, assignment, expression, and source-location IRIs.
+      [x] 3.3.1.2 Subtask - Add tests for canonical hash inputs and deterministic output.
+      [x] 3.3.1.3 Subtask - Run focused IRI tests, full `mix test`, and `mix spec.check`.

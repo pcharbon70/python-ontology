@@ -15,49 +15,49 @@ Back to index: [README](./README.md)
 - Nested classes and functions include lexical parent paths.
 - Static identity does not claim runtime object identity.
 
-[ ] 2 Phase 2 - Structural Entity Identity Helpers
+[x] 2 Phase 2 - Structural Entity Identity Helpers
   Implement package, module, class, function, and nested entity identity helpers.
 
-  [ ] 2.1 Section - Package And Module Identity
+  [x] 2.1 Section - Package And Module Identity
     Generate stable identities for project source containers.
 
-    [ ] 2.1.1 Task - Implement package identity
+    [x] 2.1.1 Task - Implement package identity
       Derive package identity from project discovery and path context.
 
-      [ ] 2.1.1.1 Subtask - Generate regular package IDs from package roots and `__init__.py` paths.
-      [ ] 2.1.1.2 Subtask - Generate namespace package IDs from discovered namespace roots.
-      [ ] 2.1.1.3 Subtask - Include source path fallback for ambiguous package names.
+      [x] 2.1.1.1 Subtask - Generate regular package IDs from package roots and `__init__.py` paths.
+      [x] 2.1.1.2 Subtask - Generate namespace package IDs from discovered namespace roots.
+      [x] 2.1.1.3 Subtask - Include source path fallback for ambiguous package names.
 
-    [ ] 2.1.2 Task - Implement module identity
+    [x] 2.1.2 Task - Implement module identity
       Derive module identity from dotted name and file identity.
 
-      [ ] 2.1.2.1 Subtask - Generate module IDs for ordinary `.py` modules.
-      [ ] 2.1.2.2 Subtask - Generate module IDs for `.pyi` stub modules.
-      [ ] 2.1.2.3 Subtask - Include source path fallback for duplicate or ambiguous modules.
+      [x] 2.1.2.1 Subtask - Generate module IDs for ordinary `.py` modules.
+      [x] 2.1.2.2 Subtask - Generate module IDs for `.pyi` stub modules.
+      [x] 2.1.2.3 Subtask - Include source path fallback for duplicate or ambiguous modules.
 
-  [ ] 2.2 Section - Class And Function Identity
+  [x] 2.2 Section - Class And Function Identity
     Generate stable lexical identities for Python declarations.
 
-    [ ] 2.2.1 Task - Implement class identity
+    [x] 2.2.1 Task - Implement class identity
       Build class IDs from module identity and lexical class path.
 
-      [ ] 2.2.1.1 Subtask - Generate top-level class IDs.
-      [ ] 2.2.1.2 Subtask - Generate nested class IDs.
-      [ ] 2.2.1.3 Subtask - Disambiguate repeated class names with occurrence and span data.
+      [x] 2.2.1.1 Subtask - Generate top-level class IDs.
+      [x] 2.2.1.2 Subtask - Generate nested class IDs.
+      [x] 2.2.1.3 Subtask - Disambiguate repeated class names with occurrence and span data.
 
-    [ ] 2.2.2 Task - Implement function and method identity
+    [x] 2.2.2 Task - Implement function and method identity
       Build function IDs from lexical path without using arity.
 
-      [ ] 2.2.2.1 Subtask - Generate top-level function IDs.
-      [ ] 2.2.2.2 Subtask - Generate method and nested function IDs.
-      [ ] 2.2.2.3 Subtask - Disambiguate repeated function names with occurrence and span data.
+      [x] 2.2.2.1 Subtask - Generate top-level function IDs.
+      [x] 2.2.2.2 Subtask - Generate method and nested function IDs.
+      [x] 2.2.2.3 Subtask - Disambiguate repeated function names with occurrence and span data.
 
-  [ ] 2.3 Section - Phase 2 Integration Tests
+  [x] 2.3 Section - Phase 2 Integration Tests
     Validate structural identity across ordinary, nested, repeated, and ambiguous definitions.
 
-    [ ] 2.3.1 Task - Run structural identity checks
+    [x] 2.3.1 Task - Run structural identity checks
       Prove structural IRIs are deterministic and lexical.
 
-      [ ] 2.3.1.1 Subtask - Add tests for package, module, class, function, method, and nested identities.
-      [ ] 2.3.1.2 Subtask - Add tests that arity changes do not define Python function identity.
-      [ ] 2.3.1.3 Subtask - Run focused IRI tests, full `mix test`, and `mix spec.check`.
+      [x] 2.3.1.1 Subtask - Add tests for package, module, class, function, method, and nested identities.
+      [x] 2.3.1.2 Subtask - Add tests that arity changes do not define Python function identity.
+      [x] 2.3.1.3 Subtask - Run focused IRI tests, full `mix test`, and `mix spec.check`.

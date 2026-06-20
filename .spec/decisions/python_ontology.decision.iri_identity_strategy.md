@@ -44,4 +44,6 @@ Renaming, moving, or reformatting source can intentionally change some resource 
 
 Builders need a shared IRI helper rather than each builder inventing local string construction.
 
+W3 implements this strategy through `PythonOntology.IRI` and supporting helper modules. The initial implementation defines a validated generated-resource base IRI context and keeps those resource helpers separate from ontology vocabulary namespace helpers.
+
 <!-- covers: python_ontology.iri_identity_strategy.namespace_resource_separation python_ontology.iri_identity_strategy.configurable_base_iri python_ontology.iri_identity_strategy.stable_path_normalization python_ontology.iri_identity_strategy.module_package_identity python_ontology.iri_identity_strategy.class_function_identity python_ontology.iri_identity_strategy.nested_scope_identity python_ontology.iri_identity_strategy.occurrence_disambiguation python_ontology.iri_identity_strategy.expression_span_identity python_ontology.iri_identity_strategy.hash_canonicalization python_ontology.iri_identity_strategy.no_runtime_identity_claims python_ontology.iri_identity_strategy.shared_iri_helper -->

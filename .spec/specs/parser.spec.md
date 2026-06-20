@@ -15,6 +15,7 @@ surface:
   - priv/tree_sitter/*
   - test/python_ontology/parser*_test.exs
   - test/python_ontology/parser/**/*_test.exs
+  - test/fixtures/python_parser/**/*
 decisions:
   - python_ontology.decision.initial_python_ontology_architecture
   - python_ontology.decision.parser_bridge_boundary
@@ -252,6 +253,48 @@ decisions:
     - python_ontology.parser.error_contract
     - python_ontology.parser.parser_version_reporting
     - python_ontology.parser.no_direct_rdf_output
+
+- kind: source_file
+  target: test/python_ontology/parser_fixture_test.exs
+  covers:
+    - python_ontology.parser.tree_sitter_python_authority
+    - python_ontology.parser.no_python_runtime_dependency
+    - python_ontology.parser.no_project_code_execution
+    - python_ontology.parser.concrete_syntax_tree_output
+    - python_ontology.parser.source_locations
+    - python_ontology.parser.error_contract
+
+- kind: source_file
+  target: test/fixtures/python_parser/valid/first_slice.py
+  covers:
+    - python_ontology.parser.tree_sitter_python_authority
+    - python_ontology.parser.concrete_syntax_tree_output
+    - python_ontology.parser.source_locations
+
+- kind: source_file
+  target: test/fixtures/python_parser/valid/preservation_cases.py
+  covers:
+    - python_ontology.parser.tree_sitter_python_authority
+    - python_ontology.parser.concrete_syntax_tree_output
+    - python_ontology.parser.source_locations
+
+- kind: source_file
+  target: test/fixtures/python_parser/invalid/incomplete_function.py
+  covers:
+    - python_ontology.parser.error_contract
+    - python_ontology.parser.source_locations
+
+- kind: source_file
+  target: test/fixtures/python_parser/invalid/invalid_indentation.py
+  covers:
+    - python_ontology.parser.error_contract
+    - python_ontology.parser.source_locations
+
+- kind: source_file
+  target: test/fixtures/python_parser/invalid/malformed_expression.py
+  covers:
+    - python_ontology.parser.error_contract
+    - python_ontology.parser.source_locations
 
 - kind: command
   target: mix test test/python_ontology/parser/tree_sitter_smoke_test.exs

@@ -1492,7 +1492,8 @@
             "native/**/*",
             "priv/tree_sitter/*",
             "test/python_ontology/parser*_test.exs",
-            "test/python_ontology/parser/**/*_test.exs"
+            "test/python_ontology/parser/**/*_test.exs",
+            "test/fixtures/python_parser/**/*"
           ],
           "verification_minimum_strength": null
         },
@@ -1768,6 +1769,17 @@
         "kind": "source_file",
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/parser_test.exs"
+      },
+      {
+        "covers": [
+          "python_ontology.initial_analysis_slice.source_locations",
+          "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+          "python_ontology.initial_analysis_slice.tests_for_slice"
+        ],
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/parser_fixture_test.exs"
       },
       {
         "covers": [
@@ -2059,6 +2071,72 @@
         "covers": [
           "python_ontology.parser.tree_sitter_python_authority",
           "python_ontology.parser.no_python_runtime_dependency",
+          "python_ontology.parser.no_project_code_execution",
+          "python_ontology.parser.concrete_syntax_tree_output",
+          "python_ontology.parser.source_locations",
+          "python_ontology.parser.error_contract"
+        ],
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.parser",
+        "target": "test/python_ontology/parser_fixture_test.exs"
+      },
+      {
+        "covers": [
+          "python_ontology.parser.tree_sitter_python_authority",
+          "python_ontology.parser.concrete_syntax_tree_output",
+          "python_ontology.parser.source_locations"
+        ],
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.parser",
+        "target": "test/fixtures/python_parser/valid/first_slice.py"
+      },
+      {
+        "covers": [
+          "python_ontology.parser.tree_sitter_python_authority",
+          "python_ontology.parser.concrete_syntax_tree_output",
+          "python_ontology.parser.source_locations"
+        ],
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.parser",
+        "target": "test/fixtures/python_parser/valid/preservation_cases.py"
+      },
+      {
+        "covers": [
+          "python_ontology.parser.error_contract",
+          "python_ontology.parser.source_locations"
+        ],
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.parser",
+        "target": "test/fixtures/python_parser/invalid/incomplete_function.py"
+      },
+      {
+        "covers": [
+          "python_ontology.parser.error_contract",
+          "python_ontology.parser.source_locations"
+        ],
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.parser",
+        "target": "test/fixtures/python_parser/invalid/invalid_indentation.py"
+      },
+      {
+        "covers": [
+          "python_ontology.parser.error_contract",
+          "python_ontology.parser.source_locations"
+        ],
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "subject_id": "python_ontology.parser",
+        "target": "test/fixtures/python_parser/invalid/malformed_expression.py"
+      },
+      {
+        "covers": [
+          "python_ontology.parser.tree_sitter_python_authority",
+          "python_ontology.parser.no_python_runtime_dependency",
           "python_ontology.parser.concrete_syntax_tree_output",
           "python_ontology.parser.source_locations",
           "python_ontology.parser.error_contract",
@@ -2179,7 +2257,7 @@
     "requirements": 107,
     "scenarios": 17,
     "subjects": 12,
-    "verifications": 47
+    "verifications": 54
   },
   "verification": {
     "claims": [
@@ -2853,6 +2931,39 @@
         "subject_id": "python_ontology.initial_analysis_slice",
         "target": "test/python_ontology/parser_test.exs",
         "verification_index": 7
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.out_of_scope_runtime",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/parser_fixture_test.exs",
+        "verification_index": 8
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.source_locations",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/parser_fixture_test.exs",
+        "verification_index": 8
+      },
+      {
+        "cover_id": "python_ontology.initial_analysis_slice.tests_for_slice",
+        "file": ".spec/specs/initial_analysis_slice.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.initial_analysis_slice",
+        "target": "test/python_ontology/parser_fixture_test.exs",
+        "verification_index": 8
       },
       {
         "cover_id": "python_ontology.iri_identity_strategy.class_function_identity",
@@ -4243,13 +4354,200 @@
       {
         "cover_id": "python_ontology.parser.concrete_syntax_tree_output",
         "file": ".spec/specs/parser.spec.md",
-        "kind": "command",
+        "kind": "source_file",
         "meets_minimum": true,
         "required_strength": "claimed",
-        "strength": "claimed",
+        "strength": "linked",
         "subject_id": "python_ontology.parser",
-        "target": "mix test test/python_ontology/parser/tree_sitter_smoke_test.exs",
+        "target": "test/python_ontology/parser_fixture_test.exs",
         "verification_index": 12
+      },
+      {
+        "cover_id": "python_ontology.parser.error_contract",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": "test/python_ontology/parser_fixture_test.exs",
+        "verification_index": 12
+      },
+      {
+        "cover_id": "python_ontology.parser.no_project_code_execution",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": "test/python_ontology/parser_fixture_test.exs",
+        "verification_index": 12
+      },
+      {
+        "cover_id": "python_ontology.parser.no_python_runtime_dependency",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": "test/python_ontology/parser_fixture_test.exs",
+        "verification_index": 12
+      },
+      {
+        "cover_id": "python_ontology.parser.source_locations",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": "test/python_ontology/parser_fixture_test.exs",
+        "verification_index": 12
+      },
+      {
+        "cover_id": "python_ontology.parser.tree_sitter_python_authority",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": "test/python_ontology/parser_fixture_test.exs",
+        "verification_index": 12
+      },
+      {
+        "cover_id": "python_ontology.parser.concrete_syntax_tree_output",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": "test/fixtures/python_parser/valid/first_slice.py",
+        "verification_index": 13
+      },
+      {
+        "cover_id": "python_ontology.parser.source_locations",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": "test/fixtures/python_parser/valid/first_slice.py",
+        "verification_index": 13
+      },
+      {
+        "cover_id": "python_ontology.parser.tree_sitter_python_authority",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": "test/fixtures/python_parser/valid/first_slice.py",
+        "verification_index": 13
+      },
+      {
+        "cover_id": "python_ontology.parser.concrete_syntax_tree_output",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": "test/fixtures/python_parser/valid/preservation_cases.py",
+        "verification_index": 14
+      },
+      {
+        "cover_id": "python_ontology.parser.source_locations",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": "test/fixtures/python_parser/valid/preservation_cases.py",
+        "verification_index": 14
+      },
+      {
+        "cover_id": "python_ontology.parser.tree_sitter_python_authority",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": "test/fixtures/python_parser/valid/preservation_cases.py",
+        "verification_index": 14
+      },
+      {
+        "cover_id": "python_ontology.parser.error_contract",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": "test/fixtures/python_parser/invalid/incomplete_function.py",
+        "verification_index": 15
+      },
+      {
+        "cover_id": "python_ontology.parser.source_locations",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": "test/fixtures/python_parser/invalid/incomplete_function.py",
+        "verification_index": 15
+      },
+      {
+        "cover_id": "python_ontology.parser.error_contract",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": "test/fixtures/python_parser/invalid/invalid_indentation.py",
+        "verification_index": 16
+      },
+      {
+        "cover_id": "python_ontology.parser.source_locations",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": "test/fixtures/python_parser/invalid/invalid_indentation.py",
+        "verification_index": 16
+      },
+      {
+        "cover_id": "python_ontology.parser.error_contract",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": "test/fixtures/python_parser/invalid/malformed_expression.py",
+        "verification_index": 17
+      },
+      {
+        "cover_id": "python_ontology.parser.source_locations",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "source_file",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "linked",
+        "subject_id": "python_ontology.parser",
+        "target": "test/fixtures/python_parser/invalid/malformed_expression.py",
+        "verification_index": 17
       },
       {
         "cover_id": "python_ontology.parser.concrete_syntax_tree_output",
@@ -4260,7 +4558,18 @@
         "strength": "claimed",
         "subject_id": "python_ontology.parser",
         "target": "mix test test/python_ontology/parser/tree_sitter_smoke_test.exs",
-        "verification_index": 12
+        "verification_index": 18
+      },
+      {
+        "cover_id": "python_ontology.parser.concrete_syntax_tree_output",
+        "file": ".spec/specs/parser.spec.md",
+        "kind": "command",
+        "meets_minimum": true,
+        "required_strength": "claimed",
+        "strength": "claimed",
+        "subject_id": "python_ontology.parser",
+        "target": "mix test test/python_ontology/parser/tree_sitter_smoke_test.exs",
+        "verification_index": 18
       },
       {
         "cover_id": "python_ontology.parser.error_contract",
@@ -4271,7 +4580,7 @@
         "strength": "claimed",
         "subject_id": "python_ontology.parser",
         "target": "mix test test/python_ontology/parser/tree_sitter_smoke_test.exs",
-        "verification_index": 12
+        "verification_index": 18
       },
       {
         "cover_id": "python_ontology.parser.error_contract",
@@ -4282,7 +4591,7 @@
         "strength": "claimed",
         "subject_id": "python_ontology.parser",
         "target": "mix test test/python_ontology/parser/tree_sitter_smoke_test.exs",
-        "verification_index": 12
+        "verification_index": 18
       },
       {
         "cover_id": "python_ontology.parser.no_direct_rdf_output",
@@ -4293,7 +4602,7 @@
         "strength": "claimed",
         "subject_id": "python_ontology.parser",
         "target": "mix test test/python_ontology/parser/tree_sitter_smoke_test.exs",
-        "verification_index": 12
+        "verification_index": 18
       },
       {
         "cover_id": "python_ontology.parser.no_project_code_execution",
@@ -4304,7 +4613,7 @@
         "strength": "claimed",
         "subject_id": "python_ontology.parser",
         "target": "mix test test/python_ontology/parser/tree_sitter_smoke_test.exs",
-        "verification_index": 12
+        "verification_index": 18
       },
       {
         "cover_id": "python_ontology.parser.no_python_runtime_dependency",
@@ -4315,7 +4624,7 @@
         "strength": "claimed",
         "subject_id": "python_ontology.parser",
         "target": "mix test test/python_ontology/parser/tree_sitter_smoke_test.exs",
-        "verification_index": 12
+        "verification_index": 18
       },
       {
         "cover_id": "python_ontology.parser.parser_version_reporting",
@@ -4326,7 +4635,7 @@
         "strength": "claimed",
         "subject_id": "python_ontology.parser",
         "target": "mix test test/python_ontology/parser/tree_sitter_smoke_test.exs",
-        "verification_index": 12
+        "verification_index": 18
       },
       {
         "cover_id": "python_ontology.parser.source_locations",
@@ -4337,7 +4646,7 @@
         "strength": "claimed",
         "subject_id": "python_ontology.parser",
         "target": "mix test test/python_ontology/parser/tree_sitter_smoke_test.exs",
-        "verification_index": 12
+        "verification_index": 18
       },
       {
         "cover_id": "python_ontology.parser.source_locations",
@@ -4348,7 +4657,7 @@
         "strength": "claimed",
         "subject_id": "python_ontology.parser",
         "target": "mix test test/python_ontology/parser/tree_sitter_smoke_test.exs",
-        "verification_index": 12
+        "verification_index": 18
       },
       {
         "cover_id": "python_ontology.parser.tree_sitter_python_authority",
@@ -4359,7 +4668,7 @@
         "strength": "claimed",
         "subject_id": "python_ontology.parser",
         "target": "mix test test/python_ontology/parser/tree_sitter_smoke_test.exs",
-        "verification_index": 12
+        "verification_index": 18
       },
       {
         "cover_id": "python_ontology.parser.elixir_owned_adapter",
@@ -4370,7 +4679,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.parser",
         "target": "native/python_ontology_parser/Cargo.toml",
-        "verification_index": 13
+        "verification_index": 19
       },
       {
         "cover_id": "python_ontology.parser.no_python_runtime_dependency",
@@ -4381,7 +4690,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.parser",
         "target": "native/python_ontology_parser/Cargo.toml",
-        "verification_index": 13
+        "verification_index": 19
       },
       {
         "cover_id": "python_ontology.parser.tree_sitter_python_authority",
@@ -4392,7 +4701,7 @@
         "strength": "linked",
         "subject_id": "python_ontology.parser",
         "target": "native/python_ontology_parser/Cargo.toml",
-        "verification_index": 13
+        "verification_index": 19
       },
       {
         "cover_id": "python_ontology.project_analysis_scope.configurable_globs",
@@ -4697,7 +5006,7 @@
     "strength_summary": {
       "claimed": 17,
       "executed": 0,
-      "linked": 211
+      "linked": 232
     },
     "threshold_failures": 0
   },

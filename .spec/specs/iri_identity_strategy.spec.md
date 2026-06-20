@@ -257,4 +257,9 @@ decisions:
     - python_ontology.iri_identity_strategy.expression_span_identity
     - python_ontology.iri_identity_strategy.hash_canonicalization
     - python_ontology.iri_identity_strategy.shared_iri_helper
+
+- kind: source_file
+  target: lib/python_ontology/builders/confidence.ex
+  covers:
+    - python_ontology.iri_identity_strategy.shared_iri_helper
 ```

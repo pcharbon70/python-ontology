@@ -109,4 +109,16 @@ decisions:
     - python_ontology.ontology_turtle_files.namespace_stability
     - python_ontology.ontology_turtle_files.import_direction
     - python_ontology.ontology_turtle_files.bootstrap_validity
+
+- kind: source_file
+  target: test/python_ontology/ontology/confidence_vocabulary_test.exs
+  covers:
+    - python_ontology.ontology_turtle_files.dynamic_fact_boundary
+    - python_ontology.ontology_turtle_files.bootstrap_validity
+
+- kind: source_file
+  target: test/python_ontology/confidence/phase2_integration_test.exs
+  covers:
+    - python_ontology.ontology_turtle_files.dynamic_fact_boundary
+    - python_ontology.ontology_turtle_files.bootstrap_validity
 ```

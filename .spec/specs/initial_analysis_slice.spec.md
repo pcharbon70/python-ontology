@@ -423,4 +423,97 @@ decisions:
     - python_ontology.initial_analysis_slice.source_locations
     - python_ontology.initial_analysis_slice.first_cli_output
     - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: lib/python_ontology/confidence.ex
+  covers:
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: lib/python_ontology/confidence/category.ex
+  covers:
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: lib/python_ontology/confidence/evidence.ex
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: test/python_ontology/confidence/category_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/confidence/evidence_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/confidence/phase1_integration_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: lib/python_ontology/builders/confidence.ex
+  covers:
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+
+- kind: source_file
+  target: test/python_ontology/builders/confidence_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/confidence/phase2_integration_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/fixtures/python_confidence/direct_and_inferred.py
+  covers:
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/fixtures/python_confidence/dynamic_boundaries.py
+  covers:
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/confidence/source_fixture_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/fixtures/python_confidence/side_effect_guard.py
+  covers:
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/confidence/no_execution_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
+
+- kind: source_file
+  target: test/python_ontology/confidence/phase3_integration_test.exs
+  covers:
+    - python_ontology.initial_analysis_slice.source_locations
+    - python_ontology.initial_analysis_slice.first_cli_output
+    - python_ontology.initial_analysis_slice.out_of_scope_runtime
+    - python_ontology.initial_analysis_slice.tests_for_slice
 ```

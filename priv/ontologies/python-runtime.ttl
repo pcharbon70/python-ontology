@@ -1,4 +1,4 @@
-# covers: python_ontology.ontology_turtle_files.layered_files python_ontology.ontology_turtle_files.namespace_stability python_ontology.ontology_turtle_files.import_direction python_ontology.ontology_turtle_files.python_native_boundaries python_ontology.ontology_turtle_files.dynamic_fact_boundary python_ontology.ontology_turtle_files.bootstrap_validity
+# covers: python_ontology.ontology_turtle_files.layered_files python_ontology.ontology_turtle_files.namespace_stability python_ontology.ontology_turtle_files.import_direction python_ontology.ontology_turtle_files.python_native_boundaries python_ontology.ontology_turtle_files.dynamic_fact_boundary python_ontology.ontology_turtle_files.bootstrap_validity python_ontology.fact_confidence_model.runtime_dependent_boundary python_ontology.fact_confidence_model.dynamic_construct_marking python_ontology.fact_confidence_model.queryable_confidence
 @prefix : <https://w3id.org/python-code/runtime#> .
 @prefix pycore: <https://w3id.org/python-code/core#> .
 @prefix pystruct: <https://w3id.org/python-code/structure#> .
@@ -36,16 +36,39 @@
     rdfs:label "Exception Handler"@en .
 
 :DynamicImport a owl:Class ;
-    rdfs:subClassOf pycore:ImportStatement ;
+    rdfs:subClassOf pycore:ImportStatement, pycore:RuntimeDependentFact ;
+    rdfs:comment "Source-visible dynamic import boundary, such as importlib.import_module(name), whose target may require runtime state."@en ;
     rdfs:label "Dynamic Import"@en .
 
 :MonkeyPatch a owl:Class ;
     rdfs:subClassOf pycore:RuntimeDependentFact ;
+    rdfs:comment "A source-visible mutation that can alter attributes or bindings at runtime."@en ;
     rdfs:label "Monkey Patch"@en .
 
 :RuntimeBoundary a owl:Class ;
     rdfs:subClassOf pycore:RuntimeDependentFact ;
+    rdfs:comment "A queryable marker for behavior that static source analysis should not promote to static truth."@en ;
     rdfs:label "Runtime Boundary"@en .
+
+:DynamicAttributeAccess a owl:Class ;
+    rdfs:subClassOf :RuntimeBoundary ;
+    rdfs:label "Dynamic Attribute Access"@en .
+
+:DynamicAttributeMutation a owl:Class ;
+    rdfs:subClassOf :RuntimeBoundary ;
+    rdfs:label "Dynamic Attribute Mutation"@en .
+
+:DecoratorRuntimeEffect a owl:Class ;
+    rdfs:subClassOf :RuntimeBoundary ;
+    rdfs:label "Decorator Runtime Effect"@en .
+
+:MetaclassRuntimeEffect a owl:Class ;
+    rdfs:subClassOf :RuntimeBoundary ;
+    rdfs:label "Metaclass Runtime Effect"@en .
+
+:ReflectionBoundary a owl:Class ;
+    rdfs:subClassOf :RuntimeBoundary ;
+    rdfs:label "Reflection Boundary"@en .
 
 :hasRuntimeBoundary a owl:ObjectProperty ;
     rdfs:range :RuntimeBoundary ;

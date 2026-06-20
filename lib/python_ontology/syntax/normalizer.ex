@@ -10,6 +10,8 @@ defmodule PythonOntology.Syntax.Normalizer do
   alias PythonOntology.Syntax.Source
   alias PythonOntology.Syntax.Span
 
+  @literal_types ~w(string integer float true false none list tuple dictionary set)
+
   @type context :: %{
           source: Source.t(),
           source_text: String.t() | nil,
@@ -151,6 +153,98 @@ defmodule PythonOntology.Syntax.Normalizer do
     }
   end
 
+  defp map_node(%Parser.Node{kind: "expression_statement"} = node, context) do
+    case named_children(node) do
+      [child] ->
+        map_node(child, child_context(node, context, child_index(node, child)))
+
+      _children ->
+        generic_node(node, context)
+    end
+  end
+
+  defp map_node(%Parser.Node{kind: "assignment"} = node, context) do
+    targets = map_field_children(node, context, "left")
+    value = map_optional_child(node, child_by_field(node, "right"), context)
+    annotation = annotation_node(child_by_field(node, "type"), context)
+
+    %Syntax.Assignment{
+      info: info(node, context),
+      targets: targets,
+      value: value,
+      annotation: annotation,
+      children: targets ++ Enum.reject([annotation, value], &is_nil/1)
+    }
+  end
+
+  defp map_node(%Parser.Node{kind: kind} = node, context)
+       when kind in ["identifier", "dotted_name"] do
+    %Syntax.Identifier{
+      info: info(node, context),
+      name: raw_text(node, context)
+    }
+  end
+
+  defp map_node(%Parser.Node{kind: "call"} = node, context) do
+    function_node = child_by_field(node, "function")
+    arguments_node = child_by_field(node, "arguments")
+
+    function = map_optional_child(node, function_node, context)
+
+    arguments =
+      if arguments_node, do: map_argument_children(node, arguments_node, context), else: []
+
+    %Syntax.Call{
+      info: info(node, context),
+      function: function,
+      arguments: arguments,
+      children: Enum.reject([function], &is_nil/1) ++ arguments
+    }
+  end
+
+  defp map_node(%Parser.Node{kind: "attribute"} = node, context) do
+    object_node = child_by_field(node, "object")
+    attribute_node = child_by_field(node, "attribute")
+
+    object = map_optional_child(node, object_node, context)
+    attribute = map_optional_child(node, attribute_node, context)
+
+    %Syntax.Attribute{
+      info: info(node, context),
+      object: object,
+      attribute: attribute,
+      children: Enum.reject([object, attribute], &is_nil/1)
+    }
+  end
+
+  defp map_node(%Parser.Node{kind: "subscript"} = node, context) do
+    object_node = child_by_field(node, "value")
+    index_node = child_by_field(node, "subscript")
+
+    object = map_optional_child(node, object_node, context)
+    index = map_optional_child(node, index_node, context)
+
+    %Syntax.Subscript{
+      info: info(node, context),
+      object: object,
+      index: index,
+      children: Enum.reject([object, index], &is_nil/1)
+    }
+  end
+
+  defp map_node(%Parser.Node{kind: kind} = node, context) when kind in @literal_types do
+    raw_text = raw_text(node, context)
+    literal_kind = literal_kind(kind)
+
+    %Syntax.Literal{
+      info: info(node, context),
+      kind: literal_kind,
+      value: literal_value(literal_kind, raw_text),
+      raw_text: raw_text,
+      children: map_named_children(node, context)
+    }
+  end
+
   defp map_node(node, context), do: generic_node(node, context)
 
   defp map_children(node, context) do
@@ -164,6 +258,13 @@ defmodule PythonOntology.Syntax.Normalizer do
     node.children
     |> Enum.with_index()
     |> Enum.reject(fn {child, _index} -> child.extra end)
+    |> Enum.map(fn {child, index} -> map_node(child, child_context(node, context, index)) end)
+  end
+
+  defp map_named_children(node, context) do
+    node.children
+    |> Enum.with_index()
+    |> Enum.filter(fn {child, _index} -> child.named end)
     |> Enum.map(fn {child, index} -> map_node(child, child_context(node, context, index)) end)
   end
 
@@ -343,6 +444,30 @@ defmodule PythonOntology.Syntax.Normalizer do
     Enum.find(node.children, &(&1.field_name == field))
   end
 
+  defp children_by_field(node, field) do
+    Enum.filter(node.children, &(&1.field_name == field))
+  end
+
+  defp map_field_children(node, context, field) do
+    node
+    |> children_by_field(field)
+    |> Enum.map(&map_optional_child(node, &1, context))
+  end
+
+  defp map_argument_children(call_node, arguments_node, context) do
+    argument_context = child_context(call_node, context, child_index(call_node, arguments_node))
+
+    arguments_node
+    |> named_children()
+    |> Enum.map(&map_optional_child(arguments_node, &1, argument_context))
+  end
+
+  defp map_optional_child(_parent, nil, _context), do: nil
+
+  defp map_optional_child(parent, child, context) do
+    map_node(child, child_context(parent, context, child_index(parent, child)))
+  end
+
   defp first_named_child(node) do
     Enum.find(node.children, & &1.named)
   end
@@ -391,4 +516,32 @@ defmodule PythonOntology.Syntax.Normalizer do
       {:error, _reason} -> nil
     end
   end
+
+  defp literal_kind(kind) when kind in ["integer", "float"], do: :number
+  defp literal_kind("string"), do: :string
+  defp literal_kind(kind) when kind in ["true", "false"], do: :boolean
+  defp literal_kind("none"), do: :none
+  defp literal_kind("list"), do: :list
+  defp literal_kind("tuple"), do: :tuple
+  defp literal_kind("dictionary"), do: :dict
+  defp literal_kind("set"), do: :set
+
+  defp literal_value(:number, raw_text) do
+    case Integer.parse(raw_text || "") do
+      {integer, ""} ->
+        integer
+
+      _other ->
+        case Float.parse(raw_text || "") do
+          {float, ""} -> float
+          _other -> nil
+        end
+    end
+  end
+
+  defp literal_value(:boolean, "True"), do: true
+  defp literal_value(:boolean, "False"), do: false
+  defp literal_value(:none, _raw_text), do: nil
+  defp literal_value(:string, raw_text), do: raw_text
+  defp literal_value(_kind, _raw_text), do: nil
 end

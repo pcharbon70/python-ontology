@@ -226,6 +226,18 @@ decisions:
     - python_ontology.normalized_syntax_model.source_span_preservation
 
 - kind: source_file
+  target: test/python_ontology/syntax/expression_mapping_test.exs
+  covers:
+    - python_ontology.normalized_syntax_model.tree_sitter_not_internal_model
+    - python_ontology.normalized_syntax_model.elixir_struct_boundary
+    - python_ontology.normalized_syntax_model.raw_cst_provenance
+    - python_ontology.normalized_syntax_model.typed_core_nodes
+    - python_ontology.normalized_syntax_model.deterministic_normalization
+    - python_ontology.normalized_syntax_model.no_code_execution
+    - python_ontology.normalized_syntax_model.no_rdf_generation
+    - python_ontology.normalized_syntax_model.source_span_preservation
+
+- kind: source_file
   target: test/python_ontology/syntax/typed_nodes_test.exs
   covers:
     - python_ontology.normalized_syntax_model.elixir_struct_boundary

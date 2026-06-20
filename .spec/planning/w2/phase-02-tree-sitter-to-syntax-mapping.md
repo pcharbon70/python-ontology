@@ -36,22 +36,22 @@ Back to index: [README](./README.md)
       [x] 2.1.2.2 Subtask - Map function names, decorators, parameters, annotations, defaults, and body children.
       [x] 2.1.2.3 Subtask - Map async function syntax as a function variant or marker.
 
-  [ ] 2.2 Section - Expression Mapping
+  [x] 2.2 Section - Expression Mapping
     Map first-slice expression constructs into normalized syntax.
 
-    [ ] 2.2.1 Task - Map call and access syntax
+    [x] 2.2.1 Task - Map call and access syntax
       Normalize expression nodes needed by initial call extraction.
 
-      [ ] 2.2.1.1 Subtask - Map call expressions and argument lists.
-      [ ] 2.2.1.2 Subtask - Map attribute access chains.
-      [ ] 2.2.1.3 Subtask - Map subscript expressions.
+      [x] 2.2.1.1 Subtask - Map call expressions and argument lists.
+      [x] 2.2.1.2 Subtask - Map attribute access chains.
+      [x] 2.2.1.3 Subtask - Map subscript expressions.
 
-    [ ] 2.2.2 Task - Map literals and identifiers
+    [x] 2.2.2 Task - Map literals and identifiers
       Preserve basic expression leaves.
 
-      [ ] 2.2.2.1 Subtask - Map identifiers and dotted names.
-      [ ] 2.2.2.2 Subtask - Map string, numeric, boolean, `None`, list, tuple, dict, and set literals.
-      [ ] 2.2.2.3 Subtask - Preserve raw text where needed for annotations and decorator expressions.
+      [x] 2.2.2.1 Subtask - Map identifiers and dotted names.
+      [x] 2.2.2.2 Subtask - Map string, numeric, boolean, `None`, list, tuple, dict, and set literals.
+      [x] 2.2.2.3 Subtask - Preserve raw text where needed for annotations and decorator expressions.
 
   [ ] 2.3 Section - Phase 2 Integration Tests
     Prove representative Python fixtures normalize into stable typed nodes.

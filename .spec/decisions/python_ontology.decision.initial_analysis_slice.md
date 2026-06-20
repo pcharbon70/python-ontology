@@ -58,4 +58,7 @@ The initial command surface is `mix python_ontology.analyze`, which accepts a fi
 path, selection options, base IRI configuration, validation options, and an optional output
 path. The task exits non-zero for invalid input and failed validation.
 
+Generated graph output is serialized through a reusable Turtle output module with stable
+PythonOntology prefixes. Generated Turtle must parse back through the RDF/Turtle gate.
+
 <!-- covers: python_ontology.initial_analysis_slice.modules_packages python_ontology.initial_analysis_slice.imports_aliases python_ontology.initial_analysis_slice.classes_bases python_ontology.initial_analysis_slice.functions_methods python_ontology.initial_analysis_slice.parameters_defaults python_ontology.initial_analysis_slice.decorators_annotations python_ontology.initial_analysis_slice.calls_attributes python_ontology.initial_analysis_slice.source_locations python_ontology.initial_analysis_slice.first_cli_output python_ontology.initial_analysis_slice.out_of_scope_runtime python_ontology.initial_analysis_slice.tests_for_slice -->

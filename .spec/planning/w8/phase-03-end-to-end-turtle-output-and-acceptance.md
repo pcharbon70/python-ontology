@@ -20,15 +20,15 @@ Back to index: [README](./README.md)
 [ ] 3 Phase 3 - End-to-End Turtle Output and Acceptance
   Prove the first slice works from Python source input to validated Turtle output.
 
-  [ ] 3.1 Section - Turtle Serialization
+  [x] 3.1 Section - Turtle Serialization
     Serialize generated graphs in a stable format.
 
-    [ ] 3.1.1 Task - Implement Turtle output
+    [x] 3.1.1 Task - Implement Turtle output
       Write generated graphs to strings and files.
 
-      [ ] 3.1.1.1 Subtask - Serialize RDF graph output to Turtle.
-      [ ] 3.1.1.2 Subtask - Preserve stable prefixes for PythonOntology namespaces.
-      [ ] 3.1.1.3 Subtask - Ensure serialized output parses back as Turtle.
+      [x] 3.1.1.1 Subtask - Serialize RDF graph output to Turtle.
+      [x] 3.1.1.2 Subtask - Preserve stable prefixes for PythonOntology namespaces.
+      [x] 3.1.1.3 Subtask - Ensure serialized output parses back as Turtle.
 
   [ ] 3.2 Section - End-To-End Project Fixture
     Validate file and project analysis on a realistic small project.

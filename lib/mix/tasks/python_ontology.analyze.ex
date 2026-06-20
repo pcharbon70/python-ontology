@@ -7,6 +7,7 @@ defmodule Mix.Tasks.PythonOntology.Analyze do
   use Mix.Task
 
   alias PythonOntology.Analysis.Result
+  alias PythonOntology.Output.Turtle
   alias PythonOntology.Project
 
   @shortdoc "Analyze a Python file or project"
@@ -23,13 +24,6 @@ defmodule Mix.Tasks.PythonOntology.Analyze do
     shapes_path: :string
   ]
   @aliases [o: :output]
-
-  @rdf_type "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
-  @pycore "https://w3id.org/python-code/core#"
-  @pystruct "https://w3id.org/python-code/structure#"
-  @pytyping "https://w3id.org/python-code/typing#"
-  @pyruntime "https://w3id.org/python-code/runtime#"
-  @pyevolution "https://w3id.org/python-code/evolution#"
 
   @impl Mix.Task
   def run(args) do
@@ -96,25 +90,21 @@ defmodule Mix.Tasks.PythonOntology.Analyze do
   end
 
   defp write_output(%Result{} = result, switches) do
-    output = turtle(result)
-
     case switches[:output] do
       nil ->
-        IO.write(output)
+        IO.write(Turtle.to_string(result))
 
       path ->
         path
         |> Path.expand()
-        |> write_file(output)
+        |> write_file(result)
     end
 
     result
   end
 
-  defp write_file(path, output) do
-    File.mkdir_p!(Path.dirname(path))
-
-    case File.write(path, output) do
+  defp write_file(path, result) do
+    case Turtle.write_file(result, path) do
       :ok ->
         :ok
 
@@ -129,53 +119,6 @@ defmodule Mix.Tasks.PythonOntology.Analyze do
 
   defp enforce_validation(%Result{} = result), do: result
 
-  defp turtle(%Result{} = result) do
-    prefixes() <>
-      "\n" <>
-      Enum.map_join(result.triples, "\n", &triple_line/1) <>
-      "\n"
-  end
-
-  defp prefixes do
-    [
-      "@prefix rdf: <#{rdf_type_namespace()}> .",
-      "@prefix pycore: <#{@pycore}> .",
-      "@prefix pystruct: <#{@pystruct}> .",
-      "@prefix pytyping: <#{@pytyping}> .",
-      "@prefix pyruntime: <#{@pyruntime}> .",
-      "@prefix pyevolution: <#{@pyevolution}> ."
-    ]
-    |> Enum.join("\n")
-  end
-
-  defp triple_line({subject, predicate, object}) do
-    "#{iri(subject)} #{iri(predicate)} #{object(object)} ."
-  end
-
-  defp iri(value), do: "<#{value}>"
-
-  defp object(value) do
-    if iri?(value) do
-      iri(value)
-    else
-      string_literal(value)
-    end
-  end
-
-  defp iri?(value), do: String.starts_with?(value, ["http://", "https://"])
-
-  defp string_literal(value) do
-    escaped =
-      value
-      |> String.replace("\\", "\\\\")
-      |> String.replace("\"", "\\\"")
-      |> String.replace("\n", "\\n")
-      |> String.replace("\r", "\\r")
-      |> String.replace("\t", "\\t")
-
-    "\"#{escaped}\""
-  end
-
   defp format_invalid_option({switch, nil}), do: to_string(switch)
   defp format_invalid_option({switch, value}), do: "#{switch}=#{value}"
 
@@ -189,11 +132,4 @@ defmodule Mix.Tasks.PythonOntology.Analyze do
 
   defp maybe_put(opts, _key, nil), do: opts
   defp maybe_put(opts, key, value), do: Keyword.put(opts, key, value)
-
-  defp rdf_type_namespace do
-    @rdf_type
-    |> String.split("#", parts: 2)
-    |> hd()
-    |> Kernel.<>("#")
-  end
 end

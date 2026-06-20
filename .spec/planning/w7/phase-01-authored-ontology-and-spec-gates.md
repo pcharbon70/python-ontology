@@ -15,7 +15,7 @@ Back to index: [README](./README.md)
 - SpecLed remains the current-truth gate.
 - Validation does not execute analyzed Python code.
 
-[ ] 1 Phase 1 - Authored Ontology and Spec Gates
+[x] 1 Phase 1 - Authored Ontology and Spec Gates
   Add fail-fast checks for authored ontology and SpecLed artifacts.
 
   [x] 1.1 Section - Turtle Parse Gate
@@ -38,12 +38,12 @@ Back to index: [README](./README.md)
       [x] 1.2.1.2 Subtask - Add command verification to specs once command surfaces stabilize.
       [x] 1.2.1.3 Subtask - Record unrelated baseline findings separately if a branch starts dirty.
 
-  [ ] 1.3 Section - Phase 1 Integration Tests
+  [x] 1.3 Section - Phase 1 Integration Tests
     Validate authored ontology and SpecLed checks before generated graph validation exists.
 
-    [ ] 1.3.1 Task - Run authored artifact gates
+    [x] 1.3.1 Task - Run authored artifact gates
       Prove ontology and spec gates are working.
 
-      [ ] 1.3.1.1 Subtask - Add tests that all Turtle files parse successfully.
-      [ ] 1.3.1.2 Subtask - Run `mix spec.check` and capture status.
-      [ ] 1.3.1.3 Subtask - Run `mix format --check-formatted`, full `mix test`, and `mix spec.check`.
+      [x] 1.3.1.1 Subtask - Add tests that all Turtle files parse successfully.
+      [x] 1.3.1.2 Subtask - Run `mix spec.check` and capture status.
+      [x] 1.3.1.3 Subtask - Run `mix format --check-formatted`, full `mix test`, and `mix spec.check`.

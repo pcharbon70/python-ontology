@@ -158,4 +158,12 @@ decisions:
   covers:
     - python_ontology.validation_strategy.specled_current_truth
     - python_ontology.validation_strategy.command_verification
+
+- kind: source_file
+  target: test/python_ontology/validation/phase1_integration_test.exs
+  covers:
+    - python_ontology.validation_strategy.turtle_parse_gate
+    - python_ontology.validation_strategy.specled_current_truth
+    - python_ontology.validation_strategy.command_verification
+    - python_ontology.validation_strategy.no_validation_by_execution
 ```

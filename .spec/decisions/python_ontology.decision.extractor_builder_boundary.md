@@ -37,4 +37,8 @@ Extractors can evolve Python-specific semantic logic without coupling to Turtle 
 
 Builders can enforce consistent IRI generation and namespace use across all extracted facts.
 
+## Implementation Notes
+
+Wave 6 starts by introducing explicit extractor and builder contexts plus a shared pipeline diagnostic shape. These contexts carry project/source metadata, IRI configuration, confidence propagation options, and accumulated diagnostics so later extractor and builder stages can remain stateless and independently testable.
+
 <!-- covers: python_ontology.extractor_builder_boundary.parser_syntax_only python_ontology.extractor_builder_boundary.extractors_emit_facts python_ontology.extractor_builder_boundary.builders_emit_rdf python_ontology.extractor_builder_boundary.shared_context python_ontology.extractor_builder_boundary.shared_iri_helper python_ontology.extractor_builder_boundary.no_rdf_in_extractors python_ontology.extractor_builder_boundary.no_parsing_in_builders python_ontology.extractor_builder_boundary.source_evidence_required python_ontology.extractor_builder_boundary.diagnostic_accumulation python_ontology.extractor_builder_boundary.validation_after_build -->

@@ -9,11 +9,16 @@ status: active
 summary: Separation of normalized syntax, extracted facts, RDF builders, and validation.
 surface:
   - .spec/decisions/python_ontology.decision.extractor_builder_boundary.md
+  - lib/python_ontology/extractors.ex
   - lib/python_ontology/extractors/**/*.ex
   - lib/python_ontology/builders/**/*.ex
+  - lib/python_ontology/facts/**/*.ex
+  - lib/python_ontology/facts.ex
   - lib/python_ontology/pipeline*.ex
+  - lib/python_ontology/pipeline/**/*.ex
   - test/python_ontology/**/*extractor*_test.exs
   - test/python_ontology/**/*builder*_test.exs
+  - test/python_ontology/**/*pipeline*_test.exs
 decisions:
   - python_ontology.decision.normalized_syntax_model
   - python_ontology.decision.iri_identity_strategy
@@ -159,4 +164,200 @@ decisions:
   covers:
     - python_ontology.extractor_builder_boundary.builders_emit_rdf
     - python_ontology.extractor_builder_boundary.shared_iri_helper
+
+- kind: source_file
+  target: lib/python_ontology/extractors/context.ex
+  covers:
+    - python_ontology.extractor_builder_boundary.shared_context
+    - python_ontology.extractor_builder_boundary.shared_iri_helper
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: lib/python_ontology/builders/context.ex
+  covers:
+    - python_ontology.extractor_builder_boundary.shared_context
+    - python_ontology.extractor_builder_boundary.shared_iri_helper
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: lib/python_ontology/pipeline/diagnostic.ex
+  covers:
+    - python_ontology.extractor_builder_boundary.shared_context
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: test/python_ontology/extractors/context_test.exs
+  covers:
+    - python_ontology.extractor_builder_boundary.shared_context
+    - python_ontology.extractor_builder_boundary.shared_iri_helper
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: test/python_ontology/builders/context_test.exs
+  covers:
+    - python_ontology.extractor_builder_boundary.shared_context
+    - python_ontology.extractor_builder_boundary.shared_iri_helper
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: lib/python_ontology/facts/fact.ex
+  covers:
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.source_evidence_required
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: lib/python_ontology/facts/result.ex
+  covers:
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: lib/python_ontology/facts.ex
+  covers:
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.source_evidence_required
+
+- kind: source_file
+  target: test/python_ontology/facts/fact_test.exs
+  covers:
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.source_evidence_required
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: test/python_ontology/extractors/phase1_integration_test.exs
+  covers:
+    - python_ontology.extractor_builder_boundary.shared_context
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.source_evidence_required
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: lib/python_ontology/extractors/structural.ex
+  covers:
+    - python_ontology.extractor_builder_boundary.parser_syntax_only
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.source_evidence_required
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: test/python_ontology/extractors/structural_test.exs
+  covers:
+    - python_ontology.extractor_builder_boundary.parser_syntax_only
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.source_evidence_required
+
+- kind: source_file
+  target: lib/python_ontology/extractors/expressions.ex
+  covers:
+    - python_ontology.extractor_builder_boundary.parser_syntax_only
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.source_evidence_required
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: test/python_ontology/extractors/expressions_test.exs
+  covers:
+    - python_ontology.extractor_builder_boundary.parser_syntax_only
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.source_evidence_required
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: lib/python_ontology/extractors.ex
+  covers:
+    - python_ontology.extractor_builder_boundary.parser_syntax_only
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.source_evidence_required
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: test/python_ontology/extractors/phase2_integration_test.exs
+  covers:
+    - python_ontology.extractor_builder_boundary.parser_syntax_only
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.source_evidence_required
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: lib/python_ontology/builders/result.ex
+  covers:
+    - python_ontology.extractor_builder_boundary.builders_emit_rdf
+    - python_ontology.extractor_builder_boundary.no_parsing_in_builders
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: lib/python_ontology/builders/rdf.ex
+  covers:
+    - python_ontology.extractor_builder_boundary.builders_emit_rdf
+    - python_ontology.extractor_builder_boundary.shared_iri_helper
+    - python_ontology.extractor_builder_boundary.no_parsing_in_builders
+    - python_ontology.extractor_builder_boundary.source_evidence_required
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+
+- kind: source_file
+  target: test/python_ontology/builders/rdf_test.exs
+  covers:
+    - python_ontology.extractor_builder_boundary.builders_emit_rdf
+    - python_ontology.extractor_builder_boundary.shared_iri_helper
+    - python_ontology.extractor_builder_boundary.no_parsing_in_builders
+    - python_ontology.extractor_builder_boundary.source_evidence_required
+
+- kind: source_file
+  target: lib/python_ontology/pipeline/result.ex
+  covers:
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.builders_emit_rdf
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+    - python_ontology.extractor_builder_boundary.validation_after_build
+
+- kind: source_file
+  target: lib/python_ontology/pipeline.ex
+  covers:
+    - python_ontology.extractor_builder_boundary.parser_syntax_only
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.builders_emit_rdf
+    - python_ontology.extractor_builder_boundary.shared_context
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.no_parsing_in_builders
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+    - python_ontology.extractor_builder_boundary.validation_after_build
+
+- kind: source_file
+  target: test/python_ontology/pipeline_test.exs
+  covers:
+    - python_ontology.extractor_builder_boundary.parser_syntax_only
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.builders_emit_rdf
+    - python_ontology.extractor_builder_boundary.shared_context
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.no_parsing_in_builders
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+    - python_ontology.extractor_builder_boundary.validation_after_build
+
+- kind: source_file
+  target: test/python_ontology/pipeline_phase3_integration_test.exs
+  covers:
+    - python_ontology.extractor_builder_boundary.parser_syntax_only
+    - python_ontology.extractor_builder_boundary.extractors_emit_facts
+    - python_ontology.extractor_builder_boundary.builders_emit_rdf
+    - python_ontology.extractor_builder_boundary.shared_context
+    - python_ontology.extractor_builder_boundary.shared_iri_helper
+    - python_ontology.extractor_builder_boundary.no_rdf_in_extractors
+    - python_ontology.extractor_builder_boundary.no_parsing_in_builders
+    - python_ontology.extractor_builder_boundary.source_evidence_required
+    - python_ontology.extractor_builder_boundary.diagnostic_accumulation
+    - python_ontology.extractor_builder_boundary.validation_after_build
 ```
